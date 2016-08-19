@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dustbuster", "Dustbuster.csproj", "{0251D14B-1821-4D77-A49A-F3ABDF2B5B32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dustbuster.Droid", "Droid\Dustbuster.Droid.csproj", "{05269D83-9D9A-4623-B2B8-A6082CF93DBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0251D14B-1821-4D77-A49A-F3ABDF2B5B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0251D14B-1821-4D77-A49A-F3ABDF2B5B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0251D14B-1821-4D77-A49A-F3ABDF2B5B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0251D14B-1821-4D77-A49A-F3ABDF2B5B32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05269D83-9D9A-4623-B2B8-A6082CF93DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05269D83-9D9A-4623-B2B8-A6082CF93DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05269D83-9D9A-4623-B2B8-A6082CF93DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05269D83-9D9A-4623-B2B8-A6082CF93DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
