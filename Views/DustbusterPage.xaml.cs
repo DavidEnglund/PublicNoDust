@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using Dustbuster;
+using System;
+using Xamarin.Forms;
 
 namespace Dustbuster
 {
@@ -8,6 +10,11 @@ namespace Dustbuster
 		{
 			InitializeComponent();
 		}
-	}
+
+        private async void Button_ToAccordion(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AccordionPage());
+        }
+    }
 }
 
