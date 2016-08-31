@@ -1,12 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ctrl="clr-namespace:Dustbuster;assembly=Dustbuster"
-             x:Class="Dustbuster.AccordionPage">
-  <ContentPage.Content>
-    <StackLayout>
-      <ctrl:AccordionView x:Name="MainOne" />
-    </StackLayout>
-
-  </ContentPage.Content>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.AccordionPage">
+	<ContentPage.Content>
+		<StackLayout x:Name="AccordionView"
+                 Padding="0"
+                 Spacing="0">
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>

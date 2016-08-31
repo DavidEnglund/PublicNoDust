@@ -11,9 +11,20 @@ namespace Dustbuster
 			InitializeComponent();
 		}
 
-        private async void Button_ToAccordion(object sender, EventArgs e)
+        private async void TapCivilButton(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AccordionPage());
+        }
+
+        private async void TapMiningButton(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AccordionPage());
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

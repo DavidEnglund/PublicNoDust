@@ -8,12 +8,15 @@ namespace Dustbuster
 		{
 			InitializeComponent();
 
-            MainPage = new NavigationPage(new DustbusterPage());
-		}
+            MainPage = new NavigationPage(new DustbusterPage())
+            {
+                BarBackgroundColor = Color.Blue,
+            };
+        }
 
 		protected override void OnStart()
 		{
-			// Handle when your app starts
+            // Handle when your app starts
 		}
 
 		protected override void OnSleep()
@@ -32,7 +35,7 @@ namespace Dustbuster
             {
                 var label = new Label()
                 {
-                    Font = Font.SystemFontOfSize(NamedSize.Default),
+                    //Font = Font.SystemFontOfSize(NamedSize.Default),
                     TextColor = Color.Blue
                 };
                 label.SetBinding(Label.TextProperty, new Binding("TextValue"));
