@@ -1,4 +1,5 @@
 ﻿using Dustbuster;
+using Dustbuster.Views;
 using System;
 using Xamarin.Forms;
 
@@ -16,7 +17,11 @@ namespace Dustbuster
             await Navigation.PushAsync(new AccordionPage());
         }
 
-    
+        private async void Button_ToSetting(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SettingsPage());
+        }
+
     }
 }
 

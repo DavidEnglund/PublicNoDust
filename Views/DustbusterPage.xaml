@@ -13,6 +13,10 @@
             BackgroundColor="Green"
             TextColor="White" />
 
+    <Button Clicked="Button_ToSetting"
+        Text="To Settings"
+        BackgroundColor="Green"
+        TextColor="White" />
     
   </StackLayout>
 </ContentPage>
