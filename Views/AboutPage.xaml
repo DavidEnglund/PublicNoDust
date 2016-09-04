@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dustbuster.AboutPage">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+  <StackLayout>
+    <Label  x:Name="Label_AboutandTeam"
+            Text="About and Team"
+            HorizontalTextAlignment="Center"
+            VerticalTextAlignment="Center"
+            HorizontalOptions="Fill"
+            BackgroundColor="Green"
+            WidthRequest="500"
+            HeightRequest="125"
+            VerticalOptions="Start"
+            Font="25"
+            TextColor="White"/>
+
+    <Label  Text="Application Title"
+            HorizontalTextAlignment="Center"/>
+    <Label  Text="Application Version"
+            HorizontalTextAlignment="Center"/>
+    <Label  TextColor="#000000"
+            FontSize = "15"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"
+            Text="Lorem ipsum dolor sit amet,consectetur adipiscing elit.Praesent luctus vestibulum lorem in cursus.Pellentesque aliquet dui at lorem laoreet,commodo gravida sem consequat.Curabitur convallis tellus id accumsan sodales.Nunc tincidunt auctor ligula at congue.Pellentesque dictum dapibus convallis.Nam vel imperdiet ex.Sed maximus neque eu lacus congue dapibus." />
+  </StackLayout>
+</ContentPage>

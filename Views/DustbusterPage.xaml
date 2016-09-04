@@ -12,6 +12,10 @@
             Text="To Accordion"
             BackgroundColor="Green"
             TextColor="White" />
-
+    
+    <Button Clicked="Button_ToAbout"
+            Text="To About/Team"
+            BackgroundColor="Green"
+            TextColor="White" />
   </StackLayout>
 </ContentPage>

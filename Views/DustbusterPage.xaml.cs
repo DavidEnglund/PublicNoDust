@@ -15,6 +15,11 @@ namespace Dustbuster
         {
             await Navigation.PushAsync(new AccordionPage());
         }
+
+        private async void Button_ToAbout(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AboutPage());
+        }
     }
 }
 
