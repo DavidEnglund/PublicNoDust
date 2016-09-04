@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dustbuster.Views.CalculationPage">
+  <ContentPage.Content>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="1*" />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+      </Grid.RowDefinitions>
+      <Label Grid.Row = "0" Text="Length" />
+      <Entry Grid.Column="1" Placeholder="Input Length" x:Name="entry_length" Keyboard="Numeric" Text="{Binding Length, Mode=TwoWay}"/>
+      <Button Grid.Column="2" Text="{Binding LengthMetrix, Mode=TwoWay}" x:Name="bToggle_length" WidthRequest="25" Command="{Binding ChangeLengthMetrix}"/>
+
+      <Label Grid.Row = "1" Text="Width" />
+      <Entry Grid.Row = "1" Grid.Column="1" Placeholder="Input Width" x:Name="entry_width" Keyboard="Numeric" Text="{Binding Width, Mode=TwoWay}"/>
+      <Button Grid.Row = "1" Grid.Column="2" Text="{Binding WidthMetrix, Mode=TwoWay}" x:Name="bToggle_width" Command="{Binding ChangeWidthMetrix}"/>
+
+      <Button Grid.Row="2" Grid.Column="1" Text="Calculate" x:Name="bCalculation" Command="{Binding CalculateArea}" />
+
+      <Label Grid.Row = "3" Text="Area" />
+      <Entry Grid.Row = "3" Grid.Column="1" Placeholder="Area" x:Name="entry_area" Text="{Binding Area, Mode=TwoWay}"/>
+      <Button Grid.Row = "3" Grid.Column="2" Text="{Binding AreaMetrix, Mode=TwoWay}" x:Name="bToggle_area" Command="{Binding ChangeAreaMetrix}"/>
+    </Grid>
+  </ContentPage.Content>
+</ContentPage>
