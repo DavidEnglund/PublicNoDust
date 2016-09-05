@@ -13,12 +13,14 @@ namespace Dustbuster
 
         private async void TapCivilButton(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AccordionPage());
+            //await Navigation.PushAsync(new AccordionPage());
+            await Navigation.PushAsync(new ContactRequestPage());
         }
 
         private async void TapMiningButton(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AccordionPage());
+            //await Navigation.PushAsync(new AccordionPage());
+            await Navigation.PushAsync(new ContactRequestPage());
         }
 
         protected override void OnAppearing()

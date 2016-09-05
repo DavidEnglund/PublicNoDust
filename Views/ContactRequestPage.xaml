@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dustbuster.ContactRequestPage">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <ContentView>
+    <StackLayout Orientation="Vertical"
+                 Padding="30, 20, 0, 0">
+      <RelativeLayout>
+        <Label Text="Your Name:"
+             FontAttributes="Bold"
+             FontSize="Medium"/>
+        <Entry Placeholder="John Doe" x:Name="etName"
+               RelativeLayout.YConstraint="25"
+               RelativeLayout.XConstraint="20"
+               WidthRequest="250"/>
+        <Label Text="Phone Number:"
+             FontSize="Medium"
+               FontAttributes="Bold"
+               RelativeLayout.YConstraint="80"/>
+        <Entry Keyboard="Telephone" Placeholder="04 123 456 78" x:Name="etPhone"
+               RelativeLayout.YConstraint="105"
+               RelativeLayout.XConstraint="20"
+               WidthRequest="250"
+               />
+        <Label Text="Best Time of Contact:"
+               FontAttributes="Bold"
+             FontSize="Medium"
+               RelativeLayout.YConstraint="160"/>
+        <Button Text="{Binding SelectedDate, StringFormat='{}{0:dd - MMM - yy}'}}" x:Name="btnDate" 
+                RelativeLayout.YConstraint="190"
+                RelativeLayout.XConstraint="50"
+                WidthRequest="200"
+                Command="{Binding DatePickerCommand}"/>
+        
+        <DatePicker x:Name="dpDate" IsVisible="False" Date="{Binding SelectedDate, Mode=TwoWay}" HorizontalOptions="FillAndExpand">
+          
+        </DatePicker>
+        <Button Text="Morning" x:Name="btnTime"
+                RelativeLayout.YConstraint="235"
+                RelativeLayout.XConstraint="50"
+                WidthRequest="200"
+                
+                Clicked="OnTimeClicked"/>
+        <Button Text="Submit" x:Name="btnSubmit"
+                BackgroundColor="Green"
+                TextColor="White"
+                RelativeLayout.YConstraint="290"
+                RelativeLayout.XConstraint="70"
+                WidthRequest="160"
+                Clicked="OnSubmitClicked"/>
+      </RelativeLayout>
+    </StackLayout>
+  </ContentView>
+
+</ContentPage>
