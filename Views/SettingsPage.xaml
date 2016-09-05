@@ -3,82 +3,72 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Dustbuster.Views.SettingsPage">
   <StackLayout>
-    <Label x:Name="Label_Settings"
-         Text="Settings"
-         HorizontalTextAlignment="Center"
-         VerticalTextAlignment="Center"
-         HorizontalOptions="Fill"
-         BackgroundColor="Green"
-         WidthRequest="500"
-         HeightRequest="125"
-         VerticalOptions="Start"
-         Font="25"
-         TextColor="White"/>
-    <StackLayout Padding="50,10,50,10">
-      <Label x:Name="Name"
-            Text="Your Name :"
-            VerticalOptions="Center"
-             TextColor="Black"/>
-
-      <Entry x:name="TextEntry_Name"
-              BackgroundColor="#d9d9d9"
-              Placeholder="Eg. John Smith"
-            />
-
-      <Label x:Name="PhoneOrEmail"
-             Text="Phone or Email :"
-             TextColor="Black"
-           />
-
-      <Picker x:Name="MainPicker"
-             SelectedIndex="0"
-              BackgroundColor="#d9d9d9"/>
-
-      <Entry x:Name="TextEntry_Name"
-             BackgroundColor="#d9d9d9"
-             WidthRequest="10"  />
-
-      <StackLayout Orientation="Horizontal"
-                   Padding="0,20,0,0">
-
-        <Switch
-          x:Name="Switch_Google"
-          IsToggled="True"
-          />
-
-        <Label  x:Name="SwitchLabel"
-                Text="Send Google Analytics"
-                HorizontalTextAlignment="End"
-                TextColor="Black"
-         />
-
-      </StackLayout>
+        <Label x:Name="SettingsLabel"
+               Text="Settings"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               HorizontalOptions="Fill"
+               BackgroundColor="Green"
+               WidthRequest="500"
+               HeightRequest="125"
+               VerticalOptions="Start"
+               Font="25"
+               TextColor="White"/>
+    
+  <StackLayout Padding="50,10,50,10">
       
-      <StackLayout Orientation="Horizontal"
-                   Padding="0,0,0,0">
+                <Label x:Name="NameLabel"
+                       Text="Your Name :"
+                       VerticalOptions="Center"
+                       TextColor="Black"/>
 
-        <Switch
-          x:Name="Switch_ReadOnly"
-          IsToggled="True"
-          />
+                <Entry x:name="NameTextEntry"
+                       BackgroundColor="#d9d9d9"
+                       Placeholder="Eg. John Smith"/>
 
-        <Label  x:Name="SwitchReadOnly"
-                Text="Reading Mode"
-                HorizontalTextAlignment="End"
-                TextColor="Black"
-         />
+                <Label x:Name="ContactMethodLabel"
+                       Text="Phone or Email :"
+                       TextColor="Black" />
 
-      </StackLayout>
+                <Picker x:Name="ContactMethodPicker"
+                        SelectedIndex="0"
+                        BackgroundColor="#d9d9d9"/>
 
-      <Button x:Name="Button_Save"
-          BackgroundColor="Green"
-          HorizontalOptions="Center"
-          VerticalOptions="Center"
-          WidthRequest="150"
-          Text="Save"
-          TextColor="White"
-          />
+                <Entry x:Name="NameTextEntry"
+                       BackgroundColor="#d9d9d9"
+                       WidthRequest="10"  />
 
+          <StackLayout Orientation="Horizontal"
+                       Padding="0,20,0,0">
+
+               <Switch x:Name="GoogleAnalyticsSwitch"
+                       IsToggled="True"/>
+
+                <Label x:Name="GoogleAnalyticsLabel"
+                       Text="Send Google Analytics"
+                       HorizontalTextAlignment="End"
+                       TextColor="Black"/>
+          </StackLayout>
+
+          <StackLayout Orientation="Horizontal"
+                       Padding="0,0,0,0">
+        
+               <Switch x:Name="ReadModeSwitch"
+                       IsToggled="False" />
+
+                <Label x:Name="ReadModeLabel"
+                       Text="Reading Mode"
+                       HorizontalTextAlignment="End"
+                       TextColor="Black" />
+           </StackLayout>
+      
+              <Button x:Name="SaveButton"
+                      BackgroundColor="Green"
+                      HorizontalOptions="Center"
+                      VerticalOptions="Center"
+                      WidthRequest="150"
+                      Text="Save"
+                      TextColor="White"/>
     </StackLayout>
   </StackLayout>
 </ContentPage>

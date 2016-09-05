@@ -16,7 +16,6 @@ namespace Dustbuster
         {
             await Navigation.PushAsync(new AccordionPage());
         }
-
         private async void Button_ToSettings(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SettingsPage());

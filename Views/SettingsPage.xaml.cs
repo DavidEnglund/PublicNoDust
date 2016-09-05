@@ -13,10 +13,10 @@ namespace Dustbuster.Views
         public SettingsPage()
         {
             InitializeComponent();
-            MainPicker.Items.Add("Phone");
-            MainPicker.Items.Add("Email");
+            ContactMethodPicker.Items.Add("Phone");
+            ContactMethodPicker.Items.Add("Email");
 
-            MainPicker.SelectedIndex = 0;
+            ContactMethodPicker.SelectedIndex = 0;
 
         }
     }
