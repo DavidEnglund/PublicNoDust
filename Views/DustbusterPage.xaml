@@ -1,22 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Dustbuster" x:Class="Dustbuster.DustbusterPage">
-  <StackLayout BackgroundColor="White"
-               Padding="60"
-               VerticalOptions="Center" >
-    
-    <Label Text="Welcome to Xamarin Forms!"
-           VerticalOptions="Center"
-           HorizontalOptions="Center" />
-
-    <Button Clicked="Button_ToAccordion"
-            Text="To Accordion"
-            BackgroundColor="Green"
-            TextColor="White" />
-    
-    <Button Clicked="Button_ToSettings"
-          Text="To Accordion"
-          BackgroundColor="Green"
-          TextColor="White" />
-    
+  <StackLayout Spacing="0">
+    <ContentView BackgroundColor="Transparent"
+                 VerticalOptions="Start"
+                 HeightRequest="240"
+                 HorizontalOptions="FillAndExpand">
+      <RelativeLayout VerticalOptions="FillAndExpand"
+                      HorizontalOptions="FillAndExpand">
+        <Image Source="app_title.png"
+               Aspect="Fill" />
+        <StackLayout Orientation="Vertical"
+                     Padding="70, 0, 70, 0"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                           Property=Width,
+                                                                           Factor=1}"
+                     RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,
+                                                                           Property=Height,
+                                                                           Factor=1}">
+            <Label Text="Application Title"
+                    TextColor="White"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    VerticalOptions="StartAndExpand"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"/>
+            <Label Text="This application is to choose what product is best suited for your needs. Some more fill in text and more here"
+                    TextColor="White"
+                    FontSize="Small"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+      </RelativeLayout>
+    </ContentView>
+    <ContentView BackgroundColor="#3498db"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand">
+      <StackLayout Padding="70, 40, 70, 40">
+        <Label Text="Mining"
+               TextColor="White"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               VerticalOptions="Start"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+        <Label Text="Mining option. Some fill in text explaining this option."
+               TextColor="White"
+               FontSize="Small"
+               VerticalOptions="End"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="FillAndExpand" />
+      </StackLayout>
+      <ContentView.GestureRecognizers>
+        <TapGestureRecognizer Tapped="TapMiningButton" 
+                              NumberOfTapsRequired="1" />
+      </ContentView.GestureRecognizers>
+    </ContentView>
+    <ContentView BackgroundColor="#2ecc71"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand">
+      <StackLayout Padding="70, 40, 70, 40">
+        <Label Text="Civil"
+               TextColor="White"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               VerticalOptions="Start"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+        <Label Text="Civil option. Some fill in text explaining this option."
+               TextColor="White"
+               FontSize="Small"
+               VerticalOptions="End"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="FillAndExpand" />
+      </StackLayout>
+      <ContentView.GestureRecognizers>
+        <TapGestureRecognizer Tapped="TapCivilButton"
+                              NumberOfTapsRequired="1" />
+      </ContentView.GestureRecognizers>
+    </ContentView>
   </StackLayout>
 </ContentPage>

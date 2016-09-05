@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--SUNHAWK && RAINSTORM COLOUR STYLES-->
+<resources>
+  <!--Text Colours-->
+  <color name="colourTextWhite">#ffffff</color>
+  <color name="colourTextGrey">#5a5d5e</color>
+  <color name="colourTextInputGrey">#404240</color>
+  <color name="colourTextHamburgerDate">#8d8c8c</color>
+  <color name="colourTextGreen">#18b750</color>
+  <color name="colourTextRed">#df4347</color>
+  <color name="colourTextBlue">#079ece</color>
+  
+  <!--Hamburger Colours-->
+  <color name="colorHamburgerHeader">#292a2a</color>
+  <color name="colorHamburgerListItem">#2e2f2f</color>
+  <color name="colourHamburgerOptionButton">#383939</color>
+  <color name="colourHamburgerOptionButtonActive">#2f3131</color>
+
+  <!--Sunhawk Colours (MINING aka Green)-->
+  <color name="colourMiningGreenPrimary">#18b750</color>
+  <color name="colourMiningGreenAccordionHeaderTrafficed">#23c15b</color>
+  <color name="colourMiningGreenAccordionHeaderCalendar">#2ecf67</color>
+  <color name="colourMiningGreenAccordionHeaderWeather">#34ce6a</color>
+  <color name="colourMiningGreenAccordionHeaderLocation">#37d06d</color>
+  <!--Sunhaw Active Colours-->
+  <color name="colourMiningGreenPrimaryActive">#16b24d</color>
+  <color name="colourMiningGreenAccordionHeaderTrafficedActive">#1ebc56</color>
+  <color name="colourMiningGreenAccordionHeaderCalendarActive">#29c962</color>
+  <color name="colourMiningGreenAccordionHeaderWeatherActive">#2fc965</color>
+  <color name="colourMiningGreenAccordionHeaderLocationActive">#33cb69</color>
+
+  <!--RainStorm Colours (CIVIL aka Blue)-->
+  <color name="colourCivilBluePrimary">#079ece</color>
+  <color name="colourCivilBlueAccordionHeaderTrafficed">#0da0cf</color>
+  <color name="colourCivilBlueAccordionHeaderCalendar">#1ca4d0</color>
+  <color name="colourCivilBlueAccordionHeaderWeather">#25aeda</color>
+  <color name="colourCivilBlueAccordionHeaderLocation">#3ab9e2</color>
+  <!--RainStrorm Active Colours-->
+  <color name="colourCivilBluePrimaryActive">#0297c6</color>
+  <color name="colourCivilBlueAccordionHeaderTrafficedActive">#099ac8</color>
+  <color name="colourCivilBlueAccordionHeaderCalendarActive">#179eca</color>
+  <color name="colourCivilBlueAccordionHeaderWeatherActive">#21a9d4</color>
+  <color name="colourCivilBlueAccordionHeaderLocationActive">#34b4dd</color>
+
+  <!--Miscellaneous Colours-->
+  <color name="colourErrorRedPrimary">#df4347</color>
+  <color name="colourErrorRedPrimaryActive">#da3e42</color>
+  <color name="colourButtonUnchecked">#78dd9c</color>
+  <color name="colourInputBackground">#d4d7d5</color>
+
+
+
+</resources>

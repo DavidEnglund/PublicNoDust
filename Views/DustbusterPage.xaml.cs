@@ -1,5 +1,4 @@
 ﻿using Dustbuster;
-using Dustbuster.Views;
 using System;
 using Xamarin.Forms;
 
@@ -12,15 +11,21 @@ namespace Dustbuster
 			InitializeComponent();
 		}
 
-        private async void Button_ToAccordion(object sender, EventArgs e)
+        private async void TapCivilButton(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AccordionPage());
         }
-        private async void Button_ToSettings(object sender, EventArgs e)
+
+        private async void TapMiningButton(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SettingsPage());
+            await Navigation.PushAsync(new AccordionPage());
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
     }
 }
 
