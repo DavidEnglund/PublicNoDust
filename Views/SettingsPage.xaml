@@ -53,6 +53,22 @@
          />
 
       </StackLayout>
+      
+      <StackLayout Orientation="Horizontal"
+                   Padding="0,0,0,0">
+
+        <Switch
+          x:Name="Switch_ReadOnly"
+          IsToggled="True"
+          />
+
+        <Label  x:Name="SwitchReadOnly"
+                Text="Reading Mode"
+                HorizontalTextAlignment="End"
+                TextColor="Black"
+         />
+
+      </StackLayout>
 
       <Button x:Name="Button_Save"
           BackgroundColor="Green"
