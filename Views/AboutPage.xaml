@@ -34,7 +34,7 @@
     
       <StackLayout Orientation="Horizontal">
             <Image  x:Name="TeamImage1"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -62,7 +62,7 @@
       
     <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage2"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -87,7 +87,7 @@
     
       <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage3"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -112,7 +112,7 @@
     
       <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage4"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -137,7 +137,7 @@
     
     <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage5"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -162,7 +162,7 @@
     
     <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage6"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -187,7 +187,7 @@
     
     <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage7"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -212,7 +212,7 @@
     
    <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage8"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -237,7 +237,7 @@
     
      <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage9"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -263,7 +263,7 @@
     
     <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage10"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"
@@ -288,7 +288,7 @@
     
     <StackLayout Orientation="Horizontal">
         <Image  x:Name="TeamImage11"
-                Source="TeamImage.png"
+                Source="Team_Image.png"
                 HeightRequest="50"
                 WidthRequest="50"
                 VerticalOptions="Start"

@@ -91,7 +91,7 @@ namespace Dustbuster
 
         private async void btnAbout_Clicked(object sender, EventArgs e)
         {
-            //TODO  Navigate to About page
+           
             await Navigation.PushAsync(new AboutPage());
         }
 

@@ -3481,7 +3481,7 @@ namespace Dustbuster.Droid
 			public const int success_tick = 2130837623;
 			
 			// aapt resource value: 0x7f020078
-			public const int TeamImage = 2130837624;
+			public const int Team_Image = 2130837624;
 			
 			static Drawable()
 			{
