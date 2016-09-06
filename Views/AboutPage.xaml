@@ -5,7 +5,7 @@
   <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
 
   <StackLayout>
-    <Label  x:Name="Label_AboutandTeam"
+    <Label  x:Name="About_Label"
             Text="About and Team"
             HorizontalTextAlignment="Center"
             VerticalTextAlignment="Center"
@@ -26,290 +26,290 @@
             VerticalTextAlignment="Center"
             HorizontalTextAlignment="Center"
             Text="Lorem ipsum dolor sit amet,consectetur adipiscing elit.Praesent luctus vestibulum lorem in cursus.Pellentesque aliquet dui at lorem laoreet,commodo gravida sem consequat.Curabitur convallis tellus id accumsan sodales.Nunc tincidunt auctor ligula at congue.Pellentesque dictum dapibus convallis.Nam vel imperdiet ex.Sed maximus neque eu lacus congue dapibus." />
-     <ScrollView>
-  <StackLayout Padding="20,20,0,0">
-        
-    <Label  Text="Acknowledgements"
-            HorizontalTextAlignment="Center"/>
+     
+      <ScrollView>
+        <StackLayout Padding="20,20,0,0">
+   
+            <Label Text="Acknowledgements"
+                   HorizontalTextAlignment="Center"/>
     
-      <StackLayout Orientation="Horizontal">
-            <Image  x:Name="TeamImage1"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://central.wa.edu.au" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="Jayden Spencer"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="TeamImage1"
+                       Source="team_image.png"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start">
+                  <Image.GestureRecognizers>
+                  <TapGestureRecognizer
+                       Command="{Binding TapAvatarCommand}"
+                       CommandParameter="https://central.wa.edu.au" />
+                </Image.GestureRecognizers>
+              </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text="Jayden Spencer"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label Text="Programmer"/>
       
           
-    </StackLayout>
-    </StackLayout>  
+          </StackLayout>
+          </StackLayout>  
     
-      
-    <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage2"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://central.wa.edu.au" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="David Englund"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>  
+          <StackLayout Orientation="Horizontal">
+           <Image  x:Name="TeamImage2"
+                      Source="team_image.png"
+                      HeightRequest="50"
+                      WidthRequest="50"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start">
+              <Image.GestureRecognizers>
+              <TapGestureRecognizer
+                      Command="{Binding TapAvatarCommand}"
+                      CommandParameter="https://central.wa.edu.au" />
+              </Image.GestureRecognizers>
+            </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text="David Englund"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>  
     
-      <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage3"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://google.com" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="Ken H"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>  
+            <StackLayout Orientation="Horizontal">
+              <Image  x:Name="TeamImage3"
+                      Source="team_image.png"
+                      HeightRequest="50"
+                      WidthRequest="50"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                      Command="{Binding TapAvatarCommand}"
+                      CommandParameter="https://google.com" />
+                </Image.GestureRecognizers>
+              </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text="Ken H"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>  
     
-      <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage4"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://google.com" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="Michay Guzman"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>  
+            <StackLayout Orientation="Horizontal">
+              <Image  x:Name="TeamImage4"
+                      Source="team_image.png"
+                      HeightRequest="50"
+                      WidthRequest="50"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                      Command="{Binding TapAvatarCommand}"
+                      CommandParameter="https://google.com" />
+                </Image.GestureRecognizers>
+              </Image>
+         <StackLayout Orientation="Vertical"
+                      Padding="10,3,0,0">
+          <Grid       Padding="0,0,0,-6">
+          <Label      Text="Michay Guzman"
+                      FontAttributes="Bold"
+                      FontSize="18"
+                      TextColor="Black"/>
+          </Grid>
+          <Label Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>  
     
-    <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage5"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://central.wa.edu.au" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text=" Michael White"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>  
+         <StackLayout Orientation="Horizontal">
+            <Image  x:Name="TeamImage5"
+                      Source="team_image.png"
+                      HeightRequest="50"
+                      WidthRequest="50"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start">
+              <Image.GestureRecognizers>
+              <TapGestureRecognizer
+                      Command="{Binding TapAvatarCommand}"
+                      CommandParameter="https://central.wa.edu.au" />
+              </Image.GestureRecognizers>
+            </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text=" Michael White"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>  
     
-    <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage6"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://central.wa.edu.au" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="Rebecca Lim"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>  
+          <StackLayout Orientation="Horizontal">
+              <Image  x:Name="TeamImage6"
+                      Source="team_image.png"
+                      HeightRequest="50"
+                      WidthRequest="50"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start">
+              <Image.GestureRecognizers>
+              <TapGestureRecognizer
+                      Command="{Binding TapAvatarCommand}"
+                      CommandParameter="https://central.wa.edu.au" />
+              </Image.GestureRecognizers>
+              </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text="Rebecca Lim"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>  
     
-    <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage7"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://central.wa.edu.au" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="Erdal Erkilic"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>  
+          <StackLayout Orientation="Horizontal">
+             <Image  x:Name="TeamImage7"
+                      Source="team_image.png"
+                      HeightRequest="50"
+                      WidthRequest="50"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start">
+              <Image.GestureRecognizers>
+              <TapGestureRecognizer
+                      Command="{Binding TapAvatarCommand}"
+                      CommandParameter="https://central.wa.edu.au" />
+              </Image.GestureRecognizers>
+             </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text="Erdal Erkilic"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>  
     
-   <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage8"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://central.wa.edu.au" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="Monique Reddy"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>  
+         <StackLayout Orientation="Horizontal">
+             <Image  x:Name="TeamImage8"
+                      Source="team_image.png"
+                      HeightRequest="50"
+                      WidthRequest="50"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                      Command="{Binding TapAvatarCommand}"
+                      CommandParameter="https://central.wa.edu.au" />
+                </Image.GestureRecognizers>
+             </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text="Monique Reddy"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label       Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>  
     
-     <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage9"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://central.wa.edu.au" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="Michael Macaulay"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>
+          <StackLayout Orientation="Horizontal">
+                <Image x:Name="TeamImage9"
+                       Source="team_image.png"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                       Command="{Binding TapAvatarCommand}"
+                       CommandParameter="https://central.wa.edu.au" />
+                </Image.GestureRecognizers>
+              </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text="Michael Macaulay"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label       Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>
     
     
-    <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage10"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://central.wa.edu.au" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="Azhar Firdaus"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>  
+         <StackLayout Orientation="Horizontal">
+              <Image  x:Name="TeamImage10"
+                      Source="team_image.png"
+                      HeightRequest="50"
+                      WidthRequest="50"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                      Command="{Binding TapAvatarCommand}"
+                      CommandParameter="https://central.wa.edu.au" />
+                </Image.GestureRecognizers>
+              </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text="Azhar Firdaus"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>  
     
-    <StackLayout Orientation="Horizontal">
-        <Image  x:Name="TeamImage11"
-                Source="Team_Image.png"
-                HeightRequest="50"
-                WidthRequest="50"
-                VerticalOptions="Start"
-                HorizontalOptions="Start">
-        <Image.GestureRecognizers>
-        <TapGestureRecognizer
-                Command="{Binding TapAvatarCommand}"
-                CommandParameter="https://central.wa.edu.au" />
-        </Image.GestureRecognizers>
-        </Image>
-    <StackLayout Orientation="Vertical"
-                 Padding="10,3,0,0">
-    <Grid        Padding="0,0,0,-6">
-    <Label       Text="Barney W"
-                 FontAttributes="Bold"
-                 FontSize="18"
-                 TextColor="Black"/>
-    </Grid>
-    <Label Text="Programmer"/>
-    </StackLayout>
-    </StackLayout>  
+         <StackLayout Orientation="Horizontal">
+              <Image  x:Name="TeamImage11"
+                      Source="team_image.png"
+                      HeightRequest="50"
+                      WidthRequest="50"
+                      VerticalOptions="Start"
+                      HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                <TapGestureRecognizer
+                      Command="{Binding TapAvatarCommand}"
+                      CommandParameter="https://central.wa.edu.au" />
+                </Image.GestureRecognizers>
+              </Image>
+          <StackLayout Orientation="Vertical"
+                       Padding="10,3,0,0">
+          <Grid        Padding="0,0,0,-6">
+          <Label       Text="Barney W"
+                       FontAttributes="Bold"
+                       FontSize="18"
+                       TextColor="Black"/>
+          </Grid>
+          <Label Text="Programmer"/>
+          </StackLayout>
+          </StackLayout>  
        
        </StackLayout>
      </ScrollView> 
