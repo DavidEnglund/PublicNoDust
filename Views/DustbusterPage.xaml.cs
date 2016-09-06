@@ -85,14 +85,14 @@ namespace Dustbuster
 
         private async void btnSettings_Clicked(object sender, EventArgs e)
         {
-            //TODO  Navigate to Settings page
-            throw new NotImplementedException();
+           
+            await Navigation.PushAsync(new SettingsPage());
         }
 
         private async void btnAbout_Clicked(object sender, EventArgs e)
         {
             //TODO  Navigate to About page
-            throw new NotImplementedException();
+            await Navigation.PushAsync(new AboutPage());
         }
 
         private async void TapCivilButton(object sender, EventArgs e)
