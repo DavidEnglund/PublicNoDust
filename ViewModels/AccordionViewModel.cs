@@ -14,16 +14,23 @@ namespace Dustbuster
 
 		public AccordionViewModel()
 		{
-			AccordionPane trafficPane = new AccordionPane("Traffic", new ContentView()
-			{
-				VerticalOptions = LayoutOptions.FillAndExpand,
-				BackgroundColor = Color.Gray
-			});
+			accordionPanes = new List<AccordionPane>();
+			expandedPane = null;
 
-			accordionPanes = new List<AccordionPane>()
-			{
-				trafficPane
-			};
+            accordionPanes.Add(new AccordionPane("Traffic", new TrafficView()));
+
+			accordionPanes.Add(new AccordionPane("Duration", new ContentView()
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand
+            }));
+			accordionPanes.Add(new AccordionPane("Weather", new ContentView()
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand
+            }));
+			accordionPanes.Add(new AccordionPane("Location and Area", new ContentView()
+            {
+                VerticalOptions = LayoutOptions.FillAndExpand
+            }));
 		}
 
 		public List<AccordionPane> AccordionPanes
