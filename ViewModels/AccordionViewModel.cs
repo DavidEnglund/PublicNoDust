@@ -19,18 +19,11 @@ namespace Dustbuster
 
             accordionPanes.Add(new AccordionPane("Traffic", new TrafficView()));
 
-			accordionPanes.Add(new AccordionPane("Duration", new ContentView()
-            {
-                VerticalOptions = LayoutOptions.FillAndExpand
-            }));
-			accordionPanes.Add(new AccordionPane("Weather", new ContentView()
-            {
-                VerticalOptions = LayoutOptions.FillAndExpand
-            }));
-			accordionPanes.Add(new AccordionPane("Location and Area", new ContentView()
-            {
-                VerticalOptions = LayoutOptions.FillAndExpand
-            }));
+            accordionPanes.Add(new AccordionPane("Duration", new CalendarView()));
+
+            accordionPanes.Add(new AccordionPane("Weather", new WeatherView()));
+
+            accordionPanes.Add(new AccordionPane("Location and Area", new LocationAreaView()));
 		}
 
 		public List<AccordionPane> AccordionPanes

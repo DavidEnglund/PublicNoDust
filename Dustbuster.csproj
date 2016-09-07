@@ -53,6 +53,18 @@
       <DependentUpon>AccordionPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AccordionView.cs" />
+    <Compile Include="Views\Panes\CalendarView.xaml.cs">
+      <DependentUpon>CalendarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Panes\LocationAreaView.xaml.cs">
+      <DependentUpon>LocationAreaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Panes\TrafficView.xaml.cs">
+      <DependentUpon>TrafficView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Panes\WeatherView.xaml.cs">
+      <DependentUpon>WeatherView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
@@ -79,6 +91,30 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Panes\TrafficView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Panes\WeatherView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Panes\LocationAreaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Panes\CalendarView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
