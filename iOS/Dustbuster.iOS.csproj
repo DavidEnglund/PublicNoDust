@@ -120,6 +120,7 @@
     <BundleResource Include="Resources\accordion_icon_weather_rain.png" />
     <BundleResource Include="Resources\accordion_icon_weather_sun.png" />
     <BundleResource Include="Resources\choice_calendar_over30.png" />
+    <Compile Include="Renderers\SelectImageButtonRenderer.cs" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
