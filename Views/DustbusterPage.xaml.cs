@@ -1,5 +1,4 @@
-﻿using Dustbuster;
-using System;
+﻿using System;
 using Xamarin.Forms;
 
 namespace Dustbuster
@@ -10,6 +9,7 @@ namespace Dustbuster
 		{
 			InitializeComponent();
 		}
+
 
         private async void TapCivilButton(object sender, EventArgs e)
         {
