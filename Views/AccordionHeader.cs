@@ -5,21 +5,25 @@ namespace Dustbuster
 {
 	public class AccordionHeader : ContentView
 	{
-		private AccordionPane pane;
+		private Label titleLabel;
 
 		public AccordionHeader(AccordionPane pane)
 		{
-			this.pane = pane;
 			BackgroundColor = Color.Green;
 			HeightRequest = 50;
 			HorizontalOptions = LayoutOptions.FillAndExpand;
-			Content = new Label()
+			Content = (titleLabel = new Label()
 			{
-				Text = pane.Title,
 				HorizontalTextAlignment = TextAlignment.Center,
 				VerticalTextAlignment = TextAlignment.Center,
 				FontSize = 20f
-			};
+			});
+		}
+
+		public string Title
+		{
+			get { return titleLabel.Text; }
+			set { this.titleLabel.Text = value; }
 		}
 	}
 }

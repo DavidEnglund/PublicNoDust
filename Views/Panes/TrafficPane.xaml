@@ -6,6 +6,7 @@
 
 	<StackLayout>
 		<Label Text="Traffic" FontSize="27" HorizontalOptions="Center" />
+		<Entry x:Name="Entry" Placeholder="Enter in some value." HorizontalOptions="FillAndExpand" />
 		<Button x:Name="WeatherButton" FontSize="17" HorizontalOptions="Center" Text="Go to Weather pane" Clicked="OnWeatherButtonClicked" />
 		<Button x:Name="LocationAreaButton" FontSize="17" HorizontalOptions="Center" Text="Go to LocationArea pane" Clicked="OnLocationAreaButtonClicked" />
 	</StackLayout>
