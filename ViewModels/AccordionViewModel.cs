@@ -7,26 +7,23 @@ namespace Dustbuster
 {
 	public class AccordionViewModel : INotifyPropertyChanged
 	{
-		private List<AccordionPane> accordionPanes;
+		private Dictionary<string, AccordionPane> accordionPanes;
 		private AccordionPane expandedPane;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public AccordionViewModel()
 		{
-			accordionPanes = new List<AccordionPane>();
-			expandedPane = null;
-
-            accordionPanes.Add(new AccordionPane("Traffic", new TrafficView()));
-
-            accordionPanes.Add(new AccordionPane("Duration", new CalendarView()));
-
-            accordionPanes.Add(new AccordionPane("Weather", new WeatherView()));
-
-            accordionPanes.Add(new AccordionPane("Location and Area", new LocationAreaView()));
+			accordionPanes = new Dictionary<string, AccordionPane>()
+			{
+				{ "Traffic", new TrafficPane() },
+				{ "Calendar", new CalendarPane() },
+				{ "Weather", new WeatherPane() },
+				{ "LocationArea", new LocationAreaPane() },
+			};
 		}
 
-		public List<AccordionPane> AccordionPanes
+		public Dictionary<string, AccordionPane> AccordionPanes
 		{
 			get { return this.accordionPanes; }
 		}

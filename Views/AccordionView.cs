@@ -7,7 +7,7 @@ namespace Dustbuster
 {
 	public class AccordionView : StackLayout
 	{
-		public static readonly BindableProperty PanesProperty = BindableProperty.Create("Panes", typeof(IEnumerable<AccordionPane>), typeof(AccordionPane), null, propertyChanged: OnPanesChanged);
+		public static readonly BindableProperty PanesProperty = BindableProperty.Create("Panes", typeof(Dictionary<string, AccordionPane>), typeof(AccordionPane), null, propertyChanged: OnPanesChanged);
 		public static readonly BindableProperty ExpandedPaneProperty = BindableProperty.Create("ExpandedPane", typeof(AccordionPane), typeof(AccordionView), null, BindingMode.TwoWay, propertyChanged: OnExpandedPaneChanged);
 
 		private StackLayout prevPanes;
@@ -31,9 +31,9 @@ namespace Dustbuster
 			visitedPanes = new List<AccordionPane>();
 		}
 
-		public List<AccordionPane> Panes
+		public Dictionary<string, AccordionPane> Panes
 		{
-			get { return (List<AccordionPane>)GetValue(PanesProperty); }
+			get { return (Dictionary<string, AccordionPane>)GetValue(PanesProperty); }
 			set { SetValue(PanesProperty, value); }
 		}
 
@@ -80,7 +80,7 @@ namespace Dustbuster
 				prevPanes.Children.Clear();
 
 				currentPane.Children.Clear();
-				currentPane.Children.Add(newExpanded.PaneContent);
+				currentPane.Children.Add(newExpanded);
 
 				foreach(AccordionPane pane in visitedPanes)
 				{
@@ -92,10 +92,10 @@ namespace Dustbuster
 					else {
 						if (expandedFound)
 						{
-							nextPanes.Children.Add(pane);
+							nextPanes.Children.Add(pane.Header);
 						}
 						else {
-							prevPanes.Children.Add(pane);
+							prevPanes.Children.Add(pane.Header);
 						}
 					}
 				}
@@ -104,12 +104,12 @@ namespace Dustbuster
 
 		private void OnPanesChanged()
 		{
-			ExpandedPane = Panes.First();
+			ExpandedPane = Panes.ToList().First().Value;
 
-			foreach (AccordionPane pane in Panes)
+			foreach (AccordionPane pane in Panes.Values.ToList())
 			{
 				pane.Owner = this;
-				pane.GestureRecognizers.Add(new TapGestureRecognizer()
+				pane.Header.GestureRecognizers.Add(new TapGestureRecognizer()
 				{
 					Command = new Command(() =>
 					{
@@ -117,51 +117,6 @@ namespace Dustbuster
 					})
 				});
 			}
-		}
-	}
-
-
-	public class AccordionPane : ContentView
-	{
-		private string title;
-		private ContentView paneContent;
-		private AccordionView owner;
-
-		public AccordionPane(string title, ContentView paneContent)
-		{
-			this.title = title;
-			this.paneContent = paneContent;
-			this.owner = null;
-
-
-			BackgroundColor = Color.Green;
-			HeightRequest = 50;
-			HorizontalOptions = LayoutOptions.FillAndExpand;
-			Content = new Label()
-			{
-				Text = title,
-				HorizontalTextAlignment = TextAlignment.Center,
-				VerticalTextAlignment = TextAlignment.Center,
-				FontSize = 20f
-			};
-		}
-
-		public string Title
-		{
-			get { return this.title; }
-			set { this.title = value; }
-		}
-
-		public ContentView PaneContent
-		{
-			get { return this.paneContent; }
-			set { this.paneContent = value; }
-		}
-
-		public AccordionView Owner
-		{
-			get { return this.owner; }
-			set { this.owner = value; }
 		}
 	}
 }
