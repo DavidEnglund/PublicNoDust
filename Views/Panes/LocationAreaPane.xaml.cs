@@ -10,6 +10,11 @@ namespace Dustbuster
         {
 			InitializeComponent();
 		}
+
+		public void OnBackButtonClicked(object sender, EventArgs args)
+		{
+			Navigation.PushAsync(new DustbusterPage());
+		}
 	}
 }
 

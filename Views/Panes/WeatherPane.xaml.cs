@@ -10,6 +10,11 @@ namespace Dustbuster
 		{
 			InitializeComponent();
 		}
+
+		public void OnCalendarButtonClicked(object sender, EventArgs args)
+		{
+			Owner.VisitPane(Owner.Panes["Calendar"]);
+		}
 	}
 }
 

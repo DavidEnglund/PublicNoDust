@@ -3,4 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.TrafficPane">
+
+	<StackLayout>
+		<Label Text="Traffic" FontSize="27" HorizontalOptions="Center" />
+		<Button x:Name="WeatherButton" FontSize="17" HorizontalOptions="Center" Text="Go to Weather pane" Clicked="OnWeatherButtonClicked" />
+		<Button x:Name="LocationAreaButton" FontSize="17" HorizontalOptions="Center" Text="Go to LocationArea pane" Clicked="OnLocationAreaButtonClicked" />
+	</StackLayout>
+
 </local:AccordionPane>

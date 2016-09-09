@@ -3,4 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.LocationAreaPane">
+	<StackLayout>
+		<Label Text="LocationArea" FontSize="27" HorizontalOptions="Center" />
+		<Button x:Name="BackButton" FontSize="17" HorizontalOptions="Center" Text="Go to back to main page" Clicked="OnBackButtonClicked" />
+	</StackLayout>
 </local:AccordionPane>

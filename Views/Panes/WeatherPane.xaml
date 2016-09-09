@@ -3,4 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.WeatherPane">
+	
+	<StackLayout>
+		<Label Text="Weather" FontSize="27" HorizontalOptions="Center" />
+		<Button x:Name="CalendarButton" FontSize="17" HorizontalOptions="Center" Text="Go to Calendar pane" Clicked="OnCalendarButtonClicked" />
+	</StackLayout>
 </local:AccordionPane>

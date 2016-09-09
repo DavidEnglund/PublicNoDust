@@ -14,5 +14,15 @@ namespace Dustbuster
 		{
 			InitializeComponent();
 		}
+
+		public void OnWeatherButtonClicked(object sender, EventArgs args)
+		{
+			Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
+		}
+
+		public void OnLocationAreaButtonClicked(object sender, EventArgs args)
+		{
+			Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["LocationArea"]);
+		}
 	}
 }
