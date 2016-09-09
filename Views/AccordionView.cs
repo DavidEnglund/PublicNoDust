@@ -118,6 +118,29 @@ namespace Dustbuster
 				});
 			}
 		}
+
+		public void VisitPane(AccordionPane pane)
+		{
+			if (pane != null)
+			{
+				ExpandedPane = pane;
+			}
+		}
+
+		public void VisitPane(AccordionPane oldPane, AccordionPane newPane)
+		{
+			if (oldPane != newPane)
+			{
+				int index;
+
+				if ((index = visitedPanes.IndexOf(oldPane)) >= 0)
+				{
+					visitedPanes[index] = newPane;
+				}
+
+				ExpandedPane = newPane;
+			}
+		}
 	}
 }
 
