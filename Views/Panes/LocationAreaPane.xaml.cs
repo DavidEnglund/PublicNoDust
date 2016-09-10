@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dustbuster.ViewModels;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -8,13 +9,9 @@ namespace Dustbuster
 	{
 		public LocationAreaPane() : base("Location and Area")
         {
-			InitializeComponent();
-		}
-
-		public void OnBackButtonClicked(object sender, EventArgs args)
-		{
-			Navigation.PushAsync(new DustbusterPage());
-		}
+            BindingContext = new AreaViewModel();
+            InitializeComponent(); 
+        }
 	}
 }
 
