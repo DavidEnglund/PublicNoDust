@@ -28,6 +28,7 @@
                      Property=Height,
                      Factor=1}">
             <Label Text="Application Title"
+                   x:Name="lblTitle"
                     TextColor="White"
                     FontSize="Medium"
                     FontAttributes="Bold"
