@@ -18,11 +18,13 @@ namespace Dustbuster
 		public void OnWeatherButtonClicked(object sender, EventArgs args)
 		{
 			Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
+			Title = Entry.Text;
 		}
 
 		public void OnLocationAreaButtonClicked(object sender, EventArgs args)
 		{
 			Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["LocationArea"]);
+			Title = Entry.Text;
 		}
 	}
 }

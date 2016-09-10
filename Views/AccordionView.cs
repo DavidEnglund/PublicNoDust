@@ -136,6 +136,8 @@ namespace Dustbuster
 				if ((index = visitedPanes.IndexOf(oldPane)) >= 0)
 				{
 					visitedPanes[index] = newPane;
+
+					visitedPanes.RemoveAll((pane) => index < visitedPanes.IndexOf(pane));
 				}
 
 				ExpandedPane = newPane;
