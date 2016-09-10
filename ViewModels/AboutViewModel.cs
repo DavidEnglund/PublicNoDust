@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace Dustbuster
 {
-    public class AboutViewModel : INotifyPropertyChanged
+    public class AboutViewModel
     {
         public AboutViewModel()
         {
@@ -24,7 +24,5 @@ namespace Dustbuster
             get;
             set;
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
