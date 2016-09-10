@@ -1,7 +1,7 @@
 using Plugin.Settings;
 using Plugin.Settings.Abstractions;
 
-namespace Dustbuster.Helpers
+namespace Dustbuster
 {
 	public static class Settings
 	{

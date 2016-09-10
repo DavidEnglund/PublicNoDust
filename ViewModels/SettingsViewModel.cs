@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using Dustbuster.Helpers;
 
 namespace Dustbuster
 {
