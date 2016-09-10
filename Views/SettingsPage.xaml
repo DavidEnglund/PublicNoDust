@@ -18,7 +18,7 @@
   <StackLayout Padding="50,10,50,10">
       
                 <Label x:Name="NameLabel"
-                       Text="Your Name :"
+                       Text="Your Name:"
                        VerticalOptions="Center"
                        TextColor="Black"/>
 
@@ -27,7 +27,7 @@
                        Placeholder="Eg. John Smith"/>
 
                 <Label x:Name="ContactMethodLabel"
-                       Text="Phone or Email :"
+                       Text="Phone or Email:"
                        TextColor="Black" />
 
                 <Picker x:Name="ContactMethodPicker"
@@ -41,11 +41,11 @@
           <StackLayout Orientation="Horizontal"
                        Padding="0,20,0,0">
 
-               <Switch x:Name="GoogleAnalyticsSwitch"
+               <Switch x:Name="AnalyticsSwitch"
                        IsToggled="True"/>
 
-                <Label x:Name="GoogleAnalyticsLabel"
-                       Text="Send Google Analytics"
+                <Label x:Name="AnalyticsLabel"
+                       Text="Send Analytics"
                        HorizontalTextAlignment="End"
                        TextColor="Black"/>
           </StackLayout>
