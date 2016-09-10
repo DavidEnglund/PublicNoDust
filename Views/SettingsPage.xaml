@@ -22,19 +22,19 @@
                        VerticalOptions="Center"
                        TextColor="Black"/>
 
-                <Entry x:name="NameTextEntry"
+                <Entry x:Name="NameTextEntry"
                        BackgroundColor="#d9d9d9"
-                       Placeholder="Eg. John Smith"/>
+                       Placeholder="E.g. John Smith"/>
 
                 <Label x:Name="ContactMethodLabel"
-                       Text="Phone or Email:"
+                       Text="Contact Method:"
                        TextColor="Black" />
 
                 <Picker x:Name="ContactMethodPicker"
                         SelectedIndex="0"
                         BackgroundColor="#d9d9d9"/>
 
-                <Entry x:Name="NameTextEntry"
+                <Entry x:Name="ContactInfoEntry"
                        BackgroundColor="#d9d9d9"
                        WidthRequest="10"  />
 
