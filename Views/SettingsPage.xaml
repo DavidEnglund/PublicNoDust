@@ -24,6 +24,7 @@
 
                 <Entry x:name="NameTextEntry"
                        BackgroundColor="#d9d9d9"
+					   Text="{Binding CustomerName, Mode=TwoWay}"
                        Placeholder="Eg. John Smith"/>
 
                 <Label x:Name="ContactMethodLabel"
@@ -31,18 +32,19 @@
                        TextColor="Black" />
 
                 <Picker x:Name="ContactMethodPicker"
-                        SelectedIndex="0"
+                        SelectedIndex="{Binding ContactMethod, Mode=TwoWay}"
                         BackgroundColor="#d9d9d9"/>
 
                 <Entry x:Name="NameTextEntry"
                        BackgroundColor="#d9d9d9"
+					   Text="{Binding ContactInfo, Mode=TwoWay}"
                        WidthRequest="10"  />
 
           <StackLayout Orientation="Horizontal"
                        Padding="0,20,0,0">
 
                <Switch x:Name="GoogleAnalyticsSwitch"
-                       IsToggled="True"/>
+                       IsToggled="{Binding EnableAnalytics, Mode=TwoWay}"/>
 
                 <Label x:Name="GoogleAnalyticsLabel"
                        Text="Send Google Analytics"
@@ -54,7 +56,7 @@
                        Padding="0,0,0,0">
         
                <Switch x:Name="ReadModeSwitch"
-                       IsToggled="False" />
+                       IsToggled="{Binding EnableReadMode, Mode=TwoWay}" />
 
                 <Label x:Name="ReadModeLabel"
                        Text="Reading Mode"

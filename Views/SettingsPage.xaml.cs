@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Dustbuster.Helpers;
 using Xamarin.Forms;
 
 namespace Dustbuster
@@ -12,12 +12,14 @@ namespace Dustbuster
     {
         public SettingsPage()
         {
+			this.BindingContext = new SettingsViewModel();
+
             InitializeComponent();
+
+			SettingsLabel.Text = Settings.ContactMethod.ToString();
+
             ContactMethodPicker.Items.Add("Phone");
             ContactMethodPicker.Items.Add("Email");
-
-            ContactMethodPicker.SelectedIndex = 0;
-
         }
     }
 }

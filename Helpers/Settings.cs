@@ -18,7 +18,7 @@ namespace Dustbuster.Helpers
 		private static readonly string CustomerNameDefault = "";
 
 		private const string ContactMethodKey = "contact_method";
-		private static readonly int ContactMethodDefault = 0;
+		private static readonly int ContactMethodDefault = 1;
 
 		private const string ContactInfoKey = "contact_info";
 		private static readonly string ContactInfoDefault = "";
