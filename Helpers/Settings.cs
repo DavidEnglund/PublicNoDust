@@ -13,11 +13,57 @@ namespace Dustbuster.Helpers
 			}
 		}
 
+
+		private const string CustomerNameKey = "customer_name";
+		private static readonly string CustomerNameDefault = "";
+
+		private const string ContactMethodKey = "contact_method";
+		private static readonly int ContactMethodDefault = 0;
+
+		private const string ContactInfoKey = "contact_info";
+		private static readonly string ContactInfoDefault = "";
+
 		private const string EnableAnalyticsKey = "enable_analytics";
 		private static readonly bool EnableAnalyticsDefault = true;
 
 		private const string EnableReadModeKey = "enable_readmode";
 		private static readonly bool EnableReadModeDefault = false;
+
+		public static string CustomerName
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(CustomerNameKey, CustomerNameDefault);
+			}
+			set
+			{
+				AppSettings.AddOrUpdateValue(CustomerNameKey, value);
+			}
+		}
+
+		public static int ContactMethod
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(ContactMethodKey, ContactMethodDefault);
+			}
+			set
+			{
+				AppSettings.AddOrUpdateValue(ContactMethodKey, value);
+			}
+		}
+
+		public static string ContactInfo
+		{
+			get
+			{
+				return AppSettings.GetValueOrDefault(ContactInfoKey, ContactInfoDefault);
+			}
+			set
+			{
+				AppSettings.AddOrUpdateValue(ContactInfoKey, value);
+			}
+		}
 
 		public static bool EnableAnalytics
 		{
