@@ -14,11 +14,6 @@ namespace Dustbuster
 			this.BindingContext = new SettingsViewModel();
 
             InitializeComponent();
-
-			SettingsLabel.Text = Settings.ContactMethod.ToString();
-
-            ContactMethodPicker.Items.Add("Phone");
-            ContactMethodPicker.Items.Add("Email");
         }
     }
 }

@@ -33,7 +33,12 @@
 
                 <Picker x:Name="ContactMethodPicker"
                         SelectedIndex="{Binding ContactMethod, Mode=TwoWay}"
-                        BackgroundColor="#d9d9d9"/>
+                        BackgroundColor="#d9d9d9">
+                    <Picker.Items>
+			            <x:String>Phone</x:String> 
+			            <x:String>Email</x:String>
+			        </Picker.Items>
+				</Picker>
 
                 <Entry x:Name="NameTextEntry"
                        BackgroundColor="#d9d9d9"
