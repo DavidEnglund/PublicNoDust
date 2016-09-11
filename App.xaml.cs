@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Dustbuster.Views;
+using Xamarin.Forms;
 
 namespace Dustbuster
 {
