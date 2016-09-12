@@ -18,7 +18,7 @@
 					SelectedImage="choice_traffic_light.png"
 
 					UnselectedBorderColor="Blue"
-					UnselectedBorderWidth="8"
+					UnselectedBorderWidth="18"
 					UnselectedBackgroundColor="Lime"
 					UnselectedImage="choice_traffic_light.png"
 					Padding="30"
