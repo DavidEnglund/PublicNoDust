@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Resources;
 
 using Xamarin.Forms;
 
@@ -10,23 +11,62 @@ namespace Dustbuster
 {
 	public partial class TrafficPane : AccordionPane
 	{
-		SelectButtonGroup myButtonGroup = new SelectButtonGroup();
+		//init traffic button group
+		SelectButtonGroup trafficButtonGroup = new SelectButtonGroup();
 
 		public TrafficPane() : base("Traffic")
 		{
 			InitializeComponent();
-			myButtonGroup.AddButton(trafficedButton);
-			myButtonGroup.AddButton(nonTrafficedButton);
-			trafficedButton.Selected = false;
-			nonTrafficedButton.Selected = false;
+
+			//add trafficked and non trafficked button to button group
+			trafficButtonGroup.AddButton(traffickedButton);
+			trafficButtonGroup.AddButton(nonTraffickedButton);
+			civilOrMiningColours("mining");
 		}
 
+		//choose civil or mining colour options
+		public void civilOrMiningColours(string input)
+		{
+			if (input == "civil")
+			{
+				//green
+				nonTraffickedButton.UnselectedBackgroundColor = Color.FromHex("78dd9c");
+				nonTraffickedButton.SelectedBackgroundColor = Color.FromHex("18b750");
+				traffickedButton.UnselectedBackgroundColor = Color.FromHex("78dd9c");
+				traffickedButton.SelectedBackgroundColor = Color.FromHex("18b750");
+			}
+			else
+			{
+				//blue
+				nonTraffickedButton.UnselectedBackgroundColor = Color.FromHex("47b6d9");
+				nonTraffickedButton.SelectedBackgroundColor = Color.FromHex("079ece");
+				traffickedButton.UnselectedBackgroundColor = Color.FromHex("47b6d9");
+				traffickedButton.SelectedBackgroundColor = Color.FromHex("079ece");
+			}
+		}
 
-		//public void OnWeatherButtonClicked(object sender, EventArgs args)
-		//{
-		//	Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
-		//	Title = Entry.Text;
-		//}
+		//trafficked button click
+		public void traffickedButton_clicked(object sender, EventArgs e)
+		{
+			trafficAnswer.Text = "Yes, my area is a trafficked area";
+
+			if (traffickedButton.Selected == true || nonTraffickedButton.Selected == true)
+			{
+				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
+
+			}
+		}
+
+		//non trafficked button click
+		public void nonTraffickedButton_clicked(object sender, EventArgs e)
+		{
+			trafficAnswer.Text = "No, my area is not a trafficked area";
+
+			if (traffickedButton.Selected == true || nonTraffickedButton.Selected == true)
+			{
+				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
+			}
+		}
 
 		//public void OnLocationAreaButtonClicked(object sender, EventArgs args)
 		//{

@@ -32,7 +32,7 @@
 
   <!--RainStorm Colours (CIVIL aka Blue)-->
   <color name="colourCivilBluePrimary">#079ece</color>
-  <color name="colourCivilBluePrimaryUnselected">#18b750</color>
+  <color name="colourCivilBluePrimaryUnselected">#47b6d9</color>
   <color name="colourCivilBlueAccordionHeaderTrafficed">#0da0cf</color>
   <color name="colourCivilBlueAccordionHeaderCalendar">#1ca4d0</color>
   <color name="colourCivilBlueAccordionHeaderWeather">#25aeda</color>
