@@ -1,18 +1,43 @@
-﻿using Xamarin.Forms;
+﻿using Dustbuster.Views;
+using Xamarin.Forms;
 
 namespace Dustbuster
 {
 	public partial class App : Application
 	{
-		public App()
+        private static DbConnectionManager productsDb;
+        private static DbConnectionManager jobsDb;
+
+        public App()
 		{
 			InitializeComponent();
+			InitializeDatabase();
 
             MainPage = new NavigationPage(new DustbusterPage())
             {
                 BarBackgroundColor = Color.Blue,
             };
         }
+
+		private async void InitializeDatabase()
+		{
+			productsDb = new DbConnectionManager("ProductDB.db3");
+			jobsDb = new DbConnectionManager("JobDB.db3");
+
+			await productsDb.FillProductTablesAsync();
+			jobsDb.CreateJobTable();
+		}
+
+		public static DbConnectionManager ProductsDb
+		{
+			get { return productsDb; }
+		}
+
+		public static DbConnectionManager JobsDb
+		{
+			get { return jobsDb; }
+		}
+
 
 		protected override void OnStart()
 		{

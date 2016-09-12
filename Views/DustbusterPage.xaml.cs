@@ -1,4 +1,4 @@
-﻿using Dustbuster;
+using Dustbuster;
 using Dustbuster.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -81,6 +81,7 @@ namespace Dustbuster
             AnimatePanel();
             await Navigation.PushAsync(new AboutPage());
         }
+
 
         private async void TapCivilButton(object sender, EventArgs e)
         {
