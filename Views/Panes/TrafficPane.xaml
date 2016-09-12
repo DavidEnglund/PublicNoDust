@@ -1,14 +1,49 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <local:AccordionPane xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.TrafficPane">
 
 	<StackLayout>
-		<Label Text="Traffic" FontSize="27" HorizontalOptions="Center" />
-		<Entry x:Name="Entry" Placeholder="Enter in some value." HorizontalOptions="FillAndExpand" />
-		<Button x:Name="WeatherButton" FontSize="17" HorizontalOptions="Center" Text="Go to Weather pane" Clicked="OnWeatherButtonClicked" />
-		<Button x:Name="LocationAreaButton" FontSize="17" HorizontalOptions="Center" Text="Go to LocationArea pane" Clicked="OnLocationAreaButtonClicked" />
+		<Label Text="Is your solution for a trafficed area?" FontSize="20" HorizontalOptions="Center" />
+
+		<StackLayout Orientation="Vertical">
+			<!--Traffic Button-->
+			<local:SelectImageButton
+					
+					x:Name="trafficedButton"
+					SelectedBorderColor="Green"
+					SelectedBorderWidth="3"
+					SelectedBackgroundColor="Aqua"
+					SelectedImage="choice_traffic_light.png"
+
+					UnselectedBorderColor="Blue"
+					UnselectedBorderWidth="8"
+					UnselectedBackgroundColor="Lime"
+					UnselectedImage="choice_traffic_light.png"
+					Padding="30"
+				/>
+
+			<!--OpenRoad Button-->
+			<local:SelectImageButton
+					x:Name="nonTrafficedButton"
+					SelectedBorderColor="Green"
+					SelectedBorderWidth="3"
+					SelectedBackgroundColor="Aqua"
+					SelectedImage="choice_traffic_openroad.png"
+
+					UnselectedBorderColor="Blue"
+					UnselectedBorderWidth="8"
+					UnselectedBackgroundColor="Lime"
+					UnselectedImage="choice_traffic_openroad.png"
+					Padding="30"
+				/>
+
+			
+		</StackLayout>
+		
+		<!--<Button x:Name="WeatherButton" FontSize="17" HorizontalOptions="Center" Text="Go to Weather pane" Clicked="OnWeatherButtonClicked" />
+		<Button x:Name="LocationAreaButton" FontSize="17" HorizontalOptions="Center" Text="Go to LocationArea pane" Clicked="OnLocationAreaButtonClicked" />-->
 	</StackLayout>
 
 </local:AccordionPane>
