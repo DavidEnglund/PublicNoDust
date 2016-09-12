@@ -6,7 +6,7 @@
 
 	<StackLayout>
 		<!--Header Text-->
-		<ContentView Padding="10,0,20,20">
+		<ContentView Padding="15">
 			<Label
 				x:Name="trafficHeader"
 				Text="Is your solution for a trafficed area?"
@@ -32,7 +32,7 @@
 					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_traffic_light.png"
 
-					Padding="15"
+					Padding="26"
 					Grid.Column="0"
 					Clicked="traffickedButton_clicked"
 				/>
@@ -50,7 +50,7 @@
 					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_traffic_openroad.png"
 
-					Padding="15"
+					Padding="26"
 					Grid.Column="1"
 					Clicked="nonTraffickedButton_clicked"
 				/>
@@ -58,7 +58,7 @@
 
 		<!--Answer Choice Text-->
 		</StackLayout>
-		<ContentView Padding="15,0,20,20">
+		<ContentView Padding="40,20,40,10">
 			<Label
 				x:Name="trafficAnswer"
 				Text="Tap on the traffic light or open road to select your option"
