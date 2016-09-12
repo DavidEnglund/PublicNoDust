@@ -2431,32 +2431,32 @@ namespace Dustbuster.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f08006a
-			public const int abc_background_cache_hint_selector_material_dark = 2131230826;
-			
-			// aapt resource value: 0x7f08006b
-			public const int abc_background_cache_hint_selector_material_light = 2131230827;
-			
 			// aapt resource value: 0x7f08006c
-			public const int abc_color_highlight_material = 2131230828;
+			public const int abc_background_cache_hint_selector_material_dark = 2131230828;
+			
+			// aapt resource value: 0x7f08006d
+			public const int abc_background_cache_hint_selector_material_light = 2131230829;
+			
+			// aapt resource value: 0x7f08006e
+			public const int abc_color_highlight_material = 2131230830;
 			
 			// aapt resource value: 0x7f08000d
 			public const int abc_input_method_navigation_guard = 2131230733;
 			
-			// aapt resource value: 0x7f08006d
-			public const int abc_primary_text_disable_only_material_dark = 2131230829;
-			
-			// aapt resource value: 0x7f08006e
-			public const int abc_primary_text_disable_only_material_light = 2131230830;
-			
 			// aapt resource value: 0x7f08006f
-			public const int abc_primary_text_material_dark = 2131230831;
+			public const int abc_primary_text_disable_only_material_dark = 2131230831;
 			
 			// aapt resource value: 0x7f080070
-			public const int abc_primary_text_material_light = 2131230832;
+			public const int abc_primary_text_disable_only_material_light = 2131230832;
 			
 			// aapt resource value: 0x7f080071
-			public const int abc_search_url_text = 2131230833;
+			public const int abc_primary_text_material_dark = 2131230833;
+			
+			// aapt resource value: 0x7f080072
+			public const int abc_primary_text_material_light = 2131230834;
+			
+			// aapt resource value: 0x7f080073
+			public const int abc_search_url_text = 2131230835;
 			
 			// aapt resource value: 0x7f08000e
 			public const int abc_search_url_text_normal = 2131230734;
@@ -2467,11 +2467,11 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f080010
 			public const int abc_search_url_text_selected = 2131230736;
 			
-			// aapt resource value: 0x7f080072
-			public const int abc_secondary_text_material_dark = 2131230834;
+			// aapt resource value: 0x7f080074
+			public const int abc_secondary_text_material_dark = 2131230836;
 			
-			// aapt resource value: 0x7f080073
-			public const int abc_secondary_text_material_light = 2131230835;
+			// aapt resource value: 0x7f080075
+			public const int abc_secondary_text_material_light = 2131230837;
 			
 			// aapt resource value: 0x7f080011
 			public const int accent_material_dark = 2131230737;
@@ -2533,44 +2533,47 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f08004f
 			public const int colorHamburgerListItem = 2131230799;
 			
-			// aapt resource value: 0x7f080068
-			public const int colourButtonUnchecked = 2131230824;
-			
-			// aapt resource value: 0x7f08005e
-			public const int colourCivilBlueAccordionHeaderCalendar = 2131230814;
-			
-			// aapt resource value: 0x7f080063
-			public const int colourCivilBlueAccordionHeaderCalendarActive = 2131230819;
+			// aapt resource value: 0x7f08006a
+			public const int colourButtonUnchecked = 2131230826;
 			
 			// aapt resource value: 0x7f080060
-			public const int colourCivilBlueAccordionHeaderLocation = 2131230816;
+			public const int colourCivilBlueAccordionHeaderCalendar = 2131230816;
 			
 			// aapt resource value: 0x7f080065
-			public const int colourCivilBlueAccordionHeaderLocationActive = 2131230821;
-			
-			// aapt resource value: 0x7f08005d
-			public const int colourCivilBlueAccordionHeaderTrafficed = 2131230813;
+			public const int colourCivilBlueAccordionHeaderCalendarActive = 2131230821;
 			
 			// aapt resource value: 0x7f080062
-			public const int colourCivilBlueAccordionHeaderTrafficedActive = 2131230818;
-			
-			// aapt resource value: 0x7f08005f
-			public const int colourCivilBlueAccordionHeaderWeather = 2131230815;
-			
-			// aapt resource value: 0x7f080064
-			public const int colourCivilBlueAccordionHeaderWeatherActive = 2131230820;
-			
-			// aapt resource value: 0x7f08005c
-			public const int colourCivilBluePrimary = 2131230812;
-			
-			// aapt resource value: 0x7f080061
-			public const int colourCivilBluePrimaryActive = 2131230817;
-			
-			// aapt resource value: 0x7f080066
-			public const int colourErrorRedPrimary = 2131230822;
+			public const int colourCivilBlueAccordionHeaderLocation = 2131230818;
 			
 			// aapt resource value: 0x7f080067
-			public const int colourErrorRedPrimaryActive = 2131230823;
+			public const int colourCivilBlueAccordionHeaderLocationActive = 2131230823;
+			
+			// aapt resource value: 0x7f08005f
+			public const int colourCivilBlueAccordionHeaderTrafficed = 2131230815;
+			
+			// aapt resource value: 0x7f080064
+			public const int colourCivilBlueAccordionHeaderTrafficedActive = 2131230820;
+			
+			// aapt resource value: 0x7f080061
+			public const int colourCivilBlueAccordionHeaderWeather = 2131230817;
+			
+			// aapt resource value: 0x7f080066
+			public const int colourCivilBlueAccordionHeaderWeatherActive = 2131230822;
+			
+			// aapt resource value: 0x7f08005d
+			public const int colourCivilBluePrimary = 2131230813;
+			
+			// aapt resource value: 0x7f080063
+			public const int colourCivilBluePrimaryActive = 2131230819;
+			
+			// aapt resource value: 0x7f08005e
+			public const int colourCivilBluePrimaryUnselected = 2131230814;
+			
+			// aapt resource value: 0x7f080068
+			public const int colourErrorRedPrimary = 2131230824;
+			
+			// aapt resource value: 0x7f080069
+			public const int colourErrorRedPrimaryActive = 2131230825;
 			
 			// aapt resource value: 0x7f080050
 			public const int colourHamburgerOptionButton = 2131230800;
@@ -2578,38 +2581,41 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f080051
 			public const int colourHamburgerOptionButtonActive = 2131230801;
 			
-			// aapt resource value: 0x7f080069
-			public const int colourInputBackground = 2131230825;
-			
-			// aapt resource value: 0x7f080054
-			public const int colourMiningGreenAccordionHeaderCalendar = 2131230804;
-			
-			// aapt resource value: 0x7f080059
-			public const int colourMiningGreenAccordionHeaderCalendarActive = 2131230809;
-			
-			// aapt resource value: 0x7f080056
-			public const int colourMiningGreenAccordionHeaderLocation = 2131230806;
-			
-			// aapt resource value: 0x7f08005b
-			public const int colourMiningGreenAccordionHeaderLocationActive = 2131230811;
-			
-			// aapt resource value: 0x7f080053
-			public const int colourMiningGreenAccordionHeaderTrafficed = 2131230803;
-			
-			// aapt resource value: 0x7f080058
-			public const int colourMiningGreenAccordionHeaderTrafficedActive = 2131230808;
+			// aapt resource value: 0x7f08006b
+			public const int colourInputBackground = 2131230827;
 			
 			// aapt resource value: 0x7f080055
-			public const int colourMiningGreenAccordionHeaderWeather = 2131230805;
+			public const int colourMiningGreenAccordionHeaderCalendar = 2131230805;
 			
 			// aapt resource value: 0x7f08005a
-			public const int colourMiningGreenAccordionHeaderWeatherActive = 2131230810;
+			public const int colourMiningGreenAccordionHeaderCalendarActive = 2131230810;
+			
+			// aapt resource value: 0x7f080057
+			public const int colourMiningGreenAccordionHeaderLocation = 2131230807;
+			
+			// aapt resource value: 0x7f08005c
+			public const int colourMiningGreenAccordionHeaderLocationActive = 2131230812;
+			
+			// aapt resource value: 0x7f080054
+			public const int colourMiningGreenAccordionHeaderTrafficed = 2131230804;
+			
+			// aapt resource value: 0x7f080059
+			public const int colourMiningGreenAccordionHeaderTrafficedActive = 2131230809;
+			
+			// aapt resource value: 0x7f080056
+			public const int colourMiningGreenAccordionHeaderWeather = 2131230806;
+			
+			// aapt resource value: 0x7f08005b
+			public const int colourMiningGreenAccordionHeaderWeatherActive = 2131230811;
 			
 			// aapt resource value: 0x7f080052
 			public const int colourMiningGreenPrimary = 2131230802;
 			
-			// aapt resource value: 0x7f080057
-			public const int colourMiningGreenPrimaryActive = 2131230807;
+			// aapt resource value: 0x7f080058
+			public const int colourMiningGreenPrimaryActive = 2131230808;
+			
+			// aapt resource value: 0x7f080053
+			public const int colourMiningGreenPrimaryUnselected = 2131230803;
 			
 			// aapt resource value: 0x7f08004d
 			public const int colourTextBlue = 2131230797;
@@ -2773,11 +2779,11 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f080044
 			public const int switch_thumb_disabled_material_light = 2131230788;
 			
-			// aapt resource value: 0x7f080074
-			public const int switch_thumb_material_dark = 2131230836;
+			// aapt resource value: 0x7f080076
+			public const int switch_thumb_material_dark = 2131230838;
 			
-			// aapt resource value: 0x7f080075
-			public const int switch_thumb_material_light = 2131230837;
+			// aapt resource value: 0x7f080077
+			public const int switch_thumb_material_light = 2131230839;
 			
 			// aapt resource value: 0x7f080045
 			public const int switch_thumb_normal_material_dark = 2131230789;
