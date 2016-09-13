@@ -6,7 +6,7 @@ namespace Dustbuster
 {
 	public partial class WeatherPane : AccordionPane
 	{
-		public WeatherPane() : base("Weather")
+		public WeatherPane() : base("Weather", "accordion_icon_weather_sun.png")
 		{
 			InitializeComponent();
 		}

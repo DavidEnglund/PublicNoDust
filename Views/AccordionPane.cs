@@ -11,10 +11,11 @@ namespace Dustbuster
 		private AccordionHeader header;
 		private AccordionView owner;
 
-		public AccordionPane(string title)
+		public AccordionPane(string title, string image)
 		{
             BackgroundColor = Color.Transparent;
 			this.header = new AccordionHeader(this);
+			this.header.IconImage = ImageSource.FromFile(image);
 			this.owner = null;
 
 			Title = title;

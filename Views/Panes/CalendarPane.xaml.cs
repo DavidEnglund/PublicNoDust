@@ -6,7 +6,7 @@ namespace Dustbuster
 {
 	public partial class CalendarPane : AccordionPane
 	{
-		public CalendarPane() : base("Duration")
+		public CalendarPane() : base("Duration", "accordion_icon_calendar_over180.png")
         {
 			InitializeComponent();
 		}

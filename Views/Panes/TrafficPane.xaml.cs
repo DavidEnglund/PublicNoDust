@@ -14,7 +14,7 @@ namespace Dustbuster
 		//init traffic button group
 		SelectButtonGroup trafficButtonGroup = new SelectButtonGroup();
 
-		public TrafficPane() : base("Traffic")
+		public TrafficPane() : base("Traffic", "accordion_icon_traffic_light.png")
 		{
 			InitializeComponent();
 
@@ -49,11 +49,11 @@ namespace Dustbuster
 		public void traffickedButton_clicked(object sender, EventArgs e)
 		{
 			trafficAnswer.Text = "Yes, my area is a trafficked area";
+			Title = "Trafficked Area";
 
-			if (traffickedButton.Selected == true || nonTraffickedButton.Selected == true)
+			if (nonTraffickedButton.Selected == false)
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
-
 			}
 		}
 
@@ -61,8 +61,9 @@ namespace Dustbuster
 		public void nonTraffickedButton_clicked(object sender, EventArgs e)
 		{
 			trafficAnswer.Text = "No, my area is not a trafficked area";
+			Title = "Non Trafficked Area";
 
-			if (traffickedButton.Selected == true || nonTraffickedButton.Selected == true)
+			if (traffickedButton.Selected == false)
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
 			}
