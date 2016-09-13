@@ -41,7 +41,8 @@
                   VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand">
       <StackLayout Padding="70, 40, 70, 40">
-      <!-- So we need to move Rebecas stuff into here! -->
+      <!-- So we need to move Rebecas stuff into here! (carousel)-->
+        
       </StackLayout>
     </ContentView>
     <ContentView BackgroundColor="#ffffff"

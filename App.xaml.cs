@@ -13,7 +13,13 @@ namespace Dustbuster
 			InitializeComponent();
 			InitializeDatabase();
 
+            /*
             MainPage = new NavigationPage(new DustbusterPage())
+            {
+                BarBackgroundColor = Color.Blue,
+            };
+            */
+            MainPage = new NavigationPage(new ProductPage())
             {
                 BarBackgroundColor = Color.Blue,
             };
