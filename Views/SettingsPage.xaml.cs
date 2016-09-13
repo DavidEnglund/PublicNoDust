@@ -17,7 +17,7 @@ namespace Dustbuster
             ContactMethodPicker.Items.Add("Email");
 
             ContactMethodPicker.SelectedIndex = 0;
-
+         
         }
     }
 }

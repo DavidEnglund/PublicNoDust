@@ -1,22 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Dustbuster.AboutPage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+             x:Class="Dustbuster.AboutPage"
+             Title="About">
 
   <StackLayout>
-    <Label  x:Name="About_Label"
-            Text="About and Team"
-            HorizontalTextAlignment="Center"
-            VerticalTextAlignment="Center"
-            HorizontalOptions="Fill"
-            BackgroundColor="Green"
-            WidthRequest="500"
-            HeightRequest="125"
-            VerticalOptions="Start"
-            Font="25"
-            TextColor="White"/>
-
     <Label  Text="Application Title"
             HorizontalTextAlignment="Center"/>
     <Label  Text="Application Version"
@@ -34,8 +22,7 @@
                    HorizontalTextAlignment="Center"/>
     
             <StackLayout Orientation="Horizontal">
-                <Image x:Name="TeamImage1"
-                       Source="team_image.png"
+                <Image Source="team_image.png"
                        HeightRequest="50"
                        WidthRequest="50"
                        VerticalOptions="Start"
@@ -61,8 +48,7 @@
           </StackLayout>  
     
           <StackLayout Orientation="Horizontal">
-           <Image  x:Name="TeamImage2"
-                      Source="team_image.png"
+           <Image     Source="team_image.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -86,8 +72,7 @@
           </StackLayout>  
     
             <StackLayout Orientation="Horizontal">
-              <Image  x:Name="TeamImage3"
-                      Source="team_image.png"
+              <Image  Source="team_image.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -111,8 +96,7 @@
           </StackLayout>  
     
             <StackLayout Orientation="Horizontal">
-              <Image  x:Name="TeamImage4"
-                      Source="team_image.png"
+              <Image  Source="team_image.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -136,8 +120,7 @@
           </StackLayout>  
     
          <StackLayout Orientation="Horizontal">
-            <Image  x:Name="TeamImage5"
-                      Source="team_image.png"
+            <Image    Source="team_image.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -161,8 +144,7 @@
           </StackLayout>  
     
           <StackLayout Orientation="Horizontal">
-              <Image  x:Name="TeamImage6"
-                      Source="team_image.png"
+              <Image  Source="team_image.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -186,8 +168,7 @@
           </StackLayout>  
     
           <StackLayout Orientation="Horizontal">
-             <Image  x:Name="TeamImage7"
-                      Source="team_image.png"
+             <Image   Source="team_image.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -211,8 +192,7 @@
           </StackLayout>  
     
          <StackLayout Orientation="Horizontal">
-             <Image  x:Name="TeamImage8"
-                      Source="team_image.png"
+             <Image   Source="team_image.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -236,8 +216,7 @@
           </StackLayout>  
     
           <StackLayout Orientation="Horizontal">
-                <Image x:Name="TeamImage9"
-                       Source="team_image.png"
+                <Image Source="team_image.png"
                        HeightRequest="50"
                        WidthRequest="50"
                        VerticalOptions="Start"
@@ -262,8 +241,7 @@
     
     
          <StackLayout Orientation="Horizontal">
-              <Image  x:Name="TeamImage10"
-                      Source="team_image.png"
+              <Image  Source="team_image.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -287,8 +265,7 @@
           </StackLayout>  
     
          <StackLayout Orientation="Horizontal">
-              <Image  x:Name="TeamImage11"
-                      Source="team_image.png"
+              <Image  Source="team_image.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"

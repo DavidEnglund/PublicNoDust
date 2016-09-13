@@ -14,7 +14,8 @@ namespace Dustbuster
 
             MainPage = new NavigationPage(new DustbusterPage())
             {
-                BarBackgroundColor = Color.Blue,
+                BarBackgroundColor = Color.FromHex("#18b750"),
+               
             };
         }
 
