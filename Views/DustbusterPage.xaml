@@ -116,13 +116,16 @@
       </ContentView.GestureRecognizers>
     </ContentView>
 
-    <Button Text=""
-            BackgroundColor="Gray"
-            HeightRequest="50"
-            WidthRequest="50"
-            Clicked="btnSideMenu_Clicked"
-            RelativeLayout.XConstraint="0"
-            RelativeLayout.YConstraint="0"/>
+    <Image HeightRequest="40"
+           WidthRequest="40"
+           Source="hamburger_icon.png"
+           RelativeLayout.XConstraint="10"
+           RelativeLayout.YConstraint="10">
+      <Image.GestureRecognizers>
+        <TapGestureRecognizer Tapped="btnSideMenu_Clicked"
+                              NumberOfTapsRequired="1"/>
+      </Image.GestureRecognizers>
+    </Image>
 
     <Button x:Name="btnDarkBackground"
             BackgroundColor="#CC000000"
