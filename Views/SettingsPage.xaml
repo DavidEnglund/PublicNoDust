@@ -50,14 +50,7 @@
                        HorizontalTextAlignment="End"
                        TextColor="Black" />
            </StackLayout>
-      
-              <Button x:Name="SaveButton"
-                      BackgroundColor="Green"
-                      HorizontalOptions="Center"
-                      VerticalOptions="Center"
-                      WidthRequest="150"
-                      Text="Save"
-                      TextColor="White"/>
+     
     </StackLayout>
   </StackLayout>
 </ContentPage>
