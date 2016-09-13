@@ -13,6 +13,7 @@ namespace Dustbuster
 
 		public AccordionPane(string title)
 		{
+            BackgroundColor = Color.Transparent;
 			this.header = new AccordionHeader(this);
 			this.owner = null;
 

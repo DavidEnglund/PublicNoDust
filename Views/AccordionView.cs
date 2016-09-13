@@ -23,6 +23,7 @@ namespace Dustbuster
 			nextPanes.VerticalOptions = LayoutOptions.End;
 			currentPane = new StackLayout();
 			currentPane.VerticalOptions = LayoutOptions.FillAndExpand;
+            currentPane.BackgroundColor = Color.Transparent;
 
 			this.Children.Add(prevPanes);
 			this.Children.Add(currentPane);
