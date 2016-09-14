@@ -98,9 +98,6 @@
     <Compile Include="Views\AccordionPage.xaml.cs">
       <DependentUpon>AccordionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AccordionView.cs" />
-    <Compile Include="Views\AccordionPane.cs" />
-    <Compile Include="Views\AccordionHeader.cs" />
     <Compile Include="Views\Panes\CalendarPane.xaml.cs">
       <DependentUpon>CalendarPane.xaml</DependentUpon>
     </Compile>
@@ -125,6 +122,9 @@
     <Compile Include="Models\ProductDuration.cs" />
     <Compile Include="Models\AreaType.cs" />
 
+    <Compile Include="Controls\AccordionHeader.cs" />
+    <Compile Include="Controls\AccordionPane.cs" />
+    <Compile Include="Controls\AccordionView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
