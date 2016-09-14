@@ -9,9 +9,10 @@ namespace Dustbuster
 	{
 		public AccordionPage()
 		{
-			BindingContext = new AccordionViewModel();
-
 			InitializeComponent();
+
+
+			Accordion.BindingContext = new AccordionViewModel();
 		}
 	}
 }

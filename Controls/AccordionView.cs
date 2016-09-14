@@ -110,6 +110,7 @@ namespace Dustbuster
 			foreach (AccordionPane pane in Panes.Values.ToList())
 			{
 				pane.Owner = this;
+				pane.BindingContext = this.BindingContext;
 				pane.Header.GestureRecognizers.Add(new TapGestureRecognizer()
 				{
 					Command = new Command(() =>
