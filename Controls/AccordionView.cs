@@ -80,8 +80,13 @@ namespace Dustbuster
 				nextPanes.Children.Clear();
 				prevPanes.Children.Clear();
 
-				currentPane.Children.Clear();
-				currentPane.Children.Add(newExpanded);
+
+				if (oldExpanded != null)
+				{
+					oldExpanded.IsVisible = false;
+				}
+
+				newExpanded.IsVisible = true;
 
 				foreach(AccordionPane pane in visitedPanes)
 				{
@@ -118,6 +123,10 @@ namespace Dustbuster
 						ExpandedPane = pane;
 					})
 				});
+
+				pane.IsVisible = (pane == ExpandedPane);
+
+				currentPane.Children.Add(pane);
 			}
 		}
 
