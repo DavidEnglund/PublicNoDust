@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Dustbuster
 {
-    //data template to show data
     class HomeView : ContentView
     {
         // not really required but is a data template to show model elements
@@ -30,16 +24,24 @@ namespace Dustbuster
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black
             };
-
             labelBlurb.SetBinding(Label.TextProperty, "Blurb");
+
+            Image productImage = new Image
+            {
+                VerticalOptions = LayoutOptions.Fill,
+                HorizontalOptions = LayoutOptions.Fill,     //TODO: This is not filling vertically
+                Aspect = Aspect.AspectFill
+            };
+            productImage.SetBinding(Image.SourceProperty, "ImageSource");
 
 
             Content = new StackLayout
             {
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 Children = {
-                    labelTitle,
-                    labelBlurb
+                    //labelTitle,
+                    //labelBlurb
+                    productImage
                 }
             };
         }

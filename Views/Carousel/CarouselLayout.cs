@@ -139,12 +139,6 @@ namespace Dustbuster
             Debug.WriteLine("LOG ~ Item source changed to {0}", SelectedIndex);
         }
 
-        public DataTemplate ItemTemplate
-        {
-            get;
-            set;
-        }
-
         public static readonly BindableProperty SelectedItemProperty =
             BindableProperty.Create(
                 nameof(SelectedItem),
@@ -212,5 +206,8 @@ namespace Dustbuster
             SelectedTitle = ProductPage.viewModel.Pages.ElementAt(_selectedIndex).Title;
             Debug.WriteLine("LOG Title Changed to: {0}", SelectedTitle);
         }
+
+
+        public DataTemplate ItemTemplate { get; set; }
     }
 }

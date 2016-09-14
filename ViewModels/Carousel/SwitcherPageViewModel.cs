@@ -18,26 +18,22 @@ namespace Dustbuster
         public SwitcherPageViewModel()
         {
             Debug.WriteLine("LOG 002 ~ SwitcherPageViewModel called");
-            
-                       
-            Pages = new List<HomeViewModel>() {
-                new HomeViewModel { Title = "1", Background = Color.White, ImageSource = "icon.png", Blurb = "blah1"},
-                new HomeViewModel { Title = "2", Background = Color.Red, ImageSource = "icon.png", Blurb = "blah2"},
-                new HomeViewModel { Title = "3", Background = Color.Blue, ImageSource = "icon.png", Blurb = "blah3" },
-                new HomeViewModel { Title = "4", Background = Color.Yellow, ImageSource = "icon.png", Blurb = "blah4" },
+
+            //This is where we fill a list of information we will use to build the carousel pages
+            Pages = new List<PageModel>() {
+                new PageModel { Title = "1", Background = Color.White, ImageSource = "icon.png", Blurb = "blah1"},
+                new PageModel { Title = "2", Background = Color.Red, ImageSource = "icon.png", Blurb = "blah2"},
+                new PageModel { Title = "3", Background = Color.Blue, ImageSource = "icon.png", Blurb = "blah3" },
+                new PageModel { Title = "4", Background = Color.Yellow, ImageSource = "icon.png", Blurb = "blah4" },
             };
 
             CurrentPage = Pages.First();
-            CurrentTitle = Pages.First().Title;
         }
 
-        IEnumerable<HomeViewModel> _pages;
-        HomeViewModel _currentPage;
-        String _currentTitle;
+        IEnumerable<PageModel> _pages;
+        PageModel _currentPage;
 
-
-        // get set shit
-        public IEnumerable<HomeViewModel> Pages
+        public IEnumerable<PageModel> Pages
         {
             get
             {
@@ -50,7 +46,7 @@ namespace Dustbuster
             }
         }
 
-        public HomeViewModel CurrentPage
+        public PageModel CurrentPage
         {
             get
             {
@@ -59,22 +55,6 @@ namespace Dustbuster
             set
             {
                 SetObservableProperty(ref _currentPage, value);
-                CurrentTitle = value.Title;
-            }
-        }
-
-        //CurrentTitle Property
-        public String CurrentTitle
-        {
-            get
-            {
-                return _currentTitle;
-            }
-            set
-            {
-                SetObservableProperty(ref _currentTitle, value);
-                //_currentTitle = value;
-                //OnPropertyChanged("CurrentTitle");
             }
         }
     }

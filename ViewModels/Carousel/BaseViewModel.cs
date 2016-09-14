@@ -39,12 +39,9 @@ namespace Dustbuster
                 {
                     PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
                 }
-
-
             }
             catch (Exception e)
             {
-
                 if (PropertyChanged == null) return;
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
                 Debug.WriteLine(e);

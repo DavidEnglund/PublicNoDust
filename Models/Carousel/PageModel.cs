@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using System.Diagnostics;
 
 namespace Dustbuster
 {
-    // HomeView Model .... the guy mixes his viewmodels with models
-    public class HomeViewModel : BaseViewModel, ITabProvider
+    public class PageModel : BaseViewModel, ITabProvider
     {
-       
-        public HomeViewModel() {
+        public PageModel() {
             Debug.WriteLine("LOG 003 ~ New home model created");
         }
 
@@ -20,8 +13,5 @@ namespace Dustbuster
         public Color Background { get; set; }
         public string ImageSource { get; set; }
         public string Blurb { get; set; }
-
-
-
     }
 }
