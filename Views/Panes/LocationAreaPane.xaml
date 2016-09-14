@@ -11,13 +11,15 @@
              HorizontalOptions="Center"
              HorizontalTextAlignment="Center"
              VerticalTextAlignment="Center"
-             VerticalOptions="Center"/>
+             VerticalOptions="Center"
+             Style="{DynamicResource labelStyle}"/>
   </StackLayout>
 
   <StackLayout Padding="50,0,60,0">
     <Label  Text="Location"
             TextColor="Black"
-            FontSize="13"/>
+            FontSize="13"
+            Style="{DynamicResource labelStyle}"/>
   </StackLayout>
     
   <StackLayout Padding="60,0,60,0">
@@ -29,7 +31,8 @@
   <StackLayout Padding="50,0,60,0">
     <Label  Text="Length"
             TextColor="Black"
-            FontSize="13"/>
+            FontSize="13"
+            Style="{DynamicResource labelStyle}"/>
   </StackLayout>
   
   <StackLayout Padding="60,0,60,0"
@@ -50,7 +53,8 @@
   <StackLayout Padding="50,0,60,0">
     <Label Text="Width"
            TextColor="Black"
-           FontSize="13"/>
+           FontSize="13"
+           Style="{DynamicResource labelStyle}"/>
   </StackLayout>
     
   <StackLayout Orientation="Horizontal"

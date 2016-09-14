@@ -13,11 +13,26 @@ namespace Dustbuster
 			InitializeComponent();
 			InitializeDatabase();
 
+            //Set a style for readingmode to be enabled and disabled
+            if (Settings.EnableReadMode)
+            {
+                Resources["labelStyle"] = Resources["readModeLabelStyle"];  
+            }
+            else
+            {
+                Resources["labelStyle"] = Resources["normalLabelStyle"];
+            }
+
             MainPage = new NavigationPage(new DustbusterPage())
             {
-                BarBackgroundColor = Color.Blue,
+                // Set header to green
+                BarBackgroundColor = Color.Green,
+                
             };
+
+            
         }
+
 
 		private async void InitializeDatabase()
 		{

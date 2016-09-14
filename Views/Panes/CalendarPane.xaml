@@ -4,7 +4,7 @@
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.CalendarPane">
 	<StackLayout>
-		<Label Text="Calendar" FontSize="27" HorizontalOptions="Center" />
+		<Label Text="Calendar" FontSize="27" HorizontalOptions="Center" Style="{DynamicResource labelStyle}" />
 		<Button x:Name="BackButton" FontSize="17" HorizontalOptions="Center" Text="Go to back to main page" Clicked="OnBackButtonClicked" />
 	</StackLayout>
 </local:AccordionPane>
