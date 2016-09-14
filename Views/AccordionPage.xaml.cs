@@ -12,15 +12,14 @@ namespace Dustbuster
 			InitializeComponent();
 
 			Accordion.BindingContext = new AccordionViewModel();
+           
             if (Settings.EnableReadMode)
             {
                 BackgroundColor = Color.White;
-                
             }
             else
             {
                 BackgroundImage = "app_title.png";
-                
             }
 		}
 	}
