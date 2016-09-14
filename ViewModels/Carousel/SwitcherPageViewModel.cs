@@ -19,7 +19,11 @@ namespace Dustbuster
         {
             Debug.WriteLine("LOG 002 ~ SwitcherPageViewModel called");
 
-            //This is where we fill a list of information we will use to build the carousel pages
+
+            // The calculation from the accordian will create and send a List of the products to Carousel Page
+            // The Carousel Page labels info and image will update accordingly
+            //This is where we fill a list of information we will use to build the carousel pages.
+            //The following list is for testing functionality only, and will be removed once merged
             Pages = new List<PageModel>() {
                 new PageModel { Title = "1", Background = Color.White, ImageSource = "icon.png", Blurb = "blah1"},
                 new PageModel { Title = "2", Background = Color.Red, ImageSource = "icon.png", Blurb = "blah2"},

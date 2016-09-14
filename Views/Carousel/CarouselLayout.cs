@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.Collections;
@@ -13,11 +11,19 @@ namespace Dustbuster
     public class CarouselLayout : ScrollView
     {
         public StackLayout _stack;
-
         int _selectedIndex;
+        Label[] thisClassLabels = new Label[5];
+        int aSuperAwesomeCount = 0;
 
-        public CarouselLayout()
+        public CarouselLayout(params Label[] labels)
         {
+            for (int i = 0; i < thisClassLabels.Length; i++)
+            {
+                thisClassLabels[i] = labels[i];
+            }
+
+
+
             Debug.WriteLine("LOG 005 ~ CarouselLayout constructor");
             Orientation = ScrollOrientation.Horizontal;
             _stack = new StackLayout()
@@ -79,7 +85,7 @@ namespace Dustbuster
             }
         }
 
-        async Task UpdateSelectedItem()
+        private async Task UpdateSelectedItem()
         {
             await Task.Delay(300);
             SelectedItem = SelectedIndex > -1 ? Children[SelectedIndex].BindingContext : null;
@@ -114,14 +120,14 @@ namespace Dustbuster
             }
         }
 
-        void ItemsSourceChanging()
+        private void ItemsSourceChanging()
         {
             if (ItemsSource == null) return;
             _selectedIndex = ItemsSource.IndexOf(SelectedItem);
             Debug.WriteLine("LOG ~ Item sourced changing to {0}", _selectedIndex);
         }
 
-        void ItemsSourceChanged()
+        private void ItemsSourceChanged()
         {
             _stack.Children.Clear();
             foreach (var item in ItemsSource)
@@ -148,7 +154,7 @@ namespace Dustbuster
                 BindingMode.TwoWay,
                 propertyChanged: (bindable, oldValue, newValue) =>
                 {
-                    ((CarouselLayout)bindable).UpdateSelectedIndex();
+                    ((CarouselLayout)bindable).UpdateSelectedProduct();
                 }
             );
 
@@ -164,7 +170,7 @@ namespace Dustbuster
             }
         }
 
-        void UpdateSelectedIndex()
+        private void UpdateSelectedProduct()
         {
             if (SelectedItem == BindingContext) return;
 
@@ -172,7 +178,16 @@ namespace Dustbuster
                 .Select(c => c.BindingContext)
                 .ToList()
                 .IndexOf(SelectedItem);
-            Debug.WriteLine("LOG ~ UpdateSelectedIndex {0}", SelectedItem);
+
+            //This very much almost does not work at 100% (means it's broken)
+            /*thisClassLabels[0].Text = "CHANGED !! " + aSuperAwesomeCount.ToString();
+            thisClassLabels[1].Text = "CHANGED !!";
+            thisClassLabels[2].Text = "CHANGED !!";
+            thisClassLabels[3].Text = "CHANGED !!";
+            thisClassLabels[4].Text = "CHANGED !!";
+            aSuperAwesomeCount++;*/
+
+            Debug.WriteLine("LOG ~ UpdateSelectedProduct {0}", SelectedItem);
         }
 
         //Not original code added  to create a bindable property for title
@@ -209,5 +224,9 @@ namespace Dustbuster
 
 
         public DataTemplate ItemTemplate { get; set; }
+
+
+        
     }
+
 }

@@ -12,7 +12,9 @@ namespace Dustbuster.Views
     public partial class ProductPage : ContentPage
     {
         public static SwitcherPageViewModel viewModel;
-        
+
+        int swipeCounter = 0; // Delete later lol
+
         public ProductPage()
         {
             Debug.WriteLine("LOG 001 ~ Product Page Constructor");
@@ -55,7 +57,8 @@ namespace Dustbuster.Views
         private CarouselLayout CreatePagesCarousel()
         {
             Debug.WriteLine("LOG 004 ~ CreatePagesCarousel method");
-            var carousel = new CarouselLayout
+            var carousel = new CarouselLayout (
+                lblProductTitle, lblDescription, lblApplication, lblQuantity, lblRate)
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.FillAndExpand,
@@ -112,14 +115,32 @@ namespace Dustbuster.Views
         private async void Button_CallNow(object sender, EventArgs e)
         {
             //GO to what ever page allows the user to make a phone call now
+            // DIALER
         }
 
         private async void Button_RequestCall(object sender, EventArgs e)
         {
             // YO MIKEY! MAKE THIS BUTTON GO TO YOUR FAB CONTACT REQUEST PAGE
-            //await Navigation.PushAsync(new ContactRequestPage());
+            // remove comment once merged
+            // await Navigation.PushAsync(new ContactRequestPage());
 
-            //GO to what ever page allows a call request
+            
         }
+
+        // ~~ TEMP HACKISH FIX ~~ This method is called when the selected product is changed 
+        /*public void UpdateLabels()
+        { 
+            Debug.WriteLine("LOG ~ Updating Labels");
+
+            lblProductTitle.Text = "CHANGED " + swipeCounter.ToString();
+            lblDescription.Text = "CHANGED " + swipeCounter.ToString();
+            lblApplication.Text = "CHANGED " + swipeCounter.ToString();
+            lblQuantity.Text = "CHANGED " + swipeCounter.ToString();
+            lblRate.Text = "CHANGED " + swipeCounter.ToString();
+
+            swipeCounter += 1;
+
+        }*/
+
     }
 }

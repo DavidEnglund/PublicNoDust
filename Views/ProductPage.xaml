@@ -32,7 +32,7 @@
             </Image.GestureRecognizers>
           </Image>
         </StackLayout>
-        <Label x:Name="productTitle"
+        <Label x:Name="lblProductTitle"
                Text="Product"
                 TextColor="#ffffff"
                 FontSize="Large"
@@ -57,7 +57,7 @@
                   VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand">
       <StackLayout Padding="50, 20, 50, 0">
-        <Label x:Name="lblDescription" Text="Description of why this is the best option for you"
+        <Label x:Name="lblDescription" x:FieldModifier="public" Text="Description of why this is the best option for you"
                 TextColor="Black"/>
         <Label x:Name="lblQuantity" Text="You will need X amount"
                 TextColor="Black"/>
