@@ -130,10 +130,10 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
+    <AndroidResource Include="Resources\drawable\app_title.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\team_image.png" />
-    <AndroidResource Include="Resources\drawable\app_title.png" />
     <AndroidResource Include="Resources\values\colours.xml" />
   </ItemGroup>
   <ItemGroup>
