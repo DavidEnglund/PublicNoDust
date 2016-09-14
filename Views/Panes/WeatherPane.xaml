@@ -1,11 +1,69 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <local:AccordionPane xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.WeatherPane">
 	
 	<StackLayout>
-		<Label Text="Weather" FontSize="27" HorizontalOptions="Center" />
-		<Button x:Name="CalendarButton" FontSize="17" HorizontalOptions="Center" Text="Go to Calendar pane" Clicked="OnCalendarButtonClicked" />
+		<!--Header Text-->
+		<ContentView Padding="15">
+			<Label
+				x:Name="weatherHeader"
+				Text="Do you expect rain in the area?"
+				FontSize="21"
+				FontAttributes="Bold"
+				HorizontalOptions="Center"
+			/>
+		</ContentView>
+
+		<!--Button Choice Group-->
+		<StackLayout Orientation="Vertical" HorizontalOptions="Center">
+			<Grid>
+				<!--Rain Button-->
+				<local:SelectImageButton
+					x:Name="rainButton"
+					SelectedBorderColor="Black"
+					SelectedBorderWidth="0"
+					SelectedBackgroundColor="Black"
+					SelectedImage="choice_weather_rain.png"
+
+					UnselectedBorderColor="White"
+					UnselectedBorderWidth="0"
+					UnselectedBackgroundColor="White"
+					UnselectedImage="choice_weather_rain.png"
+
+					Padding="26"
+					Grid.Column="0"
+				/>
+
+				<!--Sun Button-->
+				<local:SelectImageButton
+					x:Name="sunButton"
+					SelectedBorderColor="Black"
+					SelectedBorderWidth="0"
+					SelectedBackgroundColor="Black"
+					SelectedImage="choice_weather_sun.png"
+
+					UnselectedBorderColor="White"
+					UnselectedBorderWidth="0"
+					UnselectedBackgroundColor="White"
+					UnselectedImage="choice_weather_sun.png"
+
+					Padding="26"
+					Grid.Column="1"
+				/>
+			</Grid>
+
+		<!--Answer Choice Text-->
+		</StackLayout>
+		<ContentView Padding="40,20,40,10">
+			<Label
+				x:Name="weatherAnswer"
+				Text="Tap on the rain cloud or sun to select your option"
+				XAlign="Center"
+				FontSize="17"
+				HorizontalOptions="CenterAndExpand"
+			/>
+		</ContentView>
 	</StackLayout>
 </local:AccordionPane>
