@@ -18,7 +18,8 @@
         </Label.GestureRecognizers>
       </Label>
       <StackLayout>
-        <Image Source="button_calendar_add.png"
+        <Image x:Name="btnCalendar"
+               Source="button_calendar_add.png"
                 Grid.Row="0"
                 WidthRequest="70"
                 HeightRequest="25"
@@ -28,8 +29,9 @@
                                   NumberOfTapsRequired="1" />
           </Image.GestureRecognizers>
         </Image>
-      </StackLayout>
-      <Label Text="Product"
+        </StackLayout>
+      <Label x:Name="productTitle"
+             Text="Product"
               TextColor="#ffffff"
               FontSize="Large"
               Grid.Row="1"
@@ -37,18 +39,23 @@
               HorizontalOptions="Center"/>
     </Grid>
     </ContentView>
-    <ContentView BackgroundColor="#23c15b"
-                  VerticalOptions="FillAndExpand"
-                  HorizontalOptions="FillAndExpand">
-      <StackLayout Padding="70, 40, 70, 40">
+    <ContentView VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand"
+      Padding="0">
+    <RelativeLayout x:Name="CarouselView"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+      Padding="0">
+      <!--<StackLayout Padding="70, 40, 70, 40">-->
       <!-- So we need to move Rebecas stuff into here! (carousel)-->
         
-      </StackLayout>
+      <!--</StackLayout>-->
+    </RelativeLayout>
     </ContentView>
     <ContentView BackgroundColor="#ffffff"
                   VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand">
-      <StackLayout Padding="50, 40, 50, 0">
+      <StackLayout Padding="50, 20, 50, 0">
         <Label Text="Description of why this is the best option for you"
                 TextColor="Black"/>
         <Label Text="You will need X amount"

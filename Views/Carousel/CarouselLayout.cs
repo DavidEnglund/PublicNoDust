@@ -26,7 +26,6 @@ namespace Dustbuster
                 //david
                 Padding = 0,
                 Spacing = 0
-
             };
             Content = _stack;
         }
@@ -47,7 +46,11 @@ namespace Dustbuster
             if (_layingOutChildren) return;
 
             _layingOutChildren = true;
-            foreach (var child in Children) child.WidthRequest = width;
+            foreach (var child in Children)
+            {
+                child.WidthRequest = width;
+                child.HeightRequest = height;
+            }
             _layingOutChildren = false;
         }
 

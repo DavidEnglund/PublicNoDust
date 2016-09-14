@@ -16,30 +16,30 @@ namespace Dustbuster
         {
             BackgroundColor = Color.White;
 
-            var label0 = new Label
+            Label labelTitle = new Label
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black
             };
 
-            label0.SetBinding(Label.TextProperty, "Title");
+            labelTitle.SetBinding(Label.TextProperty, "Title");
             this.SetBinding(ContentView.BackgroundColorProperty, "Background");
 
-            var label1 = new Label
+            Label labelBlurb = new Label
             {
                 HorizontalTextAlignment = TextAlignment.Center,
                 TextColor = Color.Black
             };
 
-            label1.SetBinding(Label.TextProperty, "Blurb");
+            labelBlurb.SetBinding(Label.TextProperty, "Blurb");
 
 
             Content = new StackLayout
             {
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 Children = {
-                    label0,
-                    label1
+                    labelTitle,
+                    labelBlurb
                 }
             };
         }

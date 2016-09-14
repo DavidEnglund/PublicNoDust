@@ -14,13 +14,13 @@ namespace Dustbuster.Views
        
 
         #region Rebecca's Code
-        RelativeLayout relativeLayout;
+        //RelativeLayout relativeLayout;
 
         public static SwitcherPageViewModel viewModel;
         
         public ProductPage()
         {
-
+            InitializeComponent();
             Debug.WriteLine("LOG 001 ~ Product Page Constructor");
             
             NavigationPage.SetHasNavigationBar(this, false);
@@ -30,43 +30,46 @@ namespace Dustbuster.Views
             BindingContext = viewModel;
             
             //author has bad naming conventions 
-            relativeLayout = new RelativeLayout
+            /*relativeLayout = new RelativeLayout
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.FillAndExpand,
 
 
-            };
+            };*/
 
-            var pagesCarousel = CreatePagesCarousel();
-            var dots = CreatePagerIndicatorContainer();
+            CarouselLayout pagesCarousel = CreatePagesCarousel();
+            View dots = CreatePagerIndicatorContainer();
+            
             // remove later
-            relativeLayout.Children.Add(CreateTitleLabel(),
+            /*CarouselView.Children.Add(CreateTitleLabel(),
                         Constraint.RelativeToParent((parent) => { return parent.X; }),
                         Constraint.RelativeToParent((parent) => { return parent.Y; }),
                         Constraint.RelativeToParent((parent) => { return parent.Width; }),
-                        Constraint.RelativeToParent((parent) => { return parent.Height / 8; }));
+                        Constraint.RelativeToParent((parent) => { return parent.Height / 8; }));*/
 
 
 
-            relativeLayout.Children.Add(pagesCarousel,
+            CarouselView.Children.Add(pagesCarousel,
                         Constraint.RelativeToParent((parent) => { return parent.X; }),
-                        Constraint.RelativeToParent((parent) => { return 50; }),
+                        Constraint.RelativeToParent((parent) => { return 0; }),
                         Constraint.RelativeToParent((parent) => { return parent.Width; }),
-                        Constraint.RelativeToParent((parent) => { return parent.Height / 2; })
+                        Constraint.RelativeToParent((parent) => { return parent.Height; })
                         );
 
-            relativeLayout.Children.Add(dots,
+            CarouselView.Children.Add(dots,
                 Constraint.Constant(0),
-                Constraint.RelativeToView(pagesCarousel,
-                    (parent, sibling) => { return sibling.Height - 10; }),
+                Constraint.RelativeToParent((parent) => { return parent.Height * 0.8; }),
                 Constraint.RelativeToParent((parent) => parent.Width),
                 Constraint.Constant(10)
             );
+            /*
+             Constraint.RelativeToView(pagesCarousel,
+                    (parent, sibling) => { return sibling.Height - 10; }),
+                    */
 
 
-
-            Content = relativeLayout;
+            //Content = relativeLayout;
         }
 
 
@@ -131,7 +134,34 @@ namespace Dustbuster.Views
 
 
         #region Erdal's Buttons
+        private async void TapProductButton(object sender, EventArgs e)
+        {
+            //Go back to the product information
+        }
 
+        private async void TapCalandarButton(object sender, EventArgs e)
+        {
+            //GO to what ever page creates a reminder on the calanda
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            NavigationPage.SetHasNavigationBar(this, false);
+        }
+
+        private async void Button_CallNow(object sender, EventArgs e)
+        {
+            //GO to what ever page allows the user to make a phone call now
+        }
+
+        private async void Button_RequestCall(object sender, EventArgs e)
+        {
+            // YO MIKEY! MAKE THIS BUTTON GO TO YOUR FAB CONTACT REQUEST PAGE
+            //await Navigation.PushAsync(new ContactRequestPage());
+
+            //GO to what ever page allows a call request
+        }
         #endregion
     }
 }
