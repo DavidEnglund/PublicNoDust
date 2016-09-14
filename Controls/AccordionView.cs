@@ -155,7 +155,7 @@ namespace Dustbuster
 			}
 		}
 
-		public bool HasVisitedPane(AccordionPane pane)
+		public bool IsPaneVisited(AccordionPane pane)
 		{
 			return visitedPanes.Contains(pane);
 		}
