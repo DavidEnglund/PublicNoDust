@@ -11,13 +11,13 @@ namespace Dustbuster.ViewModels
     {
 
         public ObservableCollection <ProductDescription> ProductSource { get; set; }// collection from the database
-        public int ApplicationsRequired { get; set; } // applications required
+        public string ApplicationsRequired { get; set; } // applications required
         public int ApplicationRate { get; set; }  //mL per square m
         public float ProductArea { get; set; }// bound to area calculations
 
         public float TotalProductQty()
         {
-            return (float)(ProductArea * ApplicationRate * ApplicationsRequired) / 1000; //mL to L
+            return (float)(ProductArea * ApplicationRate) / 1000; //mL to L
         }
     }
 }
