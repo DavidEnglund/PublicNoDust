@@ -1,33 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.App">
 	<Application.Resources>
-		<ResourceDictionary>
+  	  <ResourceDictionary>
+      			<Style x:Key="normalLabelStyle" TargetType="Label">
+        			<Setter Property="TextColor" Value="White" />
+     	    		</Style>
+    			<Style x:Key="readModeLabelStyle" TargetType="Label">
+        			<Setter Property="TextColor" Value="Black" />
+     	 		</Style>
 			<Style x:Key="miningTrafficAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#0da0cf" />
-            </Style>
+         	   	</Style>
 			<Style x:Key="miningCalendarAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#1ca4d0" />
-            </Style>
+        		</Style>
 			<Style x:Key="miningWeatherAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#25aeda" />
-            </Style>
+        		</Style>
 			<Style x:Key="miningLocationAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#3ab9e2" />
-            </Style>
-
-			
+            		</Style>
 			<Style x:Key="civilTrafficAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#1ebc56" />
-            </Style>
+            		</Style>
 			<Style x:Key="civilCalendarAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#29c962" />
-            </Style>
+        		</Style>
 			<Style x:Key="civilWeatherAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#2fc965" />
-            </Style>
+           		</Style>
 			<Style x:Key="civilLocationAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#33cb69" />
-            </Style>
+            		</Style>
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

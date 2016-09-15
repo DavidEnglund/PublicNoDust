@@ -73,9 +73,10 @@ namespace Dustbuster
 
 				OnPropertyChanged("EnableReadMode");
 			}
+
 		}
 
-		private void OnPropertyChanged(string propertyName)
+        private void OnPropertyChanged(string propertyName)
 		{
 			if (PropertyChanged != null)
 			{

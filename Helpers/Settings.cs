@@ -78,16 +78,17 @@ namespace Dustbuster
 		}
 
 		public static bool EnableReadMode
-		{
-			get
-			{
-				return AppSettings.GetValueOrDefault(EnableReadModeKey, EnableReadModeDefault);
-			}
-			set
-			{
-				AppSettings.AddOrUpdateValue(EnableReadModeKey, value);
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(EnableReadModeKey, EnableReadModeDefault);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(EnableReadModeKey, value);
 
-			}
-		}
-	}
+                App.Current.Resources["labelStyle"] = (value) ? App.Current.Resources["readModeLabelStyle"] : App.Current.Resources["normalLabelStyle"];
+            }
+        }
+    }
 }

@@ -7,18 +7,29 @@ namespace Dustbuster
 	{
 		private static DbConnectionManager productsDb;
 		private static DbConnectionManager jobsDb;
-		private static IndustryOptions industryOption;
 
 		public App()
 		{
 			InitializeComponent();
 			InitializeDatabase();
 
-			MainPage = new NavigationPage(new DustbusterPage())
-			{
-				BarBackgroundColor = Color.Blue,
-			};
-		}
+            //Set a style for readingmode to be enabled and disabled
+            if (Settings.EnableReadMode)
+            {
+                Resources["labelStyle"] = Resources["readModeLabelStyle"];  
+            }
+            else
+            {
+                Resources["labelStyle"] = Resources["normalLabelStyle"];
+            }
+
+            MainPage = new NavigationPage(new DustbusterPage())
+            {
+                // Set header to green
+                BarBackgroundColor = Color.Green,
+                
+            };
+        }
 
 		private async void InitializeDatabase()
 		{

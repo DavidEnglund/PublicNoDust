@@ -13,6 +13,7 @@
 				FontSize="21"
 				FontAttributes="Bold"
 				HorizontalOptions="Center"
+        Style="{DynamicResource labelStyle}"
 			/>
 		</ContentView>
 
@@ -67,3 +68,4 @@
 		</ContentView>
 	</StackLayout>
 </local:AccordionPane>
+
