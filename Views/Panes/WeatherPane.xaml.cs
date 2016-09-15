@@ -9,6 +9,8 @@ namespace Dustbuster
 		public WeatherPane() : base("Weather", "accordion_icon_weather_sun.png")
 		{
 			InitializeComponent();
+
+			Header.SetDynamicResource(StyleProperty, "weatherAccordionStyle");
 		}
 
 		public void OnCalendarButtonClicked(object sender, EventArgs args)

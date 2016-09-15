@@ -18,6 +18,8 @@ namespace Dustbuster
 		{
 			InitializeComponent();
 
+			Header.SetDynamicResource(StyleProperty, "trafficAccordionStyle");
+
 			//add trafficked and non trafficked button to button group
 			trafficButtonGroup.AddButton(traffickedButton);
 			trafficButtonGroup.AddButton(nonTraffickedButton);

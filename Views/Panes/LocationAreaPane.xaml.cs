@@ -11,6 +11,10 @@ namespace Dustbuster
         {
             BindingContext = new AreaViewModel();
             InitializeComponent(); 
+
+			Header.SetDynamicResource(StyleProperty, "locationAccordionStyle");
+
+
         }
 	}
 }
