@@ -30,7 +30,7 @@ namespace Dustbuster
 		//choose civil or mining colour options
 		public void civilOrMiningColours()
 		{
-			if (App.IndustryOption == IndustryOptions.Mining)
+			if (App.IndustryOption == IndustryOptions.Civil)
 			{
 				//green
 				nonTraffickedButton.UnselectedBackgroundColor = Color.FromHex("78dd9c");
