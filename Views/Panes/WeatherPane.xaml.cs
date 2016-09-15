@@ -6,16 +6,43 @@ namespace Dustbuster
 {
 	public partial class WeatherPane : AccordionPane
 	{
+
+		//init traffic button group
+		SelectButtonGroup weatherButtonGroup = new SelectButtonGroup();
+
 		public WeatherPane() : base("Weather", "accordion_icon_weather_sun.png")
 		{
 			InitializeComponent();
 
 			Header.SetDynamicResource(StyleProperty, "weatherAccordionStyle");
+
+			//add rain and sun buttons to button group
+			weatherButtonGroup.AddButton(rainButton);
+			weatherButtonGroup.AddButton(sunButton);
 		}
 
-		public void OnCalendarButtonClicked(object sender, EventArgs args)
+		//rainy area button click
+		public void rainButton_clicked(object sender, EventArgs e)
 		{
-			Owner.VisitPane(Owner.Panes["Calendar"]);
+			weatherAnswer.Text = "Yes, I expect rain in the area";
+			Title = "Rain Expected";
+
+			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
+			{
+				Owner.VisitPane(Owner.Panes["Calendar"]);
+			}
+		}
+
+		//sunny area button click
+		public void sunButton_clicked(object sender, EventArgs e)
+		{
+			weatherAnswer.Text = "No, I do not expect rain in the area";
+			Title = "No Rain Expected";
+
+			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
+			{
+				Owner.VisitPane(Owner.Panes["Calendar"]);
+			}
 		}
 	}
 }

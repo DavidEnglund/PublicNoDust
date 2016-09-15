@@ -56,7 +56,7 @@ namespace Dustbuster
 
 			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
+				Owner.VisitPane(Owner.Panes["Weather"]);
 			}
 		}
 
@@ -68,7 +68,7 @@ namespace Dustbuster
 
 			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
+				Owner.VisitPane(Owner.Panes["Weather"]);
 			}
 		}
 	}

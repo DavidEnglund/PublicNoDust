@@ -35,6 +35,7 @@
 
 					Padding="26"
 					Grid.Column="0"
+					Clicked="rainButton_clicked"
 				/>
 
 				<!--Sun Button-->
@@ -52,6 +53,7 @@
 
 					Padding="26"
 					Grid.Column="1"
+					Clicked="sunButton_clicked"
 				/>
 			</Grid>
 
