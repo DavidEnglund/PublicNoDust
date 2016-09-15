@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Dustbuster" x:Class="Dustbuster.App">
 	<Application.Resources>
 		<ResourceDictionary>
+			<!--Primary Mining Green Colors-->
+			<Style x:Key="miningUnselectedButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#18b750" />
+            </Style>
+			<Style x:Key="miningSelectedButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#16b24d" />
+            </Style>
+
+			<!--Primary Civil Blue Colors-->
+			<Style x:Key="civilUnselectedButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#079ece" />
+            </Style>
+			<Style x:Key="civilSelectedButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#0297c6" />
+            </Style>
+			
+			<!--Mining Accordion Colors-->
 			<Style x:Key="miningTrafficAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#0da0cf" />
             </Style>
@@ -14,8 +31,7 @@
 			<Style x:Key="miningLocationAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#3ab9e2" />
             </Style>
-
-			
+            <!--Civil Accordion Colors-->
 			<Style x:Key="civilTrafficAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#1ebc56" />
             </Style>
@@ -28,6 +44,7 @@
 			<Style x:Key="civilLocationAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#33cb69" />
             </Style>
+			
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

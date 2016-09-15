@@ -24,7 +24,6 @@
 					x:Name="traffickedButton"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
-					SelectedBackgroundColor="Black"
 					SelectedImage="choice_traffic_light.png"
 
 					UnselectedBorderColor="White"
@@ -32,6 +31,8 @@
 					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_traffic_light.png"
 
+					Style="{DynamicResource selectedButtonStyle}"
+						
 					Padding="26"
 					Grid.Column="0"
 					Clicked="traffickedButton_clicked"
