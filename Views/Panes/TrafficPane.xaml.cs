@@ -51,7 +51,7 @@ namespace Dustbuster
 			trafficAnswer.Text = "Yes, my area is a trafficked area";
 			Title = "Trafficked Area";
 
-			if (nonTraffickedButton.Selected == false)
+			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
 			}
@@ -63,16 +63,10 @@ namespace Dustbuster
 			trafficAnswer.Text = "No, my area is not a trafficked area";
 			Title = "Non Trafficked Area";
 
-			if (traffickedButton.Selected == false)
+			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
 			}
 		}
-
-		//public void OnLocationAreaButtonClicked(object sender, EventArgs args)
-		//{
-		//	Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["LocationArea"]);
-		//	Title = Entry.Text;
-		//}
 	}
 }

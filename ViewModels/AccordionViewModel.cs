@@ -12,6 +12,8 @@ namespace Dustbuster
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
+		public enum IndustryOptions { Civil, Mining };
+
 		public AccordionViewModel()
 		{
 			accordionPanes = new Dictionary<string, AccordionPane>()
@@ -22,6 +24,9 @@ namespace Dustbuster
 				{ "LocationArea", new LocationAreaPane() },
 			};
 		}
+
+		//enum civil mining getter and setter
+		public IndustryOptions industryOption { get; set; }
 
 		public Dictionary<string, AccordionPane> AccordionPanes
 		{

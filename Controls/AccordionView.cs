@@ -154,6 +154,11 @@ namespace Dustbuster
 				ExpandedPane = newPane;
 			}
 		}
+
+		public bool IsPaneVisited(AccordionPane pane)
+		{
+			return visitedPanes.Contains(pane);
+		}
 	}
 }
 
