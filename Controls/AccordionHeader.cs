@@ -13,7 +13,6 @@ namespace Dustbuster
 
         public AccordionHeader(AccordionPane pane)
         {
-            BackgroundColor = Color.Green;
             HeightRequest = 50;
             HorizontalOptions = LayoutOptions.FillAndExpand;
 
