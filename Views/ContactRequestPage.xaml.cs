@@ -45,8 +45,7 @@ namespace Dustbuster
                 {
                     Debug.WriteLine("Setting a reminder at date: ");
                     // TODO: HEY DAVID, ADD DEPENDENCY SERIVCE FOR REMIDNER HERE
-                    // REMINDER REMINDERSERVICE = NEW REMINDER();
-                    // REMINDERSERVICE.ADDREMINDER(STRING,DATETIME);
+                    DependencyService.Get<IReminderervice>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date);
                 }
                 else
                 {

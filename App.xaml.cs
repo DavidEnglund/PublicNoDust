@@ -17,7 +17,9 @@ namespace Dustbuster
 		protected override void OnStart()
 		{
             // Handle when your app starts
-		}
+            // this will start the calendar access service for iOS - for android it currently does nothing
+            DependencyService.Get<IReminderervice>(DependencyFetchTarget.GlobalInstance).CreateService();
+        }
 
 		protected override void OnSleep()
 		{
