@@ -25,12 +25,12 @@
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
 					SelectedBackgroundColor="Black"
-					SelectedImage="choice_under30.png"
+					SelectedImage="choice_calendar_under30.png"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
 					UnselectedBackgroundColor="White"
-					UnselectedImage="choice_under30.png"
+					UnselectedImage="choice_calendar_under30.png"
 
 					Padding="26"
 					Grid.Column="0"
