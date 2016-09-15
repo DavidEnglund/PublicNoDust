@@ -12,8 +12,6 @@ namespace Dustbuster
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		public enum IndustryOptions { Civil, Mining };
-
 		public AccordionViewModel()
 		{
 			accordionPanes = new Dictionary<string, AccordionPane>()

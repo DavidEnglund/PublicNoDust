@@ -1,4 +1,5 @@
 ﻿using System;
+using Dustbuster.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,13 +22,13 @@ namespace Dustbuster
 			//add trafficked and non trafficked button to button group
 			trafficButtonGroup.AddButton(traffickedButton);
 			trafficButtonGroup.AddButton(nonTraffickedButton);
-			civilOrMiningColours("mining");
+			civilOrMiningColours();
 		}
 
 		//choose civil or mining colour options
-		public void civilOrMiningColours(string input)
+		public void civilOrMiningColours()
 		{
-			if (input == "civil")
+			if (App.IndustryOption == IndustryOptions.Mining)
 			{
 				//green
 				nonTraffickedButton.UnselectedBackgroundColor = Color.FromHex("78dd9c");

@@ -10,6 +10,7 @@ namespace Dustbuster
 	{
         private bool panelShowing = false;
         private DustbusterViewModel dustbusterViewModel;
+		private AccordionViewModel accordionViewModel;
 
         public DustbusterPage()
 		{
@@ -82,15 +83,16 @@ namespace Dustbuster
             await Navigation.PushAsync(new AboutPage());
         }
 
-
         private async void TapCivilButton(object sender, EventArgs e)
-        {
+		{
+			App.IndustryOption = IndustryOptions.Civil;
             await Navigation.PushAsync(new AccordionPage());
         }
 
         private async void TapMiningButton(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new AccordionPage());
+		{
+			App.IndustryOption = IndustryOptions.Mining;
+			await Navigation.PushAsync(new AccordionPage());
         }
 
         protected override void OnAppearing()
