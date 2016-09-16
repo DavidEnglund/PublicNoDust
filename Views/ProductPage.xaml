@@ -32,14 +32,16 @@
             </Image.GestureRecognizers>
           </Image>
         </StackLayout>
+        <!--
         <Label x:Name="lblProductTitle"
-               Text="Product"
+               Text="{Binding ProductName}"
                 TextColor="#ffffff"
                 FontSize="Large"
                FontAttributes="Bold"
                 Grid.Row="1"
                 WidthRequest="100"
                 HorizontalOptions="Center"/>
+                -->
       </Grid>
     </ContentView>
     
@@ -53,20 +55,24 @@
     </ContentView>
     
     <!-- Product Description -->
+       <!-- (Delete later)
     <ContentView BackgroundColor="#ffffff"
                   VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand">
       <StackLayout Padding="50, 20, 50, 0">
+     
         <Label x:Name="lblDescription" x:FieldModifier="public" Text="Description of why this is the best option for you"
                 TextColor="Black"/>
         <Label x:Name="lblQuantity" Text="You will need X amount"
                 TextColor="Black"/>
         <Label x:Name="lblApplication" Text="You will need to apply this Y amount of times"
                 TextColor="Black"/>
-        <Label x:Name="lblRate" Text="The application rate is Z"
+        <Label x:Name="lblRate" Text=""
                 TextColor="Black"/>
+                
       </StackLayout>
     </ContentView>
+    -->
     
     <!-- Buttons Call now and Request contact -->
     <ContentView BackgroundColor="#ffffff"

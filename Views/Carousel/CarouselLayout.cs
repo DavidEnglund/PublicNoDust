@@ -12,18 +12,9 @@ namespace Dustbuster
     {
         public StackLayout _stack;
         int _selectedIndex;
-        Label[] thisClassLabels = new Label[5];
-        int aSuperAwesomeCount = 0;
 
         public CarouselLayout(params Label[] labels)
         {
-            for (int i = 0; i < thisClassLabels.Length; i++)
-            {
-                thisClassLabels[i] = labels[i];
-            }
-
-
-
             Debug.WriteLine("LOG 005 ~ CarouselLayout constructor");
             Orientation = ScrollOrientation.Horizontal;
             _stack = new StackLayout()
@@ -218,7 +209,7 @@ namespace Dustbuster
 
         private void UpdateSelectedTitle()
         {
-            SelectedTitle = ProductPage.viewModel.Pages.ElementAt(_selectedIndex).Title;
+            SelectedTitle = ProductPage.viewModel.Products.ElementAt(_selectedIndex).ProductName;
             Debug.WriteLine("LOG Title Changed to: {0}", SelectedTitle);
         }
 
