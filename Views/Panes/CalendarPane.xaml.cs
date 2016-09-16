@@ -7,7 +7,7 @@ namespace Dustbuster
 	public partial class CalendarPane : AccordionPane
 	{
 
-		//init traffic button group
+		//init calendar button group
 		SelectButtonGroup calendarButtonGroup = new SelectButtonGroup();
 
 		public CalendarPane() : base("Duration", "accordion_icon_calendar_over180.png")
@@ -16,7 +16,7 @@ namespace Dustbuster
 
 			Header.SetDynamicResource(StyleProperty, "calendarAccordionStyle");
 
-			//add trafficked and non trafficked button to button group
+			//add calendar buttons to button group
 			calendarButtonGroup.AddButton(under30Button);
 			calendarButtonGroup.AddButton(over30Under180Button);
 			calendarButtonGroup.AddButton(over180Button);

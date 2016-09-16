@@ -7,7 +7,7 @@ namespace Dustbuster
 	public partial class WeatherPane : AccordionPane
 	{
 
-		//init traffic button group
+		//init weather button group
 		SelectButtonGroup weatherButtonGroup = new SelectButtonGroup();
 
 		public WeatherPane() : base("Weather", "accordion_icon_weather_sun.png")
