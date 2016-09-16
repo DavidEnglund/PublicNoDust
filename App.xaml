@@ -3,19 +3,15 @@
 	<Application.Resources>
 		<ResourceDictionary>
 			<!--Primary Mining Green Colors-->
-			<Style x:Key="miningUnselectedButtonStyle" TargetType="{x:Type local:SelectImageButton}">
-				<Setter Property="SelectedBackgroundColor" Value="#18b750" />
-            </Style>
-			<Style x:Key="miningSelectedButtonStyle" TargetType="{x:Type local:SelectImageButton}">
-				<Setter Property="SelectedBackgroundColor" Value="#16b24d" />
+			<Style x:Key="miningSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#079ece" />
+				<Setter Property="UnselectedBackgroundColor" Value="#47b6d9" />
             </Style>
 
 			<!--Primary Civil Blue Colors-->
-			<Style x:Key="civilUnselectedButtonStyle" TargetType="{x:Type local:SelectImageButton}">
-				<Setter Property="SelectedBackgroundColor" Value="#079ece" />
-            </Style>
-			<Style x:Key="civilSelectedButtonStyle" TargetType="{x:Type local:SelectImageButton}">
-				<Setter Property="SelectedBackgroundColor" Value="#0297c6" />
+			<Style x:Key="civilSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#18b750" />
+				<Setter Property="UnselectedBackgroundColor" Value="#78dd9c" />
             </Style>
 			
 			<!--Mining Accordion Colors-->

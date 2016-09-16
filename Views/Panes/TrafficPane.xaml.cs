@@ -24,28 +24,6 @@ namespace Dustbuster
 			//add trafficked and non trafficked button to button group
 			trafficButtonGroup.AddButton(traffickedButton);
 			trafficButtonGroup.AddButton(nonTraffickedButton);
-			civilOrMiningColours();
-		}
-
-		//choose civil or mining colour options
-		public void civilOrMiningColours()
-		{
-			if (App.IndustryOption == IndustryOptions.Civil)
-			{
-				//green
-				nonTraffickedButton.UnselectedBackgroundColor = Color.FromHex("78dd9c");
-				nonTraffickedButton.SelectedBackgroundColor = Color.FromHex("18b750");
-				traffickedButton.UnselectedBackgroundColor = Color.FromHex("78dd9c");
-				traffickedButton.SelectedBackgroundColor = Color.FromHex("18b750");
-			}
-			else
-			{
-				//blue
-				nonTraffickedButton.UnselectedBackgroundColor = Color.FromHex("47b6d9");
-				nonTraffickedButton.SelectedBackgroundColor = Color.FromHex("079ece");
-				traffickedButton.UnselectedBackgroundColor = Color.FromHex("47b6d9");
-				traffickedButton.SelectedBackgroundColor = Color.FromHex("079ece");
-			}
 		}
 
 		//trafficked button click

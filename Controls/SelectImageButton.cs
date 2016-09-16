@@ -10,15 +10,17 @@ namespace Dustbuster
 {
     public class SelectImageButton : AbsoluteLayout
     {
-        // all of the selected and unselected values - selected first
-        // these will all need at least simple getter/setter function to be used with xaml
-        private int selectedBorderWidth;
+		
+		public static readonly BindableProperty SelectedBackgroundColorProperty = BindableProperty.Create("SelectedBackgroundColor", typeof(Color), typeof(SelectImageButton), Color.White);
+		public static readonly BindableProperty UnselectedBackgroundColorProperty = BindableProperty.Create("UnselectedBackgroundColor", typeof(Color), typeof(SelectImageButton), Color.Silver);
+
+		// all of the selected and unselected values - selected first
+		// these will all need at least simple getter/setter function to be used with xaml
+		private int selectedBorderWidth;
         private Color selectedBorderColor;
-        private Color selectedBackgroundColor;
 
         private int unselectedBorderWidth;
         private Color unselectedBorderColor;
-        private Color unselectedBackgroundColor;
         // the public get and set for the selected/unselected colors and widths
         public int SelectedBorderWidth
         {
@@ -30,10 +32,11 @@ namespace Dustbuster
             get { return selectedBorderColor; }
             set { selectedBorderColor = value; }
         }
+
         public Color SelectedBackgroundColor
         {
-            get { return selectedBackgroundColor; }
-            set { selectedBackgroundColor = value; }
+			get { return (Color)GetValue(SelectedBackgroundColorProperty); }
+			set { SetValue(SelectedBackgroundColorProperty, value); }
         }
         
         public int UnselectedBorderWidth
@@ -48,8 +51,8 @@ namespace Dustbuster
         }
         public Color UnselectedBackgroundColor
         {
-            get { return unselectedBackgroundColor; }
-            set { unselectedBackgroundColor = value; }
+			get { return (Color)GetValue(UnselectedBackgroundColorProperty); }
+			set { SetValue(UnselectedBackgroundColorProperty, value); }
         }
 
         // a private image and a public image source that maps to the images source
@@ -113,11 +116,11 @@ namespace Dustbuster
             {
                 if (selected)
                 {
-                    return selectedBackgroundColor;
+					return SelectedBackgroundColor;
                 }
                 else
                 {
-                    return unselectedBackgroundColor;
+                    return UnselectedBackgroundColor;
                 }
             }
         }
@@ -181,6 +184,7 @@ namespace Dustbuster
                 }
             }     
         }
+
         // A function to set this button as selected
         private void setAsSelected()
         {
@@ -190,7 +194,7 @@ namespace Dustbuster
             unselectedImage.IsVisible = false;
           
             // force a redraw to make it change the colors and stuff - could proably also use forceLayout but I want to change the background anyway.
-            base.BackgroundColor = selectedBackgroundColor;            
+            base.BackgroundColor = SelectedBackgroundColor;            
         }
         //A function to set this button as unselected
         private void setAsUnselected()
@@ -201,7 +205,7 @@ namespace Dustbuster
             unselectedImage.IsVisible = true;
 
             // force a redraw to make it change colors,images and border widths
-            base.BackgroundColor = unselectedBackgroundColor;
+            base.BackgroundColor = UnselectedBackgroundColor;
         }
         // a select button group for this control to belong to
         private SelectButtonGroup buttonGroup;
@@ -258,15 +262,13 @@ namespace Dustbuster
             HorizontalOptions = LayoutOptions.Center;
 
             // some defaults
-            unselectedBackgroundColor = Color.Silver;
             unselectedBorderColor = Color.Gray;
             unselectedBorderWidth = 5;
 
-            selectedBackgroundColor = Color.White;
             selectedBorderColor = Color.Blue;
             selectedBorderWidth = 5;
             
-            base.BackgroundColor = unselectedBackgroundColor;
+            base.BackgroundColor = UnselectedBackgroundColor;
 
              // forcing a layout to cause it to properly calculate the layers coords 1st time
             ForceLayout();         

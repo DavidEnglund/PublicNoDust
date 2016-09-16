@@ -28,10 +28,9 @@
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
-					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_traffic_light.png"
 
-					Style="{DynamicResource selectedButtonStyle}"
+					Style="{DynamicResource selectableButtonStyle}"
 						
 					Padding="26"
 					Grid.Column="0"
@@ -43,13 +42,13 @@
 					x:Name="nonTraffickedButton"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
-					SelectedBackgroundColor="Black"
 					SelectedImage="choice_traffic_openroad.png"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
-					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_traffic_openroad.png"
+
+					Style="{DynamicResource selectableButtonStyle}"
 
 					Padding="26"
 					Grid.Column="1"

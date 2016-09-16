@@ -86,7 +86,7 @@ namespace Dustbuster
 		{
 			App.IndustryOption = IndustryOptions.Civil;
 
-			App.Current.Resources["selectedButtonStyle"] = App.Current.Resources["civilSelectedButtonStyle"];
+			App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["civilSelectableButtonStyle"];
 
 			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["civilTrafficAccordionStyle"];
 			App.Current.Resources["calendarAccordionStyle"] = App.Current.Resources["civilCalendarAccordionStyle"];
@@ -100,7 +100,7 @@ namespace Dustbuster
 		{
 			App.IndustryOption = IndustryOptions.Mining;
 
-			App.Current.Resources["selectedButtonStyle"] = App.Current.Resources["miningSelectedButtonStyle"];
+			App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["miningSelectableButtonStyle"];
 
 			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];
 			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];
