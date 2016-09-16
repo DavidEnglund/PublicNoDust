@@ -1,5 +1,4 @@
 ﻿using Dustbuster;
-using Dustbuster.ViewModels;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;

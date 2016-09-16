@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using Dustbuster;
 
-namespace Dustbuster.ViewModels
+namespace Dustbuster
 {
     public class DustbusterViewModel
     {

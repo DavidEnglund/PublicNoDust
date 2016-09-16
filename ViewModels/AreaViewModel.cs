@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
-namespace Dustbuster.ViewModels
+namespace Dustbuster
 {
     class AreaViewModel : INotifyPropertyChanged
     {
