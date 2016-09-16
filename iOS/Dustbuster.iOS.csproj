@@ -127,6 +127,7 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <Content Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <BundleResource Include="Resources\accordion_icon_traffic_openroad.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

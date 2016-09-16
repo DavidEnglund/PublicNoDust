@@ -69,9 +69,6 @@
         Style="{DynamicResource labelStyle}"
 			/>
 		</ContentView>
-		
-		<!--<Button x:Name="WeatherButton" FontSize="17" HorizontalOptions="Center" Text="Go to Weather pane" Clicked="OnWeatherButtonClicked" />
-		<Button x:Name="LocationAreaButton" FontSize="17" HorizontalOptions="Center" Text="Go to LocationArea pane" Clicked="OnLocationAreaButtonClicked" />-->
 	</StackLayout>
 
 </local:AccordionPane>

@@ -7,6 +7,7 @@ namespace Dustbuster
 	{
 
 		public static readonly BindableProperty TitleProperty = BindableProperty.Create("Title", typeof(string), typeof(AccordionPane), null, propertyChanged: OnTitleChanged);
+		public static readonly BindableProperty ImageProperty = BindableProperty.Create("Image", typeof(string), typeof(AccordionPane), null, propertyChanged: OnImageChanged);
 
 		private AccordionHeader header;
 		private AccordionView owner;
@@ -19,6 +20,7 @@ namespace Dustbuster
 			this.owner = null;
 
 			Title = title;
+			Image = image;
 		}
 
 		public string Title
@@ -27,6 +29,11 @@ namespace Dustbuster
 			set { SetValue(TitleProperty, value); }
 		}
 
+		public string Image
+		{
+			get { return (string)GetValue(ImageProperty); }
+			set { SetValue(ImageProperty, value); }
+		}
 
 		public AccordionHeader Header
 		{
@@ -46,6 +53,16 @@ namespace Dustbuster
 			if (oldValue != newValue)
 			{
 				accordion.Header.Title = (string)newValue;
+			}
+		}
+
+		private static void OnImageChanged(BindableObject bindable, object oldValue, object newValue)
+		{
+			var acccordion = (AccordionPane)bindable;
+
+			if (oldValue != newValue)
+			{
+				acccordion.Header.IconImage = (string)newValue;
 			}
 		}
 	}
