@@ -27,6 +27,7 @@ namespace Dustbuster
 		{
 			calendarAnswer.Text = "Solution is for under 30 days";
 			Title = "Under 30 Days";
+			Image = "accordion_icon_calendar_under30.png";
 
 			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
 			{
@@ -39,6 +40,7 @@ namespace Dustbuster
 		{
 			calendarAnswer.Text = "Solution is for over 30 days";
 			Title = "Over 30 Days";
+			Image = "accordion_icon_calendar_over30.png";
 
 			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
 			{
@@ -51,6 +53,7 @@ namespace Dustbuster
 		{
 			calendarAnswer.Text = "Solution is for over 180 days";
 			Title = "Over 180 Days";
+			Image = "accordion_icon_calendar_over180.png";
 
 			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
 			{

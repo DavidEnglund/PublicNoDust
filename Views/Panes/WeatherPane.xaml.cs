@@ -26,6 +26,7 @@ namespace Dustbuster
 		{
 			weatherAnswer.Text = "Yes, I expect rain in the area";
 			Title = "Rain Expected";
+			Image = "accordion_icon_weather_rain.png";
 
 			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
 			{
@@ -38,6 +39,7 @@ namespace Dustbuster
 		{
 			weatherAnswer.Text = "No, I do not expect rain in the area";
 			Title = "No Rain Expected";
+			Image = "accordion_icon_weather_sun.png";
 
 			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
 			{

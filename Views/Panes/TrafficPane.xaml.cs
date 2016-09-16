@@ -53,6 +53,7 @@ namespace Dustbuster
 		{
 			trafficAnswer.Text = "Yes, my area is a trafficked area";
 			Title = "Trafficked Area";
+			Image = "accordion_icon_traffic_light.png";
 
 			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
@@ -65,6 +66,7 @@ namespace Dustbuster
 		{
 			trafficAnswer.Text = "No, my area is not a trafficked area";
 			Title = "Non Trafficked Area";
+			Image = "accordion_icon_traffic_openroad.png";
 
 			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
