@@ -1,4 +1,4 @@
-﻿using Dustbuster;
+using Dustbuster;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -83,12 +83,27 @@ namespace Dustbuster
 
 
         private async void TapCivilButton(object sender, EventArgs e)
-        {
+		{
+			App.IndustryOption = IndustryOptions.Civil;
+
+			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["civilTrafficAccordionStyle"];
+			App.Current.Resources["calendarAccordionStyle"] = App.Current.Resources["civilCalendarAccordionStyle"];
+			App.Current.Resources["locationAccordionStyle"] = App.Current.Resources["civilLocationAccordionStyle"];
+			App.Current.Resources["weatherAccordionStyle"] = App.Current.Resources["civilWeatherAccordionStyle"];
+
             await Navigation.PushAsync(new AccordionPage());
         }
 
         private async void TapMiningButton(object sender, EventArgs e)
-        {
+		{
+			App.IndustryOption = IndustryOptions.Mining;
+
+			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];
+			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];
+			App.Current.Resources["calendarAccordionStyle"] = App.Current.Resources["miningCalendarAccordionStyle"];
+			App.Current.Resources["locationAccordionStyle"] = App.Current.Resources["miningLocationAccordionStyle"];
+			App.Current.Resources["weatherAccordionStyle"] = App.Current.Resources["miningWeatherAccordionStyle"];
+
             await Navigation.PushAsync(new AccordionPage());
         }
 

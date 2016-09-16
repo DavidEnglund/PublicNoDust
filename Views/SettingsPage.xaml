@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Dustbuster.SettingsPage"
@@ -13,25 +13,32 @@
 
                 <Entry x:Name="NameTextEntry"
                        BackgroundColor="#d9d9d9"
+					   Text="{Binding CustomerName, Mode=TwoWay}"
                        Placeholder="E.g. John Smith"/>
-
+			
                 <Label x:Name="ContactMethodLabel"
                        Text="Contact Method:"
                        TextColor="Black" />
 
                 <Picker x:Name="ContactMethodPicker"
-                        SelectedIndex="0"
-                        BackgroundColor="#d9d9d9"/>
+                        SelectedIndex="{Binding ContactMethod, Mode=TwoWay}"
+                        BackgroundColor="#d9d9d9">
+                    <Picker.Items>
+			            <x:String>Phone</x:String> 
+			            <x:String>Email</x:String>
+			        </Picker.Items>
+				</Picker>
 
                 <Entry x:Name="ContactInfoEntry"
                        BackgroundColor="#d9d9d9"
+					   Text="{Binding ContactInfo, Mode=TwoWay}"
                        WidthRequest="10"  />
 
           <StackLayout Orientation="Horizontal"
                        Padding="0,20,0,0">
 
                <Switch x:Name="AnalyticsSwitch"
-                       IsToggled="True"/>
+                       IsToggled="{Binding EnableAnalytics, Mode=TwoWay}"/>
 
                 <Label x:Name="AnalyticsLabel"
                        Text="Send Analytics"
@@ -43,7 +50,7 @@
                        Padding="0,0,0,0">
         
                <Switch x:Name="ReadModeSwitch"
-                       IsToggled="False" />
+                       IsToggled="{Binding EnableReadMode, Mode=TwoWay}" />
 
                 <Label x:Name="ReadModeLabel"
                        Text="Reading Mode"

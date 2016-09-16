@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 
 namespace Dustbuster
@@ -12,12 +11,9 @@ namespace Dustbuster
     {
         public SettingsPage()
         {
-            InitializeComponent();
-            ContactMethodPicker.Items.Add("Phone");
-            ContactMethodPicker.Items.Add("Email");
+			this.BindingContext = new SettingsViewModel();
 
-            ContactMethodPicker.SelectedIndex = 0;
-         
+            InitializeComponent();
         }
     }
 }

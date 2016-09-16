@@ -52,27 +52,6 @@ namespace Dustbuster
             set { unselectedBackgroundColor = value; }
         }
 
-        // new: hold colors for when the user touches and holds the button
-        private Color holdBackgroundColor;
-        private Color holdBorderColor;
-        private int holdBorderWidth;
-
-        public Color HoldBackgroundColor
-        {
-            get { return holdBackgroundColor; }
-            set { holdBackgroundColor = value; }
-        }
-        public Color HoldBorderColor
-        {
-            get { return holdBorderColor; }
-            set { holdBorderColor = value; }
-        }
-        public int HoldBorderWidth
-        {
-            get { return holdBorderWidth; }
-            set { holdBorderWidth = value; }
-        }
-
         // a private image and a public image source that maps to the images source
         private Image selectedImage = new Image();
         private Image unselectedImage = new Image();
@@ -286,10 +265,6 @@ namespace Dustbuster
             selectedBackgroundColor = Color.White;
             selectedBorderColor = Color.Blue;
             selectedBorderWidth = 5;
-
-            holdBackgroundColor = Color.White;
-            holdBorderColor = Color.Navy;
-            holdBorderWidth = 5;
             
             base.BackgroundColor = unselectedBackgroundColor;
 
@@ -299,10 +274,6 @@ namespace Dustbuster
 
         private void Click_Tapped(object sender, EventArgs e)
         {
-            // this click overrides the base android one so it cant record an up event to change the colors
-            // but having a property change will run the property changed event so I will set the background 
-            // to hold which will then be set right back again but will then change
-            base.BackgroundColor = HoldBackgroundColor;
             // if the button is not part of a group we need to set it to toggle on/off
             if (buttonGroup != null)
             {

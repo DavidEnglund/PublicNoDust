@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<local:AccordionPane xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
+             x:Class="Dustbuster.WeatherPane">
+	
+	<StackLayout>
+		<!--Header Text-->
+		<ContentView Padding="15">
+			<Label
+				x:Name="weatherHeader"
+				Text="Do you expect rain in the area?"
+				FontSize="21"
+				FontAttributes="Bold"
+				HorizontalOptions="Center"
+        Style="{DynamicResource labelStyle}"
+			/>
+		</ContentView>
+
+		<!--Button Choice Group-->
+		<StackLayout Orientation="Vertical" HorizontalOptions="Center">
+			<Grid>
+				<!--Rain Button-->
+				<local:SelectImageButton
+					x:Name="rainButton"
+					SelectedBorderColor="Black"
+					SelectedBorderWidth="0"
+					SelectedBackgroundColor="Black"
+					SelectedImage="choice_weather_rain.png"
+
+					UnselectedBorderColor="White"
+					UnselectedBorderWidth="0"
+					UnselectedBackgroundColor="White"
+					UnselectedImage="choice_weather_rain.png"
+
+					Padding="26"
+					Grid.Column="0"
+					Clicked="rainButton_clicked"
+				/>
+
+				<!--Sun Button-->
+				<local:SelectImageButton
+					x:Name="sunButton"
+					SelectedBorderColor="Black"
+					SelectedBorderWidth="0"
+					SelectedBackgroundColor="Black"
+					SelectedImage="choice_weather_sun.png"
+
+					UnselectedBorderColor="White"
+					UnselectedBorderWidth="0"
+					UnselectedBackgroundColor="White"
+					UnselectedImage="choice_weather_sun.png"
+
+					Padding="26"
+					Grid.Column="1"
+					Clicked="sunButton_clicked"
+				/>
+			</Grid>
+
+		<!--Answer Choice Text-->
+		</StackLayout>
+		<ContentView Padding="40,20,40,10">
+			<Label
+				x:Name="weatherAnswer"
+				Text="Tap on the rain cloud or sun to select your option"
+				XAlign="Center"
+				FontSize="17"
+				HorizontalOptions="CenterAndExpand"
+			/>
+		</ContentView>
+	</StackLayout>
+</local:AccordionPane>
+
