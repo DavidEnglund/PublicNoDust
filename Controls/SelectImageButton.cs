@@ -285,6 +285,10 @@ namespace Dustbuster
             selectedBackgroundColor = Color.White;
             selectedBorderColor = Color.Blue;
             selectedBorderWidth = 5;
+
+            holdBackgroundColor = Color.White;
+            holdBorderColor = Color.Navy;
+            holdBorderWidth = 5;
             
             base.BackgroundColor = unselectedBackgroundColor;
 
@@ -294,6 +298,10 @@ namespace Dustbuster
 
         private void Click_Tapped(object sender, EventArgs e)
         {
+            // this click overrides the base android one so it cant record an up event to change the colors
+            // but having a property change will run the property changed event so I will set the background 
+            // to hold which will then be set right back again but will then change
+            base.BackgroundColor = HoldBackgroundColor;
             // if the button is not part of a group we need to set it to toggle on/off
             if (buttonGroup != null)
             {
