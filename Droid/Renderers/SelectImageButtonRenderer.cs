@@ -31,6 +31,62 @@ namespace Dustbuster.Droid
         private Android.Graphics.Color droidHoldBorderColor;
         private int droidHoldBorderWidth;
 
+        //adding an android touch recogniser that can detect more touch and hold events than the forms one
+        public override bool OnTouchEvent(MotionEvent e)
+        {
+            // this boolean will be used to decide on the colors at the end and set by the various touch event types
+            bool touchDown = false;
+            // color values to chnage on hold or relese
+            Android.Graphics.Color touchBackgroundColor = droidBackgroundColor;
+            Android.Graphics.Color touchBorderColor = droidBorderColor;
+            int touchBorderWidth;
+            if (e.Action == MotionEventActions.Down)
+            {
+                Console.WriteLine("--= down =--");
+                touchDown = true;
+
+            }
+            if (e.Action == MotionEventActions.Up)
+            {
+                Console.WriteLine("--= up =--");
+                touchDown = false;
+
+            }
+            if (e.Action == MotionEventActions.ButtonPress)
+            {
+                Console.WriteLine("--= press =--");
+                touchDown = false;
+            }
+            if (e.Action == MotionEventActions.ButtonRelease)
+            {
+                Console.WriteLine("--= release =--");
+                touchDown = false;
+            }
+            Console.WriteLine(e.Action);
+            // set the color depebding on the pressed state of the button
+            if (touchDown)
+            {
+                touchBackgroundColor = droidHoldBackgroundColor;
+                touchBorderColor = droidHoldBorderColor;
+                touchBorderWidth = droidHoldBorderWidth;
+            }
+            else
+            {
+                touchBackgroundColor = droidBackgroundColor;
+                touchBorderColor = droidBorderColor;
+                touchBorderWidth = droidBorderWidth;
+            }
+
+            // create a drawable color and set its radius, color, and border
+            var rad = new global::Android.Graphics.Drawables.GradientDrawable();
+            rad.SetCornerRadius(1000.00F);
+            rad.SetColor(touchBackgroundColor);
+            rad.SetStroke(touchBorderWidth, touchBorderColor);
+            // apply the drawable to the background
+            this.Background = rad;
+            return base.OnTouchEvent(e);
+        }
+
         public SelectImageButtonRenderer()
         {
             SetPadding(0, 0, 0, 0);           
