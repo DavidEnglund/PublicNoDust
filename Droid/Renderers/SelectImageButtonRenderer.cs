@@ -22,6 +22,15 @@ namespace Dustbuster.Droid
 {
     public class SelectImageButtonRenderer : ViewRenderer
     {
+        // I need to create some color and width values here so they can be used in the touch event but set in the properteychanged even
+        private Android.Graphics.Color droidBackgroundColor;
+        private Android.Graphics.Color droidBorderColor;
+        private int droidBorderWidth;
+
+        private Android.Graphics.Color droidHoldBackgroundColor;
+        private Android.Graphics.Color droidHoldBorderColor;
+        private int droidHoldBorderWidth;
+
         public SelectImageButtonRenderer()
         {
             SetPadding(0, 0, 0, 0);           
@@ -33,18 +42,25 @@ namespace Dustbuster.Droid
         {           
             // get a copy of the xamarin control we are changing
             SelectImageButton formControl = (SelectImageButton)sender;
-            
+            // get the selected state and hold colors and widths and set them to be used thoughout the renderer
+            droidBackgroundColor = formControl.BackgroundColor.ToAndroid();
+            droidBorderColor = formControl.BorderColor.ToAndroid();
+            droidBorderWidth = formControl.BorderWidth*2;
+
+            droidHoldBackgroundColor = formControl.HoldBackgroundColor.ToAndroid();
+            droidHoldBorderColor = formControl.HoldBorderColor.ToAndroid();
+            droidHoldBorderWidth = formControl.HoldBorderWidth*2;
+
             base.OnElementPropertyChanged(formControl, e);
 
             // test of setting the padding for this before drawing a background
             this.SetClipChildren(true);
-            // get the set background color
-            Xamarin.Forms.Color bgcolor = formControl.BackgroundColor;
+            
             // create a drawable color and set irs raduis, color, and border
             var rad = new global::Android.Graphics.Drawables.GradientDrawable();
             rad.SetCornerRadius(1000.00F);
-            rad.SetColor(bgcolor.ToAndroid());
-            rad.SetStroke(formControl.BorderWidth*2,formControl.BorderColor.ToAndroid());
+            rad.SetColor(droidBackgroundColor);
+            rad.SetStroke(droidBorderWidth,droidBorderColor);
             // apply the drawable to the background
             this.Background = rad;
             
