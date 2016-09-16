@@ -51,6 +51,26 @@ namespace Dustbuster
             get { return unselectedBackgroundColor; }
             set { unselectedBackgroundColor = value; }
         }
+        // new: hold colors for when the user touches and holds the button
+        private Color holdBackgroundColor;
+        private Color holdBorderColor;
+        private int holdBorderWidth;
+
+        public Color HoldBackgroundColor
+        {
+            get { return holdBackgroundColor; }
+            set { holdBackgroundColor = value; }
+        }
+        public Color HoldBorderColor
+        {
+            get { return holdBorderColor; }
+            set { holdBorderColor = value; }
+        }
+        public int HoldBorderWidth
+        {
+            get { return holdBorderWidth; }
+            set { holdBorderWidth = value; }
+        }
 
         // a private image and a public image source that maps to the images source
         private Image selectedImage = new Image();
