@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Dustbuster
 {
     public partial class ContactRequestPage : ContentPage
     {
+        /// <summary>
+        /// Handles the input from the Contact Request Page, validates the entry fields and other view logic
+        /// </summary>
+
         public ContactRequestPage()
         {
             this.BindingContext = new ContactRequestViewModel(this);
@@ -22,8 +20,7 @@ namespace Dustbuster
         public DatePicker DatePicker
         {
             get { return this.dpDate; }
-        }
-        
+        }        
         // Pulls up the time select menu; morning, afternoon, evening
         async void OnTimeClicked(object sender, EventArgs args)
         {
@@ -39,65 +36,49 @@ namespace Dustbuster
             // validate the text entry fields
             if (ValidateFields())
             {
-                Debug.WriteLine("Log: Entries are valid.");
                 var reminder = await DisplayAlert("So far, so good!", "Would you like to set a reminder in your phone's calendar?", "Yes", "No");
-                if (reminder)
-                {
-                    Debug.WriteLine("Setting a reminder at date: ");
-                    // TODO: HEY DAVID, ADD DEPENDENCY SERIVCE FOR REMIDNER HERE
+                if (reminder)                
                     DependencyService.Get<IReminderervice>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date);
-                }
-                else
-                {
-                    Debug.WriteLine("Skipping setting a reminder");
-                }
-
+               
                 // create data info object
                 Debug.WriteLine("LOG: Creating Contact Request Info Object NAME:{0} PH:{1} DATE:{2} TIME:{3}", etName.Text, etPhone.Text, dpDate.Date, btnTime.Text);
                 ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etPhone.Text, dpDate.Date, btnTime.Text);
-            }
-            else
-            {
-                Debug.WriteLine("LOG: Entries are IN-valid");
-            }
+            }            
         }
-
+        // calls the methods used to validate the input fields
         private bool ValidateFields()
         {
-            Debug.WriteLine("LOG: Beginning validation process");
             return (ValidName() && ValidPhone()) ? true : false;
         }
+        // check if the input name is valid
         private bool ValidName()
         {
             if (etName.Text != null)
             {
                 // stand back, I'm going to try regex!
-                Debug.WriteLine("LOG: Validating name");
                 if (Regex.IsMatch(etName.Text, @"^[a-zA-Z]+$"))
                 {
-                    Debug.WriteLine("LOG: Name is valid");
                     return true;
                 }
                 else
                 {
-                    DisplayAlert("Hey, Listen!", "Incorrect input in Name field.", "Ok");
-                    Debug.WriteLine("LOG: Incorrect input in name field");
+                    DisplayAlert("Whoops!", "Incorrect input in Name field.", "Ok");
                     return false;
                 }
             } else {
-                DisplayAlert("Hey, Listen!", "You forgot to input your name.", "Ok");
+                DisplayAlert("Whoops!", "You forgot to input your name.", "Ok");
                 return false;
             }
         }
+        // check if the phone number is valid
         private bool ValidPhone()
         {
             if (etPhone.Text != null)
             {
                 etPhone.Text = etPhone.Text.Trim();
-                Debug.WriteLine("LOG: Validating phone number");
                 return true;
             } else {
-                DisplayAlert("Hey, Listen!", "You forgot to input your phone number", "Ok");
+                DisplayAlert("Whoops!", "You forgot to input your phone number", "Ok");
                 return false;
             }
         }

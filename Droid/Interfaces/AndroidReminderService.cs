@@ -1,29 +1,23 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
 using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Dustbuster.Droid;
 using Android.Provider;
 using Xamarin.Forms;
-
-
-
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroidReminderService))]
 namespace Dustbuster.Droid
 {
     class AndroidReminderService : IReminderervice
     {
+        /// <summary>
+        /// Handles the reminder insertion to the Android device calendar
+        /// </summary>
+        /// <param name="title">The title of the reminder</param>
+        /// <param name="message">The reminder message to be stored</param>
+        /// <param name="remindTime">The date picked from the Contact Request Page that triggers the reminder</param>
+
         public void AddReminder(string title, string message, DateTime remindTime)
-        {
-            
+        {            
             // well here is where the magic happens I guess
             // start with getting  content value object to add the event details to
             ContentValues eventValues = new ContentValues();
@@ -39,7 +33,7 @@ namespace Dustbuster.Droid
             var cursor = Forms.Context.ContentResolver.Query(CalendarContract.Calendars.ContentUri, calendarsProjection, null, null, null);
             if (!cursor.MoveToNext())
             {
-                App.Current.MainPage.DisplayAlert("Caledar error", "You have no calendar setup", "OK");
+                App.Current.MainPage.DisplayAlert("Calendar error", "You have no calendar setup", "OK");
             }
             else
             {

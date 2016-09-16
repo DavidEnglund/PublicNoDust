@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -38,7 +36,6 @@ namespace Dustbuster
                 PropertyChanged?.Invoke(null, new PropertyChangedEventArgs("SelectedDate"));
             }
         }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
