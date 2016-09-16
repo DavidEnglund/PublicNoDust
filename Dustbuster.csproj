@@ -41,6 +41,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataAccess\DbConnectionManager.cs" />
+    <Compile Include="Interfaces\IDialer.cs" />
     <Compile Include="Interfaces\ISQLite.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Controls\SelectButtonGroup.cs" />
