@@ -84,6 +84,8 @@ namespace Dustbuster
 
         private async void TapCivilButton(object sender, EventArgs e)
 		{
+			((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#18b750");
+
 			App.IndustryOption = IndustryOptions.Civil;
 
 			App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["civilSelectableButtonStyle"];
@@ -98,6 +100,8 @@ namespace Dustbuster
 
         private async void TapMiningButton(object sender, EventArgs e)
 		{
+			((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#079ece");
+			
 			App.IndustryOption = IndustryOptions.Mining;
 
 			App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["miningSelectableButtonStyle"];
