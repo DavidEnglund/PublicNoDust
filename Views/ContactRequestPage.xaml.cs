@@ -10,7 +10,7 @@ namespace Dustbuster
         /// <summary>
         /// Handles the input from the Contact Request Page, validates the entry fields and other view logic
         /// </summary>
-
+                
         public ContactRequestPage()
         {
             this.BindingContext = new ContactRequestViewModel(this);
@@ -37,8 +37,12 @@ namespace Dustbuster
             if (ValidateFields())
             {
                 var reminder = await DisplayAlert("So far, so good!", "Would you like to set a reminder in your phone's calendar?", "Yes", "No");
-                if (reminder)                
+                if (reminder)
+                {                               
                     DependencyService.Get<IReminderervice>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date);
+                    Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date);
+                }                
+                    
                
                 // create data info object
                 Debug.WriteLine("LOG: Creating Contact Request Info Object NAME:{0} PH:{1} DATE:{2} TIME:{3}", etName.Text, etPhone.Text, dpDate.Date, btnTime.Text);
@@ -56,13 +60,18 @@ namespace Dustbuster
             if (etName.Text != null)
             {
                 // stand back, I'm going to try regex!
-                if (Regex.IsMatch(etName.Text, @"^[a-zA-Z]+$"))
+
+
+                //if (Regex.IsMatch(etName.Text, @"^[a-zA-Z]+$"))
+                //if (Regex.IsMatch(etName.Text, @"/^[a-z ,.'-]+$/i"))
+                if (Regex.IsMatch(etName.Text, @"^[a-z A-Z]+$"))
                 {
+                    etName.Text = etName.Text.Trim();
                     return true;
                 }
                 else
                 {
-                    DisplayAlert("Whoops!", "Incorrect input in Name field.", "Ok");
+                    DisplayAlert("Whoops! Regex", "Incorrect input in Name field.", "Ok");
                     return false;
                 }
             } else {

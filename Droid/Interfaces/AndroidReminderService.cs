@@ -63,6 +63,8 @@ namespace Dustbuster.Droid
                 reminderValue.Put(CalendarContract.Reminders.InterfaceConsts.Method, 1);
                 // adding the reminder to the calendar event
                 var uriR = Forms.Context.ContentResolver.Insert(CalendarContract.Reminders.ContentUri, reminderValue);
+
+                App.Current.MainPage.DisplayAlert("All good.", "A reminder has been set in your phone's calendar", "OK");
             }
         }
 
