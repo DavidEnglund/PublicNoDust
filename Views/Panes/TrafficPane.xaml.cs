@@ -52,6 +52,8 @@ namespace Dustbuster
 				Owner.VisitPane(Owner.Panes["Calendar"]);
 
 			}
+			// set the option enum
+			App.TrafficOption = TrafficOptions.NonTraffickedArea;
 		}
 	}
 }

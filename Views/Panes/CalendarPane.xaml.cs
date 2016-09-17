@@ -26,9 +26,13 @@ namespace Dustbuster
 
 		public void checkButtonOptions()
 		{
-			//
+			//trafficked choice, does not display over 180 day choice
 			over180Button.IsVisible = (App.TrafficOption == TrafficOptions.TraffickedArea) ? true : false;
+		}
 
+		private void over30ToUnder180()
+		{
+			
 		}
 
 		//under 30 button click
@@ -49,9 +53,10 @@ namespace Dustbuster
 		//over 30 or under 180 button click
 		public void over30Under180Button_clicked(object sender, EventArgs e)
 		{
-			calendarAnswer.Text = "Solution is for over 30 days";
-			Title = "Over 30 Days";
-			Image = "accordion_icon_calendar_over30.png";
+			//switches between 30 and 180 options depending on traffic option choice
+			calendarAnswer.Text = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Solution is for over 30 days" : "Solution is for under 180 days";
+			Title = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Over 30 Days" : "Unnder 180 Days";
+			Image = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "accordion_icon_calendar_over30.png": "accordion_icon_calendar_under180.png";
 
 			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
