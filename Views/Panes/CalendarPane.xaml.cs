@@ -20,6 +20,15 @@ namespace Dustbuster
 			calendarButtonGroup.AddButton(under30Button);
 			calendarButtonGroup.AddButton(over30Under180Button);
 			calendarButtonGroup.AddButton(over180Button);
+
+			checkButtonOptions();
+		}
+
+		public void checkButtonOptions()
+		{
+
+			over180Button.IsVisible = (App.TrafficOption == TrafficOptions.TraffickedArea) ? true : false;
+
 		}
 
 		//under 30 button click
@@ -55,26 +64,19 @@ namespace Dustbuster
 		//over 180 button click
 		public void over180Button_clicked(object sender, EventArgs e)
 		{
-			if (App.TrafficOption == TrafficOptions.TraffickedArea)
+			calendarAnswer.Text = "Solution is for over 180 days";
+			Title = "Over 180 Days";
+			Image = "accordion_icon_calendar_over180.png";
+
+			//Over 180 days skips weather
+			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
 			{
-				over180Button.IsVisible = false;
+				Owner.VisitPane(Owner.Panes["LocationArea"]);
+
 			}
-			else
-			{
-				calendarAnswer.Text = "Solution is for over 180 days";
-				Title = "Over 180 Days";
-				Image = "accordion_icon_calendar_over180.png";
 
-				//Over 180 days skips weather
-				if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
-				{
-					Owner.VisitPane(Owner.Panes["LocationArea"]);
-
-				}
-
-				// set the option enum
-				App.DurationOption = DurationOptions.OverSixMonths;
-			} 
+			// set the option enum
+			App.DurationOption = DurationOptions.OverSixMonths;
         }
 	}
 }
