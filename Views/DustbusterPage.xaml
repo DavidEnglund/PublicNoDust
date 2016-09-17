@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:Dustbuster" 
@@ -18,7 +18,8 @@
         <Image Source="app_title.png"
                Aspect="Fill" />
         <StackLayout Orientation="Vertical"
-                     Padding="70, 0, 70, 0"
+                     Padding="70, 13, 70, 90"
+					 Spacing="2"
                      RelativeLayout.WidthConstraint="{ConstraintExpression 
                      Type=RelativeToParent,
                      Property=Width,
@@ -30,7 +31,7 @@
             <Label Text="Application Title"
                    x:Name="lblTitle"
                     TextColor="White"
-                    FontSize="Medium"
+                    FontSize="Large"
                     FontAttributes="Bold"
                     VerticalOptions="StartAndExpand"
                     VerticalTextAlignment="Center"
@@ -38,7 +39,7 @@
             <Label Text="This application is to choose what product is best suited for your needs. Some more fill in text and more here"
                     TextColor="White"
                     FontSize="Small"
-                    VerticalOptions="FillAndExpand"
+                    VerticalOptions="Start"
                     HorizontalTextAlignment="Center"
                     HorizontalOptions="FillAndExpand"/>
         </StackLayout>
@@ -116,8 +117,8 @@
       </ContentView.GestureRecognizers>
     </ContentView>
 
-    <Image HeightRequest="40"
-           WidthRequest="40"
+    <Image HeightRequest="25"
+           WidthRequest="25"
            Source="hamburger_icon.png"
            RelativeLayout.XConstraint="10"
            RelativeLayout.YConstraint="10">
