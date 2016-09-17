@@ -186,10 +186,10 @@
           <DataTemplate>
             <ViewCell>
               <StackLayout Orientation="Vertical"
-                           Padding="10"
+                           Padding="15"
+                           Spacing="3"
                            BackgroundColor="#2e2f2f">
-                <StackLayout Orientation="Horizontal"
-                             Padding="0,0,0,5">
+                <StackLayout Orientation="Horizontal">
                   <Label Text="{Binding Amount}"
                          TextColor="#FFF"
                          FontSize="16"/>
@@ -210,24 +210,24 @@
       
       <RelativeLayout BackgroundColor="#383939"
                       HorizontalOptions="FillAndExpand"
-                      HeightRequest="0">
+                      VerticalOptions="End">
         <ContentView VerticalOptions="Fill"
-                     Padding="0, 10, 0, 10"
+                     Padding="0, 8"
                      RelativeLayout.WidthConstraint="{ConstraintExpression
                      Type=RelativeToParent,
                      Property=Width,
                      Factor=0.5,
                      Constant=0}">
           <StackLayout Orientation="Vertical"
-                       Spacing="0">
+                       Spacing="2">
             <Image Source="settings_icon.png"
                    Aspect="AspectFit"
                    HorizontalOptions="Fill"
-                   HeightRequest="35"/>
+                   HeightRequest="28"/>
             <Label Text="Settings"
                    HorizontalOptions="Fill"
                    HorizontalTextAlignment="Center"
-                   FontSize="16"
+                   FontSize="14"
                    TextColor="White"/>
           </StackLayout>
           <ContentView.GestureRecognizers>
@@ -236,28 +236,39 @@
           </ContentView.GestureRecognizers>
         </ContentView>
         
+        <BoxView x:Name="separator"
+                 RelativeLayout.XConstraint="{ConstraintExpression
+                  Type=RelativeToParent,
+                  Property=Width,
+                  Factor=0.5,
+                  Constant=0}"
+                 WidthRequest="1"
+                 HeightRequest="64"
+                 BackgroundColor="#808d8c8c"/>
+                 <!-- Height (64) is the total height of the About/Settings buttons -->
+        
         <ContentView VerticalOptions="Fill"
-                     Padding="0, 10, 0, 10"
+                     Padding="0, 8"
                      RelativeLayout.WidthConstraint="{ConstraintExpression
                      Type=RelativeToParent,
                      Property=Width,
                      Factor=0.5,
-                     Constant=0}"
+                     Constant=-1}"
                      RelativeLayout.XConstraint="{ConstraintExpression
                      Type=RelativeToParent,
                      Property=Width,
                      Factor=0.5,
-                     Constant=0}">
+                     Constant=1}">
           <StackLayout Orientation="Vertical"
-                       Spacing="0">
+                       Spacing="2">
             <Image Source="about_icon.png"
                    Aspect="AspectFit"
                    HorizontalOptions="Fill"
-                   HeightRequest="35"/>
+                   HeightRequest="28"/>
             <Label Text="About"
                    HorizontalOptions="Fill"
                    HorizontalTextAlignment="Center"
-                   FontSize="16"
+                   FontSize="14"
                    TextColor="White"/>
           </StackLayout>
           <ContentView.GestureRecognizers>
