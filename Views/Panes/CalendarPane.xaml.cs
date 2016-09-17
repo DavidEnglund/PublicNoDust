@@ -48,7 +48,7 @@ namespace Dustbuster
 		{
 			//switches between 30 and 180 options depending on traffic option choice
 			calendarAnswer.Text = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Solution is for over 30 days" : "Solution is for under 180 days";
-			Title = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Over 30 Days" : "Unnder 180 Days";
+			Title = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Over 30 Days" : "Under 180 Days";
 			Image = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "accordion_icon_calendar_over30.png": "accordion_icon_calendar_under180.png";
 			App.DurationOption = (App.TrafficOption == TrafficOptions.TraffickedArea) ? DurationOptions.Over1Month : DurationOptions.Under3Months;
 			//Trafficked Areas always goto LocationArea, Non Trafficked under 180 goes to weather

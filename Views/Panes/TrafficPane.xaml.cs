@@ -32,12 +32,12 @@ namespace Dustbuster
 			Title = "Trafficked Area";
 			Image = "accordion_icon_traffic_light.png";
 
-			// set the option enum
-			App.TrafficOption = TrafficOptions.TraffickedArea;
-
-			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
+			if (App.TrafficOption != TrafficOptions.TraffickedArea)
 			{
-				Owner.VisitPane(Owner.Panes["Calendar"]);
+				//set the option enum
+				App.TrafficOption = TrafficOptions.TraffickedArea;
+				//visit calendar pane
+				Owner.VisitPane(Owner.Panes["Calendar"], Owner.Panes["Calendar"]);
 			}
 		}
 
@@ -48,13 +48,12 @@ namespace Dustbuster
 			Title = "Non Trafficked Area";
 			Image = "accordion_icon_traffic_openroad.png";
 
-			// set the option enum
-			App.TrafficOption = TrafficOptions.NonTraffickedArea;
-
-			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
+			if (App.TrafficOption != TrafficOptions.NonTraffickedArea)
 			{
-				Owner.VisitPane(Owner.Panes["Calendar"]);
-
+				//set the option enum
+				App.TrafficOption = TrafficOptions.NonTraffickedArea;
+				//visit calendar pane
+				Owner.VisitPane(Owner.Panes["Calendar"], Owner.Panes["Calendar"]);
 			}
 		}
 	}
