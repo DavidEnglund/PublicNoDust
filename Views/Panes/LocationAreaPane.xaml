@@ -75,6 +75,7 @@
             x:Name="bCalculation"
             Command="{Binding CalculateArea}" 
             HorizontalOptions="Center"
-            VerticalOptions="Center"/>
+            VerticalOptions="Center" 
+			Style="{StaticResource buttonGreenPrimary}" />
   </StackLayout>
 </local:AccordionPane>
