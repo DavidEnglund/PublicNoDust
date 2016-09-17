@@ -23,6 +23,9 @@ namespace Dustbuster
 			//add trafficked and non trafficked button to button group
 			trafficButtonGroup.AddButton(traffickedButton);
 			trafficButtonGroup.AddButton(nonTraffickedButton);
+
+			//set traficOption to none
+			App.TrafficOption = TrafficOptions.None;
 		}
 
 		//trafficked button click
@@ -37,7 +40,7 @@ namespace Dustbuster
 				//set the option enum
 				App.TrafficOption = TrafficOptions.TraffickedArea;
 				//visit calendar pane
-				Owner.VisitPane(Owner.Panes["Calendar"], Owner.Panes["Calendar"]);
+				Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["Calendar"]);
 			}
 		}
 
@@ -53,7 +56,7 @@ namespace Dustbuster
 				//set the option enum
 				App.TrafficOption = TrafficOptions.NonTraffickedArea;
 				//visit calendar pane
-				Owner.VisitPane(Owner.Panes["Calendar"], Owner.Panes["Calendar"]);
+				Owner.VisitPane(Owner.Panes["Calendar"]);
 			}
 		}
 	}

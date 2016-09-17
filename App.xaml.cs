@@ -115,11 +115,11 @@ namespace Dustbuster
 		}
 	}
 
-	public enum IndustryOptions { Civil, Mining };
+	public enum IndustryOptions { Civil, Mining, None };
     #region davids enums create
     // added some more enums for all of the users choices to be stored and used - david
-    public enum TrafficOptions { NonTraffickedArea, TraffickedArea };
-    public enum DurationOptions { Under1Month, Over1Month, Under3Months, Over3Months };
-    public enum WeatherOptions{ RainExpected, NoRainExpected };
+    public enum TrafficOptions { NonTraffickedArea, TraffickedArea, None };
+    public enum DurationOptions { Under1Month, Over1Month, Under3Months, Over3Months, None };
+    public enum WeatherOptions{ RainExpected, NoRainExpected, None };
     #endregion
 }

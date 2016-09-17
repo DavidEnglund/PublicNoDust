@@ -10,7 +10,7 @@ namespace Dustbuster
 		//init calendar button group
 		SelectButtonGroup calendarButtonGroup = new SelectButtonGroup();
 
-		public CalendarPane() : base("Duration", "accordion_icon_calendar_over180.png")
+		public CalendarPane() : base("Duration", "accordion_icon_calendar_none.png")
         {
 			InitializeComponent();
 
@@ -28,7 +28,9 @@ namespace Dustbuster
 		{
 			//trafficked choice, does not display over 180 day choice
 			over180Button.IsVisible = (App.TrafficOption == TrafficOptions.TraffickedArea) ? true : false;
-			//TODO change over30Under180 button icon (unslected and selected icon)
+			//change over30Under180 button icon (unslected and selected icon)
+			over30Under180Button.SelectedImage = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "choice_calendar_under180.png" : "choice_calendar_over30.png";
+			over30Under180Button.UnselectedImage = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "choice_calendar_under180.png" : "choice_calendar_over30.png";
 		}
 
 		//under 30 button click

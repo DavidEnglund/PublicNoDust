@@ -104,7 +104,6 @@
     <BundleResource Include="Resources\app_title.png" />
     <BundleResource Include="Resources\choice_calendar_over180.png" />
     <BundleResource Include="Resources\choice_calendar_under30.png" />
-    <BundleResource Include="Resources\choice_calendar_under180.png" />
     <BundleResource Include="Resources\choice_traffic_light.png" />
     <BundleResource Include="Resources\choice_traffic_openroad.png" />
     <BundleResource Include="Resources\choice_weather_rain.png" />
@@ -131,6 +130,8 @@
     <Content Include="Entitlements.plist" />
     <None Include="packages.config" />
     <BundleResource Include="Resources\accordion_icon_traffic_openroad.png" />
+    <BundleResource Include="Resources\accordion_icon_calendar_none.png" />
+    <BundleResource Include="Resources\choice_calendar_under180.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
