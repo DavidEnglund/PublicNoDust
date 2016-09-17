@@ -58,6 +58,8 @@ namespace Dustbuster
 			{
 				Owner.VisitPane(Owner.Panes["Weather"]);
 			}
+            // set the option enum - david
+            App.TrafficOption = TrafficOptions.TraffickedArea;
 		}
 
 		//non trafficked button click
@@ -71,6 +73,8 @@ namespace Dustbuster
 			{
 				Owner.VisitPane(Owner.Panes["Weather"]);
 			}
-		}
+            // set the option enum - david
+            App.TrafficOption = TrafficOptions.NonTraffickedArea;
+        }
 	}
 }

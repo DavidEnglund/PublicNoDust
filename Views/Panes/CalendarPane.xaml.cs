@@ -33,7 +33,9 @@ namespace Dustbuster
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"]);
 			}
-		}
+            // set the option enum - david
+            App.DurationOption = DurationOptions.UnderAMonth;
+        }
 
 		//over 30 or under 180 button click
 		public void over30Under180Button_clicked(object sender, EventArgs e)
@@ -46,7 +48,9 @@ namespace Dustbuster
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"]);
 			}
-		}
+            // set the option enum - david
+            App.DurationOption = DurationOptions.OverAMonth;
+        }
 
 		//over 180 button click
 		public void over180Button_clicked(object sender, EventArgs e)
@@ -59,7 +63,9 @@ namespace Dustbuster
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"]);
 			}
-		}
+            // set the option enum - david
+            App.DurationOption = DurationOptions.OverSixMonths;
+        }
 	}
 }
 

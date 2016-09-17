@@ -32,7 +32,9 @@ namespace Dustbuster
 			{
 				Owner.VisitPane(Owner.Panes["Calendar"]);
 			}
-		}
+            // set the option enum - david
+            App.WeatherOption  = WeatherOptions.RainExpected;
+        }
 
 		//sunny area button click
 		public void sunButton_clicked(object sender, EventArgs e)
@@ -45,7 +47,9 @@ namespace Dustbuster
 			{
 				Owner.VisitPane(Owner.Panes["Calendar"]);
 			}
-		}
+            // set the option enum - david
+            App.WeatherOption = WeatherOptions.NoRainExpected;
+        }
 	}
 }
 
