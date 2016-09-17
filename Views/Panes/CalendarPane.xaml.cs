@@ -29,11 +29,11 @@ namespace Dustbuster
 			Title = "Under 30 Days";
 			Image = "accordion_icon_calendar_under30.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
+				Owner.VisitPane(Owner.Panes["Weather"]);
 			}
-            // set the option enum - david
+            // set the option enum
             App.DurationOption = DurationOptions.UnderAMonth;
         }
 
@@ -44,27 +44,37 @@ namespace Dustbuster
 			Title = "Over 30 Days";
 			Image = "accordion_icon_calendar_over30.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
+				Owner.VisitPane(Owner.Panes["Weather"]);
 			}
-            // set the option enum - david
+            // set the option enum
             App.DurationOption = DurationOptions.OverAMonth;
         }
 
 		//over 180 button click
 		public void over180Button_clicked(object sender, EventArgs e)
 		{
-			calendarAnswer.Text = "Solution is for over 180 days";
-			Title = "Over 180 Days";
-			Image = "accordion_icon_calendar_over180.png";
-
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			if (App.TrafficOption == TrafficOptions.TraffickedArea)
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
+				over180Button.IsVisible = false;
 			}
-            // set the option enum - david
-            App.DurationOption = DurationOptions.OverSixMonths;
+			else
+			{
+				calendarAnswer.Text = "Solution is for over 180 days";
+				Title = "Over 180 Days";
+				Image = "accordion_icon_calendar_over180.png";
+
+				//Over 180 days skips weather
+				if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+				{
+					Owner.VisitPane(Owner.Panes["LocationArea"]);
+
+				}
+
+				// set the option enum
+				App.DurationOption = DurationOptions.OverSixMonths;
+			} 
         }
 	}
 }
