@@ -53,8 +53,24 @@ namespace Dustbuster
 			get;
 			set;
 		}
-
-		protected override void OnStart()
+        #region davids enums set
+        public static TrafficOptions TrafficOption
+        {
+            get;
+            set;
+        }
+        public static DurationOptions DurationOption
+        {
+            get;
+            set;
+        }
+        public static  WeatherOptions WeatherOption
+        {
+            get;
+            set;
+        }
+        #endregion
+        protected override void OnStart()
 		{
 			// Handle when your app starts
 		}
@@ -100,4 +116,10 @@ namespace Dustbuster
 	}
 
 	public enum IndustryOptions { Civil, Mining };
+    #region davids enums create
+    // added some more enums for all of the users choices to be stored and used - david
+    public enum TrafficOptions { TraffickedArea, NonTraffickedArea };
+    public enum DurationOptions { UnderAMonth = 14,OverAMonth = 30,OverSixMonths=180};
+    public enum WeatherOptions { RainExpected,NoRainExpected};
+    #endregion
 }
