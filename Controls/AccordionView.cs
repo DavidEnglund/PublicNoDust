@@ -84,9 +84,11 @@ namespace Dustbuster
 				if (oldExpanded != null)
 				{
 					oldExpanded.IsVisible = false;
+					oldExpanded.OnPaneCollapsed();
 				}
 
 				newExpanded.IsVisible = true;
+				newExpanded.OnPaneExpanded();
 
 				foreach(AccordionPane pane in visitedPanes)
 				{

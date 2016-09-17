@@ -11,7 +11,7 @@ namespace Dustbuster
 		SelectButtonGroup calendarButtonGroup = new SelectButtonGroup();
 
 		public CalendarPane() : base("Duration", "accordion_icon_calendar_none.png")
-        {
+		{
 			InitializeComponent();
 
 			Header.SetDynamicResource(StyleProperty, "calendarAccordionStyle");
@@ -20,11 +20,9 @@ namespace Dustbuster
 			calendarButtonGroup.AddButton(under30Button);
 			calendarButtonGroup.AddButton(over30Under180Button);
 			calendarButtonGroup.AddButton(over180Button);
-
-			checkButtonOptions();
 		}
 
-		public void checkButtonOptions()
+		public override void OnPaneExpanded()
 		{
 			//trafficked choice, does not display over 180 day choice
 			over180Button.IsVisible = (App.TrafficOption == TrafficOptions.TraffickedArea) ? true : false;

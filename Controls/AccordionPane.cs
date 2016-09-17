@@ -65,6 +65,13 @@ namespace Dustbuster
 				acccordion.Header.IconImage = (string)newValue;
 			}
 		}
+
+		public virtual void OnPaneExpanded() { } 
+
+		public virtual void OnPaneCollapsed() { } 
+
+
+
 	}
 }
 
