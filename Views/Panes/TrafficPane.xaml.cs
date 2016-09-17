@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,11 +32,11 @@ namespace Dustbuster
 			Title = "Trafficked Area";
 			Image = "accordion_icon_traffic_light.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
+			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
 			{
-				Owner.VisitPane(Owner.Panes["Weather"]);
+				Owner.VisitPane(Owner.Panes["Calendar"]);
 			}
-            // set the option enum - david
+            // set the option enum
             App.TrafficOption = TrafficOptions.TraffickedArea;
 		}
 
@@ -47,12 +47,7 @@ namespace Dustbuster
 			Title = "Non Trafficked Area";
 			Image = "accordion_icon_traffic_openroad.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
+			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
 			{
-				Owner.VisitPane(Owner.Panes["Weather"]);
-			}
-            // set the option enum - david
-            App.TrafficOption = TrafficOptions.NonTraffickedArea;
-        }
-	}
-}
+				Owner.VisitPane(Owner.Panes["Calendar"]);
+

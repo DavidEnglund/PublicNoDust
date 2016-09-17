@@ -20,6 +20,15 @@ namespace Dustbuster
 			calendarButtonGroup.AddButton(under30Button);
 			calendarButtonGroup.AddButton(over30Under180Button);
 			calendarButtonGroup.AddButton(over180Button);
+
+			checkButtonOptions();
+		}
+
+		public void checkButtonOptions()
+		{
+
+			over180Button.IsVisible = (App.TrafficOption == TrafficOptions.TraffickedArea) ? true : false;
+
 		}
 
 		//under 30 button click
@@ -29,11 +38,11 @@ namespace Dustbuster
 			Title = "Under 30 Days";
 			Image = "accordion_icon_calendar_under30.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
+				Owner.VisitPane(Owner.Panes["Weather"]);
 			}
-            // set the option enum - david
+            // set the option enum
             App.DurationOption = DurationOptions.UnderAMonth;
         }
 
@@ -44,11 +53,11 @@ namespace Dustbuster
 			Title = "Over 30 Days";
 			Image = "accordion_icon_calendar_over30.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
+				Owner.VisitPane(Owner.Panes["Weather"]);
 			}
-            // set the option enum - david
+            // set the option enum
             App.DurationOption = DurationOptions.OverAMonth;
         }
 
@@ -59,12 +68,15 @@ namespace Dustbuster
 			Title = "Over 180 Days";
 			Image = "accordion_icon_calendar_over180.png";
 
+			//Over 180 days skips weather
 			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"]);
+
 			}
-            // set the option enum - david
-            App.DurationOption = DurationOptions.OverSixMonths;
+
+			// set the option enum
+			App.DurationOption = DurationOptions.OverSixMonths;
         }
 	}
 }

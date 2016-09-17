@@ -12,7 +12,7 @@
 				FontSize="21"
 				FontAttributes="Bold"
 				HorizontalOptions="Center"
-        Style="{DynamicResource labelStyle}"
+        		Style="{DynamicResource labelStyle}"
 			/>
 		</ContentView>
 
@@ -47,7 +47,6 @@
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
-					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_calendar_over30.png"
 						
 					Style="{DynamicResource selectableButtonStyle}"
@@ -63,12 +62,10 @@
 					x:Name="over180Button"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
-					SelectedBackgroundColor="Black"
 					SelectedImage="choice_calendar_over180.png"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
-					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_calendar_over180.png"
 
 					Style="{DynamicResource selectableButtonStyle}"
