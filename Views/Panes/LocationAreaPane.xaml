@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <local:AccordionPane xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
@@ -58,7 +58,7 @@
   </StackLayout>
     
   <StackLayout Orientation="Horizontal"
-               Padding="60,0,60,30">
+               Padding="60,0,60,0">
     <Entry  Placeholder="Input Width" 
             x:Name="entry_width" 
             Keyboard="Numeric" 
