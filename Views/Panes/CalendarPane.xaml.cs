@@ -72,7 +72,7 @@ namespace Dustbuster
 			//Goto weather pane
 			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
 			{
-				Owner.VisitPane(Owner.Panes["Weather"]);
+				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
 			}
 		}
 
@@ -81,7 +81,7 @@ namespace Dustbuster
 			//Goto location area pane
 			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
+				Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["LocationArea"]);
 			}
 		}
 	}
