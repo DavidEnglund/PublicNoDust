@@ -28,11 +28,7 @@ namespace Dustbuster
 		{
 			//trafficked choice, does not display over 180 day choice
 			over180Button.IsVisible = (App.TrafficOption == TrafficOptions.TraffickedArea) ? true : false;
-		}
-
-		private void over30ToUnder180()
-		{
-			
+			//TODO change over30Under180 button icon (unslected and selected icon)
 		}
 
 		//under 30 button click
@@ -41,13 +37,10 @@ namespace Dustbuster
 			calendarAnswer.Text = "Solution is for under 30 days";
 			Title = "Under 30 Days";
 			Image = "accordion_icon_calendar_under30.png";
-
-			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
-			{
-				Owner.VisitPane(Owner.Panes["Weather"]);
-			}
-            // set the option enum
-            App.DurationOption = DurationOptions.UnderAMonth;
+			//set the option enum
+			App.DurationOption = DurationOptions.Under1Month;
+			//Trafficked Areas always goto LocationArea, Non Trafficked under 30 goes to weather
+			(App.TrafficOption == TrafficOptions.TraffickedArea ? (Action)goToLocationAreaPane : goToWeatherPane)();
         }
 
 		//over 30 or under 180 button click
@@ -57,13 +50,9 @@ namespace Dustbuster
 			calendarAnswer.Text = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Solution is for over 30 days" : "Solution is for under 180 days";
 			Title = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Over 30 Days" : "Unnder 180 Days";
 			Image = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "accordion_icon_calendar_over30.png": "accordion_icon_calendar_under180.png";
-
-			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
-			{
-				Owner.VisitPane(Owner.Panes["Weather"]);
-			}
-            // set the option enum
-            App.DurationOption = DurationOptions.OverAMonth;
+			App.DurationOption = (App.TrafficOption == TrafficOptions.TraffickedArea) ? DurationOptions.Over1Month : DurationOptions.Under3Months;
+			//Trafficked Areas always goto LocationArea, Non Trafficked under 180 goes to weather
+			(App.TrafficOption == TrafficOptions.TraffickedArea ? (Action)goToLocationAreaPane : goToWeatherPane)();
         }
 
 		//over 180 button click
@@ -72,17 +61,29 @@ namespace Dustbuster
 			calendarAnswer.Text = "Solution is for over 180 days";
 			Title = "Over 180 Days";
 			Image = "accordion_icon_calendar_over180.png";
+			// set the option enum
+			App.DurationOption = DurationOptions.Over3Months;
+			//over 180 days always goesto location area
+			goToLocationAreaPane();
+        }
 
-			//Over 180 days skips weather
+		private void goToWeatherPane()
+		{
+			//Goto weather pane
+			if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
+			{
+				Owner.VisitPane(Owner.Panes["Weather"]);
+			}
+		}
+
+		private void goToLocationAreaPane()
+		{
+			//Goto location area pane
 			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"]);
-
 			}
-
-			// set the option enum
-			App.DurationOption = DurationOptions.OverSixMonths;
-        }
+		}
 	}
 }
 

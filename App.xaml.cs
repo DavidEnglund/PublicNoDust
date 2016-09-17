@@ -119,7 +119,7 @@ namespace Dustbuster
     #region davids enums create
     // added some more enums for all of the users choices to be stored and used - david
     public enum TrafficOptions { NonTraffickedArea, TraffickedArea };
-    public enum DurationOptions { UnderAMonth = 30,OverAMonth = 180,OverSixMonths=360};
-    public enum WeatherOptions{ RainExpected,NoRainExpected};
+    public enum DurationOptions { Under1Month, Over1Month, Under3Months, Over3Months };
+    public enum WeatherOptions{ RainExpected, NoRainExpected };
     #endregion
 }
