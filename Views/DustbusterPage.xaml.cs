@@ -86,6 +86,8 @@ namespace Dustbuster
 		{
 			App.IndustryOption = IndustryOptions.Civil;
 
+			App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["civilSelectableButtonStyle"];
+
 			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["civilTrafficAccordionStyle"];
 			App.Current.Resources["calendarAccordionStyle"] = App.Current.Resources["civilCalendarAccordionStyle"];
 			App.Current.Resources["locationAccordionStyle"] = App.Current.Resources["civilLocationAccordionStyle"];
@@ -97,6 +99,8 @@ namespace Dustbuster
         private async void TapMiningButton(object sender, EventArgs e)
 		{
 			App.IndustryOption = IndustryOptions.Mining;
+
+			App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["miningSelectableButtonStyle"];
 
 			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];
 			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];

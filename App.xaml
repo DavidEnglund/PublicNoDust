@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Dustbuster" x:Class="Dustbuster.App">
 	<Application.Resources>
   	  <ResourceDictionary>
       			<Style x:Key="normalLabelStyle" TargetType="Label">
@@ -8,6 +8,19 @@
     			<Style x:Key="readModeLabelStyle" TargetType="Label">
         			<Setter Property="TextColor" Value="Black" />
      	 		</Style>
+			<!--Primary Mining Green Colors-->
+			<Style x:Key="miningSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#079ece" />
+				<Setter Property="UnselectedBackgroundColor" Value="#47b6d9" />
+            </Style>
+
+			<!--Primary Civil Blue Colors-->
+			<Style x:Key="civilSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#18b750" />
+				<Setter Property="UnselectedBackgroundColor" Value="#78dd9c" />
+            </Style>
+			
+			<!--Mining Accordion Colors-->
 			<Style x:Key="miningTrafficAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#0da0cf" />
          	   	</Style>
@@ -20,6 +33,7 @@
 			<Style x:Key="miningLocationAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#3ab9e2" />
             		</Style>
+            <!--Civil Accordion Colors-->
 			<Style x:Key="civilTrafficAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#1ebc56" />
             		</Style>
@@ -32,6 +46,43 @@
 			<Style x:Key="civilLocationAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#33cb69" />
             		</Style>
+
+      
+      
+      <!-- Buttons -->
+      
+      <!-- Submit, Calculate, Call Us Now (Accordion, Product and Contact Request pages) -->
+      <Style x:Key="buttonGreenPrimary" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#18b750" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BorderRadius" Value="3" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="WidthRequest" Value="175" />
+      </Style>
+
+      <!-- Request Contact  (Product page) -->
+      <Style x:Key="buttonWhiteSecondary" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="#18b750" />
+        <Setter Property="BorderColor" Value="#18b750" />
+        <Setter Property="BorderRadius" Value="3" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="WidthRequest" Value="175" />
+      </Style>
+
+      <!-- Create Reminder, Request Contact (Call Failed page)-->
+      <Style x:Key="buttonRedWarning" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="#df4347" />
+        <Setter Property="BorderColor" Value="#df4347" />
+        <Setter Property="BorderRadius" Value="3" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="WidthRequest" Value="175" />
+      </Style>
+			
+>>>>>>> button_app_styling
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

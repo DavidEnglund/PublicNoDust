@@ -25,13 +25,13 @@
 					x:Name="rainButton"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
-					SelectedBackgroundColor="Black"
 					SelectedImage="choice_weather_rain.png"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
-					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_weather_rain.png"
+
+					Style="{DynamicResource selectableButtonStyle}"
 
 					Padding="26"
 					Grid.Column="0"
@@ -43,13 +43,13 @@
 					x:Name="sunButton"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
-					SelectedBackgroundColor="Black"
 					SelectedImage="choice_weather_sun.png"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
-					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_weather_sun.png"
+
+					Style="{DynamicResource selectableButtonStyle}"
 
 					Padding="26"
 					Grid.Column="1"
