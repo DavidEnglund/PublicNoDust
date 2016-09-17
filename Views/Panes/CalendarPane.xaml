@@ -42,7 +42,6 @@
 					x:Name="over30Under180Button"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
-					SelectedBackgroundColor="Black"
 					SelectedImage="choice_calendar_over30.png"
 
 					UnselectedBorderColor="White"

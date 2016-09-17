@@ -26,7 +26,7 @@ namespace Dustbuster
 
 		public void checkButtonOptions()
 		{
-
+			//
 			over180Button.IsVisible = (App.TrafficOption == TrafficOptions.TraffickedArea) ? true : false;
 
 		}
