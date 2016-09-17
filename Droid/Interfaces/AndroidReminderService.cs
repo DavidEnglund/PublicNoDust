@@ -3,6 +3,7 @@ using Android.Content;
 using Dustbuster.Droid;
 using Android.Provider;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AndroidReminderService))]
 namespace Dustbuster.Droid
@@ -14,10 +15,30 @@ namespace Dustbuster.Droid
         /// </summary>
         /// <param name="title">The title of the reminder</param>
         /// <param name="message">The reminder message to be stored</param>
-        /// <param name="remindTime">The date picked from the Contact Request Page that triggers the reminder</param>
+        /// <param name="remindDate">The date picked from the Contact Request Page that triggers the reminder</param>        
 
-        public void AddReminder(string title, string message, DateTime remindTime)
-        {            
+        public void AddReminder(string title, string message, DateTime remindDate, string remindTime)
+        {
+            // Sets the reminder to the appropriate time. The implementation here may not be ideal, and will also need to be done on iOS.
+            // it should probably go in the view model ~ MM
+            switch (remindTime)
+            {
+                case "Morning":
+                    remindDate = remindDate.AddHours(8.00);
+                    break;
+                case "Afternoon":
+                    remindDate = remindDate.AddHours(12.00);
+                    break;
+                case "Evening":
+                    remindDate = remindDate.AddHours(16.00);
+                    break;
+                default:
+                    remindDate = remindDate.AddHours(8.00);
+                    break;
+            }
+
+            Debug.WriteLine("~ LOG ~ DATE TIME IS: {0} , YOU SELECTED {1} ", remindDate.ToString(), remindTime );
+
             // well here is where the magic happens I guess
             // start with getting  content value object to add the event details to
             ContentValues eventValues = new ContentValues();
@@ -43,8 +64,8 @@ namespace Dustbuster.Droid
                 eventValues.Put(CalendarContract.Events.InterfaceConsts.Description, message);
                 eventValues.Put(CalendarContract.Events.InterfaceConsts.SelfAttendeeStatus, "1");
                 // setting the start date and end date of the event. event will end one minute after start
-                eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtstart, Convert.ToInt64((remindTime.ToUniversalTime() - new DateTime(1970, 1, 1)).TotalMilliseconds));
-                eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtend, Convert.ToInt64((remindTime.AddMinutes(1).ToUniversalTime() - new DateTime(1970, 1, 1)).TotalMilliseconds));
+                eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtstart, Convert.ToInt64((remindDate.ToUniversalTime() - new DateTime(1970, 1, 1)).TotalMilliseconds));
+                eventValues.Put(CalendarContract.Events.InterfaceConsts.Dtend, Convert.ToInt64((remindDate.AddMinutes(1).ToUniversalTime() - new DateTime(1970, 1, 1)).TotalMilliseconds));
 
                 // setting the timezone to local time
                 eventValues.Put(CalendarContract.Events.InterfaceConsts.EventTimezone, TimeZone.CurrentTimeZone.StandardName);

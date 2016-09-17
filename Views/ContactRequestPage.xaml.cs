@@ -20,13 +20,16 @@ namespace Dustbuster
         public DatePicker DatePicker
         {
             get { return this.dpDate; }
-        }        
+        }
+
+        string timeSelected;
+
         // Pulls up the time select menu; morning, afternoon, evening
         async void OnTimeClicked(object sender, EventArgs args)
         {
             Button button = (Button)sender;
             // use display action sheet to bring the popup up
-            var timeSelected = await DisplayActionSheet("Select Time", "Cancel", null, "Morning", "Afternoon", "Evening");
+            timeSelected = await DisplayActionSheet("Select Time", "Cancel", null, "Morning", "Afternoon", "Evening");
             button.Text = timeSelected;
         }
 
@@ -39,12 +42,12 @@ namespace Dustbuster
                 var reminder = await DisplayAlert("So far, so good!", "Would you like to set a reminder in your phone's calendar?", "Yes", "No");
                 if (reminder)
                 {                               
-                    DependencyService.Get<IReminderervice>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date);
-                    Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date);
+                    DependencyService.Get<IReminderervice>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, timeSelected);
+                    Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, timeSelected);
                 }                
                     
                
-                // create data info object
+                // create data info object - Send this to wherever it needs to go..
                 Debug.WriteLine("LOG: Creating Contact Request Info Object NAME:{0} PH:{1} DATE:{2} TIME:{3}", etName.Text, etPhone.Text, dpDate.Date, btnTime.Text);
                 ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etPhone.Text, dpDate.Date, btnTime.Text);
             }            
@@ -60,10 +63,6 @@ namespace Dustbuster
             if (etName.Text != null)
             {
                 // stand back, I'm going to try regex!
-
-
-                //if (Regex.IsMatch(etName.Text, @"^[a-zA-Z]+$"))
-                //if (Regex.IsMatch(etName.Text, @"/^[a-z ,.'-]+$/i"))
                 if (Regex.IsMatch(etName.Text, @"^[a-z A-Z]+$"))
                 {
                     etName.Text = etName.Text.Trim();
