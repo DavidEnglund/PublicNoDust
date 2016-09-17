@@ -105,7 +105,7 @@ namespace Dustbuster
 				};
 			}
 		}
-
+        
 		public class SimpleObject
 		{
 			public string TextValue
@@ -118,8 +118,8 @@ namespace Dustbuster
 	public enum IndustryOptions { Civil, Mining };
     #region davids enums create
     // added some more enums for all of the users choices to be stored and used - david
-    public enum TrafficOptions { TraffickedArea, NonTraffickedArea };
-    public enum DurationOptions { UnderAMonth = 14,OverAMonth = 30,OverSixMonths=180};
-    public enum WeatherOptions { RainExpected,NoRainExpected};
+    public enum TrafficOptions { NonTraffickedArea, TraffickedArea };
+    public enum DurationOptions { UnderAMonth = 30,OverAMonth = 180,OverSixMonths=360};
+    public enum WeatherOptions{ RainExpected,NoRainExpected};
     #endregion
 }
