@@ -11,32 +11,23 @@ namespace Dustbuster
     public class CarouselLayout : ScrollView
     {
         public StackLayout _stack;
-        int _selectedIndex;
+        private int _selectedIndex;
+        private bool _layingOutChildren;
 
         public CarouselLayout(params Label[] labels)
         {
-            Debug.WriteLine("LOG 005 ~ CarouselLayout constructor");
             Orientation = ScrollOrientation.Horizontal;
             _stack = new StackLayout()
             {
                 Orientation = StackOrientation.Horizontal,
-                //david
                 Padding = 0,
                 Spacing = 0
             };
             Content = _stack;
         }
 
-        // populating the List with Stacklayout elements
-        public IList<View> Children
-        {
-            get
-            {
-                return _stack.Children;
-            }
-        }
+        
 
-        private bool _layingOutChildren;
         protected override void LayoutChildren(double x, double y, double width, double height)
         {
             base.LayoutChildren(x, y, width, height);
@@ -50,65 +41,12 @@ namespace Dustbuster
             }
             _layingOutChildren = false;
         }
-
-        public static readonly BindableProperty SelectedIndexProperty =
-            BindableProperty.Create(
-                nameof(SelectedIndex),
-                typeof(int),
-                typeof(CarouselLayout),
-                0,
-                BindingMode.TwoWay,
-                propertyChanged: async (bindable, oldValue, newValue) =>
-                {
-                    await ((CarouselLayout)bindable).UpdateSelectedItem();
-                }
-            );
-
-        public int SelectedIndex
-        {
-            get
-            {
-                return (int)GetValue(SelectedIndexProperty);
-            }
-            set
-            {
-                SetValue(SelectedIndexProperty, value);
-            }
-        }
-
+    
         private async Task UpdateSelectedItem()
         {
             await Task.Delay(300);
             SelectedItem = SelectedIndex > -1 ? Children[SelectedIndex].BindingContext : null;
             Debug.WriteLine("LOG ~ UpdateSelectedItem {0}", SelectedItem);
-        }
-
-        public static readonly BindableProperty ItemsSourceProperty =
-            BindableProperty.Create(
-                nameof(ItemsSource),
-                typeof(IList),
-                typeof(CarouselLayout),
-                null,
-                propertyChanging: (bindableObject, oldValue, newValue) =>
-                {
-                    ((CarouselLayout)bindableObject).ItemsSourceChanging();
-                },
-                propertyChanged: (bindableObject, oldValue, newValue) =>
-                {
-                    ((CarouselLayout)bindableObject).ItemsSourceChanged();
-                }
-            );
-
-        public IList ItemsSource
-        {
-            get
-            {
-                return (IList)GetValue(ItemsSourceProperty);
-            }
-            set
-            {
-                SetValue(ItemsSourceProperty, value);
-            }
         }
 
         private void ItemsSourceChanging()
@@ -132,10 +70,28 @@ namespace Dustbuster
 
             if (_selectedIndex >= 0)
                 SelectedIndex = _selectedIndex;
-
             Debug.WriteLine("LOG ~ Item source changed to {0}", SelectedIndex);
         }
 
+        private void UpdateSelectedProduct()
+        {
+            if (SelectedItem == BindingContext) return;
+
+            SelectedIndex = Children
+                .Select(c => c.BindingContext)
+                .ToList()
+                .IndexOf(SelectedItem);
+            Debug.WriteLine("LOG ~ UpdateSelectedProduct {0}", SelectedItem);
+        }
+
+        private void UpdateSelectedTitle()
+        {
+            SelectedTitle = ProductPage.viewModel.Products.ElementAt(_selectedIndex).ProductName;
+            Debug.WriteLine("LOG Title Changed to: {0}", SelectedTitle);
+        }
+
+
+        #region Bindable Properties
         public static readonly BindableProperty SelectedItemProperty =
             BindableProperty.Create(
                 nameof(SelectedItem),
@@ -149,37 +105,34 @@ namespace Dustbuster
                 }
             );
 
-        public object SelectedItem
-        {
-            get
-            {
-                return GetValue(SelectedItemProperty);
-            }
-            set
-            {
-                SetValue(SelectedItemProperty, value);
-            }
-        }
+        public static readonly BindableProperty ItemsSourceProperty =
+            BindableProperty.Create(
+                nameof(ItemsSource),
+                typeof(IList),
+                typeof(CarouselLayout),
+                null,
+                propertyChanging: (bindableObject, oldValue, newValue) =>
+                {
+                    ((CarouselLayout)bindableObject).ItemsSourceChanging();
+                },
+                propertyChanged: (bindableObject, oldValue, newValue) =>
+                {
+                    ((CarouselLayout)bindableObject).ItemsSourceChanged();
+                }
+            );
 
-        private void UpdateSelectedProduct()
-        {
-            if (SelectedItem == BindingContext) return;
-
-            SelectedIndex = Children
-                .Select(c => c.BindingContext)
-                .ToList()
-                .IndexOf(SelectedItem);
-
-            //This very much almost does not work at 100% (means it's broken)
-            /*thisClassLabels[0].Text = "CHANGED !! " + aSuperAwesomeCount.ToString();
-            thisClassLabels[1].Text = "CHANGED !!";
-            thisClassLabels[2].Text = "CHANGED !!";
-            thisClassLabels[3].Text = "CHANGED !!";
-            thisClassLabels[4].Text = "CHANGED !!";
-            aSuperAwesomeCount++;*/
-
-            Debug.WriteLine("LOG ~ UpdateSelectedProduct {0}", SelectedItem);
-        }
+        public static readonly BindableProperty SelectedIndexProperty =
+            BindableProperty.Create(
+                nameof(SelectedIndex),
+                typeof(int),
+                typeof(CarouselLayout),
+                0,
+                BindingMode.TwoWay,
+                propertyChanged: async (bindable, oldValue, newValue) =>
+                {
+                    await ((CarouselLayout)bindable).UpdateSelectedItem();
+                }
+            );
 
         //Not original code added  to create a bindable property for title
         public static readonly BindableProperty SelectedTitleProperty =
@@ -194,6 +147,26 @@ namespace Dustbuster
                     ((CarouselLayout)bindable).UpdateSelectedTitle();
                 }
             );
+        #endregion
+
+
+        // populating the List with Stacklayout elements
+        public IList<View> Children
+        {
+            get { return _stack.Children; }
+        }
+
+        public IList ItemsSource
+        {
+            get
+            {
+                return (IList)GetValue(ItemsSourceProperty);
+            }
+            set
+            {
+                SetValue(ItemsSourceProperty, value);
+            }
+        }
 
         public string SelectedTitle
         {
@@ -207,17 +180,30 @@ namespace Dustbuster
             }
         }
 
-        private void UpdateSelectedTitle()
+        public int SelectedIndex
         {
-            SelectedTitle = ProductPage.viewModel.Products.ElementAt(_selectedIndex).ProductName;
-            Debug.WriteLine("LOG Title Changed to: {0}", SelectedTitle);
+            get
+            {
+                return (int)GetValue(SelectedIndexProperty);
+            }
+            set
+            {
+                SetValue(SelectedIndexProperty, value);
+            }
         }
 
-
-        public DataTemplate ItemTemplate { get; set; }
-
-
+        public object SelectedItem
+        {
+            get
+            {
+                return GetValue(SelectedItemProperty);
+            }
+            set
+            {
+                SetValue(SelectedItemProperty, value);
+            }
+        }
         
+        public DataTemplate ItemTemplate { get; set; }
     }
-
 }

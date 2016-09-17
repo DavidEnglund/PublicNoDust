@@ -42,7 +42,6 @@
     </Compile>
     <Compile Include="DataAccess\DbConnectionManager.cs" />
     <Compile Include="Interfaces\ISQLite.cs" />
-    <Compile Include="Models\Carousel\PageModel.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Controls\SelectButtonGroup.cs" />
     <Compile Include="Controls\SelectImageButton.cs" />

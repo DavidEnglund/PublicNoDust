@@ -32,18 +32,9 @@
             </Image.GestureRecognizers>
           </Image>
         </StackLayout>
-        <!--
-        <Label x:Name="lblProductTitle"
-               Text="{Binding ProductName}"
-                TextColor="#ffffff"
-                FontSize="Large"
-               FontAttributes="Bold"
-                Grid.Row="1"
-                WidthRequest="100"
-                HorizontalOptions="Center"/>
-                -->
       </Grid>
     </ContentView>
+    
     
     <!-- Carousel View -->
     <ContentView VerticalOptions="FillAndExpand"
@@ -54,27 +45,8 @@
       </RelativeLayout>
     </ContentView>
     
-    <!-- Product Description -->
-       <!-- (Delete later)
-    <ContentView BackgroundColor="#ffffff"
-                  VerticalOptions="FillAndExpand"
-                  HorizontalOptions="FillAndExpand">
-      <StackLayout Padding="50, 20, 50, 0">
-     
-        <Label x:Name="lblDescription" x:FieldModifier="public" Text="Description of why this is the best option for you"
-                TextColor="Black"/>
-        <Label x:Name="lblQuantity" Text="You will need X amount"
-                TextColor="Black"/>
-        <Label x:Name="lblApplication" Text="You will need to apply this Y amount of times"
-                TextColor="Black"/>
-        <Label x:Name="lblRate" Text=""
-                TextColor="Black"/>
-                
-      </StackLayout>
-    </ContentView>
-    -->
     
-    <!-- Buttons Call now and Request contact -->
+    <!-- Buttons Call Us Now and Request contact -->
     <ContentView BackgroundColor="#ffffff"
                   VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand">
@@ -93,18 +65,6 @@
                 BorderWidth="2"
                 HeightRequest="50"
                 WidthRequest="175" />
-      
-        <!--<Button Text="Call Us Now"
-                BackgroundColor="#18b750"
-                TextColor="White"
-                Clicked="Button_CallNow"/>
-        <Button Text="Request Contact"
-                TextColor="#18b750"
-                BorderRadius="3"
-                BorderWidth="2"
-                BorderColor="#18b750"
-                BackgroundColor="White"
-                Clicked="Button_RequestCall"/>-->
       </StackLayout>
     </ContentView>
   </StackLayout>

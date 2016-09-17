@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
-
 using Xamarin.Forms;
 
 namespace Dustbuster.Views
@@ -15,12 +9,12 @@ namespace Dustbuster.Views
 
         public ProductPage()
         {
-            Debug.WriteLine("LOG 001 ~ Product Page Constructor");
             NavigationPage.SetHasNavigationBar(this, false);
 
             InitializeComponent();
             InitializeCarouselView();
         }
+
 
         private void InitializeCarouselView()
         {
@@ -54,8 +48,6 @@ namespace Dustbuster.Views
         //This method creates the carousel
         private CarouselLayout CreatePagesCarousel()
         {
-            Debug.WriteLine("LOG 004 ~ CreatePagesCarousel method");
-            
             var carousel = new CarouselLayout ()
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -69,9 +61,9 @@ namespace Dustbuster.Views
             return carousel;
         }
 
+        //This method creates the dots representing every page in the carousel
         private View CreatePagerIndicators()
         {
-            Debug.WriteLine("LOG 007 ~ CreatePagerIndicators called");
             PagerIndicatorDots pagerIndicator = new PagerIndicatorDots() { DotSize = 15, DotColor = Color.Black };
             pagerIndicator.SetBinding(PagerIndicatorDots.ItemsSourceProperty, "Products");
             pagerIndicator.SetBinding(PagerIndicatorDots.SelectedItemProperty, "CurrentProduct");
@@ -79,6 +71,8 @@ namespace Dustbuster.Views
             return pagerIndicator;
         }
        
+
+
         private async void TapProductButton(object sender, EventArgs e)
         {
             //Go back to the product information
@@ -100,10 +94,6 @@ namespace Dustbuster.Views
             // YO MIKEY! MAKE THIS BUTTON GO TO YOUR FAB CONTACT REQUEST PAGE
             // remove comment once merged
             // await Navigation.PushAsync(new ContactRequestPage());
-
-            
         }
-
-      
     }
 }
