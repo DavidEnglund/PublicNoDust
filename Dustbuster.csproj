@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="Models\ProductResult.cs" />
     <Compile Include="DataAccess\DbConnectionManager.cs" />
+    <Compile Include="Interfaces\IDialer.cs" />
     <Compile Include="Interfaces\ISQLite.cs" />
     <Compile Include="Models\Job.cs" />
     <Compile Include="Controls\SelectButtonGroup.cs" />
