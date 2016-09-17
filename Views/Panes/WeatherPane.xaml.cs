@@ -28,12 +28,13 @@ namespace Dustbuster
 			Title = "Rain Expected";
 			Image = "accordion_icon_weather_rain.png";
 
+			// set the option enum
+			App.WeatherOption = WeatherOptions.RainExpected;
+
 			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"]);
 			}
-            // set the option enum
-            App.WeatherOption  = WeatherOptions.RainExpected;
         }
 
 		//sunny area button click
@@ -43,12 +44,13 @@ namespace Dustbuster
 			Title = "No Rain Expected";
 			Image = "accordion_icon_weather_sun.png";
 
+			// set the option enums
+			App.WeatherOption = WeatherOptions.NoRainExpected;
+
 			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
 			{
 				Owner.VisitPane(Owner.Panes["LocationArea"]);
 			}
-            // set the option enums
-            App.WeatherOption = WeatherOptions.NoRainExpected;
         }
 	}
 }
