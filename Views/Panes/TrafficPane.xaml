@@ -27,6 +27,9 @@
 					SelectedBorderWidth="0"
 					SelectedImage="choice_traffic_light.png"
 
+					HoldBorderWidth="0"
+					HoldBorderColor="Black"
+
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
 					UnselectedImage="choice_traffic_light.png"
@@ -44,6 +47,9 @@
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
 					SelectedImage="choice_traffic_openroad.png"
+
+					HoldBorderWidth="0"
+					HoldBorderColor="Black"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"

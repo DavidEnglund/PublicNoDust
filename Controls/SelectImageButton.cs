@@ -13,6 +13,7 @@ namespace Dustbuster
 		
 		public static readonly BindableProperty SelectedBackgroundColorProperty = BindableProperty.Create("SelectedBackgroundColor", typeof(Color), typeof(SelectImageButton), Color.White);
 		public static readonly BindableProperty UnselectedBackgroundColorProperty = BindableProperty.Create("UnselectedBackgroundColor", typeof(Color), typeof(SelectImageButton), Color.Silver);
+		public static readonly BindableProperty HoldBackgroundColorProperty = BindableProperty.Create("HoldBackgroundColor", typeof(Color), typeof(SelectImageButton), Color.Olive);
 
 		// all of the selected and unselected values - selected first
 		// these will all need at least simple getter/setter function to be used with xaml
@@ -56,14 +57,13 @@ namespace Dustbuster
         }
 
         // new: hold colors for when the user touches and holds the button
-        private Color holdBackgroundColor;
         private Color holdBorderColor;
         private int holdBorderWidth;
 
         public Color HoldBackgroundColor
         {
-            get { return holdBackgroundColor; }
-            set { holdBackgroundColor = value; }
+			get { return (Color)GetValue(HoldBackgroundColorProperty); }
+			set { SetValue(HoldBackgroundColorProperty, value); }
         }
         public Color HoldBorderColor
         {
@@ -289,7 +289,6 @@ namespace Dustbuster
             selectedBorderColor = Color.Blue;
             selectedBorderWidth = 5;
 
-            holdBackgroundColor = Color.White;
             holdBorderColor = Color.Navy;
             holdBorderWidth = 5;
             

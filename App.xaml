@@ -12,12 +12,14 @@
 			<Style x:Key="miningSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
 				<Setter Property="SelectedBackgroundColor" Value="#079ece" />
 				<Setter Property="UnselectedBackgroundColor" Value="#47b6d9" />
+				<Setter Property="HoldBackgroundColor" Value="#0297c6" />
             </Style>
 
 			<!--Primary Civil Blue Colors-->
 			<Style x:Key="civilSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
 				<Setter Property="SelectedBackgroundColor" Value="#18b750" />
 				<Setter Property="UnselectedBackgroundColor" Value="#78dd9c" />
+				<Setter Property="HoldBackgroundColor" Value="#16b24d" />
             </Style>
 			
 			<!--Mining Accordion Colors-->
