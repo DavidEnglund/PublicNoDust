@@ -24,14 +24,14 @@
 					x:Name="under30Button"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
-					SelectedBackgroundColor="Black"
 					SelectedImage="choice_calendar_under30.png"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
-					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_calendar_under30.png"
 
+					Style="{DynamicResource selectableButtonStyle}"
+						
 					Padding="26"
 					Grid.Column="0"
 					Clicked="under30Button_clicked"
@@ -49,6 +49,8 @@
 					UnselectedBorderWidth="0"
 					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_calendar_over30.png"
+						
+					Style="{DynamicResource selectableButtonStyle}"
 
 					Padding="26"
 					Grid.Column="1"
@@ -69,6 +71,8 @@
 					UnselectedBackgroundColor="White"
 					UnselectedImage="choice_calendar_over180.png"
 
+					Style="{DynamicResource selectableButtonStyle}"
+						
 					Padding="26"
 					Grid.Column="2"
 					Clicked="over180Button_clicked"
