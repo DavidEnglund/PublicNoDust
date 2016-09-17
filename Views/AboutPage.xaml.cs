@@ -8,11 +8,12 @@ using Xamarin.Forms;
 
 namespace Dustbuster
 {
-    public partial class CalculationPage : ContentPage
+    public partial class AboutPage : ContentPage
     {
-        public CalculationPage()
+        public AboutPage()
         {
-            BindingContext = new AreaViewModel();
+            this.BindingContext = new AboutViewModel();
+
             InitializeComponent();
         }
     }

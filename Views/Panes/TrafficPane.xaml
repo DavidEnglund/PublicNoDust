@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<local:AccordionPane xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
+             x:Class="Dustbuster.TrafficPane">
+
+	<StackLayout>
+		<!--Header Text-->
+		<ContentView Padding="15">
+			<Label
+				x:Name="trafficHeader"
+				Text="Is your solution for a trafficed area?"
+				FontSize="21"
+				FontAttributes="Bold"
+				HorizontalOptions="Center"
+        Style="{DynamicResource labelStyle}"
+			/>
+		</ContentView>
+
+		<!--Button Choice Group-->
+		<StackLayout Orientation="Vertical" HorizontalOptions="Center">
+			<Grid>
+				<!--Traffic Button-->
+				<local:SelectImageButton
+					x:Name="traffickedButton"
+					SelectedBorderColor="Black"
+					SelectedBorderWidth="0"
+					SelectedImage="choice_traffic_light.png"
+
+					UnselectedBorderColor="White"
+					UnselectedBorderWidth="0"
+					UnselectedImage="choice_traffic_light.png"
+
+					Style="{DynamicResource selectableButtonStyle}"
+						
+					Padding="26"
+					Grid.Column="0"
+					Clicked="traffickedButton_clicked"
+				/>
+
+				<!--OpenRoad Button-->
+				<local:SelectImageButton
+					x:Name="nonTraffickedButton"
+					SelectedBorderColor="Black"
+					SelectedBorderWidth="0"
+					SelectedImage="choice_traffic_openroad.png"
+
+					UnselectedBorderColor="White"
+					UnselectedBorderWidth="0"
+					UnselectedImage="choice_traffic_openroad.png"
+
+					Style="{DynamicResource selectableButtonStyle}"
+
+					Padding="26"
+					Grid.Column="1"
+					Clicked="nonTraffickedButton_clicked"
+				/>
+			</Grid>
+
+		<!--Answer Choice Text-->
+		</StackLayout>
+		<ContentView Padding="40,20,40,10">
+			<Label
+				x:Name="trafficAnswer"
+				Text="Tap on the traffic light or open road to select your option"
+				XAlign="Center"
+				FontSize="17"
+				HorizontalOptions="CenterAndExpand"
+        Style="{DynamicResource labelStyle}"
+			/>
+		</ContentView>
+	</StackLayout>
+
+</local:AccordionPane>

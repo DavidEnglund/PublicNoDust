@@ -18,6 +18,7 @@
 
   <!--Sunhawk Colours (MINING aka Green)-->
   <color name="colourMiningGreenPrimary">#18b750</color>
+  <color name="colourMiningGreenPrimaryUnselected">#78dd9c</color>
   <color name="colourMiningGreenAccordionHeaderTrafficed">#23c15b</color>
   <color name="colourMiningGreenAccordionHeaderCalendar">#2ecf67</color>
   <color name="colourMiningGreenAccordionHeaderWeather">#34ce6a</color>
@@ -31,6 +32,7 @@
 
   <!--RainStorm Colours (CIVIL aka Blue)-->
   <color name="colourCivilBluePrimary">#079ece</color>
+  <color name="colourCivilBluePrimaryUnselected">#47b6d9</color>
   <color name="colourCivilBlueAccordionHeaderTrafficed">#0da0cf</color>
   <color name="colourCivilBlueAccordionHeaderCalendar">#1ca4d0</color>
   <color name="colourCivilBlueAccordionHeaderWeather">#25aeda</color>

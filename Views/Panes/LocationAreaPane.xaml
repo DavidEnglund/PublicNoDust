@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:AccordionPane xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
+             x:Class="Dustbuster.LocationAreaPane">
+<StackLayout>
+  <StackLayout Padding="70,10,70,0">
+      <Label Text="What is the location,length and width of your area?"
+             FontSize="16"
+             TextColor="Black"
+             HorizontalOptions="Center"
+             HorizontalTextAlignment="Center"
+             VerticalTextAlignment="Center"
+             VerticalOptions="Center"
+             Style="{DynamicResource labelStyle}"/>
+  </StackLayout>
+
+  <StackLayout Padding="50,0,60,0">
+    <Label  Text="Location"
+            TextColor="Black"
+            FontSize="13"
+            Style="{DynamicResource labelStyle}"/>
+  </StackLayout>
+    
+  <StackLayout Padding="60,0,60,0">
+    <Entry  BackgroundColor="#d9d9d9"
+            Placeholder="Suburb or Mine site"
+            WidthRequest="100"/>
+  </StackLayout>
+    
+  <StackLayout Padding="50,0,60,0">
+    <Label  Text="Length"
+            TextColor="Black"
+            FontSize="13"
+            Style="{DynamicResource labelStyle}"/>
+  </StackLayout>
+  
+  <StackLayout Padding="60,0,60,0"
+               Orientation="Horizontal">
+    <Entry  Placeholder="Input Length"
+            x:Name="entry_length"
+            Keyboard="Numeric"
+            BackgroundColor="#d9d9d9"
+            WidthRequest="190"
+            Text="{Binding Length, Mode=TwoWay}"/>
+   
+    <Button Text="{Binding LengthMetrix, Mode=TwoWay}"
+            x:Name="bToggle_length"
+            WidthRequest="60"
+            Command="{Binding ChangeLengthMetrix}"/>
+  </StackLayout>
+  
+  <StackLayout Padding="50,0,60,0">
+    <Label Text="Width"
+           TextColor="Black"
+           FontSize="13"
+           Style="{DynamicResource labelStyle}"/>
+  </StackLayout>
+    
+  <StackLayout Orientation="Horizontal"
+               Padding="60,0,60,30">
+    <Entry  Placeholder="Input Width" 
+            x:Name="entry_width" 
+            Keyboard="Numeric" 
+            BackgroundColor="#d9d9d9"
+            WidthRequest="190"
+            Text="{Binding Width, Mode=TwoWay}"/>
+      
+    <Button Text="{Binding WidthMetrix, Mode=TwoWay}" 
+            x:Name="bToggle_width" 
+            WidthRequest="60"
+            Command="{Binding ChangeWidthMetrix}"/>
+  </StackLayout>
+    <Button Text="Calculate"
+            x:Name="bCalculation"
+            Command="{Binding CalculateArea}" 
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
+  </StackLayout>
+</local:AccordionPane>

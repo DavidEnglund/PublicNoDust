@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 
 namespace Dustbuster
 {
-    public partial class CalculationPage : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public CalculationPage()
+        public SettingsPage()
         {
-            BindingContext = new AreaViewModel();
+			this.BindingContext = new SettingsViewModel();
+
             InitializeComponent();
         }
     }

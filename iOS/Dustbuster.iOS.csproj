@@ -121,12 +121,16 @@
     <BundleResource Include="Resources\accordion_icon_weather_sun.png" />
     <BundleResource Include="Resources\choice_calendar_over30.png" />
     <Compile Include="Renderers\SelectImageButtonRenderer.cs" />
+    <BundleResource Include="Resources\about_icon.png" />
+    <BundleResource Include="Resources\hamburger_icon.png" />
+    <BundleResource Include="Resources\settings_icon.png" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <Content Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <BundleResource Include="Resources\accordion_icon_traffic_openroad.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dustbuster.SettingsPage"
+             Title="Settings">
+  <StackLayout>
+  <StackLayout Padding="50,10,50,10">
+      
+                <Label x:Name="NameLabel"
+                       Text="Your Name:"
+                       VerticalOptions="Center"
+                       TextColor="Black"/>
+
+                <Entry x:Name="NameTextEntry"
+                       BackgroundColor="#d9d9d9"
+					   Text="{Binding CustomerName, Mode=TwoWay}"
+                       Placeholder="E.g. John Smith"/>
+			
+                <Label x:Name="ContactMethodLabel"
+                       Text="Contact Method:"
+                       TextColor="Black" />
+
+                <Picker x:Name="ContactMethodPicker"
+                        SelectedIndex="{Binding ContactMethod, Mode=TwoWay}"
+                        BackgroundColor="#d9d9d9">
+                    <Picker.Items>
+			            <x:String>Phone</x:String> 
+			            <x:String>Email</x:String>
+			        </Picker.Items>
+				</Picker>
+
+                <Entry x:Name="ContactInfoEntry"
+                       BackgroundColor="#d9d9d9"
+					   Text="{Binding ContactInfo, Mode=TwoWay}"
+                       WidthRequest="10"  />
+
+          <StackLayout Orientation="Horizontal"
+                       Padding="0,20,0,0">
+
+               <Switch x:Name="AnalyticsSwitch"
+                       IsToggled="{Binding EnableAnalytics, Mode=TwoWay}"/>
+
+                <Label x:Name="AnalyticsLabel"
+                       Text="Send Analytics"
+                       HorizontalTextAlignment="End"
+                       TextColor="Black"/>
+          </StackLayout>
+
+          <StackLayout Orientation="Horizontal"
+                       Padding="0,0,0,0">
+        
+               <Switch x:Name="ReadModeSwitch"
+                       IsToggled="{Binding EnableReadMode, Mode=TwoWay}" />
+
+                <Label x:Name="ReadModeLabel"
+                       Text="Reading Mode"
+                       HorizontalTextAlignment="End"
+                       TextColor="Black" />
+           </StackLayout>
+     
+    </StackLayout>
+  </StackLayout>
+</ContentPage>
