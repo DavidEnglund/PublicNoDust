@@ -3480,11 +3480,29 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f020078
 			public const int mr_ic_settings_light = 2130837624;
 			
-			// aapt resource value: 0x7f02007a
-			public const int notification_template_icon_bg = 2130837626;
+			// aapt resource value: 0x7f020080
+			public const int notification_template_icon_bg = 2130837632;
 			
 			// aapt resource value: 0x7f020079
-			public const int success_tick = 2130837625;
+			public const int rainstrom_logo_lg = 2130837625;
+			
+			// aapt resource value: 0x7f02007a
+			public const int rainstrom_logo_md = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int rainstrom_logo_sm = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public const int success_tick = 2130837628;
+			
+			// aapt resource value: 0x7f02007d
+			public const int sunhawk_logo_lg = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int sunhawk_logo_md = 2130837630;
+			
+			// aapt resource value: 0x7f02007f
+			public const int sunhawk_logo_sm = 2130837631;
 			
 			static Drawable()
 			{

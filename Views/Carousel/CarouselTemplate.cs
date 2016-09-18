@@ -7,8 +7,9 @@ namespace Dustbuster
     class CarouselTemplate : ContentView
     {
         Label lblTitle, lblDescription, lblQuantity, lblApplication, lblRate;
-        StackLayout stackTitleWrap, stackLabelWrap, parent;
-        Image productImage;
+        StackLayout stackTitleWrap, parent;
+        ScrollView scrollingLabelWrap;
+        Image productImage, logoImage;
 
         public CarouselTemplate()
         {
@@ -65,21 +66,43 @@ namespace Dustbuster
                 HorizontalOptions = LayoutOptions.Fill,
                 Aspect = Aspect.AspectFill
             };
+
+            logoImage = new Image
+            {
+                Source = "sunhawk_logo_sm.png"
+                //HeightRequest = 40
+            };
             //Assign tap gesture to ProductImage
             AddImageTap();
 
             stackTitleWrap = new StackLayout
             {
                 Padding = new Thickness(0, 10),     // Add padding to the layout between title and rest of page
+                Spacing = 0,
                 BackgroundColor = Color.FromHex("#18b750"),
             };
 
-            stackLabelWrap = new StackLayout
+            //Everything inside of here will be able to scoll vertically
+            scrollingLabelWrap = new ScrollView
             {
-                Padding = new Thickness(20),
-                BackgroundColor = Color.FromHex("#ffffff"),
-                Spacing = 10,
-            };
+                VerticalOptions = LayoutOptions.Fill,
+                Orientation = ScrollOrientation.Vertical,
+
+                //This is were the main labels are placed into
+                Content = new StackLayout
+                {
+                    Padding = new Thickness(20),
+                    BackgroundColor = Color.FromHex("#f2f2f2"),
+                    Spacing = 10,
+                    Children =
+                    {
+                        lblDescription,
+                        lblQuantity,
+                        lblRate,
+                        lblApplication
+                    }
+                }
+        };
 
             parent = new StackLayout
             {
@@ -88,21 +111,17 @@ namespace Dustbuster
                 Children = {
                     stackTitleWrap,
                     productImage,
-                    stackLabelWrap
+                    scrollingLabelWrap
                 }
             };
 
 
+            stackTitleWrap.Children.Add(logoImage);
             stackTitleWrap.Children.Add(lblTitle);
-
-            stackLabelWrap.Children.Add(lblDescription);
-            stackLabelWrap.Children.Add(lblQuantity);
-            stackLabelWrap.Children.Add(lblRate);
-            stackLabelWrap.Children.Add(lblApplication);
 
             parent.Children.Add(stackTitleWrap);
             parent.Children.Add(productImage);
-            parent.Children.Add(stackLabelWrap);
+            parent.Children.Add(scrollingLabelWrap);
         }
 
         /// <summary>
