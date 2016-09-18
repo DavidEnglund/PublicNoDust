@@ -13,7 +13,6 @@ namespace Dustbuster
 
 			Header.SetDynamicResource(StyleProperty, "locationAccordionStyle");
 
-
         }
 	}
 }
