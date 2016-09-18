@@ -39,6 +39,7 @@ namespace Dustbuster
 			Image = "accordion_icon_calendar_under30.png";
 			//set the option enum
 			App.DurationOption = DurationOptions.Under1Month;
+			if (App.TrafficOption == TrafficOptions.TraffickedArea) { App.WeatherOption = WeatherOptions.None; }
 			//Trafficked Areas always goto LocationArea, Non Trafficked under 30 goes to weather
 			(App.TrafficOption == TrafficOptions.TraffickedArea ? (Action)goToLocationAreaPane : goToWeatherPane)();
         }

@@ -39,6 +39,8 @@ namespace Dustbuster
 			{
 				//set the option enum
 				App.TrafficOption = TrafficOptions.TraffickedArea;
+				App.WeatherOption = WeatherOptions.None;
+				App.DurationOption = DurationOptions.None;
 				//visit calendar pane
 				Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["Calendar"]);
 			}
@@ -55,6 +57,8 @@ namespace Dustbuster
 			{
 				//set the option enum
 				App.TrafficOption = TrafficOptions.NonTraffickedArea;
+				App.WeatherOption = WeatherOptions.None;
+				App.DurationOption = DurationOptions.None;
 				//visit calendar pane
 				Owner.VisitPane(Owner.Panes["Calendar"]);
 			}
