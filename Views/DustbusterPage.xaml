@@ -219,20 +219,20 @@
                      Property=Width,
                      Factor=0.5,
                      Constant=0}">
-          <StackLayout Orientation="Vertical"
+			<StackLayout Orientation="Vertical"
                        Spacing="2">
-            <Image Source="settings_icon.png"
+            <Image Source="about_icon.png"
                    Aspect="AspectFit"
                    HorizontalOptions="Fill"
                    HeightRequest="28"/>
-            <Label Text="Settings"
+            <Label Text="About"
                    HorizontalOptions="Fill"
                    HorizontalTextAlignment="Center"
                    FontSize="14"
                    TextColor="White"/>
           </StackLayout>
           <ContentView.GestureRecognizers>
-            <TapGestureRecognizer Tapped="btnSettings_Clicked"
+            <TapGestureRecognizer Tapped="btnAbout_Clicked"
                                   NumberOfTapsRequired="1"/>
           </ContentView.GestureRecognizers>
         </ContentView>
@@ -262,18 +262,18 @@
                      Constant=1}">
           <StackLayout Orientation="Vertical"
                        Spacing="2">
-            <Image Source="about_icon.png"
+            <Image Source="settings_icon.png"
                    Aspect="AspectFit"
                    HorizontalOptions="Fill"
                    HeightRequest="28"/>
-            <Label Text="About"
+            <Label Text="Settings"
                    HorizontalOptions="Fill"
                    HorizontalTextAlignment="Center"
                    FontSize="14"
                    TextColor="White"/>
           </StackLayout>
           <ContentView.GestureRecognizers>
-            <TapGestureRecognizer Tapped="btnAbout_Clicked"
+            <TapGestureRecognizer Tapped="btnSettings_Clicked"
                                   NumberOfTapsRequired="1"/>
           </ContentView.GestureRecognizers>
         </ContentView>
