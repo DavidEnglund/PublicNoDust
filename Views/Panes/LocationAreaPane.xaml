@@ -24,7 +24,7 @@
     
   <StackLayout Padding="60,0,60,0">
     <Entry  BackgroundColor="#d9d9d9"
-            Placeholder="Suburb or Mine site"
+            Placeholder="Suburb or Mine Site"
             WidthRequest="100"/>
   </StackLayout>
     
@@ -37,7 +37,7 @@
   
   <StackLayout Padding="60,0,60,0"
                Orientation="Horizontal">
-    <Entry  Placeholder="Input Length"
+    <Entry  Placeholder="0"
             x:Name="entry_length"
             Keyboard="Numeric"
             BackgroundColor="#d9d9d9"
@@ -59,7 +59,7 @@
     
   <StackLayout Orientation="Horizontal"
                Padding="60,0,60,0">
-    <Entry  Placeholder="Input Width" 
+    <Entry  Placeholder="0" 
             x:Name="entry_width" 
             Keyboard="Numeric" 
             BackgroundColor="#d9d9d9"
