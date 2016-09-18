@@ -11,7 +11,7 @@ namespace Dustbuster
     public class SwitcherPageViewModel : BaseViewModel
     {
         private int concentration;
-        private string productName = "Ken sucks big ones";
+        private string productName = "Nice";
         private ObservableCollection<ProductDescription> products;
         ProductDescription currentProduct;
 

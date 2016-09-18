@@ -20,7 +20,7 @@ namespace Dustbuster
             HorizontalOptions = LayoutOptions.CenterAndExpand;
             VerticalOptions = LayoutOptions.Center;
             Orientation = StackOrientation.Horizontal;
-            DotColor = Color.Black;
+            DotColor = Color.FromHex("#18b750");
         }
         
 
