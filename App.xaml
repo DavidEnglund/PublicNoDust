@@ -4,10 +4,24 @@
   	  <ResourceDictionary>
       			<Style x:Key="normalLabelStyle" TargetType="Label">
         			<Setter Property="TextColor" Value="White" />
-     	    		</Style>
+     	    	</Style>
     			<Style x:Key="readModeLabelStyle" TargetType="Label">
         			<Setter Property="TextColor" Value="Black" />
      	 		</Style>
+     	 		<!--Accordion Text Styles-->
+				<Style x:Key="greyHeaderLabelStyle" TargetType="Label">
+					<Setter Property="TextColor" Value="#5a5d5e" />
+					<Setter Property="FontSize" Value="21" />
+					<Setter Property="FontAttributes" Value="Bold" />
+					<Setter Property="HorizontalOptions" Value="Center" />
+					<Setter Property="HorizontalTextAlignment" Value="Center" />
+				</Style>
+				<Style x:Key="greyAnswerLabelStyle" TargetType="Label">
+					<Setter Property="TextColor" Value="#5a5d5e" />
+					<Setter Property="FontSize" Value="17" />
+					<Setter Property="HorizontalTextAlignment" Value="Center" />
+					<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+				</Style>
 			<!--Primary Mining Green Colors-->
 			<Style x:Key="miningSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
 				<Setter Property="SelectedBackgroundColor" Value="#079ece" />

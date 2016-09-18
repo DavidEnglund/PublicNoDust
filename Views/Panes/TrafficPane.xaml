@@ -10,10 +10,7 @@
 			<Label
 				x:Name="trafficHeader"
 				Text="Is your solution for a trafficed area?"
-				FontSize="21"
-				FontAttributes="Bold"
-				HorizontalOptions="Center"
-        Style="{DynamicResource labelStyle}"
+        		Style="{DynamicResource greyHeaderLabelStyle}"
 			/>
 		</ContentView>
 
@@ -69,10 +66,7 @@
 			<Label
 				x:Name="trafficAnswer"
 				Text="Tap on the traffic light or open road to select your option"
-				XAlign="Center"
-				FontSize="17"
-				HorizontalOptions="CenterAndExpand"
-        Style="{DynamicResource labelStyle}"
+        		Style="{DynamicResource greyAnswerLabelStyle}"
 			/>
 		</ContentView>
 	</StackLayout>

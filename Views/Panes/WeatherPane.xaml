@@ -10,10 +10,7 @@
 			<Label
 				x:Name="weatherHeader"
 				Text="Do you expect rain in the area?"
-				FontSize="21"
-				FontAttributes="Bold"
-				HorizontalOptions="Center"
-        Style="{DynamicResource labelStyle}"
+        		Style="{DynamicResource greyHeaderLabelStyle}"
 			/>
 		</ContentView>
 
@@ -69,9 +66,7 @@
 			<Label
 				x:Name="weatherAnswer"
 				Text="Tap on the rain cloud or sun to select your option"
-				XAlign="Center"
-				FontSize="17"
-				HorizontalOptions="CenterAndExpand"
+				Style="{DynamicResource greyAnswerLabelStyle}"
 			/>
 		</ContentView>
 	</StackLayout>

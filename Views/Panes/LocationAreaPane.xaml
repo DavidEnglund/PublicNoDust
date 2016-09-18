@@ -4,21 +4,17 @@
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.LocationAreaPane">
 <StackLayout>
-  <StackLayout Padding="70,10,70,0">
+  <StackLayout Padding="30,0,30,0">
       <Label Text="What is the location,length and width of your area?"
-             FontSize="16"
-             TextColor="Black"
-             HorizontalOptions="Center"
-             HorizontalTextAlignment="Center"
              VerticalTextAlignment="Center"
              VerticalOptions="Center"
-             Style="{DynamicResource labelStyle}"/>
+             Style="{DynamicResource greyHeaderLabelStyle}"/>
   </StackLayout>
 
   <StackLayout Padding="50,0,60,0">
     <Label  Text="Location"
-            TextColor="Black"
             FontSize="13"
+			FontAttributes="Bold"
             Style="{DynamicResource labelStyle}"/>
   </StackLayout>
     
@@ -30,8 +26,8 @@
     
   <StackLayout Padding="50,0,60,0">
     <Label  Text="Length"
-            TextColor="Black"
             FontSize="13"
+			FontAttributes="Bold"
             Style="{DynamicResource labelStyle}"/>
   </StackLayout>
   
@@ -52,8 +48,8 @@
   
   <StackLayout Padding="50,0,60,0">
     <Label Text="Width"
-           TextColor="Black"
            FontSize="13"
+		   FontAttributes="Bold"
            Style="{DynamicResource labelStyle}"/>
   </StackLayout>
     

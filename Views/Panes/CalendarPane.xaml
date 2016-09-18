@@ -9,10 +9,7 @@
 			<Label
 				x:Name="calendarHeader"
 				Text="How long do you expect to require a solution?"
-				FontSize="21"
-				FontAttributes="Bold"
-				HorizontalOptions="Center"
-        		Style="{DynamicResource labelStyle}"
+        		Style="{DynamicResource greyHeaderLabelStyle}"
 			/>
 		</ContentView>
 
@@ -90,9 +87,7 @@
 			<Label
 				x:Name="calendarAnswer"
 				Text="Tap on a calendar to select your option"
-				XAlign="Center"
-				FontSize="17"
-				HorizontalOptions="CenterAndExpand"
+				Style="{DynamicResource greyAnswerLabelStyle}"
 			/>
 		</ContentView>
 	</StackLayout>
