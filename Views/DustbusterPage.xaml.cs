@@ -10,7 +10,6 @@ namespace Dustbuster
 			InitializeComponent();
 		}
 
-
         private async void TapCivilButton(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AccordionPage());

@@ -1,4 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using Dustbuster.Views.Carousel;
+using System;
+using Xamarin.Forms;
 
 namespace Dustbuster
 {
@@ -63,7 +65,8 @@ namespace Dustbuster
                 HorizontalOptions = LayoutOptions.Fill,
                 Aspect = Aspect.AspectFill
             };
-            
+            //Assign tap gesture to ProductImage
+            AddImageTap();
 
             stackTitleWrap = new StackLayout
             {
@@ -100,6 +103,26 @@ namespace Dustbuster
             parent.Children.Add(stackTitleWrap);
             parent.Children.Add(productImage);
             parent.Children.Add(stackLabelWrap);
+        }
+
+        /// <summary>
+        /// This method adds a tap gesture to the product image
+        /// </summary>
+        private void AddImageTap()
+        {
+            //Create a new tap gesture and assign it to the image
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += (s, e) =>
+            {
+                ImageTapEvent(s, e);
+            };
+            productImage.GestureRecognizers.Add(tapGestureRecognizer);
+        }
+
+        //This method handles the tap event which opens the ImageViewer
+        private async void ImageTapEvent(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new ImageViewer(productImage));
         }
 
         private void SetBindings()

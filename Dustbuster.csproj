@@ -53,6 +53,7 @@
       <DependentUpon>CalculationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Carousel\CarouselLayout.cs" />
+    <Compile Include="Views\Carousel\ImageViewer.cs" />
     <Compile Include="Views\Carousel\PageIndicatorDots.cs" />
     <Compile Include="Views\DustbusterPage.xaml.cs">
       <DependentUpon>DustbusterPage.xaml</DependentUpon>
@@ -107,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app_title.png" />
+    <Content Include="cross_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ProductPage.xaml">
