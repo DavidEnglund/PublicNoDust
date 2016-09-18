@@ -22,40 +22,85 @@ namespace Dustbuster
             get { return this.dpDate; }
         }
 
-        string timeSelected;
-
-        // Pulls up the time select menu; morning, afternoon, evening
-        async void OnTimeClicked(object sender, EventArgs args)
+        #region Page Buttons
+        string contactType; // either Phone or Email        
+        double remindTime;
+        // Pulls up the contact type selcted menu
+        private async void OnContactClicked(object sender, EventArgs args)
         {
             Button button = (Button)sender;
-            // use display action sheet to bring the popup up
-            timeSelected = await DisplayActionSheet("Select Time", "Cancel", null, "Morning", "Afternoon", "Evening");
-            button.Text = timeSelected;
+            contactType = await DisplayActionSheet("Select Method of Contact", "", null, "Phone", "Email");
+            //change the place holder
+            etContact.Text = ""; // clear the text;
+            switch (contactType)
+            {
+                case "Email":
+                    etContact.Placeholder = "johndoe@mail.com";
+                    etContact.Keyboard = Keyboard.Email;
+                    button.Text = "Email";
+                    break;
+                case "Phone":
+                    etContact.Placeholder = "04 123 456 78";
+                    etContact.Keyboard = Keyboard.Telephone;
+                    button.Text = "Phone";
+                    break;
+                default:
+                    break;
+            }
         }
 
-        async void OnSubmitClicked(object sender, EventArgs args)
+        // Pulls up the time select menu; morning, afternoon, evening
+        private async void OnTimeClicked(object sender, EventArgs args)
+        {
+            Button button = (Button)sender;
+            // use display action sheet to bring the popup up            
+            string pickTime = await DisplayActionSheet("Select Time", "", null, "Morning", "Midday", "Afternoon", "Evening");
+            // either Morning(8AM), Midday(12-noon), Afternoon(2pm) or Evening(5pm)
+            switch (pickTime)
+            {
+                case "Evening":
+                    remindTime = 16.00;
+                    break;
+                case "Afternoon":
+                    remindTime = 14.00;
+                    break;
+                case "Midday":
+                    remindTime = 12.00;
+                    break;
+                case "Morning": // defaults to morning
+                default:
+                    remindTime = 8.00;
+                    break;
+            }
+            button.Text = pickTime;
+        }
+
+        private async void OnSubmitClicked(object sender, EventArgs args)
         {
             Button button = (Button)sender;
             // validate the text entry fields
             if (ValidateFields())
             {
-                var reminder = await DisplayAlert("So far, so good!", "Would you like to set a reminder in your phone's calendar?", "Yes", "No");
-                if (reminder)
-                {                               
-                    DependencyService.Get<IReminderervice>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, timeSelected);
-                    Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, timeSelected);
-                }                
-                    
-               
-                // create data info object - Send this to wherever it needs to go..
-                Debug.WriteLine("LOG: Creating Contact Request Info Object NAME:{0} PH:{1} DATE:{2} TIME:{3}", etName.Text, etPhone.Text, dpDate.Date, btnTime.Text);
-                ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etPhone.Text, dpDate.Date, btnTime.Text);
-            }            
+                var pickReminder = await DisplayAlert("So far, so good!", "Would you like to set a reminder in your contact's calendar?", "Yes", "No");
+                if (pickReminder)
+                {
+                    // the date and time to be passed into the reminder
+                    DateTime remindDate = DatePicker.Date;                   
+                    remindDate.AddHours(remindTime);
+
+                    DependencyService.Get<IReminderervice>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", remindDate);
+                    Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, remindDate);
+                }
+                // create data info object - Send this to wherever it needs to go..                
+                ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text, dpDate.Date);
+            }
         }
         // calls the methods used to validate the input fields
+        #endregion
+
         private bool ValidateFields()
         {
-            return (ValidName() && ValidPhone()) ? true : false;
+            return (ValidName() && ValidContact()) ? true : false;
         }
         // check if the input name is valid
         private bool ValidName()
@@ -78,15 +123,15 @@ namespace Dustbuster
                 return false;
             }
         }
-        // check if the phone number is valid
-        private bool ValidPhone()
+        // check if the contact number is valid
+        private bool ValidContact()
         {
-            if (etPhone.Text != null)
+            if (etContact.Text != null)
             {
-                etPhone.Text = etPhone.Text.Trim();
+                etContact.Text = etContact.Text.Trim();
                 return true;
             } else {
-                DisplayAlert("Whoops!", "You forgot to input your phone number", "Ok");
+                DisplayAlert("Whoops!", "You forgot to input your contact info", "Ok");
                 return false;
             }
         }

@@ -5,16 +5,15 @@ namespace Dustbuster
     class ContactRequestInfo
     {
         string name;
-        string phone;
+        string contact;
         DateTime date;
-        string time;
         
-        public ContactRequestInfo( string name, string phone, DateTime date, string time)
+        
+        public ContactRequestInfo( string name, string contact, DateTime date)
         {
             this.name = name;
-            this.phone = phone;
-            this.date = date;
-            this.time = time;
+            this.contact = contact;
+            this.date = date;            
         }
     }
 }

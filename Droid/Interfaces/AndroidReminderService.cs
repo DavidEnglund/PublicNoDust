@@ -17,27 +17,12 @@ namespace Dustbuster.Droid
         /// <param name="message">The reminder message to be stored</param>
         /// <param name="remindDate">The date picked from the Contact Request Page that triggers the reminder</param>        
 
-        public void AddReminder(string title, string message, DateTime remindDate, string remindTime)
+        public void AddReminder(string title, string message, DateTime remindDate)
         {
             // Sets the reminder to the appropriate time. The implementation here may not be ideal, and will also need to be done on iOS.
-            // it should probably go in the view model ~ MM
-            switch (remindTime)
-            {
-                case "Morning":
-                    remindDate = remindDate.AddHours(8.00);
-                    break;
-                case "Afternoon":
-                    remindDate = remindDate.AddHours(12.00);
-                    break;
-                case "Evening":
-                    remindDate = remindDate.AddHours(16.00);
-                    break;
-                default:
-                    remindDate = remindDate.AddHours(8.00);
-                    break;
-            }
+           // it should probably go in the view model ~ MM
 
-            Debug.WriteLine("~ LOG ~ DATE TIME IS: {0} , YOU SELECTED {1} ", remindDate.ToString(), remindTime );
+            Debug.WriteLine("~ LOG ~ DATE TIME IS: {0} , YOU SELECTED {1} ", remindDate.ToString());
 
             // well here is where the magic happens I guess
             // start with getting  content value object to add the event details to
