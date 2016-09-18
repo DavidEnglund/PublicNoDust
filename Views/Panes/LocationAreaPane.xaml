@@ -40,10 +40,10 @@
             WidthRequest="190"
             Text="{Binding Length, Mode=TwoWay}"/>
    
-    <Button Text="{Binding LengthMetrix, Mode=TwoWay}"
+    <Button Text="{Binding LengthUnit, Converter={StaticResource unitNotationConverter}}"
             x:Name="bToggle_length"
             WidthRequest="60"
-            Command="{Binding ChangeLengthMetrix}"/>
+            Command="{Binding ChangeLengthUnit}"/>
   </StackLayout>
   
   <StackLayout Padding="50,0,60,0">
@@ -62,10 +62,10 @@
             WidthRequest="190"
             Text="{Binding Width, Mode=TwoWay}"/>
       
-    <Button Text="{Binding WidthMetrix, Mode=TwoWay}" 
+    <Button Text="{Binding WidthUnit, Converter={StaticResource unitNotationConverter}}" 
             x:Name="bToggle_width" 
             WidthRequest="60"
-            Command="{Binding ChangeWidthMetrix}"/>
+            Command="{Binding ChangeWidthUnit}"/>
   </StackLayout>
     <Button Text="Calculate"
             x:Name="bCalculation"
