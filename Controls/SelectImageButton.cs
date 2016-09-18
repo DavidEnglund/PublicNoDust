@@ -254,9 +254,17 @@ namespace Dustbuster
         public event EventHandler Clicked
         {
             remove { tapRecognizer.Tapped -= value; }
-            add { tapRecognizer.Tapped += value; }
+            add {
+                tapRecognizer.Tapped += value;
+                clickEvents += value;
+            }
         }
-
+        // code to get all of the click event code and send it to ios as it does not run the forms click if you hold the button
+        private EventHandler clickEvents;
+        public EventHandler ClickEvents
+        {
+            get { return clickEvents; }
+        }
         // the init class
         public SelectImageButton()
         {
