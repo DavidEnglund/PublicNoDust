@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +74,12 @@ namespace Dustbuster.Views
                     
                     productStrings.Add(new string[] { productDescription.ProductName, formattedDescription });
                 }
+
+            // interum testing
+            foreach (string[] testingMatrixResult in productStrings)
+            {
+                    Debug.WriteLine(testingMatrixResult[0] + " ----- " + testingMatrixResult[1]);
+            }
                 // and finally we need to put this data in a carousel data source that I dont have yet
                 /*
                 List<HomeViewModel> CarouselSource = new List<HomeViewModel>();
@@ -83,7 +90,7 @@ namespace Dustbuster.Views
                }
 
 
-                */
+                /**/
                 });
 
 
