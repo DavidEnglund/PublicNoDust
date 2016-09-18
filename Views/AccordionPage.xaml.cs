@@ -12,6 +12,9 @@ namespace Dustbuster
 			InitializeComponent();
 
 			Accordion.BindingContext = new AccordionViewModel();
+
+			//give Title civil or mining string
+			Title = (App.IndustryOption == IndustryOptions.Civil) ? "Civil" : "Mining";
            
             if (Settings.EnableReadMode)
             {

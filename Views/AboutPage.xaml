@@ -6,21 +6,22 @@
 
   <StackLayout>
     <Label  Text="Application Title"
+			FontAttributes="Bold"
             HorizontalTextAlignment="Center"/>
     <Label  Text="Application Version"
+			FontAttributes="Bold"
             HorizontalTextAlignment="Center"/>
     <Label  TextColor="#000000"
             FontSize = "15"
             VerticalTextAlignment="Center"
             HorizontalTextAlignment="Center"
             Text="Lorem ipsum dolor sit amet,consectetur adipiscing elit.Praesent luctus vestibulum lorem in cursus.Pellentesque aliquet dui at lorem laoreet,commodo gravida sem consequat.Curabitur convallis tellus id accumsan sodales.Nunc tincidunt auctor ligula at congue." />
-     
+
+	<Label Text="Acknowledgements"
+		   FontAttributes="Bold"
+           HorizontalTextAlignment="Center"/>
       <ScrollView>
-        <StackLayout Padding="20,20,0,0">
-   
-            <Label Text="Acknowledgements"
-                   HorizontalTextAlignment="Center"/>
-    
+        <StackLayout Padding="20,0,0,0">
             <StackLayout Orientation="Horizontal">
                 <Image Source="team_image.png"
                        HeightRequest="50"
@@ -34,7 +35,7 @@
                 </Image.GestureRecognizers>
               </Image>
           <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
+                       Padding="10,0,0,0">
           <Grid        Padding="0,0,0,-6">
           <Label       Text="Jayden Spencer"
                        FontAttributes="Bold"
