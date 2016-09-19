@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Dustbuster.Droid;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -7,21 +7,21 @@ using AndroidColor = Android.Graphics.Color;
 [assembly: ExportRenderer(typeof(Entry), typeof(DroidEditRenderer))]
 namespace Dustbuster.Droid
 {
-	public class DroidEditRenderer : EntryRenderer
-	{
-		public DroidEditRenderer()
-		{
-		}
+    public class DroidEditRenderer : EntryRenderer
+    {
+        public DroidEditRenderer()
+        {
+        }
 
-		protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
-		{
-			base.OnElementChanged(e);
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
+        {
+            base.OnElementChanged(e);
 
-			if (Control != null)
-			{
-				Control.SetBackgroundColor(AndroidColor.Transparent);
-				Control.SetPaddingRelative(Control.PaddingLeft + 20, Control.PaddingTop, Control.PaddingRight, Control.PaddingBottom);
-			}
-		}
-	}
+            if (Control != null)
+            {
+                Control.SetBackgroundColor(AndroidColor.Transparent);
+                Control.SetPaddingRelative(Control.PaddingLeft + 20, Control.PaddingTop, Control.PaddingRight, Control.PaddingBottom);
+            }
+        }
+    }
 }
