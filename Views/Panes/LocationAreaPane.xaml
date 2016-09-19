@@ -33,17 +33,23 @@
 
   <StackLayout Padding="60,0,60,0"
                Orientation="Horizontal">
-    <Entry  Placeholder="0"
-            x:Name="entry_length"
-            Keyboard="Numeric"
-            BackgroundColor="#d9d9d9"
-            WidthRequest="190"
-            Text="{Binding Length, Mode=TwoWay}"/>
-   
-    <Button Text="{Binding LengthUnit, Converter={StaticResource unitNotationConverter}}"
-            x:Name="bToggle_length"
-            WidthRequest="60"
-            Command="{Binding ChangeLengthUnit}"/>
+    <StackLayout>
+      <Entry  Placeholder="0"
+              x:Name="entry_length"
+              Keyboard="Numeric"
+              BackgroundColor="#d9d9d9"
+              WidthRequest="190"
+              VerticalOptions="CenterAndExpand"
+              Text="{Binding Length, Mode=TwoWay}"/>
+    </StackLayout>
+    <StackLayout>
+      <Button Text="{Binding LengthUnit, Converter={StaticResource unitNotationConverter}}"
+              x:Name="bToggle_length"
+              WidthRequest="60"
+              HeightRequest="58"
+              VerticalOptions="CenterAndExpand"
+              Command="{Binding ChangeLengthUnit}"/>
+    </StackLayout>
   </StackLayout>
   
   <StackLayout Padding="50,0,60,0">
@@ -55,17 +61,23 @@
     
   <StackLayout Orientation="Horizontal"
                Padding="60,0,60,0">
-    <Entry  Placeholder="0" 
-            x:Name="entry_width" 
-            Keyboard="Numeric" 
-            BackgroundColor="#d9d9d9"
-            WidthRequest="190"
-            Text="{Binding Width, Mode=TwoWay}"/>
-      
-    <Button Text="{Binding WidthUnit, Converter={StaticResource unitNotationConverter}}" 
-            x:Name="bToggle_width" 
-            WidthRequest="60"
-            Command="{Binding ChangeWidthUnit}"/>
+    <StackLayout>
+      <Entry  Placeholder="0" 
+              x:Name="entry_width" 
+              Keyboard="Numeric" 
+              BackgroundColor="#d9d9d9"
+              WidthRequest="190"
+              VerticalOptions="CenterAndExpand"
+              Text="{Binding Width, Mode=TwoWay}"/>
+    </StackLayout>
+    <StackLayout>
+      <Button Text="{Binding WidthUnit, Converter={StaticResource unitNotationConverter}}" 
+              x:Name="bToggle_width" 
+              WidthRequest="60"
+              HeightRequest="58"
+              VerticalOptions="CenterAndExpand"
+              Command="{Binding ChangeWidthUnit}"/>
+    </StackLayout>
   </StackLayout>
     <Button Text="Calculate"
             x:Name="bCalculation"
