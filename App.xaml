@@ -27,7 +27,7 @@
 			<!--Primary Mining Green Colors-->
 			<Style x:Key="miningSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
 				<Setter Property="SelectedBackgroundColor" Value="#079ece" />
-				<Setter Property="UnselectedBackgroundColor" Value="#47b6d9" />
+				<Setter Property="UnselectedBackgroundColor" Value="#48aacc" />
 				<Setter Property="HoldBackgroundColor" Value="#0297c6" />
             </Style>
 
@@ -46,10 +46,10 @@
 				<Setter Property="BackgroundColor" Value="#1ca4d0" />
         		</Style>
 			<Style x:Key="miningWeatherAccordionStyle" TargetType="ContentView">
-				<Setter Property="BackgroundColor" Value="#25aeda" />
+				<Setter Property="BackgroundColor" Value="#2ab0db" />
         		</Style>
 			<Style x:Key="miningLocationAccordionStyle" TargetType="ContentView">
-				<Setter Property="BackgroundColor" Value="#3ab9e2" />
+				<Setter Property="BackgroundColor" Value="#3db9e0" />
             		</Style>
             <!--Civil Accordion Colors-->
 			<Style x:Key="civilTrafficAccordionStyle" TargetType="ContentView">
@@ -59,10 +59,10 @@
 				<Setter Property="BackgroundColor" Value="#29c962" />
         		</Style>
 			<Style x:Key="civilWeatherAccordionStyle" TargetType="ContentView">
-				<Setter Property="BackgroundColor" Value="#2fc965" />
+				<Setter Property="BackgroundColor" Value="#38cc6c" />
            		</Style>
 			<Style x:Key="civilLocationAccordionStyle" TargetType="ContentView">
-				<Setter Property="BackgroundColor" Value="#33cb69" />
+				<Setter Property="BackgroundColor" Value="#46d077" />
             		</Style>
 
       

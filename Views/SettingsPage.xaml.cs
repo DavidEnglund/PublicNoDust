@@ -28,7 +28,7 @@ namespace Dustbuster
             else
             {
                 ContactInfoEntry.Keyboard = Keyboard.Numeric;
-                ContactInfoEntry.Placeholder = "E.g. 0412345678";
+                ContactInfoEntry.Placeholder = "E.g. 04 123 456 78";
             }
         }
     }
