@@ -10,46 +10,69 @@ namespace Dustbuster
 {
     public class SelectImageButton : AbsoluteLayout
     {
-        // all of the selected and unselected values - selected first
-        // these will all need at least simple getter/setter function to be used with xaml
-        private int selectedBorderWidth;
-        private Color selectedBorderColor;
-        private Color selectedBackgroundColor;
+		
+		public static readonly BindableProperty SelectedBackgroundColorProperty = BindableProperty.Create("SelectedBackgroundColor", typeof(Color), typeof(SelectImageButton), Color.White);
+		public static readonly BindableProperty UnselectedBackgroundColorProperty = BindableProperty.Create("UnselectedBackgroundColor", typeof(Color), typeof(SelectImageButton), Color.Silver);
+		public static readonly BindableProperty HoldBackgroundColorProperty = BindableProperty.Create("HoldBackgroundColor", typeof(Color), typeof(SelectImageButton), Color.Olive);
 
-        private int unselectedBorderWidth;
-        private Color unselectedBorderColor;
-        private Color unselectedBackgroundColor;
+
+		public static readonly BindableProperty SelectedBorderWidthProperty = BindableProperty.Create("SelectedBorderWidth", typeof(int), typeof(SelectImageButton), 5);
+		public static readonly BindableProperty UnselectedBorderWidthProperty = BindableProperty.Create("SelectedBorderWidth", typeof(int), typeof(SelectImageButton), 5);
+
+		public static readonly BindableProperty SelectedBorderColorProperty = BindableProperty.Create("SelectedBorderColor", typeof(Color), typeof(SelectImageButton), Color.Gray);
+		public static readonly BindableProperty UnselectedBorderColorProperty = BindableProperty.Create("UnselectedBorderColor", typeof(Color), typeof(SelectImageButton), Color.Blue);
+
+		public static readonly BindableProperty HoldBorderColorProperty = BindableProperty.Create("HoldBorderColor", typeof(Color), typeof(SelectImageButton), Color.Navy);
+		public static readonly BindableProperty HoldBorderWidthProperty = BindableProperty.Create("HoldBorderWidth", typeof(int), typeof(SelectImageButton), 5);
+
         // the public get and set for the selected/unselected colors and widths
         public int SelectedBorderWidth
         {
-            get { return selectedBorderWidth; }
-            set { selectedBorderWidth = value; }
+			get { return (int)GetValue(SelectedBorderWidthProperty); }
+			set { SetValue(SelectedBorderWidthProperty, value); }
         }
         public Color SelectedBorderColor
         {
-            get { return selectedBorderColor; }
-            set { selectedBorderColor = value; }
+			get { return (Color)GetValue(SelectedBorderColorProperty); }
+            set { SetValue(SelectedBorderColorProperty, value); }
         }
+
         public Color SelectedBackgroundColor
         {
-            get { return selectedBackgroundColor; }
-            set { selectedBackgroundColor = value; }
+			get { return (Color)GetValue(SelectedBackgroundColorProperty); }
+			set { SetValue(SelectedBackgroundColorProperty, value); }
         }
         
         public int UnselectedBorderWidth
         {
-            get { return unselectedBorderWidth; }
-            set { unselectedBorderWidth = value; }
+			get { return (int)GetValue(UnselectedBorderWidthProperty); }
+			set { SetValue(UnselectedBorderWidthProperty, value); }
         }
         public Color UnselectedBorderColor
         {
-            get { return unselectedBorderColor; }
-            set { unselectedBorderColor = value; }
+			get { return (Color)GetValue(UnselectedBorderColorProperty); }
+			set { SetValue(UnselectedBorderColorProperty, value); }
         }
         public Color UnselectedBackgroundColor
         {
-            get { return unselectedBackgroundColor; }
-            set { unselectedBackgroundColor = value; }
+			get { return (Color)GetValue(UnselectedBackgroundColorProperty); }
+			set { SetValue(UnselectedBackgroundColorProperty, value); }
+        }
+
+        public Color HoldBackgroundColor
+        {
+			get { return (Color)GetValue(HoldBackgroundColorProperty); }
+			set { SetValue(HoldBackgroundColorProperty, value); }
+        }
+        public Color HoldBorderColor
+        {
+			get { return (Color)GetValue(HoldBorderColorProperty); }
+			set { SetValue(HoldBorderColorProperty, value); }
+        }
+        public int HoldBorderWidth
+        {
+			get { return (int)GetValue(HoldBorderWidthProperty); }
+			set { SetValue(HoldBorderWidthProperty, value); }
         }
 
         // a private image and a public image source that maps to the images source
@@ -85,11 +108,11 @@ namespace Dustbuster
             {
                 if (selected)
                 {
-                    return selectedBorderWidth;
+                    return SelectedBorderWidth;
                 }
                 else
                 {
-                    return unselectedBorderWidth;
+                    return UnselectedBorderWidth;
                 }
             }
         }
@@ -99,11 +122,11 @@ namespace Dustbuster
             {
                 if (selected)
                 {
-                    return selectedBorderColor;
+                    return SelectedBorderColor;
                 }
                 else
                 {
-                    return unselectedBorderColor;
+                    return UnselectedBorderColor;
                 }
             }
         }
@@ -113,11 +136,11 @@ namespace Dustbuster
             {
                 if (selected)
                 {
-                    return selectedBackgroundColor;
+					return SelectedBackgroundColor;
                 }
                 else
                 {
-                    return unselectedBackgroundColor;
+                    return UnselectedBackgroundColor;
                 }
             }
         }
@@ -181,6 +204,7 @@ namespace Dustbuster
                 }
             }     
         }
+
         // A function to set this button as selected
         private void setAsSelected()
         {
@@ -190,7 +214,7 @@ namespace Dustbuster
             unselectedImage.IsVisible = false;
           
             // force a redraw to make it change the colors and stuff - could proably also use forceLayout but I want to change the background anyway.
-            base.BackgroundColor = selectedBackgroundColor;            
+            base.BackgroundColor = SelectedBackgroundColor;            
         }
         //A function to set this button as unselected
         private void setAsUnselected()
@@ -201,7 +225,7 @@ namespace Dustbuster
             unselectedImage.IsVisible = true;
 
             // force a redraw to make it change colors,images and border widths
-            base.BackgroundColor = unselectedBackgroundColor;
+            base.BackgroundColor = UnselectedBackgroundColor;
         }
         // a select button group for this control to belong to
         private SelectButtonGroup buttonGroup;
@@ -230,9 +254,17 @@ namespace Dustbuster
         public event EventHandler Clicked
         {
             remove { tapRecognizer.Tapped -= value; }
-            add { tapRecognizer.Tapped += value; }
+            add {
+                tapRecognizer.Tapped += value;
+                clickEvents += value;
+            }
         }
-
+        // code to get all of the click event code and send it to ios as it does not run the forms click if you hold the button
+        private EventHandler clickEvents;
+        public EventHandler ClickEvents
+        {
+            get { return clickEvents; }
+        }
         // the init class
         public SelectImageButton()
         {
@@ -255,18 +287,9 @@ namespace Dustbuster
            
             // also need a default to set the layout to not fill
             VerticalOptions = LayoutOptions.Center;
-            HorizontalOptions = LayoutOptions.Center;
-
-            // some defaults
-            unselectedBackgroundColor = Color.Silver;
-            unselectedBorderColor = Color.Gray;
-            unselectedBorderWidth = 5;
-
-            selectedBackgroundColor = Color.White;
-            selectedBorderColor = Color.Blue;
-            selectedBorderWidth = 5;
+			HorizontalOptions = LayoutOptions.Center;
             
-            base.BackgroundColor = unselectedBackgroundColor;
+            base.BackgroundColor = UnselectedBackgroundColor;
 
              // forcing a layout to cause it to properly calculate the layers coords 1st time
             ForceLayout();         
@@ -274,6 +297,10 @@ namespace Dustbuster
 
         private void Click_Tapped(object sender, EventArgs e)
         {
+            // this click overrides the base android one so it cant record an up event to change the colors
+            // but having a property change will run the property changed event so I will set the background 
+            // to hold which will then be set right back again but will then change
+            base.BackgroundColor = HoldBackgroundColor;
             // if the button is not part of a group we need to set it to toggle on/off
             if (buttonGroup != null)
             {
@@ -311,13 +338,13 @@ namespace Dustbuster
                 padding = base.Padding.Bottom;
             }
 
-            if(selectedBorderWidth < unselectedBorderWidth)
+            if(SelectedBorderWidth < UnselectedBorderWidth)
             {
-                base.Padding = (padding * 1)  + (unselectedBorderWidth*1);
+                base.Padding = (padding * 1)  + (UnselectedBorderWidth*1);
             }
             else
             {
-                base.Padding = (padding * 1) + selectedBorderWidth;
+                base.Padding = (padding * 1) + SelectedBorderWidth;
             }
             // now to actualy call the size of the control - first call the base size request then work out which dimension is higher(or exisits) then send that for both
             double fullsize = 0;

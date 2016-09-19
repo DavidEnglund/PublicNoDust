@@ -86,8 +86,8 @@ namespace Dustbuster
 
         private void UpdateSelectedTitle()
         {
-            SelectedTitle = ProductPage.viewModel.Products.ElementAt(_selectedIndex).ProductName;
-            Debug.WriteLine("LOG Title Changed to: {0}", SelectedTitle);
+            //SelectedTitle = ProductPage.viewModel.Products.ElementAt(_selectedIndex).ProductName;
+            //Debug.WriteLine("LOG Title Changed to: {0}", SelectedTitle);
         }
 
 

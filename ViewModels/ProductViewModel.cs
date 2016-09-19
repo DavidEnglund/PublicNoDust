@@ -10,14 +10,14 @@ namespace Dustbuster.ViewModels
 {
     public class ProductViewModel : INotifyPropertyChanged
     {
-		private AreaViewModel viewModel;
+		private AccordionViewModel viewModel;
 		private ObservableCollection<ProductDescription> products;
 		private ProductDescription selectedProduct;
 		private string applicationsRequired;
 		private int applicationRate;
 		private float productQuantity;
 
-		public ProductViewModel(AreaViewModel viewModel)
+		public ProductViewModel(AccordionViewModel viewModel)
 		{
 			this.viewModel = viewModel;
 			this.selectedProduct = null;

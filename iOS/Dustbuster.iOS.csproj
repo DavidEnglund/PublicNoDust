@@ -99,12 +99,12 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\SQLiteIOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <BundleResource Include="Resources\app_title.png" />
     <BundleResource Include="Resources\choice_calendar_over180.png" />
     <BundleResource Include="Resources\choice_calendar_under30.png" />
-    <BundleResource Include="Resources\choice_calendar_under180.png" />
     <BundleResource Include="Resources\choice_traffic_light.png" />
     <BundleResource Include="Resources\choice_traffic_openroad.png" />
     <BundleResource Include="Resources\choice_weather_rain.png" />
@@ -121,12 +121,19 @@
     <BundleResource Include="Resources\accordion_icon_weather_sun.png" />
     <BundleResource Include="Resources\choice_calendar_over30.png" />
     <Compile Include="Renderers\SelectImageButtonRenderer.cs" />
+    <BundleResource Include="Resources\about_icon.png" />
+    <BundleResource Include="Resources\hamburger_icon.png" />
+    <BundleResource Include="Resources\settings_icon.png" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
     <Content Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <BundleResource Include="Resources\accordion_icon_traffic_openroad.png" />
+    <BundleResource Include="Resources\accordion_icon_calendar_none.png" />
+    <BundleResource Include="Resources\choice_calendar_under180.png" />
+    <BundleResource Include="Resources\unselectedNone.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

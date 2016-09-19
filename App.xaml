@@ -1,6 +1,126 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.App">
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Dustbuster" x:Class="Dustbuster.App">
 	<Application.Resources>
-		<!-- Application resource dictionary -->
+  	  <ResourceDictionary>
+
+            <local:UnitNotationConverter x:Key="unitNotationConverter" />
+  			<Style x:Key="normalLabelStyle" TargetType="Label">
+    			<Setter Property="TextColor" Value="White" />
+ 	    	</Style>
+			<Style x:Key="readModeLabelStyle" TargetType="Label">
+    			<Setter Property="TextColor" Value="Black" />
+ 	 		</Style>
+ 	 		<!--Accordion Text Styles-->
+			<Style x:Key="greyHeaderLabelStyle" TargetType="Label">
+				<Setter Property="TextColor" Value="#5a5d5e" />
+				<Setter Property="FontSize" Value="21" />
+				<Setter Property="FontAttributes" Value="Bold" />
+				<Setter Property="HorizontalOptions" Value="Center" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+			</Style>
+			<Style x:Key="greyAnswerLabelStyle" TargetType="Label">
+				<Setter Property="TextColor" Value="#5a5d5e" />
+				<Setter Property="FontSize" Value="17" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+			</Style>
+			<!--Primary Mining Green Colors-->
+			<Style x:Key="miningSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#079ece" />
+				<Setter Property="UnselectedBackgroundColor" Value="#47b6d9" />
+				<Setter Property="HoldBackgroundColor" Value="#0297c6" />
+            </Style>
+
+			<!--Primary Civil Blue Colors-->
+			<Style x:Key="civilSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
+				<Setter Property="SelectedBackgroundColor" Value="#18b750" />
+				<Setter Property="UnselectedBackgroundColor" Value="#78dd9c" />
+				<Setter Property="HoldBackgroundColor" Value="#16b24d" />
+            </Style>
+			
+			<!--Mining Accordion Colors-->
+			<Style x:Key="miningTrafficAccordionStyle" TargetType="ContentView">
+				<Setter Property="BackgroundColor" Value="#0da0cf" />
+         	   	</Style>
+			<Style x:Key="miningCalendarAccordionStyle" TargetType="ContentView">
+				<Setter Property="BackgroundColor" Value="#1ca4d0" />
+        		</Style>
+			<Style x:Key="miningWeatherAccordionStyle" TargetType="ContentView">
+				<Setter Property="BackgroundColor" Value="#25aeda" />
+        		</Style>
+			<Style x:Key="miningLocationAccordionStyle" TargetType="ContentView">
+				<Setter Property="BackgroundColor" Value="#3ab9e2" />
+            		</Style>
+            <!--Civil Accordion Colors-->
+			<Style x:Key="civilTrafficAccordionStyle" TargetType="ContentView">
+				<Setter Property="BackgroundColor" Value="#1ebc56" />
+            		</Style>
+			<Style x:Key="civilCalendarAccordionStyle" TargetType="ContentView">
+				<Setter Property="BackgroundColor" Value="#29c962" />
+        		</Style>
+			<Style x:Key="civilWeatherAccordionStyle" TargetType="ContentView">
+				<Setter Property="BackgroundColor" Value="#2fc965" />
+           		</Style>
+			<Style x:Key="civilLocationAccordionStyle" TargetType="ContentView">
+				<Setter Property="BackgroundColor" Value="#33cb69" />
+            		</Style>
+
+      
+      
+      <!-- Buttons -->
+      <!-- Submit, Calculate, Call Us Now (Accordion, Product and Contact Request pages) -->
+	  <!-- GREEN -->
+      <Style x:Key="buttonGreenPrimary" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#18b750" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BorderRadius" Value="6" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
+      </Style>
+
+      <!-- Request Contact  (Product page) -->
+      <Style x:Key="buttonGreenSecondary" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="#18b750" />
+        <Setter Property="BorderColor" Value="#18b750" />
+        <Setter Property="BorderRadius" Value="6" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
+      </Style>
+
+	  <!-- Submit, Calculate, Call Us Now (Accordion, Product and Contact Request pages) -->
+	  <!-- BLUE -->
+	  <Style x:Key="buttonBluePrimary" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#079ece" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BorderRadius" Value="6" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
+      </Style>
+
+      <!-- Request Contact  (Product page) -->
+      <Style x:Key="buttonBlueSecondary" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="#079ece" />
+        <Setter Property="BorderColor" Value="#079ece" />
+        <Setter Property="BorderRadius" Value="6" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
+      </Style>
+
+      <!-- Create Reminder, Request Contact (Call Failed page)-->
+      <Style x:Key="buttonRedWarning" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="#df4347" />
+        <Setter Property="BorderColor" Value="#df4347" />
+        <Setter Property="BorderRadius" Value="6" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
+      </Style>
+			
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>
