@@ -70,6 +70,7 @@ namespace Dustbuster
 
 		public virtual void OnPaneCollapsed() { } 
 
+		public virtual void OnPaneInvalidate() { }
 
 
 	}

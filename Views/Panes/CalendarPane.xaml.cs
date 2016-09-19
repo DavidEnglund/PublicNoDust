@@ -33,7 +33,7 @@ namespace Dustbuster
 			if (App.DurationOption == DurationOptions.None && Owner.IsPaneVisited(Owner.Panes["Calendar"]))
 			{
 				Image = "unselectedNone.png";
-				calendarButtonGroup.UnselectAll();
+				calendarButtonGroup.Selected = null;
 			}
 		}
 

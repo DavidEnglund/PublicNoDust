@@ -37,6 +37,11 @@ namespace Dustbuster
 
 			if (App.TrafficOption != TrafficOptions.TraffickedArea)
 			{
+				if (App.TrafficOption == TrafficOptions.NonTraffickedArea)
+				{
+					Owner.Panes["Calendar"].OnPaneInvalidate();
+				}
+
 				//set the option enum
 				App.TrafficOption = TrafficOptions.TraffickedArea;
 				App.WeatherOption = WeatherOptions.None;
@@ -62,6 +67,11 @@ namespace Dustbuster
 
 			if (App.TrafficOption != TrafficOptions.NonTraffickedArea)
 			{
+				if (App.TrafficOption == TrafficOptions.TraffickedArea)
+				{
+					Owner.Panes["Calendar"].OnPaneInvalidate();
+				}
+
 				//set the option enum
 				App.TrafficOption = TrafficOptions.NonTraffickedArea;
 				App.WeatherOption = WeatherOptions.None;

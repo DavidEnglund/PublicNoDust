@@ -16,18 +16,30 @@ namespace Dustbuster
         // the public interface for setting the selected control
         public SelectImageButton Selected
         {
-            get { return group[selectedIndex]; }
+			get { return (selectedIndex >= 0) ? group[selectedIndex] : null; }
             set
-            {
-                // set the requested buttton to be selected then deselect the rest
-                selectedIndex = group.IndexOf(value);
-                value.Selected = true;
-                foreach (SelectImageButton checkForSelected in group)
-                {
-                    // the button wont let itself be set to false if the group has it as selected
-                    checkForSelected.Selected = false;
-                }               
-            }
+			{
+				if (value != null)
+				{
+					// set the requested buttton to be selected then deselect the rest
+					selectedIndex = group.IndexOf(value);
+					value.Selected = true;
+					foreach (SelectImageButton checkForSelected in group)
+					{
+						// the button wont let itself be set to false if the group has it as selected
+						checkForSelected.Selected = false;
+					}
+				}
+				else {
+					selectedIndex = -1;
+
+					foreach (SelectImageButton checkForSelected in group)
+					{
+						// the button wont let itself be set to false if the group has it as selected
+						checkForSelected.Selected = false;
+					}
+				}
+			}
         }
         // another interface that is a function
         public void SetSelected(SelectImageButton selectMe)
@@ -55,10 +67,13 @@ namespace Dustbuster
 
 		public void UnselectAll()
 		{
-			SelectImageButton currentSelected = this.Selected;
-			currentSelected.Selected = false;
+			Selected = null;
+			foreach (SelectImageButton imageButton in group)
+			{
+				imageButton.Selected = false;
+			}
+
 			selectedIndex = 0;
-			currentSelected = null;
 		}
 
         public SelectButtonGroup()

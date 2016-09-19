@@ -21,13 +21,10 @@ namespace Dustbuster
 			weatherButtonGroup.AddButton(sunButton);
 		}
 
-		public override void OnPaneExpanded()
+		public override void OnPaneInvalidate()
 		{
-			if (App.WeatherOption == WeatherOptions.None && Owner.IsPaneVisited(Owner.Panes["Weather"]))
-			{
-				Image = "unselectedNone.png";
-				weatherButtonGroup.UnselectAll();
-			}
+			Image = "unselectedNone.png";
+			weatherButtonGroup.UnselectAll();
 		}
 
 		//rainy area button click
