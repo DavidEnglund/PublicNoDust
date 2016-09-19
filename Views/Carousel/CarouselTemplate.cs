@@ -10,6 +10,7 @@ namespace Dustbuster
         StackLayout stackTitleWrap, parent;
         ScrollView scrollingLabelWrap;
         Image productImage, logoImage;
+        string logoChoice = "", PageColor = "";
 
         public CarouselTemplate()
         {
@@ -23,6 +24,18 @@ namespace Dustbuster
 
         private void CreateElements()
         {
+            //Here we set the logo and the color of the carousel page depedning on if the user chooses civil or mining
+            if (App.IndustryOption == IndustryOptions.Civil)
+            {
+                logoChoice = "sunhawk_logo_sm.png";
+                PageColor = "#18b750";
+            }
+            else if (App.IndustryOption == IndustryOptions.Mining)
+            {
+                logoChoice = "rainstrom_logo_sm.png";
+                PageColor = "#079ece";
+            }
+
             lblTitle = new Label
             {
                 HorizontalTextAlignment = TextAlignment.Center,
@@ -67,16 +80,6 @@ namespace Dustbuster
                 Aspect = Aspect.AspectFill
             };
 
-            //Here we give LogoChoice the name of the icon we wish to use for the logo depending on if the user chooses mining or civil
-            string logoChoice = "sunhawk_logo_sm.png";
-            if(App.IndustryOption == IndustryOptions.Civil)
-            {
-                logoChoice = "sunhawk_logo_sm.png";
-            }
-            else if(App.IndustryOption == IndustryOptions.Mining)
-            {
-                logoChoice = "rainstrom_logo_sm.png";
-            }
 
             logoImage = new Image
             {
@@ -90,7 +93,7 @@ namespace Dustbuster
             {
                 Padding = new Thickness(0, 10),     // Add padding to the layout between title and rest of page
                 Spacing = 0,
-                BackgroundColor = Color.FromHex("#18b750"),
+                BackgroundColor = Color.FromHex(PageColor),
             };
 
             //Everything inside of here will be able to scoll vertically

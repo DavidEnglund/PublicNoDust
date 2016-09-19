@@ -12,16 +12,30 @@ namespace Dustbuster
     public partial class ProductPage : ContentPage
     {
         public static SwitcherPageViewModel viewModel;
+        string PageColor = "";
 
         public ProductPage()
         {
-            NavigationPage.SetHasNavigationBar(this, false);
+            //NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             InitializeCarouselView();
         }
 
         private void InitializeCarouselView()
         {
+            //Here we set the color of our dots, and buttons depending on if the user chooses civil or mining
+            if (App.IndustryOption == IndustryOptions.Civil)
+            {
+                PageColor = "#18b750";
+            }
+            else if (App.IndustryOption == IndustryOptions.Mining)
+            {
+                PageColor = "#079ece";
+            }
+            btnCallNow.BackgroundColor = Color.FromHex(PageColor);
+            btnRequestContact.BorderColor = Color.FromHex(PageColor);
+            btnRequestContact.TextColor = Color.FromHex(PageColor);
+
             viewModel = new SwitcherPageViewModel();
             BindingContext = viewModel;
 
@@ -43,7 +57,7 @@ namespace Dustbuster
 
             CarouselView.Children.Add(dots,
                         Constraint.Constant(0),
-                        Constraint.RelativeToParent((parent) => { return parent.Height - 20; }),
+                        Constraint.RelativeToParent((parent) => { return parent.Height - 9.8; }),
                         Constraint.RelativeToParent((parent) => parent.Width),
                         Constraint.Constant(10)
             );
@@ -68,7 +82,7 @@ namespace Dustbuster
         //This method creates the dots representing every page in the carousel
         private View CreatePagerIndicators()
         {
-            PagerIndicatorDots pagerIndicator = new PagerIndicatorDots() { DotSize = 15, DotColor = Color.FromHex("#18b750") };
+            PagerIndicatorDots pagerIndicator = new PagerIndicatorDots() { DotSize = 15, DotColor = Color.FromHex(PageColor) };
             pagerIndicator.SetBinding(PagerIndicatorDots.ItemsSourceProperty, "Products");
             pagerIndicator.SetBinding(PagerIndicatorDots.SelectedItemProperty, "CurrentProduct");
 
