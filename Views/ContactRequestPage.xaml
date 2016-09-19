@@ -1,57 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Dustbuster.ContactRequestPage">
+             x:Class="Dustbuster.ContactRequestPage"
+             Title="Contact Request">
+             
   <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
   <ContentView>
     <StackLayout Orientation="Vertical"
-                 Padding="30, 20, 0, 0">
+                 Padding="30, 15, 0, 0">
       <RelativeLayout>
         <Label Text="Your Name:"
              FontAttributes="Bold"
              FontSize="Medium"/>      
-        
+        <!--Width and Constraint changed to make up for the extra pixels from setting a background color-->
         <Entry Placeholder="John Doe" x:Name="etName"               
-               RelativeLayout.XConstraint="20"
-               RelativeLayout.YConstraint="20"
-               WidthRequest="250"/>
+               RelativeLayout.XConstraint="23"
+               RelativeLayout.YConstraint="35"
+               WidthRequest="243"
+               BackgroundColor="#d9d9d9"
+        />
+        <Label Text="Contact Info:"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               RelativeLayout.YConstraint="90"
+          />
+          
         
         <Button Text="Phone"                            
                 RelativeLayout.XConstraint="20"
-                RelativeLayout.YConstraint="70"
+                RelativeLayout.YConstraint="120"
                 WidthRequest="250"
+                
                 Clicked="OnContactClicked"/>
         
         <Entry Keyboard="Telephone" Placeholder="04 123 456 78" x:Name="etContact"               
-               RelativeLayout.XConstraint="20"
-               RelativeLayout.YConstraint="115"
-               WidthRequest="250"/>
+               RelativeLayout.XConstraint="23"
+               RelativeLayout.YConstraint="170"
+               WidthRequest="243"
+               BackgroundColor="#d9d9d9"/>
                
         <Label Text="Best Time of Contact:"
                FontAttributes="Bold"
              FontSize="Medium"
-               RelativeLayout.YConstraint="170"/>
+               RelativeLayout.YConstraint="230"/>
         
         <Button Text="{Binding SelectedDate, StringFormat='{}{0:dd - MMM - yy}'}}" x:Name="btnDate"                 
                 RelativeLayout.XConstraint="50"
-                RelativeLayout.YConstraint="210"
+                RelativeLayout.YConstraint="260"
                 WidthRequest="200"
                 Command="{Binding DatePickerCommand}"/>
         
         <DatePicker x:Name="dpDate" IsVisible="False" Date="{Binding SelectedDate, Mode=TwoWay}" HorizontalOptions="FillAndExpand">
           
         </DatePicker>
+        
         <Button Text="Morning" x:Name="btnTime"                
                 RelativeLayout.XConstraint="50"
-                RelativeLayout.YConstraint="255"
-                WidthRequest="200"
-                
+                RelativeLayout.YConstraint="305"
+                WidthRequest="200"                
                 Clicked="OnTimeClicked"/>
+        
         <Button Text="Submit" x:Name="btnSubmit"
                 BackgroundColor="Green"
                 TextColor="White"                
                 RelativeLayout.XConstraint="70"
-                RelativeLayout.YConstraint="315"
+                RelativeLayout.YConstraint="365"
                 WidthRequest="160"
                 Clicked="OnSubmitClicked"/>
       </RelativeLayout>
