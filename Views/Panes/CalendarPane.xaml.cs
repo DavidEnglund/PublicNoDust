@@ -57,7 +57,7 @@ namespace Dustbuster
 			calendarAnswer.Text = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Solution is for over 30 days" : "Solution is for under 180 days";
 			Title = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Over 30 Days" : "Under 180 Days";
 			Image = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "accordion_icon_calendar_over30.png": "accordion_icon_calendar_under180.png";
-			App.DurationOption = (App.TrafficOption == TrafficOptions.TraffickedArea) ? DurationOptions.Over1Month : DurationOptions.Under3Months;
+			App.DurationOption = (App.TrafficOption == TrafficOptions.TraffickedArea) ? DurationOptions.Over1Month : DurationOptions.Under6Months;
 			//if traffic option is selected weather option is none
 			if (App.TrafficOption == TrafficOptions.TraffickedArea) { App.WeatherOption = WeatherOptions.None; }
 			//Trafficked Areas always goto LocationArea, Non Trafficked under 180 goes to weather
@@ -71,7 +71,7 @@ namespace Dustbuster
 			Title = "Over 180 Days";
 			Image = "accordion_icon_calendar_over180.png";
 			// set the option enum
-			App.DurationOption = DurationOptions.Over3Months;
+			App.DurationOption = DurationOptions.Over6Months;
 			App.WeatherOption = WeatherOptions.None;
 			//over 180 days always goesto location area
 			goToLocationAreaPane();
@@ -89,7 +89,7 @@ namespace Dustbuster
 		private void goToLocationAreaPane()
 		{
 			//Goto location area pane
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]) || App.DurationOption == DurationOptions.Over3Months)
+			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]) || App.DurationOption == DurationOptions.Over6Months)
 			{
 				Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["LocationArea"]);
 			}
