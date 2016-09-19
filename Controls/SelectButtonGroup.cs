@@ -52,6 +52,15 @@ namespace Dustbuster
                 }
             }
         }
+
+		public void UnselectAll()
+		{
+			SelectImageButton currentSelected = this.Selected;
+			currentSelected.Selected = false;
+			selectedIndex = 0;
+			currentSelected = null;
+		}
+
         public SelectButtonGroup()
         {
             group = new List<SelectImageButton>();
