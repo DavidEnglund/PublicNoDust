@@ -29,6 +29,11 @@ namespace Dustbuster
 			//change over30Under180 button icon (unslected and selected icon)
 			over30Under180Button.SelectedImage = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "choice_calendar_over30.png" : "choice_calendar_under180.png";
 			over30Under180Button.UnselectedImage = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "choice_calendar_over30.png" : "choice_calendar_under180.png";
+
+			if (App.DurationOption == DurationOptions.None)
+			{
+				Image = "unselectedNone.png";
+			}
 		}
 
 		//under 30 button click

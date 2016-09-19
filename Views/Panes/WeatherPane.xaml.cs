@@ -21,6 +21,14 @@ namespace Dustbuster
 			weatherButtonGroup.AddButton(sunButton);
 		}
 
+		public override void OnPaneExpanded()
+		{
+			if (App.WeatherOption == WeatherOptions.None)
+			{
+				Image = "unselectedNone.png";
+			}
+		}
+
 		//rainy area button click
 		public void rainButton_clicked(object sender, EventArgs e)
 		{
