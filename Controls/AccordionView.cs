@@ -25,6 +25,10 @@ namespace Dustbuster
 			currentPane.VerticalOptions = LayoutOptions.FillAndExpand;
             currentPane.BackgroundColor = Color.Transparent;
 
+            //Removes spacing between Accordion Headers
+            prevPanes.Spacing = 0;
+            nextPanes.Spacing = 0;
+
 			this.Children.Add(prevPanes);
 			this.Children.Add(currentPane);
 			this.Children.Add(nextPanes);
