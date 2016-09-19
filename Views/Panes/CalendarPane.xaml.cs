@@ -30,9 +30,10 @@ namespace Dustbuster
 			over30Under180Button.SelectedImage = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "choice_calendar_over30.png" : "choice_calendar_under180.png";
 			over30Under180Button.UnselectedImage = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "choice_calendar_over30.png" : "choice_calendar_under180.png";
 
-			if (App.DurationOption == DurationOptions.None)
+			if (App.DurationOption == DurationOptions.None && Owner.IsPaneVisited(Owner.Panes["Calendar"]))
 			{
 				Image = "unselectedNone.png";
+				calendarButtonGroup.UnselectAll();
 			}
 		}
 
@@ -88,7 +89,7 @@ namespace Dustbuster
 		private void goToLocationAreaPane()
 		{
 			//Goto location area pane
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]) || App.DurationOption == DurationOptions.Over3Months)
 			{
 				Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["LocationArea"]);
 			}
