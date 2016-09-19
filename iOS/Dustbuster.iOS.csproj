@@ -133,6 +133,7 @@
     <BundleResource Include="Resources\accordion_icon_traffic_openroad.png" />
     <BundleResource Include="Resources\accordion_icon_calendar_none.png" />
     <BundleResource Include="Resources\choice_calendar_under180.png" />
+    <BundleResource Include="Resources\unselectedNone.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

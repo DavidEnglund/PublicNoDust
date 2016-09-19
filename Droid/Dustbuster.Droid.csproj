@@ -135,6 +135,7 @@
     <AndroidResource Include="Resources\drawable\app_title.png" />
     <AndroidResource Include="Resources\drawable\accordion_icon_traffic_openroad.png" />
     <AndroidResource Include="Resources\drawable\accordion_icon_calendar_none.png" />
+    <AndroidResource Include="Resources\drawable\unselectedNone.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\team_image.png" />

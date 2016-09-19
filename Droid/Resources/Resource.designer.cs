@@ -3492,8 +3492,8 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f02007a
 			public const int mr_ic_settings_light = 2130837626;
 			
-			// aapt resource value: 0x7f02007e
-			public const int notification_template_icon_bg = 2130837630;
+			// aapt resource value: 0x7f02007f
+			public const int notification_template_icon_bg = 2130837631;
 			
 			// aapt resource value: 0x7f02007b
 			public const int settings_icon = 2130837627;
@@ -3503,6 +3503,9 @@ namespace Dustbuster.Droid
 			
 			// aapt resource value: 0x7f02007d
 			public const int team_image = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int unselectedNone = 2130837630;
 			
 			static Drawable()
 			{
