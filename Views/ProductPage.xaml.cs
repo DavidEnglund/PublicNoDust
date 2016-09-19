@@ -21,15 +21,12 @@ namespace Dustbuster
             //Go back to the product information
         }
 
-        private async void TapCalandarButton(object sender, EventArgs e)
-        {
-            //GO to what ever page creates a reminder on the calanda
-        }
+    
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            NavigationPage.SetHasNavigationBar(this, false);
+            
         }
 
         private async void Button_CallNow(object sender, EventArgs e)
