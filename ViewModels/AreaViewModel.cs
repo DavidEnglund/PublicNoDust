@@ -9,7 +9,7 @@ using Xamarin.Forms;
 
 namespace Dustbuster.ViewModels
 {
-    class AreaViewModel : INotifyPropertyChanged
+    public class AreaViewModel : INotifyPropertyChanged
     {
         private double _length = 0, _width = 0;
         private string _length_metrix = METRE_NOTATION, _width_metrix = METRE_NOTATION, _area_metrix = METRE_SQUARE_NOTATION;

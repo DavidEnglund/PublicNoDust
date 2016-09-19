@@ -49,7 +49,7 @@
     <Compile Include="Controls\SelectImageButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AreaViewModel.cs" />
-    <Compile Include="ViewModels\ProductCalculationViewModel.cs" />
+    <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="Views\CalculationPage.xaml.cs">
       <DependentUpon>CalculationPage.xaml</DependentUpon>
     </Compile>
