@@ -5,17 +5,16 @@
              x:Class="Dustbuster.CalendarPane">
 	<StackLayout>
 		<!--Header Text-->
-		<ContentView Padding="15">
+		<ContentView Padding="10">
 			<Label
 				x:Name="calendarHeader"
-				Text="How long do you expect to require a solution?"
+				Text="How long is solution for?"
         		Style="{DynamicResource greyHeaderLabelStyle}"
 			/>
 		</ContentView>
 
 		<!--Button Choice Group-->
-		<StackLayout Orientation="Vertical" HorizontalOptions="Center">
-			<Grid>
+		<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 				<!--Duration Under 30 days Button-->
 				<local:SelectImageButton
 					x:Name="under30Button"
@@ -33,7 +32,6 @@
 					Style="{DynamicResource selectableButtonStyle}"
 						
 					Padding="26"
-					Grid.Column="0"
 					Clicked="under30Button_clicked"
 				/>
 
@@ -54,10 +52,12 @@
 					Style="{DynamicResource selectableButtonStyle}"
 
 					Padding="26"
-					Grid.Column="1"
 					Clicked="over30Under180Button_clicked"
 				/>
 
+		</StackLayout>
+
+		<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
 				<!--Duration Over 180 days-->
 				<!--Not shown in all accordion flows-->
 				<local:SelectImageButton
@@ -76,18 +76,18 @@
 					Style="{DynamicResource selectableButtonStyle}"
 						
 					Padding="26"
-					Grid.Column="2"
 					Clicked="over180Button_clicked"
 				/>
-			</Grid>
+		</StackLayout>
 
 		<!--Answer Choice Text-->
-		</StackLayout>
-		<ContentView Padding="40,20,40,10">
+	
+		<ContentView Padding="0,10,0,10">
 			<Label
 				x:Name="calendarAnswer"
 				Text="Tap on a calendar to select your option"
 				Style="{DynamicResource greyAnswerLabelStyle}"
+				HorizontalTextAlignment="Center"
 			/>
 		</ContentView>
 	</StackLayout>
