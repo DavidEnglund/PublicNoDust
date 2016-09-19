@@ -27,7 +27,7 @@
 			<!--Primary Mining Green Colors-->
 			<Style x:Key="miningSelectableButtonStyle" TargetType="{x:Type local:SelectImageButton}">
 				<Setter Property="SelectedBackgroundColor" Value="#079ece" />
-				<Setter Property="UnselectedBackgroundColor" Value="#48aacc" />
+				<Setter Property="UnselectedBackgroundColor" Value="#4eb1d0" />
 				<Setter Property="HoldBackgroundColor" Value="#0297c6" />
             </Style>
 
