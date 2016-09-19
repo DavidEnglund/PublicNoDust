@@ -13,7 +13,7 @@
  	 		<!--Accordion Text Styles-->
 			<Style x:Key="greyHeaderLabelStyle" TargetType="Label">
 				<Setter Property="TextColor" Value="#5a5d5e" />
-				<Setter Property="FontSize" Value="21" />
+				<Setter Property="FontSize" Value="19" />
 				<Setter Property="FontAttributes" Value="Bold" />
 				<Setter Property="HorizontalOptions" Value="Center" />
 				<Setter Property="HorizontalTextAlignment" Value="Center" />

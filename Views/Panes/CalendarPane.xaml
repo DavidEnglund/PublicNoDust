@@ -8,7 +8,7 @@
 		<ContentView Padding="10">
 			<Label
 				x:Name="calendarHeader"
-				Text="How long is solution for?"
+				Text="Is the solution for a short or long duration?"
         		Style="{DynamicResource greyHeaderLabelStyle}"
 			/>
 		</ContentView>

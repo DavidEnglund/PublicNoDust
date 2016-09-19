@@ -168,7 +168,7 @@
                  Property=Height,
                  Factor=1,
                  Constant=0}">
-      <Label Text="History"
+      <Label Text="Product History"
              HorizontalOptions="FillAndExpand"
              HorizontalTextAlignment="Center"
              VerticalTextAlignment="Center"
