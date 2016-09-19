@@ -3,7 +3,7 @@ namespace Dustbuster
 {
 	public enum Units
 	{
-		Metre,
-		Kilometre
+		Kilometre,
+		Metre
 	}
 }

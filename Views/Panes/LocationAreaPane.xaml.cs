@@ -8,11 +8,9 @@ namespace Dustbuster
 	{
 		public LocationAreaPane() : base("Location and Area", "accordion_icon_location.png")
         {
-            InitializeComponent(); 
-
+            InitializeComponent();
 			Header.SetDynamicResource(StyleProperty, "locationAccordionStyle");
-
         }
-	}
+    }
 }
 

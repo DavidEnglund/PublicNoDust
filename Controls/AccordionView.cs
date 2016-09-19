@@ -48,7 +48,7 @@ namespace Dustbuster
 		private static void OnExpandedPaneChanged(BindableObject bindable, object oldValue, object newValue)
 		{
 			var accordion = (AccordionView)bindable;
-
+            
 			if (oldValue != newValue)
 			{
 				accordion.OnExpandedPaneChanged((AccordionPane)oldValue);

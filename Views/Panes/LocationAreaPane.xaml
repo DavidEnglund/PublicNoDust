@@ -30,7 +30,7 @@
 			FontAttributes="Bold"
             Style="{DynamicResource labelStyle}"/>
   </StackLayout>
-  
+
   <StackLayout Padding="60,0,60,0"
                Orientation="Horizontal">
     <Entry  Placeholder="0"
