@@ -23,10 +23,12 @@ namespace Dustbuster
             if (ContactMethodPicker.SelectedIndex == 1)
             {
                 ContactInfoEntry.Keyboard = Keyboard.Email;
+                ContactInfoEntry.Placeholder = "E.g. example@email.com";
             }
             else
             {
                 ContactInfoEntry.Keyboard = Keyboard.Numeric;
+                ContactInfoEntry.Placeholder = "E.g. 0412345678";
             }
         }
     }

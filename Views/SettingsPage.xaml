@@ -13,7 +13,7 @@
 
                 <Entry x:Name="NameTextEntry"
                        BackgroundColor="#d9d9d9"
-					   Text="{Binding CustomerName, Mode=TwoWay}"
+					             Text="{Binding CustomerName, Mode=TwoWay}"
                        Placeholder="E.g. John Smith"/>
 			
                 <Label x:Name="ContactMethodLabel"
@@ -32,7 +32,8 @@
                 <Entry x:Name="ContactInfoEntry"
                        BackgroundColor="#d9d9d9"
 					             Text="{Binding ContactInfo, Mode=TwoWay}"
-                       WidthRequest="10"/>
+                       WidthRequest="10"
+                       Placeholder="E.g. 0412345678"/>
 
           <StackLayout Orientation="Horizontal"
                        Padding="0,20,0,0">
@@ -43,7 +44,8 @@
                 <Label x:Name="AnalyticsLabel"
                        Text="Send Analytics"
                        HorizontalTextAlignment="End"
-                       TextColor="Black"/>
+                       TextColor="Black"
+                       VerticalTextAlignment="Center"/>
           </StackLayout>
 
           <StackLayout Orientation="Horizontal"
@@ -55,7 +57,8 @@
                 <Label x:Name="ReadModeLabel"
                        Text="Reading Mode"
                        HorizontalTextAlignment="End"
-                       TextColor="Black" />
+                       TextColor="Black"
+                       VerticalTextAlignment="Center"/>
            </StackLayout>
      
     </StackLayout>
