@@ -20,6 +20,7 @@ namespace Dustbuster.Droid
 			if (Control != null)
 			{
 				Control.SetBackgroundColor(AndroidColor.Transparent);
+				Control.SetPaddingRelative(Control.PaddingLeft + 20, Control.PaddingTop, Control.PaddingRight, Control.PaddingBottom);
 			}
 		}
 	}

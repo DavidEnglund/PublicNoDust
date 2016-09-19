@@ -68,8 +68,8 @@
       
       
       <!-- Buttons -->
-      
       <!-- Submit, Calculate, Call Us Now (Accordion, Product and Contact Request pages) -->
+	  <!-- GREEN -->
       <Style x:Key="buttonGreenPrimary" TargetType="Button">
         <Setter Property="BackgroundColor" Value="#18b750" />
         <Setter Property="TextColor" Value="White" />
@@ -79,10 +79,31 @@
       </Style>
 
       <!-- Request Contact  (Product page) -->
-      <Style x:Key="buttonWhiteSecondary" TargetType="Button">
+      <Style x:Key="buttonGreenSecondary" TargetType="Button">
         <Setter Property="BackgroundColor" Value="White" />
         <Setter Property="TextColor" Value="#18b750" />
         <Setter Property="BorderColor" Value="#18b750" />
+        <Setter Property="BorderRadius" Value="3" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="WidthRequest" Value="175" />
+      </Style>
+
+	  <!-- Submit, Calculate, Call Us Now (Accordion, Product and Contact Request pages) -->
+	  <!-- BLUE -->
+	  <Style x:Key="buttonBluePrimary" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#079ece" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BorderRadius" Value="3" />
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="WidthRequest" Value="175" />
+      </Style>
+
+      <!-- Request Contact  (Product page) -->
+      <Style x:Key="buttonBlueSecondary" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="White" />
+        <Setter Property="TextColor" Value="#079ece" />
+        <Setter Property="BorderColor" Value="#079ece" />
         <Setter Property="BorderRadius" Value="3" />
         <Setter Property="BorderWidth" Value="2" />
         <Setter Property="HeightRequest" Value="50" />
