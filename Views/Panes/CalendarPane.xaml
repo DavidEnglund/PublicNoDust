@@ -5,7 +5,7 @@
              x:Class="Dustbuster.CalendarPane">
 	<StackLayout>
 		<!--Header Text-->
-		<ContentView Padding="10">
+		<ContentView Padding="5">
 			<Label
 				x:Name="calendarHeader"
 				Text="Is the solution for a short or long duration?"
@@ -13,8 +13,8 @@
 			/>
 		</ContentView>
 
-		<!--Button Choice Group-->
-		<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+		<StackLayout Orientation="Vertical" HorizontalOptions="Center">
+			<Grid>
 				<!--Duration Under 30 days Button-->
 				<local:SelectImageButton
 					x:Name="under30Button"
@@ -30,6 +30,8 @@
 					UnselectedImage="choice_calendar_under30.png"
 
 					Style="{DynamicResource selectableButtonStyle}"
+
+					Grid.Column="0"
 						
 					Padding="26"
 					Clicked="under30Button_clicked"
@@ -51,10 +53,13 @@
 						
 					Style="{DynamicResource selectableButtonStyle}"
 
+
+					Grid.Column="1"
+						
 					Padding="26"
 					Clicked="over30Under180Button_clicked"
 				/>
-
+			</Grid>
 		</StackLayout>
 
 		<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
