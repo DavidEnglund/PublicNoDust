@@ -61,7 +61,7 @@
                 Clicked="OnTimeClicked"/>
         
         <Button Text="Submit" x:Name="btnSubmit"
-                BackgroundColor="Green"
+                BackgroundColor="#18b750"
                 TextColor="White"                
                 RelativeLayout.XConstraint="70"
                 RelativeLayout.YConstraint="365"
