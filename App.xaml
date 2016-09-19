@@ -73,9 +73,9 @@
       <Style x:Key="buttonGreenPrimary" TargetType="Button">
         <Setter Property="BackgroundColor" Value="#18b750" />
         <Setter Property="TextColor" Value="White" />
-        <Setter Property="BorderRadius" Value="3" />
-        <Setter Property="HeightRequest" Value="50" />
-        <Setter Property="WidthRequest" Value="175" />
+        <Setter Property="BorderRadius" Value="6" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
       </Style>
 
       <!-- Request Contact  (Product page) -->
@@ -83,10 +83,10 @@
         <Setter Property="BackgroundColor" Value="White" />
         <Setter Property="TextColor" Value="#18b750" />
         <Setter Property="BorderColor" Value="#18b750" />
-        <Setter Property="BorderRadius" Value="3" />
+        <Setter Property="BorderRadius" Value="6" />
         <Setter Property="BorderWidth" Value="2" />
-        <Setter Property="HeightRequest" Value="50" />
-        <Setter Property="WidthRequest" Value="175" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
       </Style>
 
 	  <!-- Submit, Calculate, Call Us Now (Accordion, Product and Contact Request pages) -->
@@ -94,9 +94,9 @@
 	  <Style x:Key="buttonBluePrimary" TargetType="Button">
         <Setter Property="BackgroundColor" Value="#079ece" />
         <Setter Property="TextColor" Value="White" />
-        <Setter Property="BorderRadius" Value="3" />
-        <Setter Property="HeightRequest" Value="50" />
-        <Setter Property="WidthRequest" Value="175" />
+        <Setter Property="BorderRadius" Value="6" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
       </Style>
 
       <!-- Request Contact  (Product page) -->
@@ -104,10 +104,10 @@
         <Setter Property="BackgroundColor" Value="White" />
         <Setter Property="TextColor" Value="#079ece" />
         <Setter Property="BorderColor" Value="#079ece" />
-        <Setter Property="BorderRadius" Value="3" />
+        <Setter Property="BorderRadius" Value="6" />
         <Setter Property="BorderWidth" Value="2" />
-        <Setter Property="HeightRequest" Value="50" />
-        <Setter Property="WidthRequest" Value="175" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
       </Style>
 
       <!-- Create Reminder, Request Contact (Call Failed page)-->
@@ -115,10 +115,10 @@
         <Setter Property="BackgroundColor" Value="White" />
         <Setter Property="TextColor" Value="#df4347" />
         <Setter Property="BorderColor" Value="#df4347" />
-        <Setter Property="BorderRadius" Value="3" />
+        <Setter Property="BorderRadius" Value="6" />
         <Setter Property="BorderWidth" Value="2" />
-        <Setter Property="HeightRequest" Value="50" />
-        <Setter Property="WidthRequest" Value="175" />
+        <Setter Property="HeightRequest" Value="60" />
+        <Setter Property="WidthRequest" Value="220" />
       </Style>
 			
 		</ResourceDictionary>

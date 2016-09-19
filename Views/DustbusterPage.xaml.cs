@@ -95,6 +95,9 @@ namespace Dustbuster
 			App.Current.Resources["locationAccordionStyle"] = App.Current.Resources["civilLocationAccordionStyle"];
 			App.Current.Resources["weatherAccordionStyle"] = App.Current.Resources["civilWeatherAccordionStyle"];
 
+			App.Current.Resources["primaryButtonStyle"] = App.Current.Resources["buttonGreenPrimary"];
+			App.Current.Resources["secondaryButtonStyle"] = App.Current.Resources["buttonGreenSecondary"];
+
             await Navigation.PushAsync(new AccordionPage());
         }
 
@@ -111,6 +114,9 @@ namespace Dustbuster
 			App.Current.Resources["calendarAccordionStyle"] = App.Current.Resources["miningCalendarAccordionStyle"];
 			App.Current.Resources["locationAccordionStyle"] = App.Current.Resources["miningLocationAccordionStyle"];
 			App.Current.Resources["weatherAccordionStyle"] = App.Current.Resources["miningWeatherAccordionStyle"];
+
+			App.Current.Resources["primaryButtonStyle"] = App.Current.Resources["buttonBluePrimary"];
+			App.Current.Resources["secondaryButtonStyle"] = App.Current.Resources["buttonBlueSecondary"];
 
             await Navigation.PushAsync(new AccordionPage());
         }
