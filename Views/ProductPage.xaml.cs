@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace Dustbuster.Views
+namespace Dustbuster
 {
     public partial class ProductPage : ContentPage
     {

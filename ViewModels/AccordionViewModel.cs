@@ -35,7 +35,7 @@ namespace Dustbuster
 
 				double tempArea = tempLength * tempWidth;
 
-				Area = (AreaUnit == Units.Kilometre) ? tempArea / 1000000 : tempArea;;
+				Area = (AreaUnit == Units.Kilometre) ? tempArea / 1000000 : tempArea;
 
 			});
 
