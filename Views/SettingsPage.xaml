@@ -5,17 +5,24 @@
              Title="Settings">
   <StackLayout>
     <StackLayout Padding="50,10,50,10">
+      <!-- Enter Name Label -->
       <Label x:Name="NameLabel"
              Text="Your Name:"
              VerticalOptions="Center"
              TextColor="Black"/>
+      
+      <!-- Name Entry -->
       <Entry x:Name="NameTextEntry"
              BackgroundColor="#d9d9d9"
 					   Text="{Binding CustomerName, Mode=TwoWay}"
              Placeholder="E.g. John Smith"/>
+      
+      <!-- Contact Method Label -->
       <Label x:Name="ContactMethodLabel"
              Text="Contact Method:"
              TextColor="Black" />
+      
+      <!-- Contact Method Picker (Phone & Email) -->
       <Picker x:Name="ContactMethodPicker"
               SelectedIndex="{Binding ContactMethod, Mode=TwoWay}"
               BackgroundColor="#d9d9d9">
@@ -24,25 +31,39 @@
 			    <x:String>Email</x:String>
 			  </Picker.Items>
 		  </Picker>
+      
+      <!-- Contact Info Entry (Phone & Email) -->
       <Entry x:Name="ContactInfoEntry"
              BackgroundColor="#d9d9d9"
 					   Text="{Binding ContactInfo, Mode=TwoWay}"
              WidthRequest="10"
              Placeholder="E.g. 0412345678"/>
+      
+      <!-- Stacklayout for Analytics Switch & Label -->
       <StackLayout Orientation="Horizontal"
                    Padding="0,20,0,0">
+        
+        <!-- Analytics Switch  -->
         <Switch x:Name="AnalyticsSwitch"
                 IsToggled="{Binding EnableAnalytics, Mode=TwoWay}"/>
+        
+        <!-- Analytics Label -->
         <Label x:Name="AnalyticsLabel"
                Text="Send Analytics"
                HorizontalTextAlignment="End"
                TextColor="Black"
                VerticalTextAlignment="Center"/>
       </StackLayout>
+      
+      <!-- Stacklayout for Read Mode Switch & Label -->
       <StackLayout Orientation="Horizontal"
                    Padding="0,0,0,0">
+        
+        <!-- Read Mode Switch -->
         <Switch x:Name="ReadModeSwitch"
                 IsToggled="{Binding EnableReadMode, Mode=TwoWay}" />
+        
+        <!-- Read Mode Label -->
         <Label x:Name="ReadModeLabel"
                Text="Reading Mode"
                HorizontalTextAlignment="End"
