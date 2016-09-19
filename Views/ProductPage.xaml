@@ -3,11 +3,6 @@
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               x:Class="Dustbuster.ProductPage" Title="Product Page">
   <StackLayout Spacing="0">
-    
-    <!-- Header section -->
-    
-    
-    
     <!-- Carousel View -->
     <ContentView VerticalOptions="FillAndExpand"
                  HorizontalOptions="FillAndExpand">
@@ -22,7 +17,7 @@
     <ContentView BackgroundColor="#ffffff"
                   VerticalOptions="FillAndExpand"
                   HorizontalOptions="FillAndExpand">
-      <StackLayout Padding="80, 20, 80, 20">
+      <StackLayout Padding="80, 0, 80, 20">
         <Button Text="Call Us Now"
                 BackgroundColor="#18b750"
                 TextColor="White"

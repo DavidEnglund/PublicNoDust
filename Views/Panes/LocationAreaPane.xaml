@@ -84,6 +84,7 @@
             Command="{Binding CalculateArea}" 
             HorizontalOptions="Center"
             VerticalOptions="Center" 
+            Clicked="btnCalculateButton"
 			Style="{StaticResource primaryButtonStyle}" />
   </StackLayout>
 </local:AccordionPane>

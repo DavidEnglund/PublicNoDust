@@ -67,9 +67,20 @@ namespace Dustbuster
                 Aspect = Aspect.AspectFill
             };
 
+            //Here we give LogoChoice the name of the icon we wish to use for the logo depending on if the user chooses mining or civil
+            string logoChoice = "sunhawk_logo_sm.png";
+            if(App.IndustryOption == IndustryOptions.Civil)
+            {
+                logoChoice = "sunhawk_logo_sm.png";
+            }
+            else if(App.IndustryOption == IndustryOptions.Mining)
+            {
+                logoChoice = "rainstrom_logo_sm.png";
+            }
+
             logoImage = new Image
             {
-                Source = "sunhawk_logo_sm.png"
+                Source = logoChoice
                 //HeightRequest = 40
             };
             //Assign tap gesture to ProductImage
