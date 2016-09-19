@@ -4,44 +4,61 @@
              x:Class="Dustbuster.SettingsPage"
              Title="Settings">
   <StackLayout>
-    <StackLayout Padding="50,10,50,10">
-      <!-- Enter Name Label -->
-      <Label x:Name="NameLabel"
-             Text="Your Name:"
-             VerticalOptions="Center"
-             TextColor="Black"/>
+    <StackLayout Padding="0,10,0,10">
+      <!-- Dip label to left -->
+      <StackLayout Padding="35,0,35,0">
+        <!-- Enter Name Label -->
+        <Label x:Name="NameLabel"
+               Text="Your Name:"
+               VerticalOptions="Center"
+               TextColor="#5a5d5e"
+               FontSize="17"/>
+      </StackLayout>
       
-      <!-- Name Entry -->
-      <Entry x:Name="NameTextEntry"
-             BackgroundColor="#d9d9d9"
-					   Text="{Binding CustomerName, Mode=TwoWay}"
-             Placeholder="E.g. John Smith"/>
+      <!-- Center Entry -->
+      <StackLayout Padding="50,0,50,0">
+        <!-- Name Entry -->
+        <Entry x:Name="NameTextEntry"
+               BackgroundColor="#d9d9d9"
+					     Text="{Binding CustomerName, Mode=TwoWay}"
+               Placeholder="E.g. John Smith"/>
+      </StackLayout>
       
-      <!-- Contact Method Label -->
-      <Label x:Name="ContactMethodLabel"
-             Text="Contact Method:"
-             TextColor="Black" />
+      <StackLayout Padding="35,0,35,0">
+      <!-- Dip label to left -->
+        <!-- Contact Method Label -->
+        <Label x:Name="ContactMethodLabel"
+               Text="Contact Method:"
+               TextColor="#5a5d5e"
+               FontSize="17"/>
+      </StackLayout>
       
-      <!-- Contact Method Picker (Phone & Email) -->
-      <Picker x:Name="ContactMethodPicker"
-              SelectedIndex="{Binding ContactMethod, Mode=TwoWay}"
-              BackgroundColor="#d9d9d9">
-        <Picker.Items>
-			    <x:String>Phone</x:String> 
-			    <x:String>Email</x:String>
-			  </Picker.Items>
-		  </Picker>
+      <!-- Center Picker -->
+      <StackLayout Padding="50,0,50,0">
+        <!-- Contact Method Picker (Phone & Email) -->
+        <Picker x:Name="ContactMethodPicker"
+                SelectedIndex="{Binding ContactMethod, Mode=TwoWay}"
+                BackgroundColor="#d9d9d9">
+          <Picker.Items>
+			      <x:String>Phone</x:String> 
+			      <x:String>Email</x:String>
+			    </Picker.Items>
+		    </Picker>
+      </StackLayout>
       
-      <!-- Contact Info Entry (Phone & Email) -->
-      <Entry x:Name="ContactInfoEntry"
-             BackgroundColor="#d9d9d9"
-					   Text="{Binding ContactInfo, Mode=TwoWay}"
-             WidthRequest="10"
-             Placeholder="E.g. 0412345678"/>
+      <!-- Center Entry -->
+      <StackLayout Padding="50,0,50,0">
+        <!-- Contact Info Entry (Phone & Email) -->
+        <Entry x:Name="ContactInfoEntry"
+               BackgroundColor="#d9d9d9"
+					     Text="{Binding ContactInfo, Mode=TwoWay}"
+               WidthRequest="10"
+               Placeholder="E.g. 0412345678"/>
+      </StackLayout>
       
       <!-- Stacklayout for Analytics Switch & Label -->
       <StackLayout Orientation="Horizontal"
-                   Padding="0,20,0,0">
+                   Padding="50,20,50,0">
         
         <!-- Analytics Switch  -->
         <Switch x:Name="AnalyticsSwitch"
@@ -51,13 +68,14 @@
         <Label x:Name="AnalyticsLabel"
                Text="Send Analytics"
                HorizontalTextAlignment="End"
-               TextColor="Black"
+               TextColor="#5a5d5e"
+               FontSize="17"
                VerticalTextAlignment="Center"/>
       </StackLayout>
       
       <!-- Stacklayout for Read Mode Switch & Label -->
       <StackLayout Orientation="Horizontal"
-                   Padding="0,0,0,0">
+                   Padding="50,0,50,0">
         
         <!-- Read Mode Switch -->
         <Switch x:Name="ReadModeSwitch"
@@ -67,7 +85,8 @@
         <Label x:Name="ReadModeLabel"
                Text="Reading Mode"
                HorizontalTextAlignment="End"
-               TextColor="Black"
+               TextColor="#5a5d5e"
+               FontSize="17"
                VerticalTextAlignment="Center"/>
       </StackLayout>
     </StackLayout>
