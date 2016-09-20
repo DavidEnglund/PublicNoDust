@@ -110,6 +110,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\DialerDroid.cs" />
     <Compile Include="Interfaces\SQLiteDroid.cs" />
+    <Compile Include="Interfaces\AndroidReminderService.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderers\CarouselLayoutRenderer.cs" />

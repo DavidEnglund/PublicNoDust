@@ -1,4 +1,4 @@
-﻿using Dustbuster.Views;
+using Dustbuster.Views;
 using Xamarin.Forms;
 
 namespace Dustbuster
@@ -13,21 +13,21 @@ namespace Dustbuster
 			InitializeComponent();
 			InitializeDatabase();
 
-            //Set a style for readingmode to be enabled and disabled
-            if (Settings.EnableReadMode)
-            {
-                Resources["labelStyle"] = Resources["readModeLabelStyle"];  
-            }
-            else
-            {
-                Resources["labelStyle"] = Resources["normalLabelStyle"];
-            }
+			//Set a style for readingmode to be enabled and disabled
+			if (Settings.EnableReadMode)
+			{
+				Resources["labelStyle"] = Resources["readModeLabelStyle"];
+			}
+			else
+			{
+				Resources["labelStyle"] = Resources["normalLabelStyle"];
+			}
 
 			MainPage = new NavigationPage(new DustbusterPage())
 			{
 				BarBackgroundColor = Color.FromHex("#18b750")
-            };
-        }
+			};
+		}
 
 		private async void InitializeDatabase()
 		{
@@ -53,26 +53,29 @@ namespace Dustbuster
 			get;
 			set;
 		}
-        #region davids enums set
-        public static TrafficOptions TrafficOption
-        {
-            get;
-            set;
-        }
-        public static DurationOptions DurationOption
-        {
-            get;
-            set;
-        }
-        public static  WeatherOptions WeatherOption
-        {
-            get;
-            set;
-        }
-        #endregion
-        protected override void OnStart()
+		#region davids enums set
+		public static TrafficOptions TrafficOption
+		{
+			get;
+			set;
+		}
+		public static DurationOptions DurationOption
+		{
+			get;
+			set;
+		}
+		public static WeatherOptions WeatherOption
+		{
+			get;
+			set;
+		}
+		#endregion
+
+		protected override void OnStart()
 		{
 			// Handle when your app starts
+			// this will start the calendar access service for iOS - for android it currently does nothing
+			DependencyService.Get<IReminderervice>(DependencyFetchTarget.GlobalInstance).CreateService();
 		}
 
 		protected override void OnSleep()
@@ -105,7 +108,7 @@ namespace Dustbuster
 				};
 			}
 		}
-        
+
 		public class SimpleObject
 		{
 			public string TextValue
@@ -116,10 +119,10 @@ namespace Dustbuster
 	}
 
 	public enum IndustryOptions { Civil, Mining, None };
-    #region davids enums create
-    // added some more enums for all of the users choices to be stored and used - david
-    public enum TrafficOptions { NonTraffickedArea, TraffickedArea, None };
-    public enum DurationOptions { Under1Month, Over1Month, Under6Months, Over6Months, None };
-    public enum WeatherOptions{ RainExpected, NoRainExpected, None };
-    #endregion
+	#region davids enums create
+	// added some more enums for all of the users choices to be stored and used - david
+	public enum TrafficOptions { NonTraffickedArea, TraffickedArea, None };
+	public enum DurationOptions { Under1Month, Over1Month, Under6Months, Over6Months, None };
+	public enum WeatherOptions { RainExpected, NoRainExpected, None };
+	#endregion
 }
