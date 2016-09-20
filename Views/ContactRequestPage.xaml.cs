@@ -88,7 +88,7 @@ namespace Dustbuster
                     DateTime remindDate = DatePicker.Date;                   
                     remindDate.AddHours(remindTime);
 
-                    DependencyService.Get<IReminderervice>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", remindDate);
+                    DependencyService.Get<IReminderService>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", remindDate);
                     Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, remindDate);
                 }
                 // create data info object - Send this to wherever it needs to go..                

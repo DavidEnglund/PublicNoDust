@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dustbuster.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -87,14 +88,7 @@ namespace Dustbuster
             pagerIndicator.SetBinding(PagerIndicatorDots.SelectedItemProperty, "CurrentProduct");
 
             return pagerIndicator;
-        }
-
-        private async void TapProductButton(object sender, EventArgs e)
-        {
-            //Go back to the product information
-        }
-
-    
+        }       
 
         protected override void OnAppearing()
         {
@@ -102,18 +96,18 @@ namespace Dustbuster
             
         }
 
-        private async void Button_CallNow(object sender, EventArgs e)
+        private async void OnCallNow_Clicked(object sender, EventArgs e)
         {
-            //GO to what ever page allows the user to make a phone call now
+            DependencyService.Get<IDialer>().Dial("0425448555");
         }
 
-        private async void Button_RequestCall(object sender, EventArgs e)
+        private async void OnRequestContact_Clicked(object sender, EventArgs e)
         {
-            //GO to what ever page allows a call request
+            await Navigation.PushAsync(new ContactRequestPage());
         }
 
         // getting the data from the database and formatting it and creating  carousel data object - David
-       
+
         private async void getProductData()
         {
             // set the carousel's data source to an object

@@ -18,13 +18,14 @@
                  VerticalOptions="FillAndExpand"
                  HorizontalOptions="FillAndExpand">
       <StackLayout Padding="80, 0, 80, 20">
-        <Button Text="Call Us Now"
+        <Button Text="Call Us Now"             
                 x:Name="btnCallNow"
                 BackgroundColor="#18b750"
                 TextColor="White"
                 BorderRadius="3"
                 HeightRequest="50"
-                WidthRequest="175" />
+                WidthRequest="175"
+                Clicked="OnCallNow_Clicked"/>
         <Button Text="Request Contact"
                 x:Name="btnRequestContact"
                 BackgroundColor="Transparent"
@@ -33,7 +34,8 @@
                 BorderRadius="3"
                 BorderWidth="2"
                 HeightRequest="50"
-                WidthRequest="175" />
+                WidthRequest="175"
+                Clicked="OnRequestContact_Clicked"/>
       </StackLayout>
     </ContentView>
   </StackLayout>
