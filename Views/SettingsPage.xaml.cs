@@ -16,6 +16,17 @@ namespace Dustbuster
             InitializeComponent();
 
             ContactMethodPicker.SelectedIndexChanged += ContactMethodPicker_SelectedIndexChanged;
+
+            if (ContactMethodPicker.SelectedIndex == 0)
+            {
+                ContactInfoEntry.Keyboard = Keyboard.Numeric;
+                ContactInfoEntry.Placeholder = "E.g. 04 123 456 78";
+            }
+            else
+            {
+                ContactInfoEntry.Keyboard = Keyboard.Email;
+                ContactInfoEntry.Placeholder = "E.g. example@email.com";
+            }
         }
 
         private void ContactMethodPicker_SelectedIndexChanged(object sender, EventArgs e)
