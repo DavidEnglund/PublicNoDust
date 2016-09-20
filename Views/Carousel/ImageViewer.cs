@@ -37,7 +37,7 @@ namespace Dustbuster.Views.Carousel
             //Create a stack layout to hold the close icon
             StackLayout stackLayout = new StackLayout
             {
-                Padding = new Thickness(5, 5, 5, 5)
+                Padding = new Thickness(20, 20, 20, 20)
             };
 
             //Create and add the close icon to the stack layout
