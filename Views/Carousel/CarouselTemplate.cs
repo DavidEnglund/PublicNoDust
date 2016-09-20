@@ -84,7 +84,6 @@ namespace Dustbuster
             logoImage = new Image
             {
                 Source = logoChoice
-                //HeightRequest = 40
             };
             //Assign tap gesture to ProductImage
             AddImageTap();
