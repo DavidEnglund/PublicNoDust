@@ -2693,9 +2693,6 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f05000b
 			public const int abc_action_bar_home_description = 2131034123;
 			
-			// aapt resource value: 0x7f05000b
-			public const int abc_action_bar_home_description = 2131034123;
-			
 			// aapt resource value: 0x7f05000c
 			public const int abc_action_bar_home_description_format = 2131034124;
 			

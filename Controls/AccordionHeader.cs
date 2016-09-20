@@ -25,16 +25,23 @@ namespace Dustbuster
 
             titleLayout.Children.Add((imageHolder = new StackLayout()
             {
+                VerticalOptions = LayoutOptions.FillAndExpand,
+                WidthRequest = 60
+            }),
+                heightConstraint: Constraint.RelativeToParent((parent) => { return parent.Height; }));
+
+            StackLayout imageContainer;
+            imageHolder.Children.Add(imageContainer = new StackLayout()
+            {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 Padding = new Thickness(20, 0, 0, 0)
-            }), widthConstraint: Constraint.RelativeToParent((parent) => { return parent.Width; }),
-                heightConstraint: Constraint.RelativeToParent((parent) => { return parent.Height; }));
+            });
 
-            imageHolder.Children.Add((iconImage = new Image()
+            imageContainer.Children.Add((iconImage = new Image()
             {
                 HeightRequest = 32,
-                HorizontalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.CenterAndExpand
             }));
             titleLayout.Children.Add((titleLabel = new Label()
