@@ -76,8 +76,8 @@ namespace Dustbuster.Views.Carousel
             {
                 HorizontalOptions = LayoutOptions.End,
                 Source = ImageSource.FromFile("cross_icon.png"),
-                WidthRequest = 32,
-                HeightRequest = 32
+                WidthRequest = 16,
+                HeightRequest = 16
             };
 
             //Create a new tap gesture, add the tap event and assign the tap gesture to the cross icon image
