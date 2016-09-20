@@ -152,10 +152,17 @@ namespace Dustbuster
             productImage.GestureRecognizers.Add(tapGestureRecognizer);
         }
 
+        bool disable = false;
+
         //This method handles the tap event which opens the ImageViewer
         private async void ImageTapEvent(object sender, EventArgs e)
         {
+            if (this.disable)
+                return;
+
+            this.disable = true;
             await Navigation.PushModalAsync(new ImageViewer(productImage));
+            this.disable = false;
         }
 
         private void SetBindings()
