@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Linq;
+using System.Collections.ObjectModel;
 
 namespace Dustbuster
 {
@@ -13,6 +14,8 @@ namespace Dustbuster
 		private StackLayout nextPanes;
 		private StackLayout currentPane;
 		private List<AccordionPane> visitedPanes;
+
+		private ObservableCollection<AccordionPane> panes;
 
 		public AccordionView()
 		{
@@ -33,6 +36,13 @@ namespace Dustbuster
 			this.Children.Add(nextPanes);
 
 			visitedPanes = new List<AccordionPane>();
+
+			panes = new ObservableCollection<AccordionPane>();
+		}
+
+		public ObservableCollection<AccordionPane> Panes
+		{
+			get { return this.panes; }
 		}
 
 		public AccordionPane ExpandedPane

@@ -10,7 +10,7 @@ namespace Dustbuster
 		//init weather button group
 		SelectButtonGroup weatherButtonGroup = new SelectButtonGroup();
 
-		public WeatherPane() //: base("Weather", "unselectedNone.png")
+		public WeatherPane() : base("Weather", "unselectedNone.png")
 		{
 			InitializeComponent();
 

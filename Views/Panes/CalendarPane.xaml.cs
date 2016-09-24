@@ -10,7 +10,7 @@ namespace Dustbuster
 		//init calendar button group
 		SelectButtonGroup calendarButtonGroup = new SelectButtonGroup();
 
-		public CalendarPane() //: base("Duration", "unselectedNone.png")
+		public CalendarPane() : base("Duration", "unselectedNone.png")
 		{
 			InitializeComponent();
 

@@ -24,6 +24,12 @@ namespace Dustbuster
 			this.owner = null;
 		}
 
+		public AccordionPane(string title, string image) : this()
+		{
+			Title = title;
+			Image = image;
+		}
+
 		public string Title
 		{
 			get { return (string)GetValue(TitleProperty); }
