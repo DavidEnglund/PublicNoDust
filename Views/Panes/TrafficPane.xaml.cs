@@ -14,7 +14,7 @@ namespace Dustbuster
 		//init traffic button group
 		SelectButtonGroup trafficButtonGroup = new SelectButtonGroup();
 
-		public TrafficPane() : base("Traffic", "unselectedNone.png")
+		public TrafficPane() //: base("Traffic", "unselectedNone.png")
 		{
 			InitializeComponent();
 

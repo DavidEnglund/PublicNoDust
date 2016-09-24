@@ -6,21 +6,22 @@ namespace Dustbuster
 	public class AccordionPane : ContentView
 	{
 
-		public static readonly BindableProperty TitleProperty = BindableProperty.Create("Title", typeof(string), typeof(AccordionPane), null, propertyChanged: OnTitleChanged);
+		public static readonly BindableProperty TitleProperty = BindableProperty.Create("Title", typeof(string), typeof(AccordionPane), "", propertyChanged: OnTitleChanged);
 		public static readonly BindableProperty ImageProperty = BindableProperty.Create("Image", typeof(string), typeof(AccordionPane), null, propertyChanged: OnImageChanged);
+		public static readonly BindableProperty IsExpandedProperty = BindableProperty.Create("IsExpanded", typeof(bool), typeof(AccordionPane), false);
 
 		private AccordionHeader header;
 		private AccordionView owner;
 
-		public AccordionPane(string title, string image)
+		public event EventHandler PaneExpaneded;
+		public event EventHandler PaneCollapsed;
+		public event EventHandler PaneInvalidated;
+
+		public AccordionPane()
 		{
             BackgroundColor = Color.Transparent;
 			this.header = new AccordionHeader(this);
-			this.header.IconImage = ImageSource.FromFile(image);
 			this.owner = null;
-
-			Title = title;
-			Image = image;
 		}
 
 		public string Title
@@ -33,6 +34,12 @@ namespace Dustbuster
 		{
 			get { return (string)GetValue(ImageProperty); }
 			set { SetValue(ImageProperty, value); }
+		}
+
+		public bool IsExpanded
+		{
+			get { return (bool)GetValue(IsExpandedProperty); }
+			set { SetValue(IsExpandedProperty, value); }
 		}
 
 		public AccordionHeader Header
