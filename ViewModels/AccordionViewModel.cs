@@ -9,11 +9,20 @@ namespace Dustbuster
 	public class AccordionViewModel : INotifyPropertyChanged
 	{
 		private AccordionPane expandedPane;
+		private TrafficPane trafficPane;
+		private CalendarPane calendarPane;
+		private WeatherPane weatherPane;
+		private LocationAreaPane locationAreaPane;
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public AccordionViewModel()
 		{
+			trafficPane = null;
+			calendarPane = null;
+			weatherPane = null;
+			locationAreaPane = null;
+
 			this.CalculateArea = new Command((nothing) =>
 			{
 				// Add the key to the input string.
@@ -75,6 +84,30 @@ namespace Dustbuster
 
 		//enum civil mining getter and setter
 		public IndustryOptions industryOption { get; set; }
+
+		public TrafficPane TrafficPane
+		{
+			get { return trafficPane; }
+			set { trafficPane = value; }
+		}
+
+		public CalendarPane CalendarPane
+		{
+			get { return calendarPane; }
+			set { calendarPane = value; }
+		}
+
+		public WeatherPane WeatherPane
+		{
+			get { return weatherPane; }
+			set { weatherPane = value; }
+		}
+
+		public LocationAreaPane LocationAreaPane
+		{
+			get { return locationAreaPane; }
+			set { locationAreaPane = value; }
+		}
 
 		public AccordionPane ExpandedPane
 		{

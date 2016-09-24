@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Linq;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 
 namespace Dustbuster
 {
@@ -38,6 +39,41 @@ namespace Dustbuster
 			visitedPanes = new List<AccordionPane>();
 
 			panes = new ObservableCollection<AccordionPane>();
+			panes.CollectionChanged += (sender, e) =>
+			{
+				switch (e.Action)
+				{
+					case NotifyCollectionChangedAction.Add:
+						
+						foreach (AccordionPane pane in e.NewItems.OfType<AccordionPane>())
+						{
+							if (pane.Owner == null)
+							{
+								pane.Owner = this;
+								pane.BindingContext = this.BindingContext;
+								pane.Header.GestureRecognizers.Add(new TapGestureRecognizer()
+								{
+									Command = new Command(() =>
+									{
+										ExpandedPane = pane;
+									})
+								});
+
+								pane.IsVisible = false;
+
+								currentPane.Children.Add(pane);
+							}
+
+							if (ExpandedPane == null)
+							{
+								ExpandedPane = pane;
+							}
+
+						}
+
+						break;
+				}
+			};
 		}
 
 		public ObservableCollection<AccordionPane> Panes
@@ -58,16 +94,6 @@ namespace Dustbuster
 			if (oldValue != newValue)
 			{
 				accordion.OnExpandedPaneChanged((AccordionPane)oldValue);
-			}
-		}
-
-		private static void OnPanesChanged(BindableObject bindable, object oldValue, object newValue)
-		{
-			var accordion = (AccordionView)bindable;
-
-			if (oldValue != newValue)
-			{
-				accordion.OnPanesChanged();
 			}
 		}
 
@@ -114,28 +140,6 @@ namespace Dustbuster
 					}
 				}
 			}
-		}
-
-		private void OnPanesChanged()
-		{
-			/*ExpandedPane = Panes.ToList().First().Value;
-
-			foreach (AccordionPane pane in Panes.Values.ToList())
-			{
-				pane.Owner = this;
-				pane.BindingContext = this.BindingContext;
-				pane.Header.GestureRecognizers.Add(new TapGestureRecognizer()
-				{
-					Command = new Command(() =>
-					{
-						ExpandedPane = pane;
-					})
-				});
-
-				pane.IsVisible = (pane == ExpandedPane);
-
-				currentPane.Children.Add(pane);
-			}*/
 		}
 
 		public void VisitPane(AccordionPane pane)

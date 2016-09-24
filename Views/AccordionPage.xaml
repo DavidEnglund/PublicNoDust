@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" BackgroundColor="White" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Dustbuster" x:Class="Dustbuster.AccordionPage">
+<ContentPage x:Name="AccordionPage" xmlns="http://xamarin.com/schemas/2014/forms" BackgroundColor="White" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Dustbuster" x:Class="Dustbuster.AccordionPage">
 	<ContentPage.Content>
-		<local:AccordionView x:Name="Accordion"  BackgroundColor="Transparent" ExpandedPane="{Binding ExpandedPane}">
+		<local:AccordionView x:Name="Accordion" BindingContext="{Binding Source={x:Reference AccordionPage}, Path=BindingContext}" BackgroundColor="Transparent" ExpandedPane="{Binding ExpandedPane}">
 			<local:AccordionView.Panes>
-				<local:TrafficPane />
-				<local:WeatherPane />
-				<local:CalendarPane />
-				<local:LocationAreaPane />
+				<local:TrafficPane x:Name="TrafficPane" />
+				<local:WeatherPane x:Name="WeatherPane" />
+				<local:CalendarPane x:Name="CalendarPane" />
+				<local:LocationAreaPane x:Name="LocationAreaPane" />
 			</local:AccordionView.Panes>
 		</local:AccordionView>
 	</ContentPage.Content>

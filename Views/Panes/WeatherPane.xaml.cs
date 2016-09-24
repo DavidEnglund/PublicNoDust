@@ -23,11 +23,11 @@ namespace Dustbuster
 
 		public override void OnPaneExpanded()
 		{
-            /*if (App.WeatherOption == WeatherOptions.None && Owner.IsPaneVisited(Owner.Panes["Weather"]))
+            if (App.WeatherOption == WeatherOptions.None && Owner.IsPaneVisited(this))
             {
                 Image = "unselectedNone.png";
                 weatherButtonGroup.Selected = null;
-            }*/
+            }
 		}
 
 		//rainy area button click
@@ -38,12 +38,12 @@ namespace Dustbuster
 			Image = "accordion_icon_weather_rain.png";
 
 			// set the option enum
-			/*App.WeatherOption = WeatherOptions.RainExpected;
+			App.WeatherOption = WeatherOptions.RainExpected;
 
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			if (!Owner.IsPaneVisited(((AccordionViewModel)BindingContext).LocationAreaPane))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
-			}*/
+				Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane);
+			}
         }
 
 		//sunny area button click
@@ -54,12 +54,12 @@ namespace Dustbuster
 			Image = "accordion_icon_weather_sun.png";
 
 			// set the option enums
-			/*App.WeatherOption = WeatherOptions.NoRainExpected;
+			App.WeatherOption = WeatherOptions.NoRainExpected;
 
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			if (!Owner.IsPaneVisited(((AccordionViewModel)BindingContext).LocationAreaPane))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
-			}*/
+				Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane);
+			}
         }
 	}
 }

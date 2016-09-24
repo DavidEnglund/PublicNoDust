@@ -48,13 +48,13 @@ namespace Dustbuster
 				App.DurationOption = DurationOptions.None;
 				//visit calendar pane
 
-				/*if (Owner.IsPaneVisited(Owner.Panes["Weather"]))
+				if (Owner.IsPaneVisited(((AccordionViewModel)BindingContext).WeatherPane))
 				{
-					Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["Calendar"]);
+					Owner.VisitPane(((AccordionViewModel)BindingContext).WeatherPane, ((AccordionViewModel)BindingContext).CalendarPane);
 				}
 				else {
-					Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Calendar"]);
-				}*/
+					Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane, ((AccordionViewModel)BindingContext).CalendarPane);
+				}
 			}
 		}
 
@@ -65,11 +65,11 @@ namespace Dustbuster
 			Title = "Non Trafficked Area";
 			Image = "accordion_icon_traffic_openroad.png";
 
-			/*if (App.TrafficOption != TrafficOptions.NonTraffickedArea)
+			if (App.TrafficOption != TrafficOptions.NonTraffickedArea)
 			{
 				if (App.TrafficOption == TrafficOptions.TraffickedArea)
 				{
-					Owner.Panes["Calendar"].OnPaneInvalidate();
+					((AccordionViewModel)BindingContext).CalendarPane.OnPaneInvalidate();
 				}
 
 				//set the option enum
@@ -77,8 +77,8 @@ namespace Dustbuster
 				App.WeatherOption = WeatherOptions.None;
 				App.DurationOption = DurationOptions.None;
 				//visit calendar pane
-				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Calendar"]);
-			}*/
+				Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane, ((AccordionViewModel)BindingContext).CalendarPane);
+			}
 		}
 	}
 }

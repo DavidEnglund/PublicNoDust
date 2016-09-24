@@ -30,11 +30,11 @@ namespace Dustbuster
 			over30Under180Button.SelectedImage = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "choice_calendar_over30.png" : "choice_calendar_under180.png";
 			over30Under180Button.UnselectedImage = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "choice_calendar_over30.png" : "choice_calendar_under180.png";
 
-			/*if (App.DurationOption == DurationOptions.None && Owner.IsPaneVisited(Owner.Panes["Calendar"]))
+			if (App.DurationOption == DurationOptions.None && Owner.IsPaneVisited(((AccordionViewModel)BindingContext).CalendarPane))
 			{
 				Image = "unselectedNone.png";
 				calendarButtonGroup.Selected = null;
-			}*/
+			}
 		}
 
 		//under 30 button click
@@ -80,19 +80,20 @@ namespace Dustbuster
 		private void goToWeatherPane()
 		{
 			//Goto weather pane
-			/*if (!Owner.IsPaneVisited(Owner.Panes["Weather"]))
+			if (!Owner.IsPaneVisited(((AccordionViewModel)BindingContext).WeatherPane))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Weather"]);
-			}*/
+				Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane, ((AccordionViewModel)BindingContext).WeatherPane);
+			}
 		}
 
 		private void goToLocationAreaPane()
 		{
+
 			//Goto location area pane
-			/*if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]) || App.DurationOption == DurationOptions.Over6Months)
+			if (!Owner.IsPaneVisited(((AccordionViewModel)BindingContext).LocationAreaPane) || App.DurationOption == DurationOptions.Over6Months)
 			{
-				Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["LocationArea"]);
-			}*/
+				Owner.VisitPane(((AccordionViewModel)BindingContext).WeatherPane, ((AccordionViewModel)BindingContext).LocationAreaPane);
+			}
 		}
 	}
 }
