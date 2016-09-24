@@ -37,10 +37,10 @@ namespace Dustbuster
 
 			if (App.TrafficOption != TrafficOptions.TraffickedArea)
 			{
-				if (App.TrafficOption == TrafficOptions.NonTraffickedArea)
+				/*if (App.TrafficOption == TrafficOptions.NonTraffickedArea)
 				{
 					Owner.Panes["Calendar"].OnPaneInvalidate();
-				}
+				}*/
 
 				//set the option enum
 				App.TrafficOption = TrafficOptions.TraffickedArea;
@@ -48,13 +48,13 @@ namespace Dustbuster
 				App.DurationOption = DurationOptions.None;
 				//visit calendar pane
 
-				if (Owner.IsPaneVisited(Owner.Panes["Weather"]))
+				/*if (Owner.IsPaneVisited(Owner.Panes["Weather"]))
 				{
 					Owner.VisitPane(Owner.Panes["Weather"], Owner.Panes["Calendar"]);
 				}
 				else {
 					Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Calendar"]);
-				}
+				}*/
 			}
 		}
 
@@ -65,7 +65,7 @@ namespace Dustbuster
 			Title = "Non Trafficked Area";
 			Image = "accordion_icon_traffic_openroad.png";
 
-			if (App.TrafficOption != TrafficOptions.NonTraffickedArea)
+			/*if (App.TrafficOption != TrafficOptions.NonTraffickedArea)
 			{
 				if (App.TrafficOption == TrafficOptions.TraffickedArea)
 				{
@@ -78,7 +78,7 @@ namespace Dustbuster
 				App.DurationOption = DurationOptions.None;
 				//visit calendar pane
 				Owner.VisitPane(Owner.Panes["LocationArea"], Owner.Panes["Calendar"]);
-			}
+			}*/
 		}
 	}
 }

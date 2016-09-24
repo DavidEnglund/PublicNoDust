@@ -7,7 +7,6 @@ namespace Dustbuster
 {
 	public class AccordionView : StackLayout
 	{
-		public static readonly BindableProperty PanesProperty = BindableProperty.Create("Panes", typeof(Dictionary<string, AccordionPane>), typeof(AccordionPane), null, propertyChanged: OnPanesChanged);
 		public static readonly BindableProperty ExpandedPaneProperty = BindableProperty.Create("ExpandedPane", typeof(AccordionPane), typeof(AccordionView), null, BindingMode.TwoWay, propertyChanged: OnExpandedPaneChanged);
 
 		private StackLayout prevPanes;
@@ -35,13 +34,6 @@ namespace Dustbuster
 
 			visitedPanes = new List<AccordionPane>();
 		}
-
-		public Dictionary<string, AccordionPane> Panes
-		{
-			get { return (Dictionary<string, AccordionPane>)GetValue(PanesProperty); }
-			set { SetValue(PanesProperty, value); }
-		}
-
 
 		public AccordionPane ExpandedPane
 		{
@@ -116,7 +108,7 @@ namespace Dustbuster
 
 		private void OnPanesChanged()
 		{
-			ExpandedPane = Panes.ToList().First().Value;
+			/*ExpandedPane = Panes.ToList().First().Value;
 
 			foreach (AccordionPane pane in Panes.Values.ToList())
 			{
@@ -133,7 +125,7 @@ namespace Dustbuster
 				pane.IsVisible = (pane == ExpandedPane);
 
 				currentPane.Children.Add(pane);
-			}
+			}*/
 		}
 
 		public void VisitPane(AccordionPane pane)
