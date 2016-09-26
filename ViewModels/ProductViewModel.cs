@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace Dustbuster.ViewModels
+namespace Dustbuster
 {
     public class ProductViewModel : INotifyPropertyChanged
     {
@@ -20,6 +20,7 @@ namespace Dustbuster.ViewModels
 		public ProductViewModel(AccordionViewModel viewModel)
 		{
 			this.viewModel = viewModel;
+			this.products = new ObservableCollection<ProductDescription>();
 			this.selectedProduct = null;
 		}
 

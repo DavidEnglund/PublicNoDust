@@ -16,17 +16,15 @@ namespace Dustbuster
 
 		public event PropertyChangedEventHandler PropertyChanged;
 
-		public AccordionViewModel()
+		public AccordionViewModel(INavigation navigation)
 		{
 			trafficPane = null;
 			calendarPane = null;
 			weatherPane = null;
 			locationAreaPane = null;
 
-			this.CalculateArea = new Command((nothing) =>
+			this.Calculate = new Command(async (nothing) =>
 			{
-				// Add the key to the input string.
-
 				double tempLength = Length;
 				double tempWidth = Width;
 
@@ -36,6 +34,25 @@ namespace Dustbuster
 				double tempArea = tempLength * tempWidth;
 
 				Area = (AreaUnit == Units.Kilometre) ? tempArea / 1000000 : tempArea;
+
+				ProductViewModel productViewModel = new ProductViewModel(this);
+
+				DbConnectionManager connection = App.ProductsDb;
+
+				var productSelection = connection.SelectProducts((int)App.DurationOption,
+										  (int)App.TrafficOption,
+										  (App.WeatherOption == WeatherOptions.RainExpected));
+
+				foreach (ProductMatrix productMatrix in productSelection)
+				{
+					ProductDescription productDescription = connection.GetProductInfo(productMatrix);
+
+					productViewModel.Products.Add(productDescription);
+				}
+
+
+				await navigation.PushAsync(new ProductPage(productViewModel));
+
 
 			});
 
@@ -254,7 +271,7 @@ namespace Dustbuster
 			}
 		}
 
-		public ICommand CalculateArea { set; get; }
+		public ICommand Calculate { set; get; }
 
 		public ICommand ChangeLengthUnit { set; get; }
 

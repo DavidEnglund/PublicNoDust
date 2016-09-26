@@ -11,11 +11,6 @@ namespace Dustbuster
             InitializeComponent();
 			Header.SetDynamicResource(StyleProperty, "locationAccordionStyle");
         }
-
-        private async void btnCalculateButton(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ProductPage());
-        }
     }
 }
 

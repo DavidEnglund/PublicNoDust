@@ -10,7 +10,7 @@ namespace Dustbuster
 		private AccordionViewModel viewModel;
 		public AccordionPage()
 		{
-			BindingContext = (viewModel = new AccordionViewModel());
+			BindingContext = (viewModel = new AccordionViewModel(Navigation));
 
 			InitializeComponent();
 

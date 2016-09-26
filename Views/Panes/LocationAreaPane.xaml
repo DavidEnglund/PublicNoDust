@@ -81,10 +81,9 @@
   </StackLayout>
     <Button Text="Calculate"
             x:Name="bCalculation"
-            Command="{Binding CalculateArea}" 
+            Command="{Binding Calculate}" 
             HorizontalOptions="Center"
             VerticalOptions="Center" 
-            Clicked="btnCalculateButton"
 			Style="{StaticResource primaryButtonStyle}" />
   </StackLayout>
 </local:AccordionPane>

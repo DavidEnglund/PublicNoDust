@@ -12,11 +12,11 @@ namespace Dustbuster
 {
     public partial class ProductPage : ContentPage
     {
-        public static SwitcherPageViewModel viewModel;
         string PageColor = "";
 
-        public ProductPage()
+        public ProductPage(ProductViewModel viewModel)
         {
+			BindingContext = viewModel;
             //NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             InitializeCarouselView();
@@ -36,9 +36,6 @@ namespace Dustbuster
             btnCallNow.BackgroundColor = Color.FromHex(PageColor);
             btnRequestContact.BorderColor = Color.FromHex(PageColor);
             btnRequestContact.TextColor = Color.FromHex(PageColor);
-
-            viewModel = new SwitcherPageViewModel();
-            BindingContext = viewModel;
 
             CarouselLayout pagesCarousel = CreatePagesCarousel();
             View dots = new StackLayout
@@ -75,7 +72,7 @@ namespace Dustbuster
                 ItemTemplate = new DataTemplate(typeof(CarouselTemplate))
             };
             carousel.SetBinding(CarouselLayout.ItemsSourceProperty, "Products");
-            carousel.SetBinding(CarouselLayout.SelectedItemProperty, "CurrentProduct", BindingMode.TwoWay);
+            carousel.SetBinding(CarouselLayout.SelectedItemProperty, "SelectedProduct", BindingMode.TwoWay);
 
             return carousel;
         }
