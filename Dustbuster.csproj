@@ -80,7 +80,6 @@
     <Compile Include="Controls\SelectImageButton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Carousel\BaseViewModel.cs" />
-    <Compile Include="ViewModels\Carousel\SwitcherPageViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
     <Compile Include="Views\CallEmailResultsPage.xaml.cs">
       <DependentUpon>CallEmailResultsPage.xaml</DependentUpon>

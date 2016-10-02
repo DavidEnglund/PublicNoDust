@@ -117,6 +117,12 @@
       </ContentView.GestureRecognizers>
     </ContentView>
 
+    <Button x:Name="ReadModeButton"
+            Clicked="btnReadModeButton_Clicked"
+            Text="Read Only"
+            RelativeLayout.XConstraint="290"
+            RelativeLayout.YConstraint="5"/>
+
     <Image HeightRequest="25"
            WidthRequest="25"
            Source="hamburger_icon.png"

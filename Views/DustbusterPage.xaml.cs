@@ -1,4 +1,5 @@
 using Dustbuster;
+using Dustbuster.Views;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -56,7 +57,18 @@ namespace Dustbuster
             }
         }
 
-        
+        private async void btnReadModeButton_Clicked(object sender, EventArgs e)
+        {
+            if(Settings.EnableReadMode)
+            {
+                Settings.EnableReadMode = false;
+            }
+            else
+            {
+                Settings.EnableReadMode = true;
+            }
+        }
+
         private void btnSideMenu_Clicked(object sender, EventArgs e)
         {
             AnimatePanel();
