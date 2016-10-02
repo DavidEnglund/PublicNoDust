@@ -28,20 +28,20 @@
                      Type=RelativeToParent,
                      Property=Height,
                      Factor=1}">
-            <Label Text="Application Title"
+            <Label Text="No Dust"
                    x:Name="lblTitle"
-                    TextColor="White"
-                    FontSize="Large"
-                    FontAttributes="Bold"
-                    VerticalOptions="StartAndExpand"
-                    VerticalTextAlignment="Center"
-                    HorizontalTextAlignment="Center"/>
-            <Label Text="This application is to choose what product is best suited for your needs. Some more fill in text and more here"
-                    TextColor="White"
-                    FontSize="Small"
-                    VerticalOptions="Start"
-                    HorizontalTextAlignment="Center"
-                    HorizontalOptions="FillAndExpand"/>
+                   TextColor="White"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   VerticalOptions="StartAndExpand"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="Stop your dust in only a few clicks. Fill out all the parameters and we will calculate what product will meet the requirements of your site."
+                   TextColor="White"
+                   FontSize="Small"
+                   VerticalOptions="Start"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="FillAndExpand"/>
         </StackLayout>
       </RelativeLayout>
     </ContentView>
@@ -68,7 +68,7 @@
                VerticalOptions="Start"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center"/>
-        <Label Text="Mining option. Some fill in text explaining this option."
+        <Label Text="Specialised dust suppression for mine sites in Australia. Complete the checklist to see what products suit you."
                TextColor="White"
                FontSize="Small"
                VerticalOptions="End"
@@ -103,7 +103,7 @@
                VerticalOptions="Start"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center"/>
-        <Label Text="Civil option. Some fill in text explaining this option."
+        <Label Text="Specialised dust suppression for government and civil works or for private use. Complete the checklist to see what products suits you."
                TextColor="White"
                FontSize="Small"
                VerticalOptions="End"

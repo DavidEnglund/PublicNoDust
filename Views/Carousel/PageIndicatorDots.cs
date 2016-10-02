@@ -18,7 +18,7 @@ namespace Dustbuster
         public PagerIndicatorDots()
         {
             HorizontalOptions = LayoutOptions.CenterAndExpand;
-            VerticalOptions = LayoutOptions.Center;
+            VerticalOptions = LayoutOptions.CenterAndExpand;
             Orientation = StackOrientation.Horizontal;
             DotColor = Color.FromHex("#18b750");
         }
@@ -29,11 +29,13 @@ namespace Dustbuster
             //Make one button and add it to the dotLayout
             var dot = new Button
             {
-                BorderRadius = Convert.ToInt32(DotSize / 8),
+                BorderRadius = Convert.ToInt32(DotSize/2),
                 HeightRequest = DotSize,
                 WidthRequest = DotSize,
                 BackgroundColor = DotColor
             };
+            //var box = new BoxView { HeightRequest = DotSize, WidthRequest = DotSize, Color = DotColor };
+            //Children.Add(box);
             Children.Add(dot);
         }
 
@@ -108,7 +110,6 @@ namespace Dustbuster
         {
             dot.Opacity = 1.0;
         }
-
 
         #region Bindable Properties
         public static BindableProperty ItemsSourceProperty =
