@@ -82,11 +82,14 @@
     <Compile Include="ViewModels\Carousel\BaseViewModel.cs" />
     <Compile Include="ViewModels\Carousel\SwitcherPageViewModel.cs" />
     <Compile Include="ViewModels\ProductViewModel.cs" />
+    <Compile Include="Views\CallEmailResultsPage.xaml.cs">
+      <DependentUpon>CallEmailResultsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Carousel\CarouselLayout.cs" />
     <Compile Include="Views\Carousel\ImageViewer.cs" />
     <Compile Include="Views\Carousel\PageIndicatorDots.cs" />
     <Compile Include="Interfaces\Reminder.cs" />
-    <Compile Include="Models\ContactRequestInfo.cs" />    
+    <Compile Include="Models\ContactRequestInfo.cs" />
     <Compile Include="ViewModels\ContactRequestViewModel.cs" />
     <Compile Include="Views\ContactRequestPage.xaml.cs">
       <DependentUpon>ContactRequestPage.xaml</DependentUpon>
@@ -185,6 +188,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\ContactRequestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\CallEmailResultsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

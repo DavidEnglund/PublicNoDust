@@ -103,8 +103,9 @@ namespace Dustbuster
             await Navigation.PushAsync(new ContactRequestPage());
         }
 
-        // getting the data from the database and formatting it and creating  carousel data object - David
-
+        /* is this even needed now? seems no longer needed?
+        #region dont think this is needed anymore? 
+        // getting the data from the database and formatting it and creating  carousel data object
         private async void getProductData()
         {
             // set the carousel's data source to an object
@@ -152,9 +153,8 @@ namespace Dustbuster
 
 
                 /**/
-                });
-
-
+        /*  });
         }
+        #endregion */
     }
 }

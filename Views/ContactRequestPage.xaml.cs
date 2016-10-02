@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dustbuster.Views;
+using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
@@ -93,11 +94,22 @@ namespace Dustbuster
                 }
                 // create data info object - Send this to wherever it needs to go..                
                 ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text, dpDate.Date);
+
+                /*
+                if(COntactRequestInfo sends corretly)
+                {
+                    await Navigation.PushAsync(new CallEmailResultsPage(3));
+                }
+                else
+                {
+                    await Navigation.PushAsync(new CallEmailResultsPage(4));
+                }
+                */
             }
         }
-        // calls the methods used to validate the input fields
         #endregion
 
+        // calls the methods used to validate the input fields
         private bool ValidateFields()
         {
             return (ValidName() && ValidContact()) ? true : false;

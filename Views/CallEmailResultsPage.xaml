@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dustbuster.Views.CallEmailResultsPage">
+  <StackLayout Spacing="0">
+    <ContentView x:Name="ColorBackgroundOne"
+                 BackgroundColor="#df4347"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand">
+      <StackLayout Padding="0, 0, 300, 0">
+        <Label Text="X Close"
+               TextColor="#ffffff"
+               FontSize="Small"
+               FontAttributes="Bold"
+               VerticalOptions="Start"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+      </StackLayout>
+      <ContentView.GestureRecognizers>
+        <TapGestureRecognizer Tapped="TapCloseButton" 
+                              NumberOfTapsRequired="1" />
+      </ContentView.GestureRecognizers>
+    </ContentView>
+    <ContentView x:Name="ColorBackgroundTwo"
+                 BackgroundColor="#df4347"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand">
+      <StackLayout Padding="50, 40, 50, 0">
+        <Image x:Name="MainImage"
+               Source="fail_cross.png"
+               WidthRequest="150"
+               HeightRequest="150"/>
+      </StackLayout>
+    </ContentView>
+    <ContentView x:Name="ColorBackgroundThree"
+                 BackgroundColor="#df4347"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand">
+      <StackLayout Padding="0, 30, 0, 30">
+        <Label x:Name="StateLabel"
+               Text="Call Failed!"
+               TextColor="#ffffff"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               VerticalOptions="Start"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+      </StackLayout>
+    </ContentView>
+    <ContentView BackgroundColor="#ffffff"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand">
+      <StackLayout Padding="30, 30, 30, 30">
+        <Label x:Name="MainTextLabel"
+               Text="Your call failed, however you can attempt to send a contact request or add a reminder to your phones calendar"
+               TextColor="#5a5d5e"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               VerticalOptions="Start"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"/>
+      </StackLayout>
+    </ContentView>
+    <ContentView BackgroundColor="#ffffff"
+                 VerticalOptions="FillAndExpand"
+                 HorizontalOptions="FillAndExpand">
+      <StackLayout Padding="20, 30, 20, 70">
+        <Button x:Name="ButtonOne"
+                Text="Create Reminder"
+                TextColor="#df4347"
+                BackgroundColor="#ffffff"
+                Clicked="Button_CreateReminder"
+                BorderColor="#df4347"
+                BorderWidth="3"
+                BorderRadius="1" />
+        <Button x:Name="ButtonTwo"
+                Text="Request Contact"
+                TextColor="#df4347"
+                BackgroundColor="#ffffff"
+                Clicked="Button_RequestContact"
+                BorderColor="#df4347"
+                BorderWidth="3"
+                BorderRadius="1"/>
+      </StackLayout>
+    </ContentView>
+  </StackLayout>
+</ContentPage>
