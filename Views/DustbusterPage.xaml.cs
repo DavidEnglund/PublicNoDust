@@ -56,15 +56,21 @@ namespace Dustbuster
             }
         }
 
-        private async void btnReadModeButton_Clicked(object sender, EventArgs e)
+        private void btnReadModeButton_Clicked(object sender, EventArgs e)
         {
             if(Settings.EnableReadMode)
             {
                 Settings.EnableReadMode = false;
+				lblTitle.TextColor = Color.FromHex("#ffffff");
+				lblMainDescription.TextColor = Color.FromHex("#ffffff");
+				imgApplicationImage.Source = "app_title.png";
             }
             else
             {
                 Settings.EnableReadMode = true;
+				lblTitle.TextColor = Color.FromHex("#5a5d5e");
+				lblMainDescription.TextColor = Color.FromHex("##5a5d5e");
+				imgApplicationImage.Source = "";
             }
         }
 
