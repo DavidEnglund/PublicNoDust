@@ -22,7 +22,6 @@
                 x:Name="btnCallNow"
                 BackgroundColor="#18b750"
                 TextColor="White"
-                BorderRadius="3"
                 HeightRequest="50"
                 WidthRequest="175"
                 Clicked="OnCallNow_Clicked"/>

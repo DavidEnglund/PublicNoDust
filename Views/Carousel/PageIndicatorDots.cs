@@ -18,7 +18,7 @@ namespace Dustbuster
         public PagerIndicatorDots()
         {
             HorizontalOptions = LayoutOptions.CenterAndExpand;
-            VerticalOptions = LayoutOptions.CenterAndExpand;
+            VerticalOptions = LayoutOptions.Center;
             Orientation = StackOrientation.Horizontal;
             DotColor = Color.FromHex("#18b750");
         }
@@ -34,8 +34,6 @@ namespace Dustbuster
                 WidthRequest = DotSize,
                 BackgroundColor = DotColor
             };
-            //var box = new BoxView { HeightRequest = DotSize, WidthRequest = DotSize, Color = DotColor };
-            //Children.Add(box);
             Children.Add(dot);
         }
 
