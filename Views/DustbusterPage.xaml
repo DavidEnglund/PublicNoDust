@@ -16,7 +16,6 @@
       <RelativeLayout VerticalOptions="FillAndExpand"
                       HorizontalOptions="FillAndExpand">
         <Image Source="app_title.png"
-			   x:Name="imgApplicationImage"
                Aspect="Fill" />
         <StackLayout Orientation="Vertical"
                      Padding="70, 13, 70, 90"
@@ -39,7 +38,6 @@
                    HorizontalTextAlignment="Center"/>
             <Label Text="Stop your dust in only a few clicks. Fill out all the parameters and we will calculate what product will meet the requirements of your site."
                    TextColor="White"
-				   x:Name="lblMainDescription"
                    FontSize="Small"
                    VerticalOptions="Start"
                    HorizontalTextAlignment="Center"
