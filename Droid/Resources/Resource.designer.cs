@@ -28,7 +28,7 @@ namespace Dustbuster.Droid
 		{
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Dustbuster.Droid.Resource.Attribute.actionBarSize;
 		}
-		
+
 		public partial class Animation
 		{
 			

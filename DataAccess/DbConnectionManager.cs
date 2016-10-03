@@ -20,6 +20,7 @@ namespace Dustbuster
 		private List<ProductDuration> durationList = new List<ProductDuration>
         {
             new ProductDuration(30,"Short Term"),
+            new ProductDuration(90,"Medium To Long Term"),        //applies to roads only
             new ProductDuration(180,"Medium Term"),
             new ProductDuration(360,"Long Term")
         };
@@ -59,11 +60,14 @@ namespace Dustbuster
             new ProductDescription(5, 360,"1 App", 4000, "Hydroseeding","HydroSeeding is the best possible option to ensure long term erosion control. Our proprietary blend includes soil enhancers and fast germinating seeds to establish vegetation as soon as possible. Very popular on mine sites and waste treatment plant to complete revegetation requirements. We can add any type of seed or other additives to the product if requested."),
 
             new ProductDescription(3, 30,"3 App/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
-            new ProductDescription(3, 180,"3 App/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
-            new ProductDescription(3, 360,"3 App/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
+            new ProductDescription(3, 90,"3 App/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
+            
             new ProductDescription(4, 30,"1 App", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required."),
-            new ProductDescription(4, 180,"1 App/2 months", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required."),
-            new ProductDescription(4, 360,"1 App/2 months", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required.")
+            new ProductDescription(4, 90,"1 App/2 months", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required."),
+
+            //medium and long term road solutions were folded into one result
+            //new ProductDescription(3, 360,"3 App/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
+            //new ProductDescription(4, 360,"1 App/2 months", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required.")
 
         };
 
@@ -105,11 +109,11 @@ namespace Dustbuster
             new ProductMatrix(30,1,true,4), 
             new ProductMatrix(30,1,false,3),  
             //medium term
-            new ProductMatrix(180,1,false,4),
-            new ProductMatrix(180,1,true,3), 
-            //long term
-            new ProductMatrix(360,1,false,4),
-            new ProductMatrix(360,1,true,3),
+            new ProductMatrix(90,1,false,4),
+            new ProductMatrix(90,1,true,3)
+            //long term (folded into medium term)
+            //new ProductMatrix(360,1,false,4),
+            //new ProductMatrix(360,1,true,3)
 
         };
 
@@ -210,7 +214,6 @@ namespace Dustbuster
         {
             lock (locker)
             {
-                //linq and sqlite version for reference
                 return dbConnection.Table<ProductDescription>().Where(c => c.ProductId == pId && c.DurationMaxDays == duration).FirstOrDefault();
             }
         }
