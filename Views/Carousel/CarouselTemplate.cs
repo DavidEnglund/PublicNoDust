@@ -9,8 +9,8 @@ namespace Dustbuster
         Label lblTitle, lblDescription, lblQuantity, lblApplication, lblRate;
         StackLayout stackTitleWrap, parent;
         ScrollView scrollingLabelWrap;
-        Image productImage, logoImage;
-        string logoChoice = "", PageColor = "";
+        Image productImage;
+        string PageColor = "";
 
         public CarouselTemplate()
         {
@@ -27,12 +27,10 @@ namespace Dustbuster
             //Here we set the logo and the color of the carousel page depedning on if the user chooses civil or mining
             if (App.IndustryOption == IndustryOptions.Civil)
             {
-                logoChoice = "sunhawk_logo_sm.png";
                 PageColor = "#18b750";
             }
             else if (App.IndustryOption == IndustryOptions.Mining)
             {
-                logoChoice = "rainstrom_logo_sm.png";
                 PageColor = "#079ece";
             }
 
@@ -80,11 +78,6 @@ namespace Dustbuster
                 Aspect = Aspect.AspectFill
             };
 
-
-            logoImage = new Image
-            {
-                Source = logoChoice
-            };
             //Assign tap gesture to ProductImage
             AddImageTap();
 
@@ -128,8 +121,6 @@ namespace Dustbuster
                 }
             };
 
-
-            stackTitleWrap.Children.Add(logoImage);
             stackTitleWrap.Children.Add(lblTitle);
 
             parent.Children.Add(stackTitleWrap);

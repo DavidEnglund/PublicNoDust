@@ -28,10 +28,14 @@ namespace Dustbuster
             if (App.IndustryOption == IndustryOptions.Civil)
             {
                 PageColor = "#18b750";
+                LogoImage.Source = "sunhawk_logo_sm.png";
+                LogoImage.BackgroundColor = Color.FromHex("#18b750");
             }
             else if (App.IndustryOption == IndustryOptions.Mining)
             {
                 PageColor = "#079ece";
+                LogoImage.Source = "rainstrom_logo_sm.png";
+                LogoImage.BackgroundColor = Color.FromHex("#079ece");
             }
             btnCallNow.BackgroundColor = Color.FromHex(PageColor);
             btnRequestContact.BorderColor = Color.FromHex(PageColor);

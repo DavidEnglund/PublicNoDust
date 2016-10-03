@@ -3,6 +3,11 @@
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
               x:Class="Dustbuster.ProductPage" Title="Product Page">
   <StackLayout Spacing="0">
+
+    <Image Source="rainstrom_logo_sm.png"
+           x:Name="LogoImage"
+           BackgroundColor="Blue"/>
+    
     <!-- Carousel View -->
     <ContentView VerticalOptions="FillAndExpand"
                  HorizontalOptions="FillAndExpand">
