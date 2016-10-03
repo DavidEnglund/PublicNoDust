@@ -72,23 +72,6 @@
                FontSize="17"
                VerticalTextAlignment="Center"/>
       </StackLayout>
-      
-      <!-- Stacklayout for Read Mode Switch & Label -->
-      <StackLayout Orientation="Horizontal"
-                   Padding="50,0,50,0">
-        
-        <!-- Read Mode Switch -->
-        <Switch x:Name="ReadModeSwitch"
-                IsToggled="{Binding EnableReadMode, Mode=TwoWay}" />
-        
-        <!-- Read Mode Label -->
-        <Label x:Name="ReadModeLabel"
-               Text="Reading Mode"
-               HorizontalTextAlignment="End"
-               TextColor="#5a5d5e"
-               FontSize="17"
-               VerticalTextAlignment="Center"/>
-      </StackLayout>
     </StackLayout>
   </StackLayout>
 </ContentPage>
