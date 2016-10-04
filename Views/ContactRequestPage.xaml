@@ -26,11 +26,10 @@
           />
           
         
-        <Button Text="Phone"                            
+        <Button Text="Phone" x:Name="btnPhone"                            
                 RelativeLayout.XConstraint="20"
                 RelativeLayout.YConstraint="120"
                 WidthRequest="250"
-                
                 Clicked="OnContactClicked"/>
         
         <Entry Keyboard="Telephone" Placeholder="04 123 456 78" x:Name="etContact"               

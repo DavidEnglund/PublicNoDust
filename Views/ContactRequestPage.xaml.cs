@@ -14,8 +14,22 @@ namespace Dustbuster
                 
         public ContactRequestPage()
         {
+            string industryColor = "";
+
             this.BindingContext = new ContactRequestViewModel(this);
             InitializeComponent();
+
+            // get industry color
+            if (App.IndustryOption == IndustryOptions.Civil)
+            {
+                industryColor = "#18b750";
+            }
+            else if (App.IndustryOption == IndustryOptions.Mining)
+            {
+                industryColor = "#079ece";
+            }
+            // set industry color
+            btnSubmit.BackgroundColor = Color.FromHex(industryColor);
         }
 
         public DatePicker DatePicker
@@ -127,7 +141,7 @@ namespace Dustbuster
                 }
                 else
                 {
-                    DisplayAlert("Whoops! Regex", "Incorrect input in Name field.", "Ok");
+                    DisplayAlert("Whoops!", "Incorrect input in Name field.", "Ok");
                     return false;
                 }
             } else {
