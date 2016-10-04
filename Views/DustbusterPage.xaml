@@ -125,16 +125,18 @@
             RelativeLayout.XConstraint="290"
             RelativeLayout.YConstraint="5"/>
     
-    <!--<Image HeightRequest="25"
-           WidthRequest="25"
-           Source="fail_cross.png"
+    <!-- Will replace button above when jaydens images start to work
+    <Image HeightRequest="100"
+           WidthRequest="100"
+           x:Name="ReadModeImage"
+           Source=""
            RelativeLayout.XConstraint="280"
            RelativeLayout.YConstraint="10">
       <Image.GestureRecognizers>
         <TapGestureRecognizer Tapped="btnReadModeButton_Clicked"
                               NumberOfTapsRequired="1"/>
       </Image.GestureRecognizers>
-    </Image> -->
+    </Image>-->
 
     <Image HeightRequest="25"
            WidthRequest="25"

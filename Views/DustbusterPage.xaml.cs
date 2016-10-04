@@ -70,6 +70,7 @@ namespace Dustbuster
                 lblTitle.TextColor = Color.FromHex("#ffffff");
                 lblMainDescription.TextColor = Color.FromHex("#ffffff");
                 imgApplicationImage.Source = "app_title.png";
+               // ReadModeImage.Source = "readingModelcon.png";
                 Settings.EnableReadMode = false;
             }
             else
@@ -77,6 +78,7 @@ namespace Dustbuster
                 lblTitle.TextColor = Color.FromHex("#5a5d5e");
                 lblMainDescription.TextColor = Color.FromHex("##5a5d5e");
                 imgApplicationImage.Source = "";
+               // ReadModeImage.Source = "readingModelconOff.png";
                 Settings.EnableReadMode = true;
             }
         }
