@@ -50,10 +50,7 @@ namespace Dustbuster
 					productViewModel.Products.Add(productDescription);
 				}
 
-
 				await navigation.PushAsync(new ProductPage(productViewModel));
-
-
 			});
 
 			this.ChangeLengthUnit = new Command((nothing) =>
