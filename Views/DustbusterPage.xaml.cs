@@ -12,10 +12,12 @@ namespace Dustbuster
 
         public DustbusterPage()
 		{
+            Settings.EnableReadMode = true; //Need it to start of false on start up.
             dustbusterViewModel = new DustbusterViewModel();
             BindingContext = dustbusterViewModel;
 
             InitializeComponent();
+            setTitleImageDescription();
         }
 
 
@@ -58,19 +60,24 @@ namespace Dustbuster
 
         private void btnReadModeButton_Clicked(object sender, EventArgs e)
         {
-            if(Settings.EnableReadMode)
+                setTitleImageDescription();
+        }
+
+        public void setTitleImageDescription()
+        {
+            if (Settings.EnableReadMode)
             {
+                lblTitle.TextColor = Color.FromHex("#ffffff");
+                lblMainDescription.TextColor = Color.FromHex("#ffffff");
+                imgApplicationImage.Source = "app_title.png";
                 Settings.EnableReadMode = false;
-				lblTitle.TextColor = Color.FromHex("#ffffff");
-				lblMainDescription.TextColor = Color.FromHex("#ffffff");
-				imgApplicationImage.Source = "app_title.png";
             }
             else
             {
+                lblTitle.TextColor = Color.FromHex("#5a5d5e");
+                lblMainDescription.TextColor = Color.FromHex("##5a5d5e");
+                imgApplicationImage.Source = "";
                 Settings.EnableReadMode = true;
-				lblTitle.TextColor = Color.FromHex("#5a5d5e");
-				lblMainDescription.TextColor = Color.FromHex("##5a5d5e");
-				imgApplicationImage.Source = "";
             }
         }
 

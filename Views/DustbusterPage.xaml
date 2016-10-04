@@ -16,7 +16,7 @@
       <RelativeLayout VerticalOptions="FillAndExpand"
                       HorizontalOptions="FillAndExpand">
         <Image Source="app_title.png"
-			   x:Name="imgApplicationImage"
+			         x:Name="imgApplicationImage"
                Aspect="Fill" />
         <StackLayout Orientation="Vertical"
                      Padding="70, 13, 70, 90"
@@ -124,6 +124,17 @@
             Text="Read Only"
             RelativeLayout.XConstraint="290"
             RelativeLayout.YConstraint="5"/>
+    
+    <!--<Image HeightRequest="25"
+           WidthRequest="25"
+           Source="fail_cross.png"
+           RelativeLayout.XConstraint="280"
+           RelativeLayout.YConstraint="10">
+      <Image.GestureRecognizers>
+        <TapGestureRecognizer Tapped="btnReadModeButton_Clicked"
+                              NumberOfTapsRequired="1"/>
+      </Image.GestureRecognizers>
+    </Image> -->
 
     <Image HeightRequest="25"
            WidthRequest="25"

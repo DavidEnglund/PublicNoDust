@@ -28,7 +28,7 @@ namespace Dustbuster.Droid
 		{
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Dustbuster.Droid.Resource.Attribute.actionBarSize;
 		}
-
+		
 		public partial class Animation
 		{
 			
@@ -2041,8 +2041,8 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f02007c
 			public const int mr_ic_settings_light = 2130837628;
 			
-			// aapt resource value: 0x7f020088
-			public const int notification_template_icon_bg = 2130837640;
+			// aapt resource value: 0x7f02008a
+			public const int notification_template_icon_bg = 2130837642;
 			
 			// aapt resource value: 0x7f02007d
 			public const int ProductImagePreview = 2130837629;
@@ -2057,25 +2057,31 @@ namespace Dustbuster.Droid
 			public const int rainstrom_logo_sm = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int settings_icon = 2130837633;
+			public const int readingModeIcon = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int success_tick = 2130837634;
+			public const int readingModeIconOff = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int sunhawk_logo_lg = 2130837635;
+			public const int settings_icon = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int sunhawk_logo_md = 2130837636;
+			public const int success_tick = 2130837636;
 			
 			// aapt resource value: 0x7f020085
-			public const int sunhawk_logo_sm = 2130837637;
+			public const int sunhawk_logo_lg = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int team_image = 2130837638;
+			public const int sunhawk_logo_md = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int unselectedNone = 2130837639;
+			public const int sunhawk_logo_sm = 2130837639;
+			
+			// aapt resource value: 0x7f020088
+			public const int team_image = 2130837640;
+			
+			// aapt resource value: 0x7f020089
+			public const int unselectedNone = 2130837641;
 			
 			static Drawable()
 			{
