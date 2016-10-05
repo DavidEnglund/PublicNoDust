@@ -5,21 +5,28 @@
              Title="About">
 
   <StackLayout>
-    <Label  Text="Application Title"
-			FontAttributes="Bold"
+    <Label  Text="No Dust"
+			      FontAttributes="Bold"
+            FontSize="17"
+            TextColor="Black"
             HorizontalTextAlignment="Center"/>
-    <Label  Text="Application Version"
-			FontAttributes="Bold"
+    <Label  Text="Version 1.0"
+			      FontAttributes="Bold"
+            
+            TextColor="Black"
             HorizontalTextAlignment="Center"/>
-    <Label  TextColor="#000000"
-            FontSize = "15"
+      <StackLayout  Padding="20,0,20,0">   
+      <Label  
+            FontSize = "13"
             VerticalTextAlignment="Center"
             HorizontalTextAlignment="Center"
-            Text="Lorem ipsum dolor sit amet,consectetur adipiscing elit.Praesent luctus vestibulum lorem in cursus.Pellentesque aliquet dui at lorem laoreet,commodo gravida sem consequat.Curabitur convallis tellus id accumsan sodales.Nunc tincidunt auctor ligula at congue." />
-
+            Text="Officially created in 2016.The application generates a systematical quotation of the recommended product and the amount required, based upon the users input for their selected area. No Dust can be contacted for further information regarding pricing." />
+      </StackLayout> 
 	<Label Text="Acknowledgements"
-		   FontAttributes="Bold"
-           HorizontalTextAlignment="Center"/>
+		     FontAttributes="Bold"
+         TextColor="Black"
+         FontSize = "16"
+         HorizontalTextAlignment="Center"/>
       <ScrollView>
         <StackLayout Padding="20,0,0,0">
             <StackLayout Orientation="Horizontal">
@@ -39,7 +46,7 @@
           <Grid        Padding="0,0,0,-6">
           <Label       Text="Jayden Spencer"
                        FontAttributes="Bold"
-                       FontSize="18"
+                       FontSize="15"
                        TextColor="Black"/>
           </Grid>
           <Label Text="Programmer"/>
@@ -65,7 +72,7 @@
           <Grid        Padding="0,0,0,-6">
           <Label       Text="David Englund"
                        FontAttributes="Bold"
-                       FontSize="18"
+                       FontSize="15"
                        TextColor="Black"/>
           </Grid>
           <Label Text="Programmer"/>
@@ -89,7 +96,7 @@
           <Grid        Padding="0,0,0,-6">
           <Label       Text="Ken H"
                        FontAttributes="Bold"
-                       FontSize="18"
+                       FontSize="15"
                        TextColor="Black"/>
           </Grid>
           <Label Text="Programmer"/>
@@ -113,7 +120,7 @@
           <Grid       Padding="0,0,0,-6">
           <Label      Text="Michay Guzman"
                       FontAttributes="Bold"
-                      FontSize="18"
+                      FontSize="15"
                       TextColor="Black"/>
           </Grid>
           <Label Text="Programmer"/>
@@ -137,7 +144,7 @@
           <Grid        Padding="0,0,0,-6">
           <Label       Text=" Michael White"
                        FontAttributes="Bold"
-                       FontSize="18"
+                       FontSize="15"
                        TextColor="Black"/>
           </Grid>
           <Label Text="Programmer"/>
@@ -161,7 +168,7 @@
           <Grid        Padding="0,0,0,-6">
           <Label       Text="Rebecca Lim"
                        FontAttributes="Bold"
-                       FontSize="18"
+                       FontSize="15"
                        TextColor="Black"/>
           </Grid>
           <Label Text="Programmer"/>
@@ -185,7 +192,7 @@
           <Grid        Padding="0,0,0,-6">
           <Label       Text="Erdal Erkilic"
                        FontAttributes="Bold"
-                       FontSize="18"
+                       FontSize="15"
                        TextColor="Black"/>
           </Grid>
           <Label Text="Programmer"/>
@@ -209,7 +216,7 @@
           <Grid        Padding="0,0,0,-6">
           <Label       Text="Monique Reddy"
                        FontAttributes="Bold"
-                       FontSize="18"
+                       FontSize="15"
                        TextColor="Black"/>
           </Grid>
           <Label       Text="Programmer"/>
@@ -233,7 +240,7 @@
           <Grid        Padding="0,0,0,-6">
           <Label       Text="Michael Macaulay"
                        FontAttributes="Bold"
-                       FontSize="18"
+                       FontSize="15"
                        TextColor="Black"/>
           </Grid>
           <Label       Text="Programmer"/>
@@ -258,7 +265,7 @@
           <Grid        Padding="0,0,0,-6">
           <Label       Text="Azhar Firdaus"
                        FontAttributes="Bold"
-                       FontSize="18"
+                       FontSize="15"
                        TextColor="Black"/>
           </Grid>
           <Label Text="Programmer"/>
