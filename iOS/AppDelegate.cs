@@ -20,6 +20,12 @@ namespace Dustbuster.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            // this is to register for access to the calendar services 
+            var settings = UIUserNotificationSettings.GetSettingsForTypes(
+              UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.None
+              , null);
+            
+            UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
 
             return base.FinishedLaunching(app, options);
         }
