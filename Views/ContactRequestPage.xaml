@@ -49,8 +49,7 @@
                 WidthRequest="200"
                 Command="{Binding DatePickerCommand}"/>
         
-        <DatePicker x:Name="dpDate" IsVisible="False" Date="{Binding SelectedDate, Mode=TwoWay}" HorizontalOptions="FillAndExpand">
-          
+        <DatePicker x:Name="dpDate" IsVisible="False" Date="{Binding SelectedDate, Mode=TwoWay}" HorizontalOptions="FillAndExpand">          
         </DatePicker>
         
         <Button Text="Morning" x:Name="btnTime"                
