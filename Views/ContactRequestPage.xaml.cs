@@ -30,6 +30,17 @@ namespace Dustbuster
             }
             // set industry color
             btnSubmit.BackgroundColor = Color.FromHex(industryColor);
+
+
+            if (etName.Text != null)
+            {
+                etName.Text = etName.Text.Trim();
+            }
+            else
+            {
+                etName.Text = Settings.CustomerName.Trim();
+
+            }
         }
 
         public DatePicker DatePicker
