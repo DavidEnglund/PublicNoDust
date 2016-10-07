@@ -31,7 +31,7 @@ namespace Dustbuster
             // set industry color
             btnSubmit.BackgroundColor = Color.FromHex(industryColor);
 
-
+            // sync settings username to contact request page user name 
             if (etName.Text != null)
             {
                 etName.Text = etName.Text.Trim();
@@ -39,9 +39,19 @@ namespace Dustbuster
             else
             {
                 etName.Text = Settings.CustomerName.Trim();
+            }
 
+            // sync settings number to contact request page user name
+            if (etContact.Text != null)
+            {
+                etContact.Text = etContact.Text.Trim();
+            }
+            else
+            {
+                etContact.Text = Settings.ContactInfo.Trim();
             }
         }
+
 
         public DatePicker DatePicker
         {
