@@ -63,6 +63,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IKeyboardInteraction.cs" />
     <Compile Include="Models\Analytics.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\DustbusterViewModel.cs" />

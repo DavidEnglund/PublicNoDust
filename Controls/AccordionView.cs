@@ -116,8 +116,8 @@ namespace Dustbuster
 				if (oldExpanded != null)
 				{
 					oldExpanded.IsVisible = false;
-					oldExpanded.OnPaneCollapsed();
-				}
+					oldExpanded.OnPaneCollapsed(); // invoke method when the pane collapses
+                }
 
 				newExpanded.IsVisible = true;
 				newExpanded.OnPaneExpanded();
