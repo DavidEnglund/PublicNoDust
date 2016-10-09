@@ -8,7 +8,7 @@
             <Label Text="Your Name:" VerticalOptions="Center" TextColor="#5a5d5e" FontAttributes="Bold" FontSize="Medium" />
         </StackLayout>
         <!-- Name Entry -->
-        <StackLayout Padding="50,0,50,0">
+        <StackLayout Padding="52,0,52,0">
             <Entry Placeholder="E.g. John Smith" x:Name="etName" BackgroundColor="#d9d9d9" />
         </StackLayout>
         <!-- LABEL contact info -->
@@ -20,7 +20,7 @@
             <Button Text="Phone" x:Name="btnPhone" Clicked="OnContactClicked" />
         </StackLayout>
         <!-- Phone/Email entry field  -->
-        <StackLayout Padding="50,0,50,0">
+        <StackLayout Padding="52,0,52,0">
             <Entry Keyboard="Telephone" Placeholder="04 123 456 78" x:Name="etContact" BackgroundColor="#d9d9d9" />
         </StackLayout>
         <!-- LABEL contact-->
@@ -28,16 +28,16 @@
             <Label Text="Best Time of Contact:" TextColor="#5a5d5e" FontSize="Medium" FontAttributes="Bold" />
         </StackLayout>
         <!--  Date button & DatePicker-->
-        <StackLayout Padding="50,0,50,0">
+        <StackLayout Padding="75,0,75,0">
             <Button Text="{Binding SelectedDate, StringFormat='{}{0:dd - MMM - yy}'}}" x:Name="btnDate" Command="{Binding DatePickerCommand}" />
             <DatePicker x:Name="dpDate" IsVisible="False" Date="{Binding SelectedDate, Mode=TwoWay}" HorizontalOptions="FillAndExpand" />
         </StackLayout>
         <!-- Time Button  -->
-        <StackLayout Padding="50,0,50,0">
+        <StackLayout Padding="75,0,75,0">
             <Button Text="Morning" x:Name="btnTime" Clicked="OnTimeClicked" />
         </StackLayout>
         <!-- Submit Button -->
-        <StackLayout Padding="50,0,50,0">
+        <StackLayout Padding="100,10,100,0">
             <Button Text="Submit" x:Name="btnSubmit" BackgroundColor="#18b750" TextColor="White" Clicked="OnSubmitClicked" />
         </StackLayout>
     </StackLayout>
