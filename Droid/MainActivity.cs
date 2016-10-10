@@ -7,6 +7,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Graphics;
+using Android.Util;
 
 namespace Dustbuster.Droid
 {
@@ -14,17 +16,21 @@ namespace Dustbuster.Droid
 	          ScreenOrientation = ScreenOrientation.Portrait)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
-		protected override void OnCreate(Bundle bundle)
-		{
-			TabLayoutResource = Resource.Layout.Tabbar;
-			ToolbarResource = Resource.Layout.Toolbar;
+        
 
-			base.OnCreate(bundle);
+        protected override void OnCreate(Bundle bundle)
+        {
+            TabLayoutResource = Resource.Layout.Tabbar;
+            ToolbarResource = Resource.Layout.Toolbar;
 
-			global::Xamarin.Forms.Forms.Init(this, bundle);
+            base.OnCreate(bundle);
 
-			LoadApplication(new App());
-		}
+
+            global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            LoadApplication(new App());
+        }
+        
 	}
 }
 

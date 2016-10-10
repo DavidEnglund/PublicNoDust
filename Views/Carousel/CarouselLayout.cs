@@ -39,7 +39,7 @@ namespace Dustbuster
                 child.WidthRequest = width;
                 child.HeightRequest = height;
             }
-            _layingOutChildren = false;
+           // _layingOutChildren = false;
         }
     
         private async Task UpdateSelectedItem()
