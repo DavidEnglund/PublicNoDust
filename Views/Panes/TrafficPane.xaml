@@ -43,14 +43,16 @@
 					x:Name="nonTraffickedButton"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
-					SelectedImage="choice_traffic_openroad.png"
+					SelectedImage="sandPile_button_img.png"
+          HeightRequest="85"
+          WidthRequest="85"
 
 					HoldBorderWidth="0"
 					HoldBorderColor="Black"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
-					UnselectedImage="choice_traffic_openroad.png"
+					UnselectedImage="sandPile_button_img.png"
 
 					Style="{DynamicResource selectableButtonStyle}"
 

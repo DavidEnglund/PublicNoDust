@@ -63,7 +63,7 @@ namespace Dustbuster
 		{
 			trafficAnswer.Text = "No, my area is not a trafficked area";
 			Title = "Non Trafficked Area";
-			Image = "accordion_icon_traffic_openroad.png";
+			Image = "sandPile_icon.png";
 
 			if (App.TrafficOption != TrafficOptions.NonTraffickedArea)
 			{
