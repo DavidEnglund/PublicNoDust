@@ -130,29 +130,22 @@
                               NumberOfTapsRequired="1" />
       </ContentView.GestureRecognizers>
     </ContentView>
-
-    <Button x:Name="ReadModeButton"
-            Clicked="btnReadModeButton_Clicked"
-            Text="Read Only"
-            RelativeLayout.XConstraint="290"
-            RelativeLayout.YConstraint="5"/>
     
-    <!-- Will replace button above when jaydens images start to work
-    <Image HeightRequest="100"
-           WidthRequest="100"
+    <Image HeightRequest="40"
            x:Name="ReadModeImage"
            Source=""
-           RelativeLayout.XConstraint="280"
+           RelativeLayout.XConstraint="330"
            RelativeLayout.YConstraint="10">
       <Image.GestureRecognizers>
         <TapGestureRecognizer Tapped="btnReadModeButton_Clicked"
                               NumberOfTapsRequired="1"/>
       </Image.GestureRecognizers>
-    </Image>-->
+    </Image>
 
     <Image HeightRequest="25"
            WidthRequest="25"
-           Source="hamburger_icon.png"
+           x:Name="HamBurgerImage"
+           Source=""
            RelativeLayout.XConstraint="10"
            RelativeLayout.YConstraint="10">
       <Image.GestureRecognizers>
