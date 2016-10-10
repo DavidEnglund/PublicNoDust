@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dustbuster.Interfaces;
+using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
 
@@ -10,6 +11,14 @@ namespace Dustbuster
         {
             InitializeComponent();
 			Header.SetDynamicResource(StyleProperty, "locationAccordionStyle");
+        }
+
+        /**
+         * Hide active soft-keyboard when pane dismisses or shrinks
+         **/
+        public override void OnPaneCollapsed()
+        {
+            DependencyService.Get<IKeyboardInteraction>().HideKeyboard();
         }
     }
 }

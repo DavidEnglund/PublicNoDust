@@ -117,6 +117,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\DialerDroid.cs" />
+    <Compile Include="Interfaces\KeyboardInteractionDroid.cs" />
     <Compile Include="Interfaces\SQLiteDroid.cs" />
     <Compile Include="Interfaces\AndroidReminderService.cs" />
     <Compile Include="MainActivity.cs" />

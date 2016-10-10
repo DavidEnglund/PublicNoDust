@@ -79,11 +79,16 @@ namespace Dustbuster
 			}
 		}
 
-		public virtual void OnPaneExpanded() { } 
+		public virtual void OnPaneExpanded() { }
 
-		public virtual void OnPaneCollapsed() { } 
+        /*
+         * this method purposely is made empty or unimplemented to be used by child or inherited class
+         * unless new solving could prove this method is not mandatory
+         * this method should exist
+         */
+        public virtual void OnPaneCollapsed() { } // do not remove
 
-		public virtual void OnPaneInvalidate() { }
+        public virtual void OnPaneInvalidate() { }
 
 
 	}

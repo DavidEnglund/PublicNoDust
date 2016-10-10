@@ -30,7 +30,28 @@ namespace Dustbuster
             }
             // set industry color
             btnSubmit.BackgroundColor = Color.FromHex(industryColor);
+
+            // sync settings username to contact request page user name 
+            if (etName.Text != null)
+            {
+                etName.Text = etName.Text.Trim();
+            }
+            else
+            {
+                etName.Text = Settings.CustomerName.Trim();
+            }
+
+            // sync settings number to contact request page user name
+            if (etContact.Text != null)
+            {
+                etContact.Text = etContact.Text.Trim();
+            }
+            else
+            {
+                etContact.Text = Settings.ContactInfo.Trim();
+            }
         }
+
 
         public DatePicker DatePicker
         {
@@ -69,7 +90,14 @@ namespace Dustbuster
         {
             Button button = (Button)sender;
             // use display action sheet to bring the popup up            
-            string pickTime = await DisplayActionSheet("Select Time", "", null, "Morning", "Midday", "Afternoon", "Evening");
+            string selectTime = await DisplayActionSheet("Select Time", "", null, "Morning", "Midday", "Afternoon", "Evening");
+            // if the user selects out of the popup, go with the last selected
+
+            string pickTime = null;
+            if (selectTime != null)
+                pickTime = selectTime;
+
+            
             // either Morning(8AM), Midday(12-noon), Afternoon(2pm) or Evening(5pm)
             switch (pickTime)
             {
@@ -87,7 +115,8 @@ namespace Dustbuster
                     remindTime = 8.00;
                     break;
             }
-            button.Text = pickTime;
+            if (pickTime != null)
+                button.Text = pickTime;
         }
 
         private async void OnSubmitClicked(object sender, EventArgs args)
