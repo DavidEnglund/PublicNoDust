@@ -69,6 +69,7 @@ namespace Dustbuster
                 setTitleImageDescription();
         }
 
+        //Here we are setting all the elements that have to change depedning on if reading mode is on or off
         public void setTitleImageDescription()
         {
             if (Settings.EnableReadMode)
