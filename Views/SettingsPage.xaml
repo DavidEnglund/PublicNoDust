@@ -24,6 +24,7 @@
                Placeholder="E.g. John Smith"/>
       </StackLayout>
       
+      
       <StackLayout Padding="35,0,35,0">
       <!-- Dip label to left -->
         <!-- Contact Method Label -->
