@@ -126,6 +126,7 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\DialerIOS.cs" />
     <Compile Include="Interfaces\IOSReminderService.cs" />
     <Compile Include="Interfaces\SQLiteIOS.cs" />
     <Compile Include="Main.cs" />
