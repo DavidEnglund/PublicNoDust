@@ -20,7 +20,7 @@
     
     <!-- Buttons Call Us Now and Request contact -->
     <ContentView BackgroundColor="#ffffff"
-                 VerticalOptions="FillAndExpand"
+                 VerticalOptions="EndAndExpand"
                  HorizontalOptions="FillAndExpand">
       <StackLayout Padding="80, 0, 80, 20">
         <Button Text="Call Us Now"             
