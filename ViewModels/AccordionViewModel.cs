@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dustbuster.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Input;
@@ -15,6 +16,8 @@ namespace Dustbuster
 		private LocationAreaPane locationAreaPane;
 
 		public event PropertyChangedEventHandler PropertyChanged;
+
+        Analytics AnalyticsClass = new Analytics();
 
 		public AccordionViewModel(INavigation navigation)
 		{
@@ -49,6 +52,11 @@ namespace Dustbuster
 
 					productViewModel.Products.Add(productDescription);
 				}
+
+                //Starts Analytics up
+                AnalyticsClass.SetDetails();
+                //Send all needed data
+                AnalyticsClass.SendAnalytics(App.IndustryOption.ToString(), "Traffic", App.TrafficOption.ToString(), "Calendar", App.DurationOption.ToString(), "Rain", App.WeatherOption.ToString(), "Location", " ");
 
 				await navigation.PushAsync(new ProductPage(productViewModel));
 			});

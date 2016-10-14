@@ -1,5 +1,5 @@
 using Dustbuster;
-using Plugin.GoogleAnalytics;
+using Dustbuster.Models;
 using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
@@ -19,11 +19,6 @@ namespace Dustbuster
 
             InitializeComponent();
             setTitleImageDescription();
-
-            //Begin tracking information
-            GoogleAnalytics.Current.InitTracker();
-            //Tell Analytics that this is still working
-            GoogleAnalytics.Current.Tracker.SendView("I still work!");
         }
 
 
