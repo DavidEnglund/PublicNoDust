@@ -13,80 +13,16 @@
 			/>
 		</ContentView>
 
-		<StackLayout Orientation="Vertical" HorizontalOptions="Center">
-			<Grid>
-				<!--Duration Under 30 days Button-->
-				<local:SelectImageButton
-					x:Name="under30Button"
-					SelectedBorderColor="Black"
-					SelectedBorderWidth="0"
-					SelectedImage="choice_calendar_under30.png"
-
-					HoldBorderWidth="0"
-					HoldBorderColor="Black"
-
-					UnselectedBorderColor="White"
-					UnselectedBorderWidth="0"
-					UnselectedImage="choice_calendar_under30.png"
-
-					Style="{DynamicResource selectableButtonStyle}"
-
-					Grid.Column="0"
-						
-					Padding="26"
-					Clicked="under30Button_clicked"
-				/>
-
-				<!--Duration Under 180days /or/ Over 30days -->
-				<local:SelectImageButton
-					x:Name="over30Under180Button"
-					SelectedBorderColor="Black"
-					SelectedBorderWidth="0"
-					SelectedImage="choice_calendar_over30.png"
-
-					HoldBorderWidth="0"
-					HoldBorderColor="Black"
-
-					UnselectedBorderColor="White"
-					UnselectedBorderWidth="0"
-					UnselectedImage="choice_calendar_over30.png"
-						
-					Style="{DynamicResource selectableButtonStyle}"
-
-
-					Grid.Column="1"
-						
-					Padding="26"
-					Clicked="over30Under180Button_clicked"
-				/>
-			</Grid>
-		</StackLayout>
-
-		<StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-				<!--Duration Over 180 days-->
-				<!--Not shown in all accordion flows-->
-				<local:SelectImageButton
-					x:Name="over180Button"
-					SelectedBorderColor="Black"
-					SelectedBorderWidth="0"
-					SelectedImage="choice_calendar_over180.png"
-
-					HoldBorderWidth="0"
-					HoldBorderColor="Black"
-
-					UnselectedBorderColor="White"
-					UnselectedBorderWidth="0"
-					UnselectedImage="choice_calendar_over180.png"
-
-					Style="{DynamicResource selectableButtonStyle}"
-						
-					Padding="26"
-					Clicked="over180Button_clicked"
-				/>
-		</StackLayout>
+		<RelativeLayout x:Name="layoutDurationButtons" 
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+      
+				<!-- Calendar buttons are added here programatically -->
+      
+		</RelativeLayout>
+    
 
 		<!--Answer Choice Text-->
-	
 		<ContentView Padding="0,10,0,10">
 			<Label
 				x:Name="calendarAnswer"

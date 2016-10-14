@@ -15,6 +15,7 @@ namespace Dustbuster
 
             InitializeComponent();
 
+
             ContactMethodPicker.SelectedIndexChanged += ContactMethodPicker_SelectedIndexChanged;
 
             if (ContactMethodPicker.SelectedIndex == 0)
@@ -41,6 +42,8 @@ namespace Dustbuster
                 ContactInfoEntry.Keyboard = Keyboard.Numeric;
                 ContactInfoEntry.Placeholder = "E.g. 04 123 456 78";
             }
+
+           
         }
     }
 }

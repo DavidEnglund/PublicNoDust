@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Input;
 using Xamarin.Forms;
-
+using Dustbuster.Views;
 namespace Dustbuster
 {
 	public class AccordionViewModel : INotifyPropertyChanged
