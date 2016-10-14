@@ -27,13 +27,19 @@ namespace Dustbuster
         private void CreateDot()
         {
             //Make one button and add it to the dotLayout
-            var dot = new Button
+            var dot = new SelectImageButton
             {
-                BorderRadius = Convert.ToInt32(DotSize/2),
+            //    BorderRadius = Convert.ToInt32(DotSize/2),
                 HeightRequest = DotSize,
                 WidthRequest = DotSize,
-                BackgroundColor = DotColor,
-                Opacity = 0.5
+                SelectedBackgroundColor = DotColor,
+                UnselectedBackgroundColor = DotColor,
+                SelectedBorderWidth = 0,
+                UnselectedBorderWidth = 0,
+                HoldBackgroundColor = DotColor,
+                HoldBorderWidth = 0,
+
+                Opacity = 0.4
             };
             Children.Add(dot);
         }
@@ -87,7 +93,7 @@ namespace Dustbuster
         {
 
             var selectedIndex = ItemsSource.IndexOf(SelectedItem);
-            var pagerIndicators = Children.Cast<Button>().ToList();
+            var pagerIndicators = Children.Cast<SelectImageButton>().ToList();
 
             foreach (var pi in pagerIndicators)
             {
@@ -100,14 +106,14 @@ namespace Dustbuster
             }
         }
 
-        private static void UnselectDot(Button dot)
+        private static void UnselectDot(SelectImageButton dot)
         {
-            dot.Opacity = 0.5;
+            dot.Opacity = 0.1;
         }
 
-        private static void SelectDot(Button dot)
+        private static void SelectDot(SelectImageButton dot)
         {
-            dot.Opacity = 1.0;
+            dot.Opacity = 0.8;
         }
 
         #region Bindable Properties

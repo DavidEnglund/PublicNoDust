@@ -59,7 +59,7 @@ namespace Dustbuster.Views
 
             CarouselView.Children.Add(dots,
                         Constraint.Constant(0),
-                        Constraint.RelativeToParent((parent) => { return parent.Height - 9.8; }),
+                        Constraint.RelativeToParent((parent) => { return parent.Height - 14; }),
                         Constraint.RelativeToParent((parent) => parent.Width),
                         Constraint.Constant(10)
             );
@@ -84,7 +84,7 @@ namespace Dustbuster.Views
         //This method creates the dots representing every page in the carousel
         private View CreatePagerIndicators()
         {
-            PagerIndicatorDots pagerIndicator = new PagerIndicatorDots() { DotSize = 15, DotColor = Color.FromHex(PageColor) };
+            PagerIndicatorDots pagerIndicator = new PagerIndicatorDots() { DotSize = 9, DotColor = Color.FromHex(PageColor) };
             pagerIndicator.SetBinding(PagerIndicatorDots.ItemsSourceProperty, "Products");
             pagerIndicator.SetBinding(PagerIndicatorDots.SelectedItemProperty, "SelectedProduct");
 
