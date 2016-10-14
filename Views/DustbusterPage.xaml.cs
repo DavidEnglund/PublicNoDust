@@ -114,48 +114,58 @@ namespace Dustbuster
 
         private async void TapCivilButton(object sender, EventArgs e)
 		{
-			((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#18b750");
+			if (App.IndustryOption == IndustryOptions.None)
+			{
+				((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#18b750");
 
-			App.IndustryOption = IndustryOptions.Civil;
+				App.IndustryOption = IndustryOptions.Civil;
 
-			App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["civilSelectableButtonStyle"];
+				App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["civilSelectableButtonStyle"];
 
-			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["civilTrafficAccordionStyle"];
-			App.Current.Resources["calendarAccordionStyle"] = App.Current.Resources["civilCalendarAccordionStyle"];
-			App.Current.Resources["locationAccordionStyle"] = App.Current.Resources["civilLocationAccordionStyle"];
-			App.Current.Resources["weatherAccordionStyle"] = App.Current.Resources["civilWeatherAccordionStyle"];
+				App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["civilTrafficAccordionStyle"];
+				App.Current.Resources["calendarAccordionStyle"] = App.Current.Resources["civilCalendarAccordionStyle"];
+				App.Current.Resources["locationAccordionStyle"] = App.Current.Resources["civilLocationAccordionStyle"];
+				App.Current.Resources["weatherAccordionStyle"] = App.Current.Resources["civilWeatherAccordionStyle"];
 
-			App.Current.Resources["primaryButtonStyle"] = App.Current.Resources["buttonGreenPrimary"];
-			App.Current.Resources["secondaryButtonStyle"] = App.Current.Resources["buttonGreenSecondary"];
+				App.Current.Resources["primaryButtonStyle"] = App.Current.Resources["buttonGreenPrimary"];
+				App.Current.Resources["secondaryButtonStyle"] = App.Current.Resources["buttonGreenSecondary"];
 
-            await Navigation.PushAsync(new AccordionPage());
+				await Navigation.PushAsync(new AccordionPage());
+			}
         }
 
         private async void TapMiningButton(object sender, EventArgs e)
 		{
-			((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#079ece");
-			
-			App.IndustryOption = IndustryOptions.Mining;
+			if (App.IndustryOption == IndustryOptions.None)
+			{
+				((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#079ece");
 
-			App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["miningSelectableButtonStyle"];
+				App.IndustryOption = IndustryOptions.Mining;
 
-			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];
-			App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];
-			App.Current.Resources["calendarAccordionStyle"] = App.Current.Resources["miningCalendarAccordionStyle"];
-			App.Current.Resources["locationAccordionStyle"] = App.Current.Resources["miningLocationAccordionStyle"];
-			App.Current.Resources["weatherAccordionStyle"] = App.Current.Resources["miningWeatherAccordionStyle"];
+				App.Current.Resources["selectableButtonStyle"] = App.Current.Resources["miningSelectableButtonStyle"];
 
-			App.Current.Resources["primaryButtonStyle"] = App.Current.Resources["buttonBluePrimary"];
-			App.Current.Resources["secondaryButtonStyle"] = App.Current.Resources["buttonBlueSecondary"];
+				App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];
+				App.Current.Resources["trafficAccordionStyle"] = App.Current.Resources["miningTrafficAccordionStyle"];
+				App.Current.Resources["calendarAccordionStyle"] = App.Current.Resources["miningCalendarAccordionStyle"];
+				App.Current.Resources["locationAccordionStyle"] = App.Current.Resources["miningLocationAccordionStyle"];
+				App.Current.Resources["weatherAccordionStyle"] = App.Current.Resources["miningWeatherAccordionStyle"];
 
-            await Navigation.PushAsync(new AccordionPage());
+				App.Current.Resources["primaryButtonStyle"] = App.Current.Resources["buttonBluePrimary"];
+				App.Current.Resources["secondaryButtonStyle"] = App.Current.Resources["buttonBlueSecondary"];
+
+				await Navigation.PushAsync(new AccordionPage());
+			}
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            NavigationPage.SetHasNavigationBar(this, false);
-        }
+
+			App.IndustryOption = IndustryOptions.None;
+
+			NavigationPage.SetHasNavigationBar(this, false);
+
+		}
     }
 }
 
