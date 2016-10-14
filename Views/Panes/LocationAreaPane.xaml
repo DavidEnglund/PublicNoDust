@@ -21,7 +21,8 @@
   <StackLayout Padding="60,0,60,0">
     <Entry  BackgroundColor="#d9d9d9"
             Placeholder="Suburb or Mine Site"
-            WidthRequest="100"/>
+            WidthRequest="100"
+            Text="{Binding Location, Mode=TwoWay}"/>
   </StackLayout>
     
   <StackLayout Padding="50,0,60,0">

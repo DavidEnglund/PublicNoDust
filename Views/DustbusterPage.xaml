@@ -203,12 +203,13 @@
              BackgroundColor="#292a2a"
              FontAttributes="Bold"
              HeightRequest="50"/>
-
+      
+      <!-- ListView -  Product History -->
       <ListView x:Name="listViewHistory"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="True"
-                ItemsSource="{Binding Products}"
-                ItemTapped="listViewItem_Clicked">
+                ItemsSource="{Binding Jobs}"
+                ItemSelected="listViewItem_Clicked">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ViewCell>
@@ -216,17 +217,11 @@
                            Padding="15"
                            Spacing="3"
                            BackgroundColor="#2e2f2f">
-                <StackLayout Orientation="Horizontal">
-                  <Label Text="{Binding Amount}"
-                         TextColor="#FFF"
-                         FontSize="16"/>
-                  <Grid Padding="15,0,0,0">
-                    <Label Text="{Binding ProductName}"
-                           TextColor="#FFF"
-                           FontSize="16"/>
-                  </Grid>
-                </StackLayout>
-                <Label Text="{Binding DateCreated,
+                <!-- This label will expand vertically when the string is longer than the available width -->
+                <Label Text="{Binding Location}"
+                       TextColor="#FFF"
+                       FontSize="16"/>
+                <Label Text="{Binding CreationDate,
                        StringFormat='{0:hh:mm tt  -  dd-MM-yyyy}'}"
                        TextColor="#8d8c8c"/>
               </StackLayout>

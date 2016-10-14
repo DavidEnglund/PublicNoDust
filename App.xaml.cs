@@ -19,12 +19,12 @@ namespace Dustbuster
 			};
 		}
 
-		private async void InitializeDatabase()
+		private void InitializeDatabase()
 		{
 			productsDb = new DbConnectionManager("ProductDB.db3");
 			jobsDb = new DbConnectionManager("JobDB.db3");
 
-			await productsDb.FillProductTablesAsync();
+			productsDb.FillProductTablesAsync();
 			jobsDb.CreateJobTable();
 		}
 

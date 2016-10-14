@@ -1,37 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace Dustbuster
 {
     public class ProductViewModel : INotifyPropertyChanged
     {
-		private AccordionViewModel viewModel;
 		private ObservableCollection<ProductDescription> products;
 		private ProductDescription selectedProduct;
 		private string applicationsRequired;
 		private int applicationRate;
 		private float productQuantity;
+        double area;
 
-		public ProductViewModel(AccordionViewModel viewModel)
+        public ProductViewModel(AccordionViewModel viewModel)
 		{
-			this.viewModel = viewModel;
+			area = viewModel.Area;
 			this.products = new ObservableCollection<ProductDescription>();
 			this.selectedProduct = null;
            
 		}
+        public ProductViewModel(double area)
+        {
+            this.area = area;
+            products = new ObservableCollection<ProductDescription>();
+            selectedProduct = null;
+        }
+
 
         public ObservableCollection<ProductDescription> Products // collected from the database
 		{
 			get { return products; }
 			set { products = value; }
 		}
-
-
+        
 		public ProductDescription SelectedProduct
 		{
 			get { return this.selectedProduct; }
@@ -99,7 +100,7 @@ namespace Dustbuster
 
 		private float CalculateQuantity()
         {
-			return (float)(viewModel.Area * ApplicationRate) / 1000; //mL to L
+			return (float)(area * ApplicationRate) / 1000; //mL to L
         }
 				   
 		public event PropertyChangedEventHandler PropertyChanged;

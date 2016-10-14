@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using SQLite;
 using Dustbuster.Interfaces;
 using Xamarin.Forms;
+using System;
 
 namespace Dustbuster
 {
@@ -31,7 +32,8 @@ namespace Dustbuster
             new Supplier(2,"Rainstorm","Rainstorm Phone","Rainstorm Email")
         };
 
-        private Job tempJob = new Job(1338, 0, 30, false, "Jobby McJobface"); //a pre-saved job for testing
+        //a pre-saved job for testing   TODO - Remove later
+        private Job tempJob = new Job(1, 1338, 1, 30, false, DateTime.Now, "tempJob object");
 
         //now that each area/duration combo has its own description (and different names for hydromulch),
         //this is pretty much useless, mebbe use for pictures or something
@@ -140,8 +142,9 @@ namespace Dustbuster
         public IEnumerable<Job> GetJobs()
         {
             lock (locker)
+
             {
-                return (from i in dbConnection.Table<Job>() select i).ToList();
+               return dbConnection.Query<Job>("SELECT * FROM [Job]").ToList();
             }
         }
 
@@ -184,10 +187,17 @@ namespace Dustbuster
         //should parameterise this
         public IEnumerable<ProductMatrix> SelectProducts(Job job)
         {
+            int rainToInt = 0;
+            if (job.WillRain)
+            {
+                rainToInt = 1;
+            }
+
             lock (locker)
             {
-				return dbConnection.Query<ProductMatrix>($"SELECT * FROM [ProductMatrix] WHERE [DurationMaxDays] = {job.DurationMaxDays}" +
-				                                         $" AND [AreaTypeId] = {job.AreaTypeID} AND [WillRain] = {(job.WillRain ? 1 : 0)}").ToList();
+				return dbConnection.Query<ProductMatrix>("SELECT * FROM [ProductMatrix] " +
+                                                         $"WHERE [DurationMaxDays] = {job.DurationMaxDays} " +
+				                                         $"AND [AreaTypeId] = {job.AreaTypeID} AND [WillRain] = {rainToInt}").ToList();
             }
         }
 
@@ -301,12 +311,15 @@ namespace Dustbuster
             dbConnection.CreateTable<ProductMatrix>();
             dbConnection.CreateTable<Supplier>();
             dbConnection.CreateTable<ProductDescription>();
+            //dbConnection.CreateTable<Job>();
+            //dbConnection.Insert(tempJob);
         }
 
         public void CreateJobTable()
         {
             dbConnection.CreateTable<Job>();
-            dbConnection.Insert(tempJob);  //adds a demo job for debug
+            dbConnection.Insert(tempJob); //a demo job for debug
+            dbConnection.Insert(new Job(1, 25000, 1, 90, true, DateTime.Now, "second Job object"));
         }
 
         //set to return no. of altered rows, reset to void later if nec
