@@ -32,7 +32,8 @@ namespace Dustbuster
                 BorderRadius = Convert.ToInt32(DotSize/2),
                 HeightRequest = DotSize,
                 WidthRequest = DotSize,
-                BackgroundColor = DotColor
+                BackgroundColor = DotColor,
+                Opacity = 0.5
             };
             Children.Add(dot);
         }

@@ -51,6 +51,10 @@ namespace Dustbuster
 					ProductDescription productDescription = connection.GetProductInfo(productMatrix);
 
 					productViewModel.Products.Add(productDescription);
+                    if (productViewModel.Products.Count > 0)
+                    {
+                        productViewModel.SelectedProduct = productViewModel.Products[0];
+                    }
 				}
 
                 //Starts Analytics up

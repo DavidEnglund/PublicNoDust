@@ -86,7 +86,7 @@ namespace Dustbuster.Views
         {
             PagerIndicatorDots pagerIndicator = new PagerIndicatorDots() { DotSize = 15, DotColor = Color.FromHex(PageColor) };
             pagerIndicator.SetBinding(PagerIndicatorDots.ItemsSourceProperty, "Products");
-            pagerIndicator.SetBinding(PagerIndicatorDots.SelectedItemProperty, "CurrentProduct");
+            pagerIndicator.SetBinding(PagerIndicatorDots.SelectedItemProperty, "SelectedProduct");
 
             return pagerIndicator;
         }       

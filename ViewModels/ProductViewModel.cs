@@ -22,6 +22,7 @@ namespace Dustbuster
 			this.viewModel = viewModel;
 			this.products = new ObservableCollection<ProductDescription>();
 			this.selectedProduct = null;
+           
 		}
 
         public ObservableCollection<ProductDescription> Products // collected from the database
@@ -36,7 +37,7 @@ namespace Dustbuster
 			get { return this.selectedProduct; }
 			set
 			{
-				if (this.selectedProduct != null)
+				if (value != null)
 				{
 					this.selectedProduct = value;
 
