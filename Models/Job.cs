@@ -25,7 +25,7 @@ namespace Dustbuster
 
         [PrimaryKey, AutoIncrement]
         public int JobID { get; set; }
-        public int JobType { get; set; }  //1 = civil, 2 = mining
+        public int JobType { get; set; }  //0 = civil, 1 = mining
         public double Area { get; set; }
         public int AreaTypeID { get; set; }
         public int DurationMaxDays { get; set; }

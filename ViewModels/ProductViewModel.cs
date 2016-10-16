@@ -10,18 +10,9 @@ namespace Dustbuster
 		private string applicationsRequired;
 		private int applicationRate;
 		private float productQuantity;
-        double area;
 
-        public ProductViewModel(AccordionViewModel viewModel)
-		{
-			area = viewModel.Area;
-			this.products = new ObservableCollection<ProductResult>();
-			this.selectedProduct = null;
-           
-		}
-        public ProductViewModel(double area)
+        public ProductViewModel()
         {
-            this.area = area;
             products = new ObservableCollection<ProductResult>();
             selectedProduct = null;
         }

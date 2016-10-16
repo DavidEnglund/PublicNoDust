@@ -96,40 +96,47 @@ namespace Dustbuster
         private async void listViewItem_Clicked(object sender, SelectedItemChangedEventArgs e)
         {
             AnimatePanel();
-
-
-            //TODO : Still working on this, it's not 100% functional.
-
+            
             /*
-            //This is only necessary if we want to make the items unselectable (they don't stay highlighted)
+            //This is only necessary if we want to make the items unselectable (so they don't remain highlighted)
             if (e.SelectedItem == null)
             {
                 return;     //ItemSelected is called on deselection, which results in SelectedItem being set to null
             }
             ((ListView)sender).SelectedItem = null;
             */
-
-            /*
+            
             Job jobSelected = (Job)((ListView)sender).SelectedItem;
             var productSelection = App.ProductsDb.SelectProducts(jobSelected);
 
-            ProductViewModel productViewModel = new ProductViewModel(jobSelected.Area);
+            ProductViewModel productViewModel = new ProductViewModel();
             foreach (ProductMatrix productMatrix in productSelection)
             {
                 ProductDescription productDescription = App.ProductsDb.GetProductInfo(productMatrix);
 
-                productViewModel.Products.Add(productDescription);
+                productViewModel.Products.Add(new ProductResult() { Job = jobSelected, Description = productDescription });
                 if (productViewModel.Products.Count > 0)
                 {
                     productViewModel.SelectedProduct = productViewModel.Products[0];
                 }
             }
 
-            //ERROR : At some point (don't know where exactly) this throws a
-            //System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values.
-            //Parameter name: Empty string
+            //Note: This is an ugly workaround to a problem within ProductPage.xaml.cs
+            // • ProductPage.InitializeCarouselView() 
+            // That method gets the IndustryOption from App.xaml.cs which is set when the user goes through the 
+            // accordion page. Obviously, it does not work when we try to jump straight to the ProductPage.
+            if (jobSelected.JobType == 0)
+            {
+                App.IndustryOption = IndustryOptions.Civil;
+                ((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#18b750");
+            }
+            else if (jobSelected.JobType == 1)
+            {
+                App.IndustryOption = IndustryOptions.Mining;
+                ((NavigationPage)App.Current.MainPage).BarBackgroundColor = Color.FromHex("#079ece");
+            }
+            
             await Navigation.PushAsync(new ProductPage(productViewModel));
-            */
         }
 
         private async void btnSettings_Clicked(object sender, EventArgs e)

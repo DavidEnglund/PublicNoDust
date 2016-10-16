@@ -39,7 +39,7 @@ namespace Dustbuster
 
                 Area = (AreaUnit == Units.Kilometre) ? tempArea / 1000000 : tempArea;
 
-                ProductViewModel productViewModel = new ProductViewModel(this);
+                ProductViewModel productViewModel = new ProductViewModel();
 
                 DbConnectionManager productsDB = App.ProductsDb;
 

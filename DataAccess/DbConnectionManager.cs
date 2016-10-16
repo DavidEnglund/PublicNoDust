@@ -311,15 +311,13 @@ namespace Dustbuster
             dbConnection.CreateTable<ProductMatrix>();
             dbConnection.CreateTable<Supplier>();
             dbConnection.CreateTable<ProductDescription>();
-            //dbConnection.CreateTable<Job>();
-            //dbConnection.Insert(tempJob);
         }
 
         public void CreateJobTable()
         {
             dbConnection.CreateTable<Job>();
-            dbConnection.Insert(tempJob); //a demo job for debug
-            dbConnection.Insert(new Job(1, 25000, 1, 90, true, DateTime.Now, "second Job object"));
+            //dbConnection.Insert(tempJob); //a demo job for debug
+            //dbConnection.Insert(new Job(0, 25000, 1, 90, true, DateTime.Now, "second Job object"));
         }
 
         //set to return no. of altered rows, reset to void later if nec
