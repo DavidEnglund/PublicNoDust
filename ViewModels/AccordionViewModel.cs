@@ -62,7 +62,7 @@ namespace Dustbuster
                 {
                     ProductDescription productDescription = productsDB.GetProductInfo(productMatrix);
 
-                    productViewModel.Products.Add(productDescription);
+					productViewModel.Products.Add(new ProductResult() { Job = newJob, Description = productDescription });
                     if (productViewModel.Products.Count > 0)
                     {
                         productViewModel.SelectedProduct = productViewModel.Products[0];
