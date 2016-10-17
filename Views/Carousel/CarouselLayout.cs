@@ -14,7 +14,7 @@ namespace Dustbuster
         private int _selectedIndex;
         private bool _layingOutChildren;
 
-        public CarouselLayout(params Label[] labels)
+		public CarouselLayout()
         {
             Orientation = ScrollOrientation.Horizontal;
             _stack = new StackLayout()

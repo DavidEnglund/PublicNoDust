@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			  xmlns:local="clr-namespace:Dustbuster"
               x:Class="Dustbuster.Views.ProductPage" Title="Product Page">
   <StackLayout Spacing="0">
 
@@ -9,17 +10,41 @@
            BackgroundColor="Blue"/>
     
     <!-- Carousel View -->
-    <ContentView VerticalOptions="FillAndExpand"
+    <StackLayout 
+				 VerticalOptions="FillAndExpand"
                  HorizontalOptions="FillAndExpand">
       <RelativeLayout x:Name="CarouselView"
-                      VerticalOptions="FillAndExpand"
                       HorizontalOptions="FillAndExpand">
+          <local:CarouselLayout x:Name="Carousel"
+          			HorizontalOptions="FillAndExpand"
+					VerticalOptions="FillAndExpand"
+					ItemsSource="{Binding Products}"
+					SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
+			        RelativeLayout.XConstraint="{ConstraintExpression 
+			        Type=RelativeToParent,
+			        Property=X,
+			        Factor=1}"
+			        RelativeLayout.YConstraint="{ConstraintExpression 
+			        Type=RelativeToParent,
+			        Property=Y,
+			        Factor=1}"
+			        RelativeLayout.WidthConstraint="{ConstraintExpression 
+			        Type=RelativeToParent,
+			        Property=Width,
+			        Factor=1}"
+			        RelativeLayout.HeightConstraint="{ConstraintExpression 
+			        Type=RelativeToParent,
+			        Property=Height,
+			        Factor=1}">
+		 </local:CarouselLayout>
+
+                     
       </RelativeLayout>
-    </ContentView>
+    </StackLayout>
     
     
     <!-- Buttons Call Us Now and Request contact -->
-    <ContentView BackgroundColor="#ffffff"
+    <StackLayout BackgroundColor="#ffffff"
                  VerticalOptions="Fill"
                  HorizontalOptions="FillAndExpand">
       <StackLayout Padding="80, 10, 80, 20">
@@ -41,6 +66,6 @@
                 WidthRequest="175"
                 Clicked="OnRequestContact_Clicked"/>
       </StackLayout>
-    </ContentView>
+    </StackLayout>
   </StackLayout>
 </ContentPage>
