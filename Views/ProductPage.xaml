@@ -20,9 +20,9 @@
     
     <!-- Buttons Call Us Now and Request contact -->
     <ContentView BackgroundColor="#ffffff"
-                 VerticalOptions="EndAndExpand"
+                 VerticalOptions="Fill"
                  HorizontalOptions="FillAndExpand">
-      <StackLayout Padding="80, 0, 80, 20">
+      <StackLayout Padding="80, 10, 80, 20">
         <Button Text="Call Us Now"             
                 x:Name="btnCallNow"
                 BackgroundColor="#18b750"
