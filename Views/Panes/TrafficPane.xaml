@@ -9,7 +9,7 @@
 		<ContentView Padding="15">
 			<Label
 				x:Name="trafficHeader"
-				Text="Is your solution for a trafficed area?"
+				Text="Is your solution for a trafficked area?"
         		Style="{DynamicResource labelStyle}"
 			/>
 		</ContentView>
