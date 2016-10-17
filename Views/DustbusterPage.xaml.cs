@@ -14,7 +14,6 @@ namespace Dustbuster
 
         public DustbusterPage()
         {
-            Settings.EnableReadMode = true; //Need it to start of false on start up.
             dustbusterViewModel = new DustbusterViewModel();
             BindingContext = dustbusterViewModel;
 
