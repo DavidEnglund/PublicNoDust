@@ -44,6 +44,14 @@
                    VerticalOptions="Start"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="FillAndExpand"/>
+        <Label Text="Tap Mining or Civil to begin!"
+                   TextColor="White"
+				   x:Name="lblMainDescription2"
+                   FontSize="Small"
+                   FontAttributes="Bold"
+                   VerticalOptions="Start"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="FillAndExpand"/>
         </StackLayout>
       </RelativeLayout>
     </ContentView>
