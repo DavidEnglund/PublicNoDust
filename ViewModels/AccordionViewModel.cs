@@ -72,7 +72,7 @@ namespace Dustbuster
                 //Starts Analytics up
                 AnalyticsClass.SetDetails();
                 //Send all needed data
-                AnalyticsClass.SendAnalytics(App.IndustryOption.ToString(), "Traffic", App.TrafficOption.ToString(), "Calendar", App.DurationOption.ToString(), "Rain", App.WeatherOption.ToString(), "Location", " ");
+                AnalyticsClass.SendAnalytics(App.IndustryOption.ToString(), "Traffic", App.TrafficOption.ToString(), "Calendar", App.DurationOption.ToString(), "Rain", App.WeatherOption.ToString(), "Location", Location);
 
                 App.JobsDb.DbConnection.Insert(newJob);
                 await navigation.PushAsync(new ProductPage(productViewModel));

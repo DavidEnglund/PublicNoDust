@@ -16,10 +16,10 @@ namespace Dustbuster.Views
 
         public ProductPage(ProductViewModel viewModel)
         {
-			BindingContext = viewModel;
             //NavigationPage.SetHasNavigationBar(this, false);
             InitializeComponent();
             InitializeCarouselView();
+			BindingContext = viewModel;
         }
 
         private void InitializeCarouselView()
@@ -41,45 +41,24 @@ namespace Dustbuster.Views
             btnRequestContact.BorderColor = Color.FromHex(PageColor);
             btnRequestContact.TextColor = Color.FromHex(PageColor);
 
-            CarouselLayout pagesCarousel = CreatePagesCarousel();
             View dots = new StackLayout
             {
                 Children = { CreatePagerIndicators() }
             };
 
-            // Sets the position padding and dimensions of the Carousel pages (Yay!)
-            // Position X, Position Y; Dimension X, Dimension Y
-            // NOTE: Only really need to change Dimension Y to comply with the design.
-            CarouselView.Children.Add(pagesCarousel,
-                        Constraint.RelativeToParent((parent) => { return parent.X; }),
-                        Constraint.RelativeToParent((parent) => { return 0; }),
-                        Constraint.RelativeToParent((parent) => { return parent.Width; }),
-                        Constraint.RelativeToParent((parent) => { return parent.Height; })
-                        );
+			Carousel.ItemTemplate = new DataTemplate(typeof(CarouselTemplate));
 
-            CarouselView.Children.Add(dots,
-                        Constraint.Constant(0),
-                        Constraint.RelativeToParent((parent) => { return parent.Height - 14; }),
-                        Constraint.RelativeToParent((parent) => parent.Width),
-                        Constraint.Constant(10)
-            );
-        }
+			// Sets the position padding and dimensions of the Carousel pages (Yay!)
+			// Position X, Position Y; Dimension X, Dimension Y
+			// NOTE: Only really need to change Dimension Y to comply with the design.
 
-        //This method creates the carousel
-        private CarouselLayout CreatePagesCarousel()
-        {
-            var carousel = new CarouselLayout()
-            {
-                HorizontalOptions = LayoutOptions.FillAndExpand,
-                VerticalOptions = LayoutOptions.FillAndExpand,
+			CarouselView.Children.Add(dots,
+						Constraint.Constant(0),
+						Constraint.RelativeToParent((parent) => { return parent.Height - 14; }),
+						Constraint.RelativeToParent((parent) => parent.Width),
+						Constraint.Constant(10));
 
-                ItemTemplate = new DataTemplate(typeof(CarouselTemplate))
-            };
-            carousel.SetBinding(CarouselLayout.ItemsSourceProperty, "Products");
-            carousel.SetBinding(CarouselLayout.SelectedItemProperty, "SelectedProduct", BindingMode.TwoWay);
-
-            return carousel;
-        }
+		}
 
         //This method creates the dots representing every page in the carousel
         private View CreatePagerIndicators()
@@ -99,7 +78,7 @@ namespace Dustbuster.Views
 
         private async void OnCallNow_Clicked(object sender, EventArgs e)
         {
-            DependencyService.Get<IDialer>().Dial("0425448555");
+            DependencyService.Get<IDialer>().Dial("0429388777");
         }
 
         private async void OnRequestContact_Clicked(object sender, EventArgs e)
