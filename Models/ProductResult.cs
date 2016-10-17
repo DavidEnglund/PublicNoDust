@@ -34,8 +34,8 @@ namespace Dustbuster
 
 		public float ProductQuantity //mL per square m
 		{
-			get { return CalculateQuantity(); }
-		}
+            get { return (float)Math.Ceiling(CalculateQuantity() / 100) * 100; }
+        }
 
 		private float CalculateQuantity()
 		{

@@ -9,7 +9,7 @@
 			<Label
 				x:Name="calendarHeader"
 				Text="Is the solution for a short or long duration?"
-        		Style="{DynamicResource greyHeaderLabelStyle}"
+        		Style="{DynamicResource labelStyle}"
 			/>
 		</ContentView>
 
@@ -27,7 +27,7 @@
 			<Label
 				x:Name="calendarAnswer"
 				Text="Tap on a calendar to select your option"
-				Style="{DynamicResource greyAnswerLabelStyle}"
+				Style="{DynamicResource labelStyle}"
 				HorizontalTextAlignment="Center"
 			/>
 		</ContentView>

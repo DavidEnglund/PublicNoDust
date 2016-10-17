@@ -8,7 +8,7 @@
       <Label Text="What is the location,length and width of your area?"
              VerticalTextAlignment="Center"
              VerticalOptions="Center"
-             Style="{DynamicResource greyHeaderLabelStyle}"/>
+             Style="{DynamicResource labelStyle}"/>
   </StackLayout>
 
   <StackLayout Padding="50,0,60,0">
