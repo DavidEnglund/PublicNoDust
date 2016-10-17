@@ -159,7 +159,7 @@ namespace Dustbuster
         {
             lblTitle.SetBinding(Label.TextProperty, "ProductName");
             lblDescription.SetBinding(Label.TextProperty, "ProductDesc");
-            lblQuantity.SetBinding(Label.TextProperty, new Binding("ProductQuantity", stringFormat: "Estimated product per application: {0}L"));
+            lblQuantity.SetBinding(Label.TextProperty, new Binding("ProductQuantity", stringFormat: "Estimated amount per application: {0}L"));
             lblApplication.SetBinding(Label.TextProperty, new Binding("ApplicationsRequired", stringFormat: "Applications required: {0}"));
             lblRate.SetBinding(Label.TextProperty, new Binding("ApplicationRate", stringFormat: "Application rate: {0}mL/m\xB2"));
             productImage.SetBinding(Image.SourceProperty, "ImageSource");
