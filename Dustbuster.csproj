@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\IKeyboardInteraction.cs" />
     <Compile Include="Models\Analytics.cs" />
+    <Compile Include="Models\UserInfo.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\DustbusterViewModel.cs" />
     <Compile Include="Views\AboutPage.xaml.cs">
