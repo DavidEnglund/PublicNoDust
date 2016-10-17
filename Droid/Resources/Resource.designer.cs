@@ -2065,53 +2065,56 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f020084
 			public const int nichola = 2130837636;
 			
-			// aapt resource value: 0x7f020094
-			public const int notification_template_icon_bg = 2130837652;
+			// aapt resource value: 0x7f020095
+			public const int notification_template_icon_bg = 2130837653;
 			
 			// aapt resource value: 0x7f020085
-			public const int ProductImagePreview = 2130837637;
+			public const int placeholder = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int rainstrom_logo_lg = 2130837638;
+			public const int ProductImagePreview = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int rainstrom_logo_md = 2130837639;
+			public const int rainstrom_logo_lg = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int rainstrom_logo_sm = 2130837640;
+			public const int rainstrom_logo_md = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int readingMode_glasses = 2130837641;
+			public const int rainstrom_logo_sm = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int readingMode_img = 2130837642;
+			public const int readingMode_glasses = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int sandPile_button_img = 2130837643;
+			public const int readingMode_img = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int sandPile_icon = 2130837644;
+			public const int sandPile_button_img = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int settings_icon = 2130837645;
+			public const int sandPile_icon = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int success_tick = 2130837646;
+			public const int settings_icon = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int sunhawk_logo_lg = 2130837647;
+			public const int success_tick = 2130837647;
 			
 			// aapt resource value: 0x7f020090
-			public const int sunhawk_logo_md = 2130837648;
+			public const int sunhawk_logo_lg = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int sunhawk_logo_sm = 2130837649;
+			public const int sunhawk_logo_md = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int team_image = 2130837650;
+			public const int sunhawk_logo_sm = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int unselectedNone = 2130837651;
+			public const int team_image = 2130837651;
+			
+			// aapt resource value: 0x7f020094
+			public const int unselectedNone = 2130837652;
 			
 			static Drawable()
 			{

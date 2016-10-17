@@ -80,7 +80,7 @@
           </StackLayout>  
     
             <StackLayout Orientation="Horizontal">
-              <Image  Source="team_image.png"
+              <Image  Source="placeholder.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -128,7 +128,7 @@
           </StackLayout>  
     
          <StackLayout Orientation="Horizontal">
-            <Image    Source="team_image.png"
+            <Image    Source="placeholder.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -136,7 +136,7 @@
               <Image.GestureRecognizers>
               <TapGestureRecognizer
                       Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://central.wa.edu.au" />
+                      CommandParameter="https://github.com/DoritoBandito" />
               </Image.GestureRecognizers>
             </Image>
           <StackLayout Orientation="Vertical"
@@ -152,7 +152,7 @@
           </StackLayout>  
     
           <StackLayout Orientation="Horizontal">
-              <Image  Source="team_image.png"
+              <Image  Source="placeholder.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -184,7 +184,7 @@
               <Image.GestureRecognizers>
               <TapGestureRecognizer
                       Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://central.wa.edu.au" />
+                      CommandParameter="https://github.com/Erdal" />
               </Image.GestureRecognizers>
              </Image>
           <StackLayout Orientation="Vertical"
@@ -208,7 +208,7 @@
                 <Image.GestureRecognizers>
                 <TapGestureRecognizer
                       Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://au.linkedin.com/in/monique-reddy-a04079127" />
+                      CommandParameter="https://github.com/MonaRe83" />
                 </Image.GestureRecognizers>
              </Image>
           <StackLayout Orientation="Vertical"
@@ -249,7 +249,7 @@
     
     
          <StackLayout Orientation="Horizontal">
-              <Image  Source="team_image.png"
+              <Image  Source="placeholder.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -257,7 +257,7 @@
                 <Image.GestureRecognizers>
                 <TapGestureRecognizer
                       Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://central.wa.edu.au" />
+                      CommandParameter="https://github.com/azharfirdaus" />
                 </Image.GestureRecognizers>
               </Image>
           <StackLayout Orientation="Vertical"
@@ -273,7 +273,7 @@
           </StackLayout>  
     
          <StackLayout Orientation="Horizontal">
-              <Image  Source="team_image.png"
+              <Image  Source="placeholder.png"
                       HeightRequest="50"
                       WidthRequest="50"
                       VerticalOptions="Start"
@@ -281,7 +281,7 @@
                 <Image.GestureRecognizers>
                 <TapGestureRecognizer
                       Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://central.wa.edu.au" />
+                      CommandParameter="https://github.com/ChuckUFarley" />
                 </Image.GestureRecognizers>
               </Image>
           <StackLayout Orientation="Vertical"
