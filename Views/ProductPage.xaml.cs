@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Dustbuster.Views.Carousel;
 
 namespace Dustbuster.Views
 {
@@ -46,7 +47,7 @@ namespace Dustbuster.Views
                 Children = { CreatePagerIndicators() }
             };
 
-			Carousel.ItemTemplate = new DataTemplate(typeof(CarouselTemplate));
+			//Carousel.ItemTemplate = new DataTemplate(typeof(CarouselTemplate));
 
 			// Sets the position padding and dimensions of the Carousel pages (Yay!)
 			// Position X, Position Y; Dimension X, Dimension Y
@@ -85,6 +86,19 @@ namespace Dustbuster.Views
         {
             await Navigation.PushAsync(new ContactRequestPage());
         }
+
+		private bool disable;
+
+	    private async void ProductImageTapped(object sender, EventArgs e)
+		{
+			if (this.disable)
+				return;
+
+			this.disable = true;
+
+			await Navigation.PushModalAsync(new ImageViewer((Image)sender));
+			this.disable = false;
+		}
 
         /* is this even needed now? seems no longer needed?
         #region dont think this is needed anymore? 

@@ -106,7 +106,6 @@
     <Compile Include="Views\AccordionPage.xaml.cs">
       <DependentUpon>AccordionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Carousel\CarouselTemplate.cs" />
     <Compile Include="Views\Panes\CalendarPane.xaml.cs">
       <DependentUpon>CalendarPane.xaml</DependentUpon>
     </Compile>
