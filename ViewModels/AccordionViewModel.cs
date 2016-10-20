@@ -19,6 +19,7 @@ namespace Dustbuster
         public event PropertyChangedEventHandler PropertyChanged;
 
         Analytics AnalyticsClass = new Analytics();
+		private bool calculateTapped;
 
         public AccordionViewModel(INavigation navigation)
         {
@@ -29,53 +30,60 @@ namespace Dustbuster
 
             this.Calculate = new Command(async (nothing) =>
             {
-                double tempLength = Length;
-                double tempWidth = Width;
+				if (!calculateTapped)
+				{
+					calculateTapped = true;
 
-                tempLength = (LengthUnit == Units.Kilometre) ? tempLength * 1000 : tempLength;
-                tempWidth = (WidthUnit == Units.Kilometre) ? tempWidth * 1000 : tempWidth;
+					double tempLength = Length;
+					double tempWidth = Width;
 
-                double tempArea = tempLength * tempWidth;
+					tempLength = (LengthUnit == Units.Kilometre) ? tempLength * 1000 : tempLength;
+					tempWidth = (WidthUnit == Units.Kilometre) ? tempWidth * 1000 : tempWidth;
 
-                Area = (AreaUnit == Units.Kilometre) ? tempArea / 1000000 : tempArea;
+					double tempArea = tempLength * tempWidth;
 
-                ProductViewModel productViewModel = new ProductViewModel();
+					Area = (AreaUnit == Units.Kilometre) ? tempArea / 1000000 : tempArea;
 
-                DbConnectionManager productsDB = App.ProductsDb;
+					ProductViewModel productViewModel = new ProductViewModel();
 
-                var productSelection = productsDB.SelectProducts((int)App.DurationOption,
-                                          (int)App.TrafficOption,
-                                          (App.WeatherOption == WeatherOptions.RainExpected));
+					DbConnectionManager productsDB = App.ProductsDb;
 
-                Job newJob = new Job()
-                {
-                    Area = Area,
-                    AreaTypeID = (int)App.TrafficOption,
-                    CreationDate = DateTime.Now,
-                    WillRain = (App.WeatherOption == WeatherOptions.RainExpected),
-                    JobType = (int)App.IndustryOption,
-                    DurationMaxDays = (int)App.DurationOption,
-                    Location = Location
-                };
+					var productSelection = productsDB.SelectProducts((int)App.DurationOption,
+											  (int)App.TrafficOption,
+											  (App.WeatherOption == WeatherOptions.RainExpected));
 
-                foreach (ProductMatrix productMatrix in productSelection)
-                {
-                    ProductDescription productDescription = productsDB.GetProductInfo(productMatrix);
+					Job newJob = new Job()
+					{
+						Area = Area,
+						AreaTypeID = (int)App.TrafficOption,
+						CreationDate = DateTime.Now,
+						WillRain = (App.WeatherOption == WeatherOptions.RainExpected),
+						JobType = (int)App.IndustryOption,
+						DurationMaxDays = (int)App.DurationOption,
+						Location = Location
+					};
 
-					productViewModel.Products.Add(new ProductResult() { Job = newJob, Description = productDescription });
-                    if (productViewModel.Products.Count > 0)
-                    {
-                        productViewModel.SelectedProduct = productViewModel.Products[0];
-                    }
-                }
+					foreach (ProductMatrix productMatrix in productSelection)
+					{
+						ProductDescription productDescription = productsDB.GetProductInfo(productMatrix);
 
-                //Starts Analytics up
-                AnalyticsClass.SetDetails();
-                //Send all needed data
-                AnalyticsClass.SendAnalytics(App.IndustryOption.ToString(), "Traffic", App.TrafficOption.ToString(), "Calendar", App.DurationOption.ToString(), "Rain", App.WeatherOption.ToString(), "Location", Location);
+						productViewModel.Products.Add(new ProductResult() { Job = newJob, Description = productDescription });
+						if (productViewModel.Products.Count > 0)
+						{
+							productViewModel.SelectedProduct = productViewModel.Products[0];
+						}
+					}
 
-                App.JobsDb.DbConnection.Insert(newJob);
-                await navigation.PushAsync(new ProductPage(productViewModel));
+					//Starts Analytics up
+					AnalyticsClass.SetDetails();
+					//Send all needed data
+					AnalyticsClass.SendAnalytics(App.IndustryOption.ToString(), "Traffic", App.TrafficOption.ToString(), "Calendar", App.DurationOption.ToString(), "Rain", App.WeatherOption.ToString(), "Location", Location);
+
+					App.JobsDb.DbConnection.Insert(newJob);
+					await navigation.PushAsync(new ProductPage(productViewModel));
+
+					calculateTapped = false;
+				}
             });
 
             this.ChangeLengthUnit = new Command((nothing) =>
