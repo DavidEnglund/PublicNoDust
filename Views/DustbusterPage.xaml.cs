@@ -212,6 +212,19 @@ namespace Dustbuster
             dustbusterViewModel = new DustbusterViewModel();
             BindingContext = dustbusterViewModel;
         }
+
+		protected override bool OnBackButtonPressed()
+		{
+			if (panelShowing)
+			{
+				AnimatePanel();
+
+				return true;
+			}
+			else {
+				return base.OnBackButtonPressed();
+			}
+		}
     }
 }
 
