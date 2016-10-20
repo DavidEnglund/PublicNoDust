@@ -130,7 +130,7 @@ namespace Dustbuster
                 {
                     // the date and time to be passed into the reminder
                     DateTime remindDate = DatePicker.Date;                   
-                    remindDate.AddHours(remindTime);
+                    remindDate =  remindDate.AddHours(remindTime);
 
                     DependencyService.Get<IReminderService>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", remindDate);
                     Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, remindDate);
