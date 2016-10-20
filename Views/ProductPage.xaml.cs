@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Dustbuster.Views.Carousel;
 
 namespace Dustbuster.Views
 {
@@ -86,19 +85,6 @@ namespace Dustbuster.Views
         {
             await Navigation.PushAsync(new ContactRequestPage());
         }
-
-		private bool disable;
-
-	    private async void ProductImageTapped(object sender, EventArgs e)
-		{
-			if (this.disable)
-				return;
-
-			this.disable = true;
-
-			await Navigation.PushModalAsync(new ImageViewer((Image)sender));
-			this.disable = false;
-		}
 
         /* is this even needed now? seems no longer needed?
         #region dont think this is needed anymore? 

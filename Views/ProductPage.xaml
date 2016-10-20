@@ -55,9 +55,6 @@
 								HorizontalOptions="Fill" 
 								Aspect="AspectFill"
 								Source="{Binding ImageSource}">
-								 <Image.GestureRecognizers>
-								      <TapGestureRecognizer Tapped="ProductImageTapped" />
-					    		</Image.GestureRecognizers>
 							</Image>
 
 							<ScrollView VerticalOptions="Fill"

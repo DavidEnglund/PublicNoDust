@@ -3,10 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:Dustbuster" 
              x:Class="Dustbuster.DustbusterPage">
-  <RelativeLayout Padding="0">
-
-    
-    
+  <RelativeLayout Padding="0"> 
     <ContentView x:Name="sectionTitle"
                  BackgroundColor="Transparent"
                  VerticalOptions="Start"
