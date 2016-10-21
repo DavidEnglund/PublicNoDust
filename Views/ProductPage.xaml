@@ -10,7 +10,7 @@
            BackgroundColor="Blue"/>
     
     <!-- Carousel View -->
-    <StackLayout 
+    <StackLayout
 				 VerticalOptions="FillAndExpand"
                  HorizontalOptions="FillAndExpand">
       <RelativeLayout x:Name="CarouselView"
@@ -36,6 +36,50 @@
 			        Type=RelativeToParent,
 			        Property=Height,
 			        Factor=1}">
+
+		        <local:CarouselLayout.ItemTemplate>
+					<DataTemplate>
+			        	<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
+							<StackLayout Padding="0, 10" 
+										Spacing="0" 
+										Style="{DynamicResource productHeader}">
+								<Label HorizontalTextAlignment="Center"
+										TextColor="#ffffff" 
+										FontAttributes="Bold"
+										FontSize="20"
+										Text="{Binding ProductName}" />
+							</StackLayout>
+
+							<Image x:Name="ProductImage"
+								VerticalOptions="Fill" 
+								HorizontalOptions="Fill" 
+								Aspect="AspectFill"
+								Source="{Binding ImageSource}">
+							</Image>
+
+							<ScrollView VerticalOptions="Fill"
+										Orientation="Vertical">
+									<StackLayout Padding="20"
+											BackgroundColor="#f2f2f2"
+											Spacing="10">
+										<Label HorizontalTextAlignment="Center"
+											TextColor="#5a5d5e"
+											Text="{Binding ProductDesc}" />
+										<Label HorizontalTextAlignment="Center"
+											TextColor="#5a5d5e"
+											Text="{Binding ProductQuantity, StringFormat='Estimated amount per application: {0}L'}" />
+										<Label HorizontalTextAlignment="Center"
+											TextColor="#5a5d5e"
+											Text="{Binding ApplicationRate, StringFormat='Application rate: {0}mL/m&#xB2;'}" />
+										<Label HorizontalTextAlignment="Center"
+											TextColor="#5a5d5e"
+											Text="{Binding ApplicationsRequired, StringFormat='Applications required: {0}'}" />
+									</StackLayout>
+							</ScrollView>
+			        	</StackLayout>
+					</DataTemplate>
+				</local:CarouselLayout.ItemTemplate>
+					
 		 </local:CarouselLayout>
 
                      

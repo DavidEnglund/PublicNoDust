@@ -3,10 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:Dustbuster" 
              x:Class="Dustbuster.DustbusterPage">
-  <RelativeLayout Padding="0">
-
-    
-    
+  <RelativeLayout Padding="0"> 
     <ContentView x:Name="sectionTitle"
                  BackgroundColor="Transparent"
                  VerticalOptions="Start"
@@ -15,12 +12,64 @@
                  RelativeLayout.YConstraint="0">
       <RelativeLayout VerticalOptions="FillAndExpand"
                       HorizontalOptions="FillAndExpand">
-        <Image Source="app_title.png"
-			         x:Name="imgApplicationImage"
-               Aspect="Fill" />
-        <StackLayout Orientation="Vertical"
+        <Image Source="app_title.png" 
+						x:Name="imgApplicationImage"
+               			Aspect="Fill"
+				       RelativeLayout.WidthConstraint="{ConstraintExpression
+				                 Type=RelativeToParent,
+				                 Property=Width}" />
+
+        <Grid HorizontalOptions="FillAndExpand"
+						RelativeLayout.WidthConstraint="{ConstraintExpression
+				                 Type=RelativeToParent,
+				                 Property=Width}">
+        	<Grid.RowDefinitions>
+        		<RowDefinition Height="50" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+        	<Grid.ColumnDefinitions>
+        		<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+
+				<StackLayout Grid.Row="0" 
+							Padding="10" 
+							HorizontalOptions="FillAndExpand" 
+							Orientation="Horizontal">
+
+			    <Image HeightRequest="25"
+			           WidthRequest="25"
+			           x:Name="HamBurgerImage"
+			           Source="">
+			      <Image.GestureRecognizers>
+			        <TapGestureRecognizer Tapped="btnSideMenu_Clicked"
+			                              NumberOfTapsRequired="1"/>
+			      </Image.GestureRecognizers>
+			    </Image>
+
+				<Label Text="No Dust"
+                   x:Name="lblTitle"
+                   TextColor="White"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="CenterAndExpand" />
+
+
+				<Image WidthRequest="40"
+					   HeightRequest="40"
+			           x:Name="ReadModeImage"
+			           Source=""
+					   HorizontalOptions="End">
+			      <Image.GestureRecognizers>
+			        <TapGestureRecognizer Tapped="btnReadModeButton_Clicked"
+			                              NumberOfTapsRequired="1"/>
+			      </Image.GestureRecognizers>
+			    </Image>
+			 </StackLayout>
+
+			 <StackLayout Orientation="Vertical"
                      Padding="70, 13, 70, 90"
 					 Spacing="2"
+					 Grid.Row="1"
                      RelativeLayout.WidthConstraint="{ConstraintExpression 
                      Type=RelativeToParent,
                      Property=Width,
@@ -29,30 +78,24 @@
                      Type=RelativeToParent,
                      Property=Height,
                      Factor=1}">
-            <Label Text="No Dust"
-                   x:Name="lblTitle"
-                   TextColor="White"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   VerticalOptions="StartAndExpand"
-                   VerticalTextAlignment="Center"
-                   HorizontalTextAlignment="Center"/>
-            <Label Text="Stop your dust in only a few clicks. Fill out all the parameters and we will calculate what product will meet the requirements of your site."
+           
+            	<Label Text="Stop your dust in only a few clicks. Fill out all the parameters and we will calculate what product will meet the requirements of your site."
                    TextColor="White"
 				   x:Name="lblMainDescription"
                    FontSize="Small"
                    VerticalOptions="Start"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="FillAndExpand"/>
-        <Label Text="Tap Mining or Civil to begin!"
+        		<Label Text="Tap Mining or Civil to begin!"
                    TextColor="White"
 				   x:Name="lblMainDescription2"
                    FontSize="Small"
                    FontAttributes="Bold"
                    VerticalOptions="Start"
                    HorizontalTextAlignment="Center"
-                   HorizontalOptions="FillAndExpand"/>
-        </StackLayout>
+                   HorizontalOptions="FillAndExpand" />
+        	</StackLayout>
+		</Grid>
       </RelativeLayout>
     </ContentView>
     <ContentView x:Name="sectionMining"
@@ -138,30 +181,7 @@
                               NumberOfTapsRequired="1" />
       </ContentView.GestureRecognizers>
     </ContentView>
-    
-    <Image HeightRequest="40"
-           x:Name="ReadModeImage"
-           Source=""
-           RelativeLayout.XConstraint="330"
-           RelativeLayout.YConstraint="10">
-      <Image.GestureRecognizers>
-        <TapGestureRecognizer Tapped="btnReadModeButton_Clicked"
-                              NumberOfTapsRequired="1"/>
-      </Image.GestureRecognizers>
-    </Image>
-
-    <Image HeightRequest="25"
-           WidthRequest="25"
-           x:Name="HamBurgerImage"
-           Source=""
-           RelativeLayout.XConstraint="10"
-           RelativeLayout.YConstraint="10">
-      <Image.GestureRecognizers>
-        <TapGestureRecognizer Tapped="btnSideMenu_Clicked"
-                              NumberOfTapsRequired="1"/>
-      </Image.GestureRecognizers>
-    </Image>
-
+   
     <Button x:Name="btnDarkBackground"
             BackgroundColor="#CC000000"
             IsVisible="False"

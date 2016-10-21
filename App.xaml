@@ -63,9 +63,16 @@
            		</Style>
 			<Style x:Key="civilLocationAccordionStyle" TargetType="ContentView">
 				<Setter Property="BackgroundColor" Value="#46d077" />
-            		</Style>
+    		</Style>
 
-      
+			<Style x:Key="civilProductHeader" TargetType="StackLayout">
+				<Setter Property="BackgroundColor" Value="#18b750" />
+			</Style>
+
+			<Style x:Key="miningProductHeader" TargetType="StackLayout">
+				<Setter Property="BackgroundColor" Value="#079ece" />
+			</Style>
+			
       
       <!-- Buttons -->
       <!-- Submit, Calculate, Call Us Now (Accordion, Product and Contact Request pages) -->

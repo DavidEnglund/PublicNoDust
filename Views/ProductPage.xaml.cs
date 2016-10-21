@@ -46,7 +46,7 @@ namespace Dustbuster.Views
                 Children = { CreatePagerIndicators() }
             };
 
-			Carousel.ItemTemplate = new DataTemplate(typeof(CarouselTemplate));
+			//Carousel.ItemTemplate = new DataTemplate(typeof(CarouselTemplate));
 
 			// Sets the position padding and dimensions of the Carousel pages (Yay!)
 			// Position X, Position Y; Dimension X, Dimension Y

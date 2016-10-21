@@ -5,7 +5,7 @@
              x:Class="Dustbuster.LocationAreaPane">
   <StackLayout Spacing="3">
     <StackLayout Padding="30,0,30,0">
-      <Label Text="What is the location,length and width of your area?"
+      <Label Text="What is the location, length and width of your area?"
              VerticalTextAlignment="Center"
              VerticalOptions="Center"
              HorizontalTextAlignment="Center"

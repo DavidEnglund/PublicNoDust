@@ -125,12 +125,12 @@ namespace Dustbuster
             // validate the text entry fields
             if (ValidateFields())
             {
-                var pickReminder = await DisplayAlert("So far, so good!", "Would you like to set a reminder in your contact's calendar?", "Yes", "No");
+                var pickReminder = await DisplayAlert("So far, so good!", "Would you like to set a reminder in your phone's calendar?", "Yes", "No");
                 if (pickReminder)
                 {
                     // the date and time to be passed into the reminder
                     DateTime remindDate = DatePicker.Date;                   
-                    remindDate.AddHours(remindTime);
+                    remindDate =  remindDate.AddHours(remindTime);
 
                     DependencyService.Get<IReminderService>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", remindDate);
                     Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, remindDate);
