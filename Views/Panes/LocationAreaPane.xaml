@@ -3,88 +3,90 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.LocationAreaPane">
-<StackLayout Spacing="3">
-  <StackLayout Padding="30,0,30,0">
+  <StackLayout Spacing="3">
+    <StackLayout Padding="30,0,30,0">
       <Label Text="What is the location,length and width of your area?"
              VerticalTextAlignment="Center"
              VerticalOptions="Center"
+             HorizontalTextAlignment="Center"
+             FontSize="18"
              Style="{DynamicResource labelStyle}"/>
-  </StackLayout>
+    </StackLayout>
 
-  <StackLayout Padding="50,0,60,0">
-    <Label  Text="Location"
-            FontSize="13"
-			FontAttributes="Bold"
-            Style="{DynamicResource labelStyle}"/>
-  </StackLayout>
-    
-  <StackLayout Padding="60,0,60,0">
-    <Entry  BackgroundColor="#d9d9d9"
-            Placeholder="Suburb or Mine Site"
-            WidthRequest="100"
-            Text="{Binding Location, Mode=TwoWay}"/>
-  </StackLayout>
-    
-  <StackLayout Padding="50,0,60,0">
-    <Label  Text="Length"
-            FontSize="13"
-			FontAttributes="Bold"
-            Style="{DynamicResource labelStyle}"/>
-  </StackLayout>
+    <StackLayout Padding="50,0,60,0">
+      <Label  Text="Location"
+              FontSize="13"
+        FontAttributes="Bold"
+              Style="{DynamicResource labelStyle}"/>
+    </StackLayout>
 
-  <StackLayout Padding="60,0,60,0"
-               Orientation="Horizontal">
-    <StackLayout>
-      <Entry  Placeholder="0"
-              x:Name="entry_length"
-              Keyboard="Numeric"
-              BackgroundColor="#d9d9d9"
-              WidthRequest="190"
-              VerticalOptions="CenterAndExpand"
-              Text="{Binding Length, Mode=TwoWay}"/>
+    <StackLayout Padding="60,0,60,0">
+      <Entry  BackgroundColor="#d9d9d9"
+              Placeholder="Suburb or Mine Site"
+              WidthRequest="100"
+              Text="{Binding Location, Mode=TwoWay}"/>
     </StackLayout>
-    <StackLayout>
-      <Button Text="{Binding LengthUnit, Converter={StaticResource unitNotationConverter}}"
-              x:Name="bToggle_length"
-              WidthRequest="60"
-              HeightRequest="58"
-              VerticalOptions="CenterAndExpand"
-              Command="{Binding ChangeLengthUnit}"/>
+
+    <StackLayout Padding="50,0,60,0">
+      <Label  Text="Length"
+              FontSize="13"
+        FontAttributes="Bold"
+              Style="{DynamicResource labelStyle}"/>
     </StackLayout>
-  </StackLayout>
-  
-  <StackLayout Padding="50,0,60,0">
-    <Label Text="Width"
-           FontSize="13"
-		   FontAttributes="Bold"
-           Style="{DynamicResource labelStyle}"/>
-  </StackLayout>
-    
-  <StackLayout Orientation="Horizontal"
-               Padding="60,0,60,0">
-    <StackLayout>
-      <Entry  Placeholder="0" 
-              x:Name="entry_width" 
-              Keyboard="Numeric" 
-              BackgroundColor="#d9d9d9"
-              WidthRequest="190"
-              VerticalOptions="CenterAndExpand"
-              Text="{Binding Width, Mode=TwoWay}"/>
+
+    <StackLayout Padding="60,0,60,0"
+                 Orientation="Horizontal">
+      <StackLayout>
+        <Entry  Placeholder="0"
+                x:Name="entry_length"
+                Keyboard="Numeric"
+                BackgroundColor="#d9d9d9"
+                WidthRequest="190"
+                VerticalOptions="CenterAndExpand"
+                Text="{Binding Length, Mode=TwoWay}"/>
+      </StackLayout>
+      <StackLayout>
+        <Button Text="{Binding LengthUnit, Converter={StaticResource unitNotationConverter}}"
+                x:Name="bToggle_length"
+                WidthRequest="60"
+                HeightRequest="58"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding ChangeLengthUnit}"/>
+      </StackLayout>
     </StackLayout>
-    <StackLayout>
-      <Button Text="{Binding WidthUnit, Converter={StaticResource unitNotationConverter}}" 
-              x:Name="bToggle_width" 
-              WidthRequest="60"
-              HeightRequest="58"
-              VerticalOptions="CenterAndExpand"
-              Command="{Binding ChangeWidthUnit}"/>
+
+    <StackLayout Padding="50,0,60,0">
+      <Label Text="Width"
+             FontSize="13"
+         FontAttributes="Bold"
+             Style="{DynamicResource labelStyle}"/>
     </StackLayout>
-  </StackLayout>
+
+    <StackLayout Orientation="Horizontal"
+                 Padding="60,0,60,0">
+      <StackLayout>
+        <Entry  Placeholder="0"
+                x:Name="entry_width"
+                Keyboard="Numeric"
+                BackgroundColor="#d9d9d9"
+                WidthRequest="190"
+                VerticalOptions="CenterAndExpand"
+                Text="{Binding Width, Mode=TwoWay}"/>
+      </StackLayout>
+      <StackLayout>
+        <Button Text="{Binding WidthUnit, Converter={StaticResource unitNotationConverter}}"
+                x:Name="bToggle_width"
+                WidthRequest="60"
+                HeightRequest="58"
+                VerticalOptions="CenterAndExpand"
+                Command="{Binding ChangeWidthUnit}"/>
+      </StackLayout>
+    </StackLayout>
     <Button Text="Calculate"
             x:Name="bCalculation"
-            Command="{Binding Calculate}" 
+            Command="{Binding Calculate}"
             HorizontalOptions="Center"
-            VerticalOptions="Center" 
+            VerticalOptions="Center"
 			Style="{StaticResource primaryButtonStyle}" />
   </StackLayout>
 </local:AccordionPane>

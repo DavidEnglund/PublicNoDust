@@ -3,33 +3,39 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.CalendarPane">
-	<StackLayout>
-		<!--Header Text-->
-		<ContentView Padding="5">
-			<Label
+  <StackLayout>
+    <!--Header Text-->
+    <ContentView Padding="20">
+      <Label
 				x:Name="calendarHeader"
 				Text="Is the solution for a short or long duration?"
-        		Style="{DynamicResource labelStyle}"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+        FontSize="18"
+        Style="{DynamicResource labelStyle}"
 			/>
-		</ContentView>
+    </ContentView>
 
-		<RelativeLayout x:Name="layoutDurationButtons" 
+    <RelativeLayout x:Name="layoutDurationButtons"
                     HorizontalOptions="FillAndExpand"
                     VerticalOptions="FillAndExpand">
-      
-				<!-- Calendar buttons are added here programatically -->
-      
-		</RelativeLayout>
-    
 
-		<!--Answer Choice Text-->
-		<ContentView Padding="0,10,0,10">
-			<Label
+      <!-- Calendar buttons are added here programatically -->
+
+    </RelativeLayout>
+
+
+    <!--Answer Choice Text-->
+    <ContentView Padding="0,10,0,10" HorizontalOptions="Center">
+      <Label
 				x:Name="calendarAnswer"
 				Text="Tap on a calendar to select your option"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+        FontSize="18"
 				Style="{DynamicResource labelStyle}"
-				HorizontalTextAlignment="Center"
+				
 			/>
-		</ContentView>
-	</StackLayout>
+    </ContentView>
+  </StackLayout>
 </local:AccordionPane>
