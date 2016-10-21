@@ -157,9 +157,35 @@ namespace Dustbuster
         {
             return dbConnection.Delete(job);
         }
+
+        public UserInfo GetUserInfo()
+        {
+            int key = 1;
+            return dbConnection.Get<UserInfo>(key);
+        }
+
+        public void UpdateUserInfo(UserInfo user)
+        {
+            //user.ID must be 1
+            lock (locker)
+            {
+                dbConnection.Update(user);
+            }
+        }
         #endregion
 
         #region ProductDbAccessMethods
+
+        public int GetDBVersion()
+        {
+            //couldnt get pragma user_version to work
+            int key = 1;
+            lock (locker)
+            {
+                return dbConnection.Get<DBMetaData>(key).DBVersion;
+            }
+        }
+
         public IEnumerable<ProductDuration> GetDurationList()
         {
             lock (locker)
@@ -279,7 +305,6 @@ namespace Dustbuster
             }
         }
 
-
         #endregion
         //the following methods build the DB locally and may need to be edited once the external db is deployed
         #region BuildAndPopulateDbLocally
@@ -299,8 +324,9 @@ namespace Dustbuster
             Task task4 = Task.Run(() => FillProductMatrixTable());
             Task task5 = Task.Run(() => FillSupplierTable());
             Task task6 = Task.Run(() => FillProductDescriptionTable());
+            Task task7 = Task.Run(() => setDBVersion());
 
-            await Task.WhenAll(task1, task2, task3, task4, task5, task6);
+            await Task.WhenAll(task1, task2, task3, task4, task5, task6, task7);
         }
 
         public void CreateProductTables()
@@ -311,13 +337,25 @@ namespace Dustbuster
             dbConnection.CreateTable<ProductMatrix>();
             dbConnection.CreateTable<Supplier>();
             dbConnection.CreateTable<ProductDescription>();
+            dbConnection.CreateTable<DBMetaData>();
         }
 
         public void CreateJobTable()
         {
             dbConnection.CreateTable<Job>();
+            dbConnection.CreateTable<UserInfo>();
             //dbConnection.Insert(tempJob); //a demo job for debug
             //dbConnection.Insert(new Job(0, 25000, 1, 90, true, DateTime.Now, "second Job object"));
+        }
+
+
+        public void setDBVersion()
+        {
+            DBMetaData sigh = new DBMetaData(4);
+            lock (locker)
+            {
+                dbConnection.Insert(sigh);
+            }
         }
 
         //set to return no. of altered rows, reset to void later if nec
