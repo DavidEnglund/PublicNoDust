@@ -138,6 +138,7 @@ namespace Dustbuster
                 // create data info object - Send this to wherever it needs to go..                
                 ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text, dpDate.Date);
 
+
                 /*
                 if(COntactRequestInfo sends corretly)
                 {
@@ -148,6 +149,12 @@ namespace Dustbuster
                     await Navigation.PushAsync(new CallEmailResultsPage(4));
                 }
                 */
+
+                //Invoking WebService 
+                Boolean result = await DependencyService.Get<IWebServiceConnect>().TestConnection();
+                Boolean WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, etContact.Text, etContact.Text);
+                await DisplayAlert("Contact Registered?", WebContactResult.ToString(), "Ok");
+
             }
         }
         #endregion

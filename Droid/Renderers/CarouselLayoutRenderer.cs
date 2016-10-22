@@ -8,12 +8,12 @@ using Android.Views;
 using System.ComponentModel;
 using Android.Graphics;
 using Dustbuster;
-using Dustbuster.Droid.Renderers;
+using Dustbuster.Droid;
 using Android.Util;
 
 [assembly: ExportRenderer(typeof(CarouselLayout), typeof(CarouselLayoutRenderer))]
 
-namespace Dustbuster.Droid.Renderers
+namespace Dustbuster.Droid
 {
     /// <summary>
     ///  Much of this code needs to be added to a dependency service.

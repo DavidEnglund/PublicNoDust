@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-using Dustbuster.Interfaces;
-using Dustbuster.iOS.Interfaces;
+using Dustbuster.iOS;
 using Xamarin.Forms;
 using UIKit;
 using Foundation;
 
 [assembly: Dependency(typeof(DialerIOS))]
-namespace Dustbuster.iOS.Interfaces
+namespace Dustbuster.iOS
 {
     class DialerIOS : IDialer
     {

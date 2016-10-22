@@ -1,12 +1,11 @@
 using Android.App;
 using Android.Content;
-using Dustbuster.Interfaces;
 using Android.Views.InputMethods;
 using Xamarin.Forms;
-using Dustbuster.Droid.Interfaces;
+using Dustbuster.Droid;
 
 [assembly: Dependency(typeof(KeyboardInteractionDroid))]
-namespace Dustbuster.Droid.Interfaces
+namespace Dustbuster.Droid
 {
     /**
      * This class is implementation of IKeyboardInteraction in xamarin project.
