@@ -4,7 +4,6 @@ using Dustbuster.Droid;
 using Android.Provider;
 using Xamarin.Forms;
 using System.Diagnostics;
-using Dustbuster.Interfaces;
 [assembly: Xamarin.Forms.Dependency(typeof(AndroidReminderService))]
 namespace Dustbuster.Droid
 {

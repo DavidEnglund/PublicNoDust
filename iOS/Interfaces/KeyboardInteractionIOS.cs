@@ -1,9 +1,8 @@
 using Xamarin.Forms;
-using Dustbuster.iOS.Interfaces;
-using Dustbuster.Interfaces;
+using Dustbuster.iOS;
 
 [assembly: Dependency(typeof(KeyboardInteractionIOS))]
-namespace Dustbuster.iOS.Interfaces
+namespace Dustbuster.iOS
 {
     class KeyboardInteractionIOS : IKeyboardInteraction
     {

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dustbuster.Models
+namespace Dustbuster
 {
-    class Analytics
+    public class Analytics
     {
         public Analytics()
         {
@@ -15,7 +15,8 @@ namespace Dustbuster.Models
         }
 
         public void SetDetails()
-        {//Here we are setting the details that will allow us to connect to our google Analytics account
+        {
+			//Here we are setting the details that will allow us to connect to our google Analytics account
             GoogleAnalytics.Current.Config.TrackingId = "***REMOVED***";
             GoogleAnalytics.Current.Config.AppId = "AppID";
             GoogleAnalytics.Current.Config.AppName = "dustbuster";

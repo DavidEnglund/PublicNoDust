@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dustbuster.Interfaces
+namespace Dustbuster
 {
     // Contract that describes the dependencies used
     public interface IWebServiceConnect

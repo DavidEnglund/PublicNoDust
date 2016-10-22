@@ -63,7 +63,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DependencyManager\WebServiceManager.cs" />
+    <Compile Include="Managers\WebServiceManager.cs" />
     <Compile Include="Interfaces\IKeyboardInteraction.cs" />
     <Compile Include="Interfaces\IWebServiceConnect.cs" />
     <Compile Include="Models\Analytics.cs" />

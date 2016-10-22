@@ -4,11 +4,10 @@ using Android.App;
 using Android.Content;
 
 using Xamarin.Forms;
-using Dustbuster.Droid.Interfaces;
-using Dustbuster.Interfaces;
+using Dustbuster.Droid;
 
 [assembly: Dependency(typeof(DialerDroid))]
-namespace Dustbuster.Droid.Interfaces
+namespace Dustbuster.Droid
 {
     public class DialerDroid : IDialer
     {

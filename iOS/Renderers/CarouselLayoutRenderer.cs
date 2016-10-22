@@ -4,14 +4,14 @@ using System.Reflection;
 using System.Timers;
 using System.ComponentModel;
 using Dustbuster;
-using Dustbuster.iOS.Renderers;
+using Dustbuster.iOS;
 using UIKit;
 using System.Diagnostics;
 
 
 [assembly: ExportRenderer(typeof(CarouselLayout), typeof(CarouselLayoutRenderer))]
 
-namespace Dustbuster.iOS.Renderers
+namespace Dustbuster.iOS
 {
     /// <summary>
     ///  Much of this code needs to be added to a dependency service.

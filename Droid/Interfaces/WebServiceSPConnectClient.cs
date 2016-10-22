@@ -12,13 +12,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-using Dustbuster.Droid.Client;
-using Dustbuster.Interfaces;
+using Dustbuster.Droid;
 
 [assembly: Dependency(typeof(WebServiceSPConnectClient))]
-namespace Dustbuster.Droid.Client
+namespace Dustbuster.Droid
 {
-    class WebServiceSPConnectClient : IWebServiceConnect
+    public class WebServiceSPConnectClient : IWebServiceConnect
     {
         au.com.sunhawk.Sunhawk_SP_svc sunhawk;
 

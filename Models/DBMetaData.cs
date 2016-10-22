@@ -7,7 +7,7 @@ using SQLite;
 
 namespace Dustbuster
 {
-    class DBMetaData
+    public class DBMetaData
     {
         [PrimaryKey]
         public int key { get; set; } //this must be 1

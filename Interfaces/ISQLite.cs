@@ -1,6 +1,6 @@
 ﻿using SQLite;
 
-namespace Dustbuster.Interfaces
+namespace Dustbuster
 {
     public interface ISQLite
     {

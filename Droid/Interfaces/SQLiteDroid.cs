@@ -2,7 +2,6 @@ using System;
 using System.IO;
 using Xamarin.Forms;
 using SQLite;
-using Dustbuster.Interfaces;
 using Dustbuster.Droid;
 
 [assembly: Dependency(typeof(SQLiteDroid))]
