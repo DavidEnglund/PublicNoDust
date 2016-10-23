@@ -14,8 +14,9 @@ namespace Dustbuster.Droid
         {
             //see override below to accomodate multiple databases
 
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
-
+            //string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
+            
+            string documentsPath = global::Android.OS.Environment.ExternalStorageDirectory.Path;
             var productDBfilename = "ProductDB.db3";
             var jobDBfilename = "JobDB.db3";
 
@@ -35,8 +36,9 @@ namespace Dustbuster.Droid
         public SQLiteConnection GetConnection(string dbName)
         {
             //should make db filenames a string resource or something
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
-         
+            //string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
+            string documentsPath = global::Android.OS.Environment.ExternalStorageDirectory.Path;
+
 
             string dbFileName = dbName;
 
