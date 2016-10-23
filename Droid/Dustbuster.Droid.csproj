@@ -129,12 +129,12 @@
     <Compile Include="Renderers\SelectImageButtonRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Renderers\DroidEditRenderer.cs" />
+    <Compile Include="Interfaces\WebServiceSPConnectClient.cs" />
     <Compile Include="Web References\au.com.sunhawk\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\WebServiceSPConnectClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -153,9 +153,6 @@
     <None Include="Web References\au.com.sunhawk\CompositeType.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\au.com.sunhawk\MemoryStream.datasource">
-      <DependentUpon>Reference.map</DependentUpon>
-    </None>
     <None Include="Web References\au.com.sunhawk\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -168,12 +165,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Web References\au.com.sunhawk\Sunhawk_SP_svc1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\au.com.sunhawk\Sunhawk_SP_svc2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Web References\au.com.sunhawk\Sunhawk_SP_svc3.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

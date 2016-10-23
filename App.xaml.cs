@@ -61,12 +61,16 @@ namespace Dustbuster
 		}
 		#endregion
 
-		protected override void OnStart()
+        //changed method to async to allow database update R.L
+		protected async override void OnStart()
 		{
 			// Handle when your app starts
 			// this will start the calendar access service for iOS - for android it currently does nothing
 			DependencyService.Get<IReminderService>(DependencyFetchTarget.GlobalInstance).CreateService();
-		}
+            // Starts updating the product database. R.L
+            await DependencyService.Get<IWebServiceConnect>().GetDBVersion();
+            var result = await DependencyService.Get<IWebServiceConnect>().GetDB();
+        }
 
 		protected override void OnSleep()
 		{

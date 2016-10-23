@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dustbuster
 {
-    // Contract that describes the dependencies used
+    // Contract that describes the dependencies being injected R.L
     public interface IWebServiceConnect
     {
         Task<Boolean> TestConnection();
@@ -14,5 +14,7 @@ namespace Dustbuster
         Task<Boolean> AddNewRecord(String Name, String Email, String Phone);
 
         Task<String> GetDBVersion();
+
+        Task<Boolean> GetDB();
     }
 }

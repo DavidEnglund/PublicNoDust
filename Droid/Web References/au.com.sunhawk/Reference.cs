@@ -27,7 +27,6 @@ namespace Dustbuster.Droid.au.com.sunhawk {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="BasicHttpBinding_ISunhawk_SP_svc", Namespace="http://tempuri.org/")]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MarshalByRefObject))]
     public partial class Sunhawk_SP_svc : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback checkConnectionOperationCompleted;
@@ -266,10 +265,10 @@ namespace Dustbuster.Droid.au.com.sunhawk {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ISunhawk_SP_svc/getLatestDb", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public MemoryStream getLatestDb() {
+        [return: System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", IsNullable=true)]
+        public byte[] getLatestDb() {
             object[] results = this.Invoke("getLatestDb", new object[0]);
-            return ((MemoryStream)(results[0]));
+            return ((byte[])(results[0]));
         }
         
         /// <remarks/>
@@ -370,158 +369,6 @@ namespace Dustbuster.Droid.au.com.sunhawk {
                 return true;
             }
             return false;
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System.IO")]
-    public partial class MemoryStream : Stream {
-        
-        private byte[] _bufferField;
-        
-        private int _capacityField;
-        
-        private bool _expandableField;
-        
-        private bool _exposableField;
-        
-        private bool _isOpenField;
-        
-        private int _lengthField;
-        
-        private int _originField;
-        
-        private int _positionField;
-        
-        private bool _writableField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(DataType="base64Binary", IsNullable=true)]
-        public byte[] _buffer {
-            get {
-                return this._bufferField;
-            }
-            set {
-                this._bufferField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int _capacity {
-            get {
-                return this._capacityField;
-            }
-            set {
-                this._capacityField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool _expandable {
-            get {
-                return this._expandableField;
-            }
-            set {
-                this._expandableField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool _exposable {
-            get {
-                return this._exposableField;
-            }
-            set {
-                this._exposableField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool _isOpen {
-            get {
-                return this._isOpenField;
-            }
-            set {
-                this._isOpenField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int _length {
-            get {
-                return this._lengthField;
-            }
-            set {
-                this._lengthField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int _origin {
-            get {
-                return this._originField;
-            }
-            set {
-                this._originField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int _position {
-            get {
-                return this._positionField;
-            }
-            set {
-                this._positionField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool _writable {
-            get {
-                return this._writableField;
-            }
-            set {
-                this._writableField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemoryStream))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System.IO")]
-    public partial class Stream : MarshalByRefObject {
-    }
-    
-    /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Stream))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MemoryStream))]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.6.1586.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://schemas.datacontract.org/2004/07/System")]
-    public partial class MarshalByRefObject {
-        
-        private object @__identityField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
-        public object @__identity {
-            get {
-                return this.@__identityField;
-            }
-            set {
-                this.@__identityField = value;
-            }
         }
     }
     
@@ -760,10 +607,10 @@ namespace Dustbuster.Droid.au.com.sunhawk {
         }
         
         /// <remarks/>
-        public MemoryStream Result {
+        public byte[] Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((MemoryStream)(this.results[0]));
+                return ((byte[])(this.results[0]));
             }
         }
     }

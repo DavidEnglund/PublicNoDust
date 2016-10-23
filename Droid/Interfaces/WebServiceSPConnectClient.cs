@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using System.IO;
 
 using Android.App;
 using Android.Content;
@@ -21,6 +22,9 @@ namespace Dustbuster.Droid
     {
         au.com.sunhawk.Sunhawk_SP_svc sunhawk;
 
+
+        // Method to test the connection between the app and the sharepoint server
+        // returns a boolean that confirms or denies connection R.L
         public Task<Boolean> TestConnection()
         {
             try
@@ -42,6 +46,7 @@ namespace Dustbuster.Droid
 
             }
         }
+
 
         public Task<Boolean> AddNewRecord(String Name, String Email, String Phone)
         {
@@ -73,6 +78,7 @@ namespace Dustbuster.Droid
                     bool LatestDBVersion;
                     sunhawk.getLatestDbVersion(out DbVersion, out LatestDBVersion);
                     var result = DbVersion + " " + LatestDBVersion;
+                    Console.WriteLine("Running database download!!!");
                     return Task.FromResult(result);
 
                 }
@@ -81,6 +87,43 @@ namespace Dustbuster.Droid
             {
                 Console.WriteLine("Service Exception: " + ex.Message);
                 return Task.FromResult("Failed");
+
+            }
+
+        }
+
+        public Task<Boolean> GetDB()
+        {
+            try
+            {
+                using (sunhawk = new au.com.sunhawk.Sunhawk_SP_svc())
+                {
+                    //getting path of external storage. only external storage permission were granted R.L
+                    var EmulatedStorage = global::Android.OS.Environment.ExternalStorageDirectory.Path;
+                    var FilePath = Path.Combine(EmulatedStorage, "fileTarget.txt");
+                    // releasing resources for the file R.L
+                    using (FileStream objfilestream = new FileStream(FilePath, FileMode.Create, FileAccess.ReadWrite))
+                    {
+                        BinaryWriter BinWriter = new BinaryWriter(objfilestream);
+                        long TotalBytes = BinWriter.BaseStream.Length;
+                        Byte[] mybytearray = new Byte[TotalBytes];
+                        mybytearray = sunhawk.getLatestDb();
+                        // writing the file R.L
+                        objfilestream.Write(mybytearray, 0, int.Parse(TotalBytes.ToString()));
+                        objfilestream.Close();
+                    }
+                    Console.WriteLine("Database Downloaded!!!");
+                    return Task.FromResult(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Service Exception: " + ex.Message);
+                return Task.FromResult(false);
+
+            }
+            finally
+            {
 
             }
         }
