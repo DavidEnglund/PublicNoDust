@@ -173,6 +173,7 @@
     <BundleResource Include="Resources\choice_calendar_under180.png" />
     <BundleResource Include="Resources\unselectedNone.png" />
     <None Include="Properties\app.manifest" />
+    <Compile Include="Interfaces\WebServiceSPConnectClient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.Settings, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
