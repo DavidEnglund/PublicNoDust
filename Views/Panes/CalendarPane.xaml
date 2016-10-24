@@ -21,6 +21,9 @@
                     VerticalOptions="FillAndExpand">
 
       <!-- Calendar buttons are added here programatically -->
+      <local:SelectImageButton x:Name="under30Button" Padding="26"/>
+      <local:SelectImageButton x:Name="over30Under180Button" Padding="26"/>
+      <local:SelectImageButton x:Name="over180Button" Padding="26"/>
 
     </RelativeLayout>
 
