@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:Dustbuster" 
              x:Class="Dustbuster.DustbusterPage">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+		<!-- HACK -->
+		<OnPlatform x:TypeArguments="x:Double" Android="0" iOS="20" x:Key="statusBarHeight" />
+	</ResourceDictionary>
+  </ContentPage.Resources>
   <RelativeLayout Padding="0"> 
     <ContentView x:Name="sectionTitle"
                  BackgroundColor="Transparent"
@@ -20,6 +26,7 @@
 				                 Property=Width}" />
 
         <Grid HorizontalOptions="FillAndExpand"
+						RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource statusBarHeight}}"
 						RelativeLayout.WidthConstraint="{ConstraintExpression
 				                 Type=RelativeToParent,
 				                 Property=Width}">
@@ -185,7 +192,7 @@
     <Button x:Name="btnDarkBackground"
             BackgroundColor="#CC000000"
             IsVisible="False"
-            RelativeLayout.YConstraint="-20"
+			RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource statusBarHeight}}"
             RelativeLayout.XConstraint="-20"
             RelativeLayout.WidthConstraint="{ConstraintExpression
                  Type=RelativeToParent,
@@ -211,7 +218,7 @@
                  Property=Width,
                  Factor=-0.66666,
                  Constant=0}"
-                 RelativeLayout.YConstraint="0"
+				 RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant={StaticResource statusBarHeight}}"
                  RelativeLayout.WidthConstraint="{ConstraintExpression
                  Type=RelativeToParent,
                  Property=Width,
