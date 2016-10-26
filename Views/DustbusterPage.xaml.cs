@@ -35,7 +35,7 @@ namespace Dustbuster
                     child.Scale = 0;
                 }
 
-				var rect = new Rectangle(0, panel.Y, panel.Width, panel.Height - ((Device.OS == TargetPlatform.iOS) ? 20 : 0));
+				var rect = new Rectangle(0, panel.Y, panel.Width, panel.Height - Device.OnPlatform(20, 0, 0));
                 await this.panel.LayoutTo(rect, 250, Easing.CubicIn);
 
                 foreach (var child in panel.Children)
