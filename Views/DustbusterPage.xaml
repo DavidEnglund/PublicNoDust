@@ -175,7 +175,7 @@
                VerticalOptions="Start"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center"/>
-        <Label Text="Specialised dust suppression for government and civil works or for private use. Complete the checklist to see what products suits you."
+        <Label Text="Specialised dust suppression for civil, government and residential areas. Complete the checklist to see what products suits you."
                TextColor="White"
                FontSize="Small"
                VerticalOptions="End"
