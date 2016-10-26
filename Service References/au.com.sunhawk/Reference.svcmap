@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="daa371c9-a9c1-4119-b70f-8f869e9cff2f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Sunhawk_SP_svc.disco" MetadataType="Disco" ID="06bae198-b198-47d8-ad46-0a6c0433de36" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?disco" />
+    <MetadataFile FileName="Sunhawk_SP_svc.wsdl" MetadataType="Wsdl" ID="c2b34887-d5ed-40b1-a7e6-f752229169fd" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?wsdl" />
+    <MetadataFile FileName="Sunhawk_SP_svc.xsd" MetadataType="Schema" ID="bbbfc630-d025-4dd9-a04d-628b21949c18" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?xsd=xsd1" />
+    <MetadataFile FileName="Sunhawk_SP_svc1.xsd" MetadataType="Schema" ID="eb69e81e-b476-434e-890f-7b0509703738" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?xsd=xsd2" />
+    <MetadataFile FileName="Sunhawk_SP_svc2.xsd" MetadataType="Schema" ID="44bdafb7-e162-4baf-97f9-5e415fe09ffc" SourceId="1" SourceUrl="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
