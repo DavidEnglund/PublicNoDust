@@ -21,8 +21,8 @@
           <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="8*" />
-          <ColumnDefinition Width="2*" />
+          <ColumnDefinition Width="7*" />
+          <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <!-- ENTRY Length -->
         <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_length" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="CenterAndExpand" Text="{Binding Length, Mode=TwoWay}"/>
@@ -41,8 +41,8 @@
           <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="8*" />
-          <ColumnDefinition Width="2*" />
+          <ColumnDefinition Width="7*" />
+          <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
         <!-- ENTRY Width -->
         <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_width" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="CenterAndExpand" Text="{Binding Width, Mode=TwoWay}"/>
