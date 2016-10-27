@@ -27,8 +27,9 @@ namespace Dustbuster
 
 		private List<Supplier> supplierList = new List<Supplier>
         {
-            new Supplier(1,"Sunhawk","Sunhawk Phone","Sunhawk Email"),
-            new Supplier(2,"Rainstorm","Rainstorm Phone","Rainstorm Email")
+            new Supplier(1,"Sunhawk","0894592785","wa@sunhawk.com.au"),
+            new Supplier(2,"Rainstorm WA","0894520235","info@rainstorm.com.au"),
+            new Supplier(3,"Rainstorm Victoria","0352824024","info@rainstorm.com.au")
         };
 
         //a pre-saved job for testing   TODO - Remove later

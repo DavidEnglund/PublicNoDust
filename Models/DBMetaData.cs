@@ -10,7 +10,7 @@ namespace Dustbuster
     public class DBMetaData
     {
         [PrimaryKey]
-        public int key { get; set; } //this must be 1
+        public int VersionKey { get; set; } //this must be 1
         public int DBVersion { get; set; }
 
         public DBMetaData()
@@ -20,7 +20,7 @@ namespace Dustbuster
 
         public DBMetaData(int i)
         {
-            key = 1;
+            VersionKey = 1;
             DBVersion = i;
         }
     }
