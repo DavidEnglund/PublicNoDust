@@ -33,6 +33,13 @@ namespace Dustbuster
 				{
 					calculateTapped = true;
 
+                    if (!validateInputs()) // double check the inputs (length, width, location)
+                    {
+                        calculateTapped = false;
+                        return; // terminate the process
+                    }
+
+
 					double tempLength = Length;
 					double tempWidth = Width;
 
@@ -322,6 +329,26 @@ namespace Dustbuster
         public ICommand ChangeWidthUnit { set; get; }
 
         public ICommand ChangeAreaUnit { set; get; }
+
+        private bool validateInputs()
+        {
+            if (Location == null || Location.Length < 1)
+            {
+                App.Current.MainPage.DisplayAlert("Alert", "Invalid Location", "OK");
+                return false;
+            }
+            else if (Length < 1)
+            {
+                App.Current.MainPage.DisplayAlert("Alert", "Invalid Length", "OK");
+                return false;
+            }
+            else if (Width < 1)
+            {
+                App.Current.MainPage.DisplayAlert("Alert", "Invalid Width", "OK");
+                return false;
+            }
+            return true;
+        }
     }
 }
 
