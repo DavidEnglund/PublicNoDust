@@ -79,11 +79,11 @@ namespace Dustbuster.Views
         {
             if (App.IndustryOption == IndustryOptions.Civil)
             {
-                DependencyService.Get<IDialer>().Dial("0429388777");
+                DependencyService.Get<IDialer>().Dial("0894592785");
             }
             else
             {
-                DependencyService.Get<IDialer>().Dial("0470178189");
+                DependencyService.Get<IDialer>().Dial("0894520235");
             }
             
         }
