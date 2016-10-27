@@ -47,7 +47,7 @@ namespace Dustbuster.Droid
             }
         }
 
-
+        // Method to 
         public Task<Boolean> AddNewRecord(String Name, String Email, String Phone)
         {
             try

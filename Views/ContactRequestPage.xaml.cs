@@ -153,7 +153,7 @@ namespace Dustbuster
                 }
                 */
 
-                //Invoking WebService 
+                //Invoking WebService and sending contact data from app to sharepoint server R.L
                 Boolean result = await DependencyService.Get<IWebServiceConnect>().TestConnection();
                 bool IsEmail = Regex.IsMatch(etContact.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
                 if (IsEmail)
