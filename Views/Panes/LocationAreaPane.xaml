@@ -8,7 +8,7 @@
     </StackLayout>
     <!-- ENTRY Location -->
     <StackLayout Padding="50,0,50,0">
-      <Entry  BackgroundColor="#d9d9d9" Placeholder="Suburb or Mine Site" Text="{Binding Location, Mode=TwoWay}"/>
+      <Entry  BackgroundColor="#d9d9d9" Placeholder="Suburb or Postcode" Text="{Binding Location, Mode=TwoWay}"/>
     </StackLayout>
     <!-- LABEL Length-->
     <StackLayout Padding="35,0,35,0">

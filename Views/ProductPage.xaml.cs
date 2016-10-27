@@ -77,7 +77,15 @@ namespace Dustbuster.Views
 
         private async void OnCallNow_Clicked(object sender, EventArgs e)
         {
-            DependencyService.Get<IDialer>().Dial("0429388777");
+            if (App.IndustryOption == IndustryOptions.Civil)
+            {
+                DependencyService.Get<IDialer>().Dial("0429388777");
+            }
+            else
+            {
+                DependencyService.Get<IDialer>().Dial("0470178189");
+            }
+            
         }
 
         private async void OnRequestContact_Clicked(object sender, EventArgs e)

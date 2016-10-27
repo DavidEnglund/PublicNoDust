@@ -69,7 +69,7 @@
     <ContentView Padding="40,20,40,10">
       <Label
 				x:Name="trafficAnswer"
-				Text="Tap on the traffic light or open road to select your option"
+				Text="Tap on the traffic light or open area to select your option"
         VerticalTextAlignment="Center"
         HorizontalTextAlignment="Center"
         FontSize="18"

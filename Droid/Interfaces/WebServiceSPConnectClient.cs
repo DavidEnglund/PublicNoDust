@@ -47,7 +47,7 @@ namespace Dustbuster.Droid
             }
         }
 
-
+        // Method to 
         public Task<Boolean> AddNewRecord(String Name, String Email, String Phone)
         {
             try
@@ -99,7 +99,12 @@ namespace Dustbuster.Droid
                 using (sunhawk = new au.com.sunhawk.Sunhawk_SP_svc())
                 {
                     //getting path of external storage. only external storage permission were granted R.L
-                    var EmulatedStorage = global::Android.OS.Environment.ExternalStorageDirectory.Path;
+                    //old
+                    //var EmulatedStorage = global::Android.OS.Environment.ExternalStorageDirectory.Path;
+
+                    // new without the need for permissions R.L
+                    var EmulatedStorage = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+
                     var FilePath = Path.Combine(EmulatedStorage, "fileTarget.txt");
                     // releasing resources for the file R.L
                     using (FileStream objfilestream = new FileStream(FilePath, FileMode.Create, FileAccess.ReadWrite))

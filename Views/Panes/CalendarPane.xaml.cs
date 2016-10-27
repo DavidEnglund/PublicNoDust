@@ -9,9 +9,6 @@ namespace Dustbuster
 
 		//init calendar button group
 		SelectButtonGroup calendarButtonGroup = new SelectButtonGroup();
-        SelectImageButton under30Button = new SelectImageButton();
-        SelectImageButton over30Under180Button = new SelectImageButton();
-        SelectImageButton over180Button = new SelectImageButton();
 
         public CalendarPane() : base("Duration", "unselectedNone.png")
 		{
@@ -125,8 +122,6 @@ namespace Dustbuster
                 btn.UnselectedBorderWidth = 0;
 
                 btn.SetDynamicResource(VisualElement.StyleProperty, "selectableButtonStyle");
-
-                btn.Padding = 26;     //Doesn't seem to affect anything but was in the original code
             }
         }
 

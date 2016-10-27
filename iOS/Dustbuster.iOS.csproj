@@ -173,6 +173,20 @@
     <BundleResource Include="Resources\choice_calendar_under180.png" />
     <BundleResource Include="Resources\unselectedNone.png" />
     <None Include="Properties\app.manifest" />
+    <Compile Include="Interfaces\WebServiceSPConnectClient.cs" />
+    <BundleResource Include="Resources\david.png" />
+    <BundleResource Include="Resources\erdal.png" />
+    <BundleResource Include="Resources\hamburger_icon_black.png" />
+    <BundleResource Include="Resources\jayden.png" />
+    <BundleResource Include="Resources\michael.png" />
+    <BundleResource Include="Resources\michay.png" />
+    <BundleResource Include="Resources\mikey.png" />
+    <BundleResource Include="Resources\monique.png" />
+    <BundleResource Include="Resources\nichola.png" />
+    <BundleResource Include="Resources\placeholder.png" />
+    <BundleResource Include="Resources\readingMode_glasses.png" />
+    <BundleResource Include="Resources\readingMode_img.png" />
+    <BundleResource Include="Resources\sandPile_icon.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.Settings, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
