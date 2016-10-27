@@ -102,7 +102,7 @@ namespace Dustbuster.Droid
                     //old
                     //var EmulatedStorage = global::Android.OS.Environment.ExternalStorageDirectory.Path;
 
-                    // new without the need for permissions
+                    // new without the need for permissions R.L
                     var EmulatedStorage = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
 
                     var FilePath = Path.Combine(EmulatedStorage, "fileTarget.txt");

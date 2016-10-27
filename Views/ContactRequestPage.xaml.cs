@@ -121,6 +121,9 @@ namespace Dustbuster
 
         private async void OnSubmitClicked(object sender, EventArgs args)
         {
+
+            Boolean WebContactResult;
+
             Button button = (Button)sender;
             // validate the text entry fields
             if (ValidateFields())
@@ -152,9 +155,17 @@ namespace Dustbuster
 
                 //Invoking WebService 
                 Boolean result = await DependencyService.Get<IWebServiceConnect>().TestConnection();
-                Boolean WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, etContact.Text, etContact.Text);
-                await DisplayAlert("Contact Registered?", WebContactResult.ToString(), "Ok");
-
+                bool IsEmail = Regex.IsMatch(etContact.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
+                if (IsEmail)
+                {
+                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, etContact.Text, null);
+                    await DisplayAlert("Contact Submitted", "Your details has been forwarded.", "Ok");
+                }
+                else
+                {
+                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, null, etContact.Text);
+                    await DisplayAlert("Contact Submitted", "Your details has been forwarded.", "Ok");
+                }
             }
         }
         #endregion
