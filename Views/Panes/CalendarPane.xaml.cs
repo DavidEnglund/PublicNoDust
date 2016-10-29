@@ -138,7 +138,7 @@ namespace Dustbuster
 		{
 			calendarAnswer.Text = "Solution is for under 1 month";
 			Title = "Under 1 Month";
-			Image = "accordion_icon_calendar_under30.png";
+			Image = "choice_calendar_1_month.png";
 			//set the option enum
 			App.DurationOption = DurationOptions.Under1Month;
 			if (App.TrafficOption == TrafficOptions.TraffickedArea) { App.WeatherOption = WeatherOptions.None; }
@@ -152,7 +152,7 @@ namespace Dustbuster
 			//switches between 1+ and 1-6 options depending on traffic option choice
 			calendarAnswer.Text = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Solution is for over 1 month" : "Solution is for under 6 months";
 			Title = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "Over 1 Month" : "Under 6 Months";
-			Image = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "accordion_icon_calendar_over30.png": "accordion_icon_calendar_under180.png";
+			Image = (App.TrafficOption == TrafficOptions.TraffickedArea) ? "choice_calendar_over_1_month.png" : "choice_calendar_1_to_6_months.png";
 			App.DurationOption = (App.TrafficOption == TrafficOptions.TraffickedArea) ? DurationOptions.Over1Month : DurationOptions.Under6Months;
 			//if traffic option is selected weather option is none
 			if (App.TrafficOption == TrafficOptions.TraffickedArea) { App.WeatherOption = WeatherOptions.None; }
@@ -165,7 +165,7 @@ namespace Dustbuster
 		{
 			calendarAnswer.Text = "Solution is for over 6 months";
 			Title = "Over 6 Months";
-			Image = "accordion_icon_calendar_over180.png";
+			Image = "choice_calendar_over_6_months.png";
 			// set the option enum
 			App.DurationOption = DurationOptions.Over6Months;
 			App.WeatherOption = WeatherOptions.None;

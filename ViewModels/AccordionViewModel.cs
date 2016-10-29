@@ -337,12 +337,12 @@ namespace Dustbuster
                 App.Current.MainPage.DisplayAlert("Alert", "Invalid Location", "OK");
                 return false;
             }
-            else if (Length < 1)
+            else if (Length <= 0)
             {
                 App.Current.MainPage.DisplayAlert("Alert", "Invalid Length", "OK");
                 return false;
             }
-            else if (Width < 1)
+            else if (Width <= 0)
             {
                 App.Current.MainPage.DisplayAlert("Alert", "Invalid Width", "OK");
                 return false;
