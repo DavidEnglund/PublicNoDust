@@ -11,20 +11,23 @@ namespace Dustbuster
     {
         public SettingsPage()
         {
-			this.BindingContext = new SettingsViewModel();
+	        this.BindingContext = new SettingsViewModel();
 
             InitializeComponent();
 
 
             ContactMethodPicker.SelectedIndexChanged += ContactMethodPicker_SelectedIndexChanged;
 
-            if (ContactMethodPicker.SelectedIndex == 0)
+            
+            if (ContactMethodPicker.SelectedIndex == 0)     //select mobile number or email
             {
-                ContactInfoEntry.Keyboard = Keyboard.Numeric;
+                // enter mobile number with place holder to show number format 
+                ContactInfoEntry.Keyboard = Keyboard.Numeric; 
                 ContactInfoEntry.Placeholder = "E.g. 04 123 456 78";
             }
             else
             {
+                // enter email with place holder to show format of how it should be written
                 ContactInfoEntry.Keyboard = Keyboard.Email;
                 ContactInfoEntry.Placeholder = "E.g. example@email.com";
             }
@@ -34,11 +37,13 @@ namespace Dustbuster
         {
             if (ContactMethodPicker.SelectedIndex == 1)
             {
+                // enter email with place holder to show format
                 ContactInfoEntry.Keyboard = Keyboard.Email;
                 ContactInfoEntry.Placeholder = "E.g. example@email.com";
             }
             else
             {
+                // enter mobile number with place holder to show format of how it should be written
                 ContactInfoEntry.Keyboard = Keyboard.Numeric;
                 ContactInfoEntry.Placeholder = "E.g. 04 123 456 78";
             }
