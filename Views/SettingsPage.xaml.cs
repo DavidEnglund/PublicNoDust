@@ -19,7 +19,7 @@ namespace Dustbuster
             ContactMethodPicker.SelectedIndexChanged += ContactMethodPicker_SelectedIndexChanged;
 
             
-            if (ContactMethodPicker.SelectedIndex == 0)     //select mobile number or email
+            if (ContactMethodPicker.SelectedIndex == 0)     //select mobile number (0) or email (1)
             {
                 // enter mobile number with place holder to show number format 
                 etContactInfo.Keyboard = Keyboard.Numeric;

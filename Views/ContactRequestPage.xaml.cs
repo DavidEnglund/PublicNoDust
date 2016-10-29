@@ -40,7 +40,7 @@ namespace Dustbuster
             {
                 etName.Text = Settings.CustomerName.Trim();
             }
-
+            
             // sync settings number to contact request page user name
             if (etContact.Text != null)
             {
