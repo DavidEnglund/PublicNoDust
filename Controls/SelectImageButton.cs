@@ -269,7 +269,7 @@ namespace Dustbuster
         public SelectImageButton()
         {
             // init a tap(click) object to react to presses
-            tapRecognizer.Tapped += Click_Tapped;
+            Clicked += Click_Tapped;
             GestureRecognizers.Add(tapRecognizer);
 
             // images - set the selected to be invisible  and the add and layout both to the absoluteLayout
