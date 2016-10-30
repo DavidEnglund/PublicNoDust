@@ -40,7 +40,21 @@ namespace Dustbuster
             {
                 etName.Text = Settings.CustomerName.Trim();
             }
-            
+
+            // sync settings contact method to contact request page contact method
+            if (Settings.ContactMethod == 0)    //Phone
+            {
+                etContact.Placeholder = "04 123 456 78";
+                etContact.Keyboard = Keyboard.Telephone;
+                btnPhone.Text = "Phone";
+            }
+            else    //Email
+            {
+                etContact.Placeholder = "johndoe@mail.com";
+                etContact.Keyboard = Keyboard.Email;
+                btnPhone.Text = "Email";
+            }
+
             // sync settings number to contact request page user name
             if (etContact.Text != null)
             {

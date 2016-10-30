@@ -19,7 +19,7 @@ namespace Dustbuster
 			}
 		}
 
-		public int ContactMethod
+		public int ContactMethod    //Phone (0) or Email (1) from the picker
 		{
 			get
 			{
@@ -33,7 +33,7 @@ namespace Dustbuster
 			}
 		}
 
-		public string ContactInfo
+		public string ContactInfo   //Phone or Email input from the user
 		{
 			get
 			{

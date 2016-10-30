@@ -48,7 +48,8 @@ namespace Dustbuster
                 etContactInfo.Placeholder = "E.g. 04 123 456 78";
             }
 
-           
+            etContactInfo.Text = "";
         }
+
     }
 }

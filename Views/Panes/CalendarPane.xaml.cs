@@ -174,24 +174,20 @@ namespace Dustbuster
         }
 
 
-		private void goToWeatherPane()
-		{
-			//Goto weather pane
-			if (!Owner.IsPaneVisited(((AccordionViewModel)BindingContext).WeatherPane))
-			{
-				Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane, ((AccordionViewModel)BindingContext).WeatherPane);
-			}
-		}
+        private void goToWeatherPane()
+        {
+            //Goto weather pane
+            Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane, ((AccordionViewModel)BindingContext).WeatherPane);
 
-		private void goToLocationAreaPane()
-		{
+        }
 
-			//Goto location area pane
-			if (!Owner.IsPaneVisited(((AccordionViewModel)BindingContext).LocationAreaPane) || App.DurationOption == DurationOptions.Over6Months)
-			{
-				Owner.VisitPane(((AccordionViewModel)BindingContext).WeatherPane, ((AccordionViewModel)BindingContext).LocationAreaPane);
-			}
-		}
+        private void goToLocationAreaPane()
+        {
+
+            //Goto location area pane
+            Owner.VisitPane(((AccordionViewModel)BindingContext).WeatherPane, ((AccordionViewModel)BindingContext).LocationAreaPane);
+
+        }
 	}
 }
 
