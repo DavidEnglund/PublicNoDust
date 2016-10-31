@@ -66,13 +66,12 @@ namespace Dustbuster
             }
         }
 
-
+        /*
         public DatePicker DatePicker
         {
             get { return this.dpDate; }
         }
-
-        #region Page Buttons
+          */      
         string contactType; // either Phone or Email        
         double remindTime;
         // Pulls up the contact type selcted menu
@@ -142,6 +141,7 @@ namespace Dustbuster
             // validate the text entry fields
             if (ValidateFields())
             {
+                /*
                 var pickReminder = await DisplayAlert("So far, so good!", "Would you like to set a reminder in your phone's calendar?", "Yes", "No");
                 if (pickReminder)
                 {
@@ -152,8 +152,9 @@ namespace Dustbuster
                     DependencyService.Get<IReminderService>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", remindDate);
                     Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, remindDate);
                 }
-                // create data info object - Send this to wherever it needs to go..                
-                ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text, dpDate.Date);
+                // create data info object - Send this to wherever it needs to go..     
+                */           
+                ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text); //, dpDate.Date
 
 
                 /*
@@ -180,9 +181,11 @@ namespace Dustbuster
                     WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, null, etContact.Text);
                     await DisplayAlert("Contact Submitted", "Your details has been forwarded.", "Ok");
                 }
+                // INSERT code to go back to main page
+                await Navigation.PopToRootAsync();
             }
+            
         }
-        #endregion
 
         // calls the methods used to validate the input fields
         private bool ValidateFields()

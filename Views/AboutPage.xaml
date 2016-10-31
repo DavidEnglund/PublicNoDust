@@ -23,7 +23,7 @@
           </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-          <Image     Source="david.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+          <Image Source="david.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
             <Image.GestureRecognizers>
               <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://au.linkedin.com/in/davidenglund404" />
             </Image.GestureRecognizers>
