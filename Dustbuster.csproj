@@ -63,8 +63,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IEmailClientConnect.cs" />
-    <Compile Include="Managers\SMTPEmailManager.cs" />
     <Compile Include="Managers\WebServiceManager.cs" />
     <Compile Include="Interfaces\IKeyboardInteraction.cs" />
     <Compile Include="Interfaces\IWebServiceConnect.cs" />

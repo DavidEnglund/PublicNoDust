@@ -39,20 +39,8 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
-      <HintPath>..\packages\MimeKit.1.8.0\lib\MonoAndroid10\BouncyCastle.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Xamarin.Forms.2.1.0.6501-pre1\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MailKit, Version=1.8.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
-      <HintPath>..\packages\MailKit.1.8.1\lib\MonoAndroid10\MailKit.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MimeKit, Version=1.8.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
-      <HintPath>..\packages\MimeKit.1.8.0\lib\MonoAndroid10\MimeKit.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Plugin.GoogleAnalytics, Version=1.0.1.3, Culture=neutral, processorArchitecture=MSIL">
@@ -131,7 +119,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmailClient\SmtpEmailClient.cs" />
     <Compile Include="Interfaces\DialerDroid.cs" />
     <Compile Include="Interfaces\KeyboardInteractionDroid.cs" />
     <Compile Include="Interfaces\SQLiteDroid.cs" />
