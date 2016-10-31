@@ -10,28 +10,28 @@ namespace Dustbuster.Droid
 {
     public class SQLiteDroid : ISQLite
     {
-        public SQLiteConnection GetConnection()
-        {
-            //see override below to accomodate multiple databases
+        //public SQLiteConnection GetConnection()
+        //{
+        //    //see override below to accomodate multiple databases
 
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
-            //string documentsPath = global::Android.OS.Environment.ExternalStorageDirectory.Path; //public folder
+        //    string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
+        //    //string documentsPath = global::Android.OS.Environment.ExternalStorageDirectory.Path; //public folder
 
-            var productDBfilename = "ProductDB.db3";
-            var jobDBfilename = "JobDB.db3";
+        //    var productDBfilename = "ProductDB.db3";
+        //    var jobDBfilename = "JobDB.db3";
 
-            var productDBpath = Path.Combine(documentsPath, productDBfilename);
-            var jobDBpath = Path.Combine(documentsPath, jobDBfilename);
+        //    var productDBpath = Path.Combine(documentsPath, productDBfilename);
+        //    var jobDBpath = Path.Combine(documentsPath, jobDBfilename);
 
-            //to create a new db everytime use this - for debugging only 
-            File.Create(productDBpath);
-            File.Create(jobDBpath);
+        //    //to create a new db everytime use this - for debugging only 
+        //    File.Create(productDBpath);
+        //    File.Create(jobDBpath);
 
 
-            var conn = new SQLiteConnection(productDBpath);
+        //    var conn = new SQLiteConnection(productDBpath);
 
-            return conn;
-        }
+        //    return conn;
+        //}
 
         public SQLiteConnection GetConnection(string dbName)
         {

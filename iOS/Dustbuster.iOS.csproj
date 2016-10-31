@@ -187,6 +187,7 @@
     <BundleResource Include="Resources\readingMode_glasses.png" />
     <BundleResource Include="Resources\readingMode_img.png" />
     <BundleResource Include="Resources\sandPile_icon.png" />
+    <BundleResource Include="Resources\ProductDB.db3" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.Settings, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
