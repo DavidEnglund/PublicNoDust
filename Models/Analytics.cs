@@ -30,13 +30,8 @@ namespace Dustbuster
         {
             //Begin tracking information
             GoogleAnalytics.Current.InitTracker();
-            //Send the page the user is on
-            GoogleAnalytics.Current.Tracker.SendView("Maybe send users name instead of page?");
-            //Send information about an event
-            GoogleAnalytics.Current.Tracker.SendEvent(Company + " " + Traffic, ResultTraffic);
-            GoogleAnalytics.Current.Tracker.SendEvent(Company + " " + Calendar, ResultCalendar);
-            GoogleAnalytics.Current.Tracker.SendEvent(Company + " " + Rain, ResultRain);
-            GoogleAnalytics.Current.Tracker.SendEvent(Company + " " + Location, ResultLocation);
+            //Send the all the information the user has chosen
+			GoogleAnalytics.Current.Tracker.SendView(Company + " - " + Traffic + ", " + ResultTraffic + " - " + Calendar + ", " + ResultCalendar + " - " + Rain + ", " + ResultRain + " - " + Location + ", " + ResultLocation);
         }
     }
 }
