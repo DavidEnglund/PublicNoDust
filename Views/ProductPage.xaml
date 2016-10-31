@@ -1,116 +1,37 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-			  xmlns:local="clr-namespace:Dustbuster"
-              x:Class="Dustbuster.Views.ProductPage" Title="Product Page">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Dustbuster" x:Class="Dustbuster.Views.ProductPage" Title="Product Page">
   <StackLayout Spacing="0">
-
-    <Image Source="rainstrom_logo_sm.png"
-           x:Name="LogoImage"
-           BackgroundColor="Blue"/>
-    
+    <Image Source="rainstrom_logo_sm.png" x:Name="LogoImage" BackgroundColor="Blue"/>
     <!-- Carousel View -->
-    <StackLayout
-				 VerticalOptions="FillAndExpand"
-                 HorizontalOptions="FillAndExpand">
-      <RelativeLayout x:Name="CarouselView"
-                      HorizontalOptions="FillAndExpand"
-					  BackgroundColor="#f2f2f2"
-	                  Padding="0,0,0,-64">
-          <local:CarouselLayout x:Name="Carousel"
-          			HorizontalOptions="FillAndExpand"
-					VerticalOptions="FillAndExpand"
-					ItemsSource="{Binding Products}"
-					SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
-			        RelativeLayout.XConstraint="{ConstraintExpression 
-			        Type=RelativeToParent,
-			        Property=X,
-			        Factor=1}"
-			        RelativeLayout.YConstraint="{ConstraintExpression 
-			        Type=RelativeToParent,
-			        Property=Y,
-			        Factor=1}"
-			        RelativeLayout.WidthConstraint="{ConstraintExpression 
-			        Type=RelativeToParent,
-			        Property=Width,
-			        Factor=1}"
-			        RelativeLayout.HeightConstraint="{ConstraintExpression 
-			        Type=RelativeToParent,
-			        Property=Height,
-			        Factor=1}">
-
-		        <local:CarouselLayout.ItemTemplate>
-					<DataTemplate>
-			        	<StackLayout Spacing="0" VerticalOptions="StartAndExpand">
-							<StackLayout Padding="0, 10" 
-										Spacing="0" 
-										Style="{DynamicResource productHeader}">
-								<Label HorizontalTextAlignment="Center"
-										TextColor="#ffffff" 
-										FontAttributes="Bold"
-										FontSize="20"
-										Text="{Binding ProductName}" />
-							</StackLayout>
-
-							<Image x:Name="ProductImage"
-								VerticalOptions="Fill" 
-								HorizontalOptions="Fill" 
-								Aspect="AspectFill"
-								Source="{Binding ImageSource}">
-							</Image>
-
-							<ScrollView VerticalOptions="Fill"
-										Orientation="Vertical">
-									<StackLayout Padding="20"
-											BackgroundColor="#f2f2f2"
-											Spacing="10">
-										<Label HorizontalTextAlignment="Center"
-											TextColor="#5a5d5e"
-											Text="{Binding ProductDesc}" />
-										<Label HorizontalTextAlignment="Center"
-											TextColor="#5a5d5e"
-											Text="{Binding ProductQuantity, StringFormat='Estimated amount per application: {0}L'}" />
-										<Label HorizontalTextAlignment="Center"
-											TextColor="#5a5d5e"
-											Text="{Binding ApplicationRate, StringFormat='Application rate: {0}mL/m&#xB2;'}" />
-										<Label HorizontalTextAlignment="Center"
-											TextColor="#5a5d5e"
-											Text="{Binding ApplicationsRequired, StringFormat='Applications required: {0}'}" />
-									</StackLayout>
-							</ScrollView>
-			        	</StackLayout>
-					</DataTemplate>
-				</local:CarouselLayout.ItemTemplate>
-					
-		 </local:CarouselLayout>
-
-                     
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+      <RelativeLayout x:Name="CarouselView" HorizontalOptions="FillAndExpand" BackgroundColor="#f2f2f2" Padding="0,0,0,-64">
+        <local:CarouselLayout x:Name="Carousel"	HorizontalOptions="FillAndExpand"	VerticalOptions="FillAndExpand"	ItemsSource="{Binding Products}"	SelectedItem="{Binding SelectedProduct, Mode=TwoWay}" RelativeLayout.XConstraint="{ConstraintExpression  Type=RelativeToParent, Property=X, Factor=1}" RelativeLayout.YConstraint="{ConstraintExpression  Type=RelativeToParent, Property=Y, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression  Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression  Type=RelativeToParent, Property=Height, Factor=1}">
+          <local:CarouselLayout.ItemTemplate>
+            <DataTemplate>
+              <StackLayout Spacing="0" VerticalOptions="StartAndExpand">
+                <StackLayout Padding="0, 10" 	Spacing="0" 	Style="{DynamicResource productHeader}">
+                  <Label HorizontalTextAlignment="Center"	TextColor="#ffffff" 	FontAttributes="Bold"	FontSize="20"	Text="{Binding ProductName}" />
+                </StackLayout>
+                <Image x:Name="ProductImage"	VerticalOptions="Fill" 	HorizontalOptions="Fill" 	Aspect="AspectFill"	Source="{Binding ImageSource}"/>
+                <ScrollView VerticalOptions="Fill"	Orientation="Vertical">
+                  <StackLayout Padding="20"	BackgroundColor="#f2f2f2"	Spacing="10">
+                    <Label HorizontalTextAlignment="Center"	TextColor="#5a5d5e"	Text="{Binding ProductDesc}" />
+                    <Label HorizontalTextAlignment="Center"	TextColor="#5a5d5e"	Text="{Binding ProductQuantity, StringFormat='Estimated amount per application: {0}L'}" />
+                    <Label HorizontalTextAlignment="Center"	TextColor="#5a5d5e"	Text="{Binding ApplicationRate, StringFormat='Application rate: {0}mL/m&#xB2;'}" />
+                    <Label HorizontalTextAlignment="Center"	TextColor="#5a5d5e"	Text="{Binding ApplicationsRequired, StringFormat='Applications required: {0}'}" />
+                  </StackLayout>
+                </ScrollView>
+              </StackLayout>
+            </DataTemplate>
+          </local:CarouselLayout.ItemTemplate>
+        </local:CarouselLayout>
       </RelativeLayout>
     </StackLayout>
-    
-    
     <!-- Buttons Call Us Now and Request contact -->
-    <StackLayout BackgroundColor="#ffffff"
-                 VerticalOptions="Fill"
-                 HorizontalOptions="FillAndExpand">
+    <StackLayout BackgroundColor="#ffffff" VerticalOptions="Fill" HorizontalOptions="FillAndExpand">
       <StackLayout Padding="80, 10, 80, 20">
-        <Button Text="Call Us Now"             
-                x:Name="btnCallNow"
-                BackgroundColor="#18b750"
-                TextColor="White"
-                HeightRequest="50"
-                WidthRequest="175"
-                Clicked="OnCallNow_Clicked"/>
-        <Button Text="Request Contact"
-                x:Name="btnRequestContact"
-                BackgroundColor="Transparent"
-                TextColor="#18b750"
-                BorderColor="#18b750"
-                BorderRadius="3"
-                BorderWidth="2"
-                HeightRequest="50"
-                WidthRequest="175"
-                Clicked="OnRequestContact_Clicked"/>
+        <Button Text="Call Us Now"              x:Name="btnCallNow" BackgroundColor="#18b750" TextColor="White" HeightRequest="50" WidthRequest="175" Clicked="OnCallNow_Clicked"/>
+        <Button Text="Request Contact" x:Name="btnRequestContact" BackgroundColor="Transparent" TextColor="#18b750" BorderColor="#18b750" BorderRadius="3" BorderWidth="2" HeightRequest="50" WidthRequest="175" Clicked="OnRequestContact_Clicked"/>
       </StackLayout>
     </StackLayout>
   </StackLayout>

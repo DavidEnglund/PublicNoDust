@@ -1,302 +1,158 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Dustbuster.AboutPage"
-             Title="About">
-
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.AboutPage" Title="About">
   <StackLayout>
-    <Label  Text="No Dust"
-			      FontAttributes="Bold"
-            FontSize="17"
-            TextColor="Black"
-            HorizontalTextAlignment="Center"/>
-    <Label  Text="Version 1.0"
-			      FontAttributes="Bold"
-            
-            TextColor="Black"
-            HorizontalTextAlignment="Center"/>
-      <StackLayout  Padding="20,0,20,0">   
-      <Label  
-            FontSize = "13"
-            VerticalTextAlignment="Center"
-            HorizontalTextAlignment="Center"
-            Text="Officially created in 2016.The application generates a systematical quotation of the recommended product and the amount required, based upon the users input for their selected area. No Dust can be contacted for further information regarding pricing." />
-      </StackLayout> 
-	<Label Text="Acknowledgements"
-		     FontAttributes="Bold"
-         TextColor="Black"
-         FontSize = "16"
-         HorizontalTextAlignment="Center"/>
-      <ScrollView>
-        <StackLayout Padding="20,0,0,0">
-            <StackLayout Orientation="Horizontal">
-                <Image Source="jayden.png"
-                       HeightRequest="50"
-                       WidthRequest="50"
-                       VerticalOptions="Start"
-                       HorizontalOptions="Start">
-                  <Image.GestureRecognizers>
-                  <TapGestureRecognizer
-                       Command="{Binding TapAvatarCommand}"
-                       CommandParameter="http://jaydenspencer.com/" />
-                </Image.GestureRecognizers>
-              </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,0,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text="Jayden Spencer"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextColor="Black"/>
-          </Grid>
-          <Label Text="Programmer"/>
-      
-          
+    <Label  Text="No Dust" FontAttributes="Bold" FontSize="17" TextColor="Black" HorizontalTextAlignment="Center"/>
+    <Label  Text="Version 1.0" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
+    <StackLayout  Padding="20,0,20,0">
+      <Label FontSize = "13" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Officially created in 2016.The application generates a systematical quotation of the recommended product and the amount required, based upon the users input for their selected area. No Dust can be contacted for further information regarding pricing." />
+    </StackLayout>
+    <Label Text="Acknowledgements" FontAttributes="Bold" TextColor="Black" FontSize = "16" HorizontalTextAlignment="Center"/>
+    <ScrollView>
+      <StackLayout Padding="20,0,0,0">
+        <StackLayout Orientation="Horizontal">
+          <Image Source="jayden.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="http://jaydenspencer.com/" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,0,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="Jayden Spencer" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-          </StackLayout>  
-    
-          <StackLayout Orientation="Horizontal">
-           <Image     Source="david.png"
-                      HeightRequest="50"
-                      WidthRequest="50"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Start">
-              <Image.GestureRecognizers>
-              <TapGestureRecognizer
-                      Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://au.linkedin.com/in/davidenglund404" />
-              </Image.GestureRecognizers>
-            </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text="David Englund"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextColor="Black"/>
-          </Grid>
-          <Label Text="Programmer"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image     Source="david.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://au.linkedin.com/in/davidenglund404" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="David Englund" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-          </StackLayout>  
-    
-            <StackLayout Orientation="Horizontal">
-              <Image  Source="placeholder.png"
-                      HeightRequest="50"
-                      WidthRequest="50"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Start">
-                <Image.GestureRecognizers>
-                <TapGestureRecognizer
-                      Command="{Binding TapAvatarCommand}"
-                      CommandParameter="http://www.tafenet.org" />
-                </Image.GestureRecognizers>
-              </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text="Ken H"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextColor="Black"/>
-          </Grid>
-          <Label Text="Programmer"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image  Source="placeholder.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="http://www.tafenet.org" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="Ken H" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-          </StackLayout>  
-    
-            <StackLayout Orientation="Horizontal">
-              <Image  Source="michay.png"
-                      HeightRequest="50"
-                      WidthRequest="50"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Start">
-                <Image.GestureRecognizers>
-                <TapGestureRecognizer
-                      Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://au.linkedin.com/in/michay-guzman-stutz-099078127" />
-                </Image.GestureRecognizers>
-              </Image>
-         <StackLayout Orientation="Vertical"
-                      Padding="10,3,0,0">
-          <Grid       Padding="0,0,0,-6">
-          <Label      Text="Michay Guzman"
-                      FontAttributes="Bold"
-                      FontSize="15"
-                      TextColor="Black"/>
-          </Grid>
-          <Label Text="Programmer"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image Source="michay.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://au.linkedin.com/in/michay-guzman-stutz-099078127" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="Michay Guzman" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-          </StackLayout>  
-    
-         <StackLayout Orientation="Horizontal">
-            <Image    Source="placeholder.png"
-                      HeightRequest="50"
-                      WidthRequest="50"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Start">
-              <Image.GestureRecognizers>
-              <TapGestureRecognizer
-                      Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://github.com/DoritoBandito" />
-              </Image.GestureRecognizers>
-            </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text=" Michael White"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextColor="Black"/>
-          </Grid>
-          <Label Text="Programmer"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image Source="placeholder.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://github.com/DoritoBandito" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text=" Michael White" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-          </StackLayout>  
-    
-          <StackLayout Orientation="Horizontal">
-              <Image  Source="placeholder.png"
-                      HeightRequest="50"
-                      WidthRequest="50"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Start">
-              <Image.GestureRecognizers>
-              <TapGestureRecognizer
-                      Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://au.linkedin.com/in/michelle-lim-422324114" />
-              </Image.GestureRecognizers>
-              </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text="Rebecca Lim"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextColor="Black"/>
-          </Grid>
-          <Label Text="Programmer"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image Source="placeholder.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://au.linkedin.com/in/michelle-lim-422324114" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="Rebecca Lim" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-          </StackLayout>  
-    
-          <StackLayout Orientation="Horizontal">
-             <Image   Source="erdal.png"
-                      HeightRequest="50"
-                      WidthRequest="50"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Start">
-              <Image.GestureRecognizers>
-              <TapGestureRecognizer
-                      Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://github.com/Erdal" />
-              </Image.GestureRecognizers>
-             </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text="Erdal Erkilic"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextColor="Black"/>
-          </Grid>
-          <Label Text="Programmer"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image Source="erdal.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://github.com/Erdal" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="Erdal Erkilic" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-          </StackLayout>  
-    
-         <StackLayout Orientation="Horizontal">
-             <Image   Source="monique.png"
-                      HeightRequest="50"
-                      WidthRequest="50"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Start">
-                <Image.GestureRecognizers>
-                <TapGestureRecognizer
-                      Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://github.com/MonaRe83" />
-                </Image.GestureRecognizers>
-             </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text="Monique Reddy"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextColor="Black"/>
-          </Grid>
-          <Label       Text="Programmer"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image Source="monique.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://github.com/MonaRe83" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="Monique Reddy" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-          </StackLayout>  
-    
-          <StackLayout Orientation="Horizontal">
-                <Image Source="mikey.png"
-                       HeightRequest="50"
-                       WidthRequest="50"
-                       VerticalOptions="Start"
-                       HorizontalOptions="Start">
-                <Image.GestureRecognizers>
-                <TapGestureRecognizer
-                       Command="{Binding TapAvatarCommand}"
-                       CommandParameter="https://au.linkedin.com/in/michael-macaulay-88102a126" />
-                </Image.GestureRecognizers>
-              </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text="Michael Macaulay"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextColor="Black"/>
-          </Grid>
-          <Label       Text="Programmer"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image Source="mikey.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://au.linkedin.com/in/michael-macaulay-88102a126" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="Michael Macaulay" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image  Source="placeholder.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://github.com/azharfirdaus" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="Azhar Firdaus" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-    
-    
-         <StackLayout Orientation="Horizontal">
-              <Image  Source="placeholder.png"
-                      HeightRequest="50"
-                      WidthRequest="50"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Start">
-                <Image.GestureRecognizers>
-                <TapGestureRecognizer
-                      Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://github.com/azharfirdaus" />
-                </Image.GestureRecognizers>
-              </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text="Azhar Firdaus"
-                       FontAttributes="Bold"
-                       FontSize="15"
-                       TextColor="Black"/>
-          </Grid>
-          <Label Text="Programmer"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Image Source="placeholder.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://github.com/ChuckUFarley" />
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout Orientation="Vertical" Padding="10,3,0,0">
+            <Grid Padding="0,0,0,-6">
+              <Label Text="Barney W" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+            </Grid>
+            <Label Text="Programmer"/>
           </StackLayout>
-          </StackLayout>  
-    
-         <StackLayout Orientation="Horizontal">
-              <Image  Source="placeholder.png"
-                      HeightRequest="50"
-                      WidthRequest="50"
-                      VerticalOptions="Start"
-                      HorizontalOptions="Start">
-                <Image.GestureRecognizers>
-                <TapGestureRecognizer
-                      Command="{Binding TapAvatarCommand}"
-                      CommandParameter="https://github.com/ChuckUFarley" />
-                </Image.GestureRecognizers>
-              </Image>
-          <StackLayout Orientation="Vertical"
-                       Padding="10,3,0,0">
-          <Grid        Padding="0,0,0,-6">
-          <Label       Text="Barney W"
-                       FontAttributes="Bold"
-                       FontSize="18"
-                       TextColor="Black"/>
-          </Grid>
-          <Label Text="Programmer"/>
-          </StackLayout>
-          </StackLayout>  
-       
-       </StackLayout>
-     </ScrollView> 
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
   </StackLayout>
 </ContentPage>
