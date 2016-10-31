@@ -21,8 +21,6 @@ namespace Dustbuster.Droid
             // Sets the reminder to the appropriate time. The implementation here may not be ideal, and will also need to be done on iOS.
            // it should probably go in the view model ~ MM
 
-            Debug.WriteLine("~ LOG ~ DATE TIME IS: {0} , YOU SELECTED {1} ", remindDate.ToString());
-
             // well here is where the magic happens I guess
             // start with getting  content value object to add the event details to
             ContentValues eventValues = new ContentValues();
