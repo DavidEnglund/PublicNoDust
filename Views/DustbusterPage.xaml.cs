@@ -60,7 +60,9 @@ namespace Dustbuster
 
         private void btnReadModeButton_Clicked(object sender, EventArgs e)
         {
+            Settings.EnableReadMode = !Settings.EnableReadMode;
             setTitleImageDescription();
+
         }
 
         //Here we are setting all the elements that have to change depedning on if reading mode is on or off
@@ -74,7 +76,7 @@ namespace Dustbuster
                 imgApplicationImage.Source = "app_title.png";
                 ReadModeImage.Source = "readingMode_glasses.png";
                 HamBurgerImage.Source = "hamburger_icon";
-                Settings.EnableReadMode = false;
+                
             }
             else
             {
@@ -84,7 +86,7 @@ namespace Dustbuster
                 imgApplicationImage.Source = "";
                 ReadModeImage.Source = "readingMode_img.png";
                 HamBurgerImage.Source = "hamburger_icon_black";
-                Settings.EnableReadMode = true;
+                
             }
         }
 

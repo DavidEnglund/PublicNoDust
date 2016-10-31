@@ -18,7 +18,7 @@ namespace Dustbuster
 
             datePickerCommand = new Command(() =>
             {
-                page.DatePicker.Focus();
+         //       page.DatePicker.Focus();
             });
             
         }

@@ -39,7 +39,7 @@ namespace Dustbuster
 		public string ProductDesc { get; set; }
 		public string ApplicationsRequired { get; set; }
 		public int Concentration { get; set; }  //mL per square m
-        public string ImageSource { get; set; } // summon the Erdal
+        public string ImageSource { get; set; } // Image binding
 
 		public float GetQuantity(int area)
 		{

@@ -46,14 +46,12 @@ namespace Dustbuster
         {
             await Task.Delay(300);
             SelectedItem = SelectedIndex > -1 ? Children[SelectedIndex].BindingContext : null;
-            Debug.WriteLine("LOG ~ UpdateSelectedItem {0}", SelectedItem);
         }
 
         private void ItemsSourceChanging()
         {
             if (ItemsSource == null) return;
             _selectedIndex = ItemsSource.IndexOf(SelectedItem);
-            Debug.WriteLine("LOG ~ Item sourced changing to {0}", _selectedIndex);
         }
 
         private void ItemsSourceChanged()
@@ -70,7 +68,6 @@ namespace Dustbuster
 
             if (_selectedIndex >= 0)
                 SelectedIndex = _selectedIndex;
-            Debug.WriteLine("LOG ~ Item source changed to {0}", SelectedIndex);
         }
 
         private void UpdateSelectedProduct()
@@ -81,7 +78,6 @@ namespace Dustbuster
                 .Select(c => c.BindingContext)
                 .ToList()
                 .IndexOf(SelectedItem);
-            Debug.WriteLine("LOG ~ UpdateSelectedProduct {0}", SelectedItem);
         }
 
         private void UpdateSelectedTitle()

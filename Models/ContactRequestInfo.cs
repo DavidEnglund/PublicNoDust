@@ -9,11 +9,11 @@ namespace Dustbuster
         public DateTime Date;
         
         
-        public ContactRequestInfo( string name, string contact, DateTime date)
+        public ContactRequestInfo( string name, string contact) //, DateTime date
         {
             this.Name = name;
             this.Contact = contact;
-            this.Date = date;            
+           // this.Date = date;            
         }
     }
 }
