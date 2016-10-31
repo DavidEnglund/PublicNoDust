@@ -81,25 +81,13 @@ namespace Dustbuster
 
         public ImageSource SelectedImage
         {
-            get
-            {
-                return selectedImage.Source;
-            }
-            set
-            {
-                selectedImage.Source = value;
-            }
+            get { return selectedImage.Source; }
+			set { selectedImage.Source = value; }
         }
         public ImageSource UnselectedImage
         {
-            get
-            {
-                return unselectedImage.Source;
-            }
-            set
-            {
-                unselectedImage.Source = value;
-            }
+			get { return unselectedImage.Source; }
+			set { unselectedImage.Source = value; }
         }
         // the  public get functions for the current modes looks
         public int BorderWidth
@@ -176,7 +164,9 @@ namespace Dustbuster
                         if (buttonGroup.Selected != this)
                         {
                             setAsUnselected();
-                        }// no else - if the group wants me selected I stay selected
+                        } 
+
+						// no else - if the group wants me selected I stay selected
                     }
                     else
                     {
@@ -249,12 +239,14 @@ namespace Dustbuster
                 }              
             }
         }
+
         // a click function
         private TapGestureRecognizer tapRecognizer = new TapGestureRecognizer();
         public event EventHandler Clicked
         {
             remove { tapRecognizer.Tapped -= value; }
-            add {
+            add 
+			{
                 tapRecognizer.Tapped += value;
                 clickEvents += value;
             }
@@ -273,7 +265,7 @@ namespace Dustbuster
             GestureRecognizers.Add(tapRecognizer);
 
             // images - set the selected to be invisible  and the add and layout both to the absoluteLayout
-             selectedImage.IsVisible = false;
+            selectedImage.IsVisible = false;
 
             Children.Add(selectedImage);
             Children.Add(unselectedImage);
@@ -346,6 +338,7 @@ namespace Dustbuster
             {
                 base.Padding = (padding * 1) + SelectedBorderWidth;
             }
+
             // now to actualy call the size of the control - first call the base size request then work out which dimension is higher(or exisits) then send that for both
             double fullsize = 0;
             SizeRequest mysize =  base.OnSizeRequest(widthConstraint, heightConstraint);
@@ -357,11 +350,13 @@ namespace Dustbuster
             {
                 fullsize += mysize.Request.Width;
             }
+
             // and now for a default size if there is no images
             if (SelectedImage == null && UnselectedImage == null)
             {
                 fullsize += 20;
             }
+
             // everythings been added up now to apply it
             return new SizeRequest(new Size(fullsize,fullsize));
         }

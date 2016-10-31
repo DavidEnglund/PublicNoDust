@@ -27,8 +27,7 @@ namespace Dustbuster
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
                 WidthRequest = 60
-            }),
-                heightConstraint: Constraint.RelativeToParent((parent) => { return parent.Height; }));
+            }), heightConstraint: Constraint.RelativeToParent((parent) => { return parent.Height; }));
 
             StackLayout imageContainer;
             imageHolder.Children.Add(imageContainer = new StackLayout()

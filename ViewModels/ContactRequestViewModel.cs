@@ -31,7 +31,8 @@ namespace Dustbuster
         public DateTime SelectedDate
         {
             get { return this.selectedDate; }
-            set {
+            set 
+			{
                 this.selectedDate = value;
                 PropertyChanged?.Invoke(null, new PropertyChangedEventArgs("SelectedDate"));
             }

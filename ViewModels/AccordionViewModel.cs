@@ -33,10 +33,12 @@ namespace Dustbuster
 				{
 					calculateTapped = true;
 
-                    if (!validateInputs()) // double check the inputs (length, width, location)
+					// double check the inputs (length, width, location)
+                    if (!validateInputs()) 
                     {
+						// terminate the process
                         calculateTapped = false;
-                        return; // terminate the process
+                        return; 
                     }
 
 

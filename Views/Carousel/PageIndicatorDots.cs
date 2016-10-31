@@ -12,9 +12,6 @@ namespace Dustbuster
 
     public class PagerIndicatorDots : StackLayout
     {
-        private int _selectedIndex;
-        
-
         public PagerIndicatorDots()
         {
             HorizontalOptions = LayoutOptions.CenterAndExpand;
@@ -27,21 +24,20 @@ namespace Dustbuster
         private void CreateDot()
         {
             //Make one button and add it to the dotLayout
-            var dot = new SelectImageButton
-            {
-            //    BorderRadius = Convert.ToInt32(DotSize/2),
-                HeightRequest = DotSize,
-                WidthRequest = DotSize,
-                SelectedBackgroundColor = DotColor,
-                UnselectedBackgroundColor = DotColor,
-                SelectedBorderWidth = 0,
-                UnselectedBorderWidth = 0,
-                HoldBackgroundColor = DotColor,
-                HoldBorderWidth = 0,
 
-                Opacity = 0.4
-            };
-            Children.Add(dot);
+            Children.Add(new SelectImageButton
+			{
+				HeightRequest = DotSize,
+				WidthRequest = DotSize,
+				SelectedBackgroundColor = DotColor,
+				UnselectedBackgroundColor = DotColor,
+				SelectedBorderWidth = 0,
+				UnselectedBorderWidth = 0,
+				HoldBackgroundColor = DotColor,
+				HoldBorderWidth = 0,
+
+				Opacity = 0.4
+			});
         }
 
         private void CreateTabs()
@@ -56,14 +52,9 @@ namespace Dustbuster
                     BackgroundColor = DotColor,
                     Source = tab.ImageSource,
                 };
+
                 Children.Add(image);
             }
-        }
-
-        private void ItemsSourceChanging()
-        {
-            if (ItemsSource != null)
-                _selectedIndex = ItemsSource.IndexOf(SelectedItem);
         }
 
         private void ItemsSourceChanged()
@@ -124,10 +115,6 @@ namespace Dustbuster
                 typeof(PagerIndicatorDots),
                 null,
                 BindingMode.OneWay,
-                propertyChanging: (bindable, oldValue, newValue) =>
-                {
-                    ((PagerIndicatorDots)bindable).ItemsSourceChanging();
-                },
                 propertyChanged: (bindable, oldValue, newValue) =>
                 {
                     ((PagerIndicatorDots)bindable).ItemsSourceChanged();

@@ -30,7 +30,8 @@ namespace Dustbuster
 						checkForSelected.Selected = false;
 					}
 				}
-				else {
+				else 
+				{
 					selectedIndex = -1;
 
 					foreach (SelectImageButton checkForSelected in group)

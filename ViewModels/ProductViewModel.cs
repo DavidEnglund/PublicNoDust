@@ -18,7 +18,7 @@ namespace Dustbuster
         }
 
 
-        public ObservableCollection<ProductResult> Products // collected from the database
+        public ObservableCollection<ProductResult> Products
 		{
 			get { return products; }
 			set { products = value; }

@@ -129,12 +129,14 @@ namespace Dustbuster
 						expandedFound = true;
 
 					}
-					else {
+					else 
+					{
 						if (expandedFound)
 						{
 							nextPanes.Children.Add(pane.Header);
 						}
-						else {
+						else 
+						{
 							prevPanes.Children.Add(pane.Header);
 						}
 					}
