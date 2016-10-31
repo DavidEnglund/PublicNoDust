@@ -127,15 +127,20 @@ namespace Dustbuster
             dbConnection = DependencyService.Get<ISQLite>().GetConnection(fileName);
         }
 
-        public DbConnectionManager()
-        {
-            dbConnection = DependencyService.Get<ISQLite>().GetConnection();
-        }
+        //public DbConnectionManager()
+        //{
+        //    dbConnection = DependencyService.Get<ISQLite>().GetConnection();
+        //}
 
 		public SQLiteConnection DbConnection
 		{
 			get { return this.dbConnection; }
 		}
+
+        public int GetTableInfo(string tabletype)
+        {
+            return dbConnection.GetTableInfo(tabletype).Count;
+        }
         
         //data retrieval methods
         #region JobsDbAccessMethods
@@ -351,10 +356,10 @@ namespace Dustbuster
 
         public void setDBVersion()
         {
-            DBMetaData sigh = new DBMetaData(4);
+            DBMetaData newVer = new DBMetaData(4);
             lock (locker)
             {
-                dbConnection.Insert(sigh);
+                dbConnection.Insert(newVer);
             }
         }
 

@@ -150,6 +150,7 @@
     <AndroidAsset Include="Resources\font\ROBOTO-BOLD.TTF">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidAsset>
+    <AndroidResource Include="Resources\raw\ProductDB.db3" />
     <None Include="Web References\au.com.sunhawk\CompositeType.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>

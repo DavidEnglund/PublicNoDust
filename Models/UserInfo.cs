@@ -10,8 +10,8 @@ namespace Dustbuster
     public class UserInfo
     {
         [PrimaryKey]
-        public int ID { get; set; }  //this must be 1
-        public int SPId { get; set; }  //the id returned when adding a new sharepoint list item
+        public int ID { get; set; }  //this must be 1, simple way of ensuring the app only creates one entry
+        public int UserId { get; set; }  //the id returned when adding a new web db item
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }

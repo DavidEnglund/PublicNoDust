@@ -24,9 +24,12 @@ namespace Dustbuster
 			productsDb = new DbConnectionManager("ProductDB.db3");
 			jobsDb = new DbConnectionManager("JobDB.db3");
 
-			productsDb.FillProductTablesAsync();
-			jobsDb.CreateJobTable();
-		}
+            //productsDb.FillProductTablesAsync();
+            if (jobsDb.GetTableInfo("Job") == 0)
+            {
+                jobsDb.CreateJobTable();
+            }
+        }
 
 		public static DbConnectionManager ProductsDb
 		{
