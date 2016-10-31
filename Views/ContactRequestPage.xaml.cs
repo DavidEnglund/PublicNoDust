@@ -174,12 +174,12 @@ namespace Dustbuster
                 if (IsEmail)
                 {
                     WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, etContact.Text, null);
-                    await DisplayAlert("Contact Submitted", "Your details has been forwarded.", "Ok");
+                    await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
                 }
                 else
                 {
                     WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, null, etContact.Text);
-                    await DisplayAlert("Contact Submitted", "Your details has been forwarded.", "Ok");
+                    await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
                 }
                 // INSERT code to go back to main page
                 await Navigation.PopToRootAsync();
