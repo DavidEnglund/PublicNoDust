@@ -1,5 +1,6 @@
 using Dustbuster.Views;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace Dustbuster
 {
@@ -25,10 +26,12 @@ namespace Dustbuster
 			jobsDb = new DbConnectionManager("JobDB.db3");
 
             //productsDb.FillProductTablesAsync();
+            Debug.WriteLine("DATABASE DEBUG: Job tables pre Job table check: {0}", jobsDb.GetTableInfo("Job"));
             if (jobsDb.GetTableInfo("Job") == 0)
             {
                 jobsDb.CreateJobTable();
             }
+            Debug.WriteLine("DATABASE DEBUG: Job tables post Job table check: {0}", jobsDb.GetTableInfo("Job"));
         }
 
 		public static DbConnectionManager ProductsDb
