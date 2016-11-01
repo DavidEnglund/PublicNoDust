@@ -72,10 +72,10 @@ namespace Dustbuster
 		{
 			// Handle when your app starts
 			// this will start the calendar access service for iOS - for android it currently does nothing
-			DependencyService.Get<IReminderService>(DependencyFetchTarget.GlobalInstance).CreateService();
+			//DependencyService.Get<IReminderService>(DependencyFetchTarget.GlobalInstance).CreateService();
             // Starts updating the product database. R.L
-            await DependencyService.Get<IWebServiceConnect>().GetDBVersion();
-            var result = await DependencyService.Get<IWebServiceConnect>().GetDB();
+            //await DependencyService.Get<IWebServiceConnect>().GetDBVersion();
+            //var result = await DependencyService.Get<IWebServiceConnect>().GetDB();
         }
 
 		protected override void OnSleep()
