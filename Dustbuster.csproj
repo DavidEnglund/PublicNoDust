@@ -131,7 +131,6 @@
     <Compile Include="Models\Supplier.cs" />
     <Compile Include="Models\ProductDuration.cs" />
     <Compile Include="Models\AreaType.cs" />
-    <Compile Include="Controls\AccordionHeader.cs" />
     <Compile Include="Controls\AccordionPane.cs" />
     <Compile Include="Controls\AccordionView.cs" />
     <Compile Include="Converters\UnitNotationConverter.cs" />
