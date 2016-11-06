@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.AboutPage" Title="About">
   <StackLayout>
+      <!-- Name and Version -->
     <Label  Text="No Dust" FontAttributes="Bold" FontSize="17" TextColor="Black" HorizontalTextAlignment="Center"/>
     <Label  Text="Version 1.0" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Center"/>
-    <StackLayout  Padding="20,0,20,0">
+      <!-- Padding to make Tesxt centered -->
+      <StackLayout  Padding="20,0,20,0">
       <Label FontSize = "13" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Officially created in 2016.The application generates a systematical quotation of the recommended product and the amount required, based upon the users input for their selected area. No Dust can be contacted for further information regarding pricing." />
     </StackLayout>
     <Label Text="Acknowledgements" FontAttributes="Bold" TextColor="Black" FontSize = "16" HorizontalTextAlignment="Center"/>
     <ScrollView>
       <StackLayout Padding="20,0,0,0">
         <StackLayout Orientation="Horizontal">
+           <!-- Programmer name link and image -->
           <Image Source="jayden.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
             <Image.GestureRecognizers>
               <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="http://jaydenspencer.com/" />
@@ -23,6 +26,7 @@
           </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
+          <!-- Programmer name link and image -->
           <Image Source="david.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
             <Image.GestureRecognizers>
               <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://au.linkedin.com/in/davidenglund404" />
@@ -69,6 +73,7 @@
           </Image>
           <StackLayout Orientation="Vertical" Padding="10,3,0,0">
             <Grid Padding="0,0,0,-6">
+              <!-- Programmer name link and image -->
               <Label Text=" Michael White" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
             </Grid>
             <Label Text="Programmer"/>
@@ -82,6 +87,7 @@
           </Image>
           <StackLayout Orientation="Vertical" Padding="10,3,0,0">
             <Grid Padding="0,0,0,-6">
+              <!-- Programmer name ,link and image -->
               <Label Text="Rebecca Lim" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
             </Grid>
             <Label Text="Programmer"/>
@@ -95,12 +101,14 @@
           </Image>
           <StackLayout Orientation="Vertical" Padding="10,3,0,0">
             <Grid Padding="0,0,0,-6">
+              <!-- Programmer name ,link and image -->
               <Label Text="Erdal Erkilic" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
             </Grid>
             <Label Text="Programmer"/>
           </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
+          <!-- Programmer name ,link and image -->
           <Image Source="monique.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
             <Image.GestureRecognizers>
               <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://github.com/MonaRe83" />
@@ -121,6 +129,7 @@
           </Image>
           <StackLayout Orientation="Vertical" Padding="10,3,0,0">
             <Grid Padding="0,0,0,-6">
+              <!-- Programmer name, link and image -->
               <Label Text="Michael Macaulay" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
             </Grid>
             <Label Text="Programmer"/>
@@ -134,6 +143,7 @@
           </Image>
           <StackLayout Orientation="Vertical" Padding="10,3,0,0">
             <Grid Padding="0,0,0,-6">
+              <!-- Programmer name, link and image -->
               <Label Text="Azhar Firdaus" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
             </Grid>
             <Label Text="Programmer"/>
@@ -147,6 +157,7 @@
           </Image>
           <StackLayout Orientation="Vertical" Padding="10,3,0,0">
             <Grid Padding="0,0,0,-6">
+              <!-- Programmer name, link and image -->
               <Label Text="Barney W" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
             </Grid>
             <Label Text="Programmer"/>
