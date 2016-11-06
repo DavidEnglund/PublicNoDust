@@ -17,12 +17,14 @@ function getMailingAddress(){
 		}
 		// all other options have failed to now to echo the error message which will appear inside a formatted JSON string
 		echo ",{'errorType':'industry','errorMessage':'The requested industry does not exist'},";
+		
 		return null;
 	}
 	else
 	{
 		// no data was sent so now to echo the error for that to go inside the JSON
 		echo "{'errorType':'industry','errorMessage':'No industry option was sent'},";
+		
 		return null;
 	}
 }
