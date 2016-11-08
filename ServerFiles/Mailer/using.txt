@@ -1,4 +1,4 @@
-using the send contact request on-line forms
+##using the send contact request on-line forms##
 
 variable name that should be sent via POST:
 description,
@@ -39,3 +39,8 @@ optional string ("openArea","traffickedArea")
 jobDuration:
 the amount of days the user want the job to last,
 optional int (days)
+
+
+##output##
+the php will output a JSON object with contains an errors array and a success boolean.
+the errors array contains object with a errorType string and a errorMessage string
