@@ -28,12 +28,10 @@
             <Label Text="Best Time of Contact:" TextColor="#5a5d5e" FontSize="Medium" FontAttributes="Bold" />
         </StackLayout>
       <!--  Date button & DatePicker-->
-      <!--        
         <StackLayout Padding="75,0,75,0">
-            <Button  BackgroundColor="Silver" TextColor="Black" Text="{Binding SelectedDate, StringFormat='{}{0:dd - MMM - yy}'}}" x:Name="btnDate" Command="{Binding DatePickerCommand}" />
-            <DatePicker  BackgroundColor="Silver" TextColor="Black" x:Name="dpDate" IsVisible="False" Date="{Binding SelectedDate, Mode=TwoWay}" HorizontalOptions="FillAndExpand" />
+            <Button  BackgroundColor="Silver" Text="{Binding SelectedDate, StringFormat='{}{0:dd - MMM - yy}'}}" x:Name="btnDate" Command="{Binding DatePickerCommand}" />
+            <DatePicker  BackgroundColor="Silver" x:Name="dpDate" IsVisible="False" Date="{Binding SelectedDate, Mode=TwoWay}" HorizontalOptions="FillAndExpand" />
         </StackLayout>
-      -->
       <!-- Time Button  -->
         <StackLayout Padding="75,0,75,0">
             <Button Text="Morning" x:Name="btnTime" Clicked="OnTimeClicked"  BackgroundColor="Silver" TextColor="Black" />

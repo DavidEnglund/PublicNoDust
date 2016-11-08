@@ -16,9 +16,10 @@ namespace Dustbuster
         {
             selectedDate = DateTime.Now;
 
+            // command enables the date picker when the button is pressed
             datePickerCommand = new Command(() =>
             {
-         //       page.DatePicker.Focus();
+                page.DatePicker.Focus();
             });
             
         }

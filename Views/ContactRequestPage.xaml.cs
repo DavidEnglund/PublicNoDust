@@ -66,12 +66,12 @@ namespace Dustbuster
             }
         }
 
-        /*
+        
         public DatePicker DatePicker
         {
             get { return this.dpDate; }
         }
-          */      
+    
         string contactType; // either Phone or Email        
         double remindTime;
         // Pulls up the contact type selcted menu
@@ -140,21 +140,8 @@ namespace Dustbuster
             Button button = (Button)sender;
             // validate the text entry fields
             if (ValidateFields())
-            {
-                /*
-                var pickReminder = await DisplayAlert("So far, so good!", "Would you like to set a reminder in your phone's calendar?", "Yes", "No");
-                if (pickReminder)
-                {
-                    // the date and time to be passed into the reminder
-                    DateTime remindDate = DatePicker.Date;                   
-                    remindDate =  remindDate.AddHours(remindTime);
-
-                    DependencyService.Get<IReminderService>().AddReminder("Call Sunhawk", "ph: (08) 9459 2785", remindDate);
-                    Debug.WriteLine("Call Sunhawk", "ph: (08) 9459 2785", DatePicker.Date, remindDate);
-                }
-                // create data info object - Send this to wherever it needs to go..     
-                */           
-                ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text); //, dpDate.Date
+            {                          
+                ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text, dpDate.Date); //, 
 
 
                 /*
