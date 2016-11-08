@@ -38,8 +38,4 @@ function requestContact(){
 	}
 }
 
-
-
-
-
 ?>

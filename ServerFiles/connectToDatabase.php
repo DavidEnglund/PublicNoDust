@@ -3,14 +3,11 @@
 $databaseConnection;
 // this function will create and maintain the database connection
 function connectToDatabase(){
-	
-
-	
+	// get all of the connection variable set-up
 	$servername = "localhost";
 	$database = "rainstorm_app";
 	$username = "rainstorm_app";
 	$password = "***REMOVED***";
-	
 	try {
 		$databaseConnection = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
 		// set the PDO error mode to exception
@@ -21,5 +18,4 @@ function connectToDatabase(){
 		echo "Connection failed: " . $e->getMessage();
 	}
 }
-
 ?>
