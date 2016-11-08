@@ -1,69 +1,99 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <local:AccordionPane xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster" x:Class="Dustbuster.LocationAreaPane">
   <!-- Wrapper -->
-  <StackLayout Padding="0,10,0,10">
-    <!-- LABEL Location -->
-    <StackLayout Padding="35,0,35,0">
-      <Label  Text="Location" FontSize="Small" FontAttributes="Bold" Style="{DynamicResource labelStyle}"/>
-    </StackLayout>
-    <!-- ENTRY Location -->
-    <StackLayout Padding="50,0,50,0">
-      <Entry  BackgroundColor="#d9d9d9" Placeholder="Suburb or Postcode" Text="{Binding Location, Mode=TwoWay}"/>
-    </StackLayout>
-    <!-- LABEL Length-->
-    <StackLayout Padding="35,0,35,0">
-      <Label Text="Length" FontSize="Small" FontAttributes="Bold" Style="{DynamicResource labelStyle}"/>
-    </StackLayout>
-    <!-- Length -->
-    <StackLayout Padding="50,0,50,0">
-      <Grid>
-        <Grid.RowDefinitions>
-          <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="7*" />
-          <ColumnDefinition Width="3*" />
-        </Grid.ColumnDefinitions>
-        <!-- ENTRY Length -->
-        <StackLayout>
-          <StackLayout.Padding>
-            <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="0, 6, 0, 6"  />
-          </StackLayout.Padding>
-          <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_length" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Length, Mode=TwoWay}"/>
-        </StackLayout>
-        <!-- BUTTON Length Unit Toggle -->
-        <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="{Binding LengthUnit, Converter={StaticResource unitNotationConverter}}" x:Name="bToggle_length" VerticalOptions="FillAndExpand" Command="{Binding ChangeLengthUnit}"/>
-      </Grid>
-    </StackLayout>
-    <!-- LABEL Width -->
-    <StackLayout Padding="35,0,35,0">
-      <Label Text="Width" FontSize="Small" FontAttributes="Bold" Style="{DynamicResource labelStyle}"/>
-    </StackLayout>
-    <!-- Width -->
-    <StackLayout Padding="50,0,50,0">
-      <Grid>
-        <Grid.RowDefinitions>
-          <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="7*" />
-          <ColumnDefinition Width="3*" />
-        </Grid.ColumnDefinitions>
-        <!-- ENTRY Width -->
-        <StackLayout>
-          <StackLayout.Padding>
-            <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="0, 6, 0, 6" />
-          </StackLayout.Padding>
-          <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_width" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Width, Mode=TwoWay}"/>
-        </StackLayout>
-          <!-- BUTTON Width Unit Toggle -->
-        <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="{Binding WidthUnit, Converter={StaticResource unitNotationConverter}}" x:Name="bToggle_width" VerticalOptions="FillAndExpand" Command="{Binding ChangeWidthUnit}"/>
-      </Grid>
-    </StackLayout>
-    <!-- BUTTON Calculate -->
-    <StackLayout>
-      <Button Text="Calculate" x:Name="bCalculation" Command="{Binding Calculate}" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource primaryButtonStyle}" />
-    </StackLayout>
-  </StackLayout>
+  <ScrollView>
+    <StackLayout Padding="0,10,0,10">
+      <!-- LABEL Location -->
+      <StackLayout Padding="35,0,35,0">
+        <Label  Text="Location" FontSize="Small" FontAttributes="Bold" Style="{DynamicResource labelStyle}"/>
+      </StackLayout>
+      <!-- ENTRY Location -->
+      <StackLayout Padding="50,0,50,0">
+        <Entry  BackgroundColor="#d9d9d9" Placeholder="Suburb or Postcode" Text="{Binding Location, Mode=TwoWay}"/>
+      </StackLayout>
+      <!-- LABEL Length-->
+      <StackLayout Padding="35,0,35,0">
+        <Label Text="Length" FontSize="Small" FontAttributes="Bold" Style="{DynamicResource labelStyle}"/>
+      </StackLayout>
+      <!-- Length -->
+      <StackLayout Padding="50,0,50,0">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="3*" />
+          </Grid.ColumnDefinitions>
+          <!-- ENTRY Length -->
+          <StackLayout>
+            <StackLayout.Padding>
+              <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="0, 6, 0, 6"  />
+            </StackLayout.Padding>
+            <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_length" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Length, Mode=TwoWay}"/>
+          </StackLayout>
+          <!-- BUTTON Length Unit Toggle -->
+          <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="{Binding LengthUnit, Converter={StaticResource unitNotationConverter}}" x:Name="bToggle_length" VerticalOptions="FillAndExpand" Command="{Binding ChangeLengthUnit}"/>
+        </Grid>
+      </StackLayout>
+      <!-- LABEL Width -->
+      <StackLayout Padding="35,0,35,0">
+        <Label Text="Width" FontSize="Small" FontAttributes="Bold" Style="{DynamicResource labelStyle}"/>
+      </StackLayout>
+      <!-- Width -->
+      <StackLayout Padding="50,0,50,0">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="3*" />
+          </Grid.ColumnDefinitions>
+          <!-- ENTRY Width -->
+          <StackLayout>
+            <StackLayout.Padding>
+              <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="0, 6, 0, 6" />
+            </StackLayout.Padding>
+            <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_width" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Width, Mode=TwoWay}"/>
+          </StackLayout>
+            <!-- BUTTON Width Unit Toggle -->
+          <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="{Binding WidthUnit, Converter={StaticResource unitNotationConverter}}" x:Name="bToggle_width" VerticalOptions="FillAndExpand" Command="{Binding ChangeWidthUnit}"/>
+        </Grid>
+      </StackLayout>
+    
+      <!-- LABEL or Area -->
+      <StackLayout Padding="35,0,35,0">
+        <Label Text="Or Area" FontSize="Small" FontAttributes="Bold" Style="{DynamicResource labelStyle}"/>
+      </StackLayout>
+      <!-- Area -->
+      <StackLayout Padding="50,0,50,0">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="3*" />
+          </Grid.ColumnDefinitions>
+          <!-- ENTRY Area -->
+          <StackLayout>
+            <StackLayout.Padding>
+              <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="0, 6, 0, 6" />
+            </StackLayout.Padding>
+            <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_area" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Width, Mode=TwoWay}"/>
+          </StackLayout>
+            <!-- BUTTON Area Unit Toggle -->
+          <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="toBind" x:Name="bToggle_area" VerticalOptions="FillAndExpand" />
+        </Grid>
+      </StackLayout>
+     
+      <!-- BUTTON Calculate -->
+      <StackLayout>
+        <Button Text="Calculate" x:Name="bCalculation" Command="{Binding Calculate}" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource primaryButtonStyle}" />
+      </StackLayout>
+    </StackLayout>  
+  </ScrollView>
+  
 </local:AccordionPane>
  
