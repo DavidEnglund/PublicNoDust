@@ -15,7 +15,7 @@ function getDetails(){
 		$contactInfomation = $_REQUEST["contactInfomation"];
 	}
 	else{
-		echo "{'errorType':'details','errorMessage':'No contact information was sent'},";
+		$errors .= "{'errorType':'details','errorMessage':'No contact information was sent'},";
 		return false;
 	}
 	// we will need to check and format the date to be better readable in the email
@@ -26,7 +26,7 @@ function getDetails(){
 			$requestedDate = date_format($createdDate,"on the d/m/Y at H:i");
 		}
 		else{
-			echo "{'errorType':'details','errorMessage':'contact date was invalid'},";
+			$errors .= "{'errorType':'details','errorMessage':'contact date was invalid'},";
 		return false;
 		}
 		
@@ -35,21 +35,21 @@ function getDetails(){
 		
 	}
 	else{
-		echo "{'errorType':'details','errorMessage':'No contact date was sent'},";
+		$errors .= "{'errorType':'details','errorMessage':'No contact date was sent'},";
 		return false;
 	}
 	if(isset($_REQUEST["contactsName"]){
 		$contactsName = $_REQUEST["contactsName"];
 	}
 	else{
-		echo "{'errorType':'details','errorMessage':'No contact name was sent'},";
+		$errors .= "{'errorType':'details','errorMessage':'No contact name was sent'},";
 		return false;
 	}
 	if(isset($_REQUEST["jobLocation"]){
 		$jobLocation = $_REQUEST["jobLocation"];
 	}
 	else{
-		echo "{'errorType':'details','errorMessage':'No job location was sent'},";
+		$errors .= "{'errorType':'details','errorMessage':'No job location was sent'},";
 		$jobLocation = "unknown location";
 	}
 	// the contact type will be used to better format the return contact information
@@ -60,35 +60,40 @@ function getDetails(){
 		}
 		if($contactType == "email"){
 			$contactInformation = "<a href='mailto:" .$_REQUEST["contactInfomation"]. "'>".$_REQUEST["contactInfomation"]. "</a>" ;
+		}
 	}
 	else{
-		echo "{'errorType':'details','errorMessage':'No contact type was sent'},";
+		$errors .= "{'errorType':'details','errorMessage':'No contact type was sent'},";
 		$contactType = "unknown";
 	}
 	if(isset($_REQUEST["areaSize"]){
 		$areaSize = $_REQUEST["areaSize"];
 	}
 	else{
-		echo "{'errorType':'details','errorMessage':'No area size was sent'},";
+		$errors .= "{'errorType':'details','errorMessage':'No area size was sent'},";
 		$areaSize = 0;
 	}
 	if(isset($_REQUEST["areaType"]){
 		$areaType = $_REQUEST["areaType"];
 	}
 	else{
-		echo "{'errorType':'details','errorMessage':'No area type was sent'},";
+		$errors .= "{'errorType':'details','errorMessage':'No area type was sent'},";
 		$areaType = "unknown area";
 	}
 	if(isset($_REQUEST["jobDuration"]){
 		$jobDuration = $_REQUEST["jobDuration"];
 	}
 	else{
-		echo "{'errorType':'details','errorMessage':'No job duration was sent'},";
+		$errors .= "{'errorType':'details','errorMessage':'No job duration was sent'},";
 		$jobDuration = 0;
 	}
 	
 	
 	$details = ($contactsName,$jobLocation,$areaType,$areaSize,$requestedDate,$contactInfomation,$jobDuration);
+	return $details;
 	
+}
+
+?>
 	
 	

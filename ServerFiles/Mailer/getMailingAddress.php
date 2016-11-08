@@ -15,15 +15,15 @@ function getMailingAddress(){
 		if($industryToContact == "Sunhawk"){
 			return $sunhawkEmail;
 		}
-		// all other options have failed to now to echo the error message which will appear inside a formatted JSON string
-		echo ",{'errorType':'industry','errorMessage':'The requested industry does not exist'},";
+		// all other options have failed to now to $errors .= the error message which will appear inside a formatted JSON string
+		$errors .= ",{'errorType':'industry','errorMessage':'The requested industry does not exist'},";
 		
 		return null;
 	}
 	else
 	{
-		// no data was sent so now to echo the error for that to go inside the JSON
-		echo "{'errorType':'industry','errorMessage':'No industry option was sent'},";
+		// no data was sent so now to $errors .= the error for that to go inside the JSON
+		$errors .= "{'errorType':'industry','errorMessage':'No industry option was sent'},";
 		
 		return null;
 	}
