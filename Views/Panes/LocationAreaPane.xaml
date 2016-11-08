@@ -60,6 +60,33 @@
         <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="{Binding WidthUnit, Converter={StaticResource unitNotationConverter}}" x:Name="bToggle_width" VerticalOptions="FillAndExpand" Command="{Binding ChangeWidthUnit}"/>
       </Grid>
     </StackLayout>
+    
+    <!-- LABEL or Area -->
+    <StackLayout Padding="35,0,35,0">
+      <Label Text="Or Area" FontSize="Small" FontAttributes="Bold" Style="{DynamicResource labelStyle}"/>
+    </StackLayout>
+    <!-- Area -->
+    <StackLayout Padding="50,0,50,0">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="7*" />
+          <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <!-- ENTRY Area -->
+        <StackLayout>
+          <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="0, 6, 0, 6" />
+          </StackLayout.Padding>
+          <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_area" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Width, Mode=TwoWay}"/>
+        </StackLayout>
+          <!-- BUTTON Area Unit Toggle -->
+        <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="toBind" x:Name="bToggle_area" VerticalOptions="FillAndExpand" />
+      </Grid>
+    </StackLayout>
+     
     <!-- BUTTON Calculate -->
     <StackLayout>
       <Button Text="Calculate" x:Name="bCalculation" Command="{Binding Calculate}" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource primaryButtonStyle}" />
