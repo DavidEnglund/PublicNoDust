@@ -52,15 +52,9 @@ function getDetails(){
 		$errors .= "{'errorType':'details','errorMessage':'No job location was sent'},";
 		$jobLocation = "unknown location";
 	}
-	// the contact type will be used to better format the return contact information
+
 	if(isset($_REQUEST["contactType"]){
 		$contactType = $_REQUEST["contactType"];
-		if($contactType == "phone"){
-			$contactInformation = "ph:" .$_REQUEST["contactInfomation"];
-		}
-		if($contactType == "email"){
-			$contactInformation = "<a href='mailto:" .$_REQUEST["contactInfomation"]. "'>".$_REQUEST["contactInfomation"]. "</a>" ;
-		}
 	}
 	else{
 		$errors .= "{'errorType':'details','errorMessage':'No contact type was sent'},";
@@ -89,7 +83,7 @@ function getDetails(){
 	}
 	
 	
-	$details = ($contactsName,$jobLocation,$areaType,$areaSize,$requestedDate,$contactInfomation,$jobDuration);
+	$details = ($contactsName,$jobLocation,$areaType,$areaSize,$requestedDate,$contactInfomation,$jobDuration,$contactType);
 	return $details;
 	
 }
