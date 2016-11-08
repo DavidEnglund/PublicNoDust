@@ -10,9 +10,10 @@ require_once("getHeaders.php");
 require_once("handleOutput.php");
 
 
-//global error string and success boolean
+//global variables database connection, error string, and success boolean
 $errors = "";
 $success = false;
+$databaseConnection;
 
 // now to run the request contact function and then to handle outputting errors
 requestContact();
