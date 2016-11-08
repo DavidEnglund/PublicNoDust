@@ -1,0 +1,39 @@
+[08-Nov-2016 19:44:43 Australia/Sydney] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 15
+[08-Nov-2016 19:44:46 Australia/Sydney] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 15
+[08-Nov-2016 19:45:11 Australia/Sydney] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 15
+[08-Nov-2016 19:49:52 Australia/Sydney] PHP Parse error:  syntax error, unexpected '$row' (T_VARIABLE) in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 16
+[08-Nov-2016 19:50:55 Australia/Sydney] PHP Warning:  require_once(../connectToDatabase.php): failed to open stream: No such file or directory in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 4
+[08-Nov-2016 19:50:55 Australia/Sydney] PHP Fatal error:  require_once(): Failed opening required '../connectToDatabase.php' (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 4
+[08-Nov-2016 19:52:05 Australia/Sydney] PHP Warning:  require_once(../connectToDatabase.php): failed to open stream: No such file or directory in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 4
+[08-Nov-2016 19:52:05 Australia/Sydney] PHP Fatal error:  require_once(): Failed opening required '../connectToDatabase.php' (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 4
+[08-Nov-2016 19:52:07 Australia/Sydney] PHP Warning:  require_once(../connectToDatabase.php): failed to open stream: No such file or directory in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 4
+[08-Nov-2016 19:52:07 Australia/Sydney] PHP Fatal error:  require_once(): Failed opening required '../connectToDatabase.php' (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 4
+[08-Nov-2016 19:52:07 Australia/Sydney] PHP Warning:  require_once(../connectToDatabase.php): failed to open stream: No such file or directory in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 4
+[08-Nov-2016 19:52:07 Australia/Sydney] PHP Fatal error:  require_once(): Failed opening required '../connectToDatabase.php' (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 4
+[08-Nov-2016 19:56:58 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 18
+[08-Nov-2016 19:56:58 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 18
+[08-Nov-2016 19:57:01 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 18
+[08-Nov-2016 19:57:01 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 18
+[08-Nov-2016 19:57:31 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 19
+[08-Nov-2016 19:57:31 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 19
+[08-Nov-2016 19:58:41 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 19:58:41 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 19:59:07 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 19:59:07 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 19:59:10 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 19:59:10 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 19:59:59 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 19:59:59 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 20:00:01 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 20:00:01 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 20:00:02 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 20:00:02 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 20:00:02 Australia/Sydney] PHP Notice:  Undefined variable: databaseConnection in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 20:00:02 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 20
+[08-Nov-2016 20:03:21 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 21
+[08-Nov-2016 20:03:22 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 21
+[08-Nov-2016 20:03:23 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 21
+[08-Nov-2016 20:03:23 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 21
+[08-Nov-2016 20:03:23 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 21
+[08-Nov-2016 20:03:24 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 21
+[08-Nov-2016 20:05:09 Australia/Sydney] PHP Fatal error:  Call to a member function query() on a non-object in /home/rainstorm/public_html/app/UserHelp/getHelpLinks.php on line 21
