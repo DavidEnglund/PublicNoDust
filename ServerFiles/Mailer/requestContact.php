@@ -10,10 +10,10 @@ require_once("getHeaders.php");
 require_once("handleOutput.php");
 
 
-//global variables database connection, error string, and success boolean
+//global variables error string and success boolean
 $errors = "";
 $success = false;
-$databaseConnection;
+
 
 // now to run the request contact function and then to handle outputting errors
 requestContact();
@@ -30,7 +30,7 @@ function requestContact(){
 		
 		// check that it sends. If it does not add to the errors message, if it does set success to true
 		if(!mail($address,$subject,$body,$headers)){
-			$errors .= error_get_last();
+			$error .= "{'errorType':'mail','errorMessage':'" . error_get_last() . "'},";
 		}
 		else{
 			$success = true;

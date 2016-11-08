@@ -1,5 +1,6 @@
 <?PHP
-
+// global connection variable
+$databaseConnection;
 // this function will create and maintain the database connection
 function connectToDatabase(){
 	
