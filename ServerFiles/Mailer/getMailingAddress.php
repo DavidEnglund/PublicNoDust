@@ -1,6 +1,7 @@
 <?PHP
 // this code will get the industry that was sent to the php script and then give back the correct mailing address(rainstorm or sun hawk)
 function getMailingAddress(){
+	global $errors;
 	// check that the data was sent first
 	if(isset($_REQUEST["industryToContact"])){
 		// get the sent data and set the email address to return
