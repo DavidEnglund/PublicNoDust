@@ -7,6 +7,9 @@ using System.Collections.Specialized;
 
 namespace Dustbuster
 {
+	/// <summary>
+	/// AccordionView control
+	/// </summary>
 	public class AccordionView : StackLayout
 	{
 		public static readonly BindableProperty ExpandedPaneProperty = BindableProperty.Create("ExpandedPane", typeof(AccordionPane), typeof(AccordionView), null, BindingMode.TwoWay, propertyChanged: OnExpandedPaneChanged);
@@ -20,6 +23,7 @@ namespace Dustbuster
 
 		public AccordionView()
 		{
+			// Setup accordion view layout
 			prevPanes = new StackLayout();
 			prevPanes.VerticalOptions = LayoutOptions.Start;
 			nextPanes = new StackLayout();
@@ -76,17 +80,25 @@ namespace Dustbuster
 			};
 		}
 
+		/// <summary>
+		/// The panes within the accordion.
+		/// </summary>
 		public ObservableCollection<AccordionPane> Panes
 		{
 			get { return this.panes; }
 		}
-
+		
+		/// <summary>
+		/// The currently extended pane
+		/// </summary>
 		public AccordionPane ExpandedPane
 		{
 			get { return (AccordionPane)GetValue(ExpandedPaneProperty); }
 			set { SetValue(ExpandedPaneProperty, value); }
 		}
 
+		}
+		
 		private static void OnExpandedPaneChanged(BindableObject bindable, object oldValue, object newValue)
 		{
 			var accordion = (AccordionView)bindable;
@@ -143,7 +155,10 @@ namespace Dustbuster
 				}
 			}
 		}
-
+	
+		/// <summary>
+		/// Adds a pane to the visited list, and sets it to the current expanded pane
+		/// </summary>
 		public void VisitPane(AccordionPane pane)
 		{
 			if (pane != null)
@@ -151,7 +166,10 @@ namespace Dustbuster
 				ExpandedPane = pane;
 			}
 		}
-
+	
+		/// <summary>
+		/// Replace a visited pane with another, deleting the previous history.
+		/// </summary>
 		public void VisitPane(AccordionPane oldPane, AccordionPane newPane)
 		{
 			if (oldPane != newPane)
@@ -168,7 +186,10 @@ namespace Dustbuster
 				ExpandedPane = newPane;
 			}
 		}
-
+	
+		/// <summary>
+		/// Checks if a pane is visited
+		/// </summary>
 		public bool IsPaneVisited(AccordionPane pane)
 		{
 			return visitedPanes.Contains(pane);
