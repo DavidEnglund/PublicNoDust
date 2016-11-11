@@ -96,8 +96,6 @@ namespace Dustbuster
 			get { return (AccordionPane)GetValue(ExpandedPaneProperty); }
 			set { SetValue(ExpandedPaneProperty, value); }
 		}
-
-		}
 		
 		private static void OnExpandedPaneChanged(BindableObject bindable, object oldValue, object newValue)
 		{
