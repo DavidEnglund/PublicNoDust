@@ -162,6 +162,7 @@
     <BundleResource Include="Resources\sunhawk_logo_lg.png" />
     <BundleResource Include="Resources\sunhawk_logo_md.png" />
     <BundleResource Include="Resources\sunhawk_logo_sm.png" />
+    <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />

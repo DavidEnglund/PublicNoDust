@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Dustbuster
@@ -14,11 +10,9 @@ namespace Dustbuster
 	        this.BindingContext = new SettingsViewModel();
 
             InitializeComponent();
-
-
-            ContactMethodPicker.SelectedIndexChanged += ContactMethodPicker_SelectedIndexChanged;
-
             
+            ContactMethodPicker.SelectedIndexChanged += ContactMethodPicker_SelectedIndexChanged;
+           
             if (ContactMethodPicker.SelectedIndex == 0)     //select mobile number (0) or email (1)
             {
                 // enter mobile number with place holder to show number format 

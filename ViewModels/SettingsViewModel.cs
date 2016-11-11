@@ -1,11 +1,35 @@
-﻿using System;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace Dustbuster
 {
-	public class SettingsViewModel : INotifyPropertyChanged
-	{
-		public string CustomerName
+    public class SettingsViewModel : INotifyPropertyChanged
+    {
+        public SettingsViewModel()
+        {
+            GetOnlineHelpLinks();
+        }
+
+        private async void GetOnlineHelpLinks()
+        {
+            HelpService service = new HelpService();
+            Links = new ObservableCollection<Link>((await service.GetOnlineHelpLinks()));
+        }
+
+        private ObservableCollection<Link> links;
+        public ObservableCollection<Link> Links
+        {
+            get { return links; }
+            set
+            {
+                links = value;
+
+                OnPropertyChanged("Links");
+            }
+        }
+
+
+        public string CustomerName
 		{
 			get
 			{

@@ -2,21 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.SettingsPage" Title="Settings">
   <StackLayout>
     <StackLayout Padding="0,10,0,10">
+      
       <!-- Dip label to left -->
       <StackLayout Padding="35,0,35,0">
         <!-- Enter Name Label -->
         <Label x:Name="lblName" Text="Your Name:" VerticalOptions="Center" TextColor="#5a5d5e" FontSize="17"/>
       </StackLayout>
+      
       <!-- Center Entry -->
       <StackLayout Padding="50,0,50,0">
         <!-- Name Entry -->
         <Entry x:Name="etName" BackgroundColor="#d9d9d9" Text="{Binding CustomerName, Mode=TwoWay}" Placeholder="E.g. John Smith"/>
       </StackLayout>
+      
       <StackLayout Padding="35,0,35,0">
         <!-- Dip label to left -->
         <!-- Contact Method Label -->
         <Label x:Name="lblContactMethod" Text="Contact Method:" TextColor="#5a5d5e" FontSize="17"/>
       </StackLayout>
+      
       <!-- Center Picker -->
       <StackLayout Padding="50,0,50,0">
         <!-- Contact Method Picker (Phone & Email) -->
@@ -27,17 +31,32 @@
           </Picker.Items>
         </Picker>
       </StackLayout>
+      
       <!-- Center Entry -->
       <StackLayout Padding="50,0,50,0">
         <!-- Contact Info Entry (Phone & Email) -->
         <Entry x:Name="etContactInfo" BackgroundColor="#d9d9d9" Text="{Binding ContactInfo, Mode=TwoWay}" WidthRequest="10" Placeholder="E.g. 0412345678"/>
       </StackLayout>
+      
       <!-- Stacklayout for Analytics Switch & Label -->
       <StackLayout Orientation="Horizontal" Padding="50,20,50,0">
         <!-- Analytics Switch  -->
         <Switch x:Name="AnalyticsSwitch" IsToggled="{Binding EnableAnalytics, Mode=TwoWay}"/>
         <!-- Analytics Label -->
         <Label x:Name="lblAnalytics" Text="Send Analytics" HorizontalTextAlignment="End" TextColor="#5a5d5e" FontSize="17" VerticalTextAlignment="Center"/>
+      </StackLayout>
+
+      <StackLayout VerticalOptions="FillAndExpand">
+        <ListView x:Name="onlineHelp" HasUnevenRows="True" ItemsSource="{Binding Links}">
+          <!--ItemSelected="onlineHelpLink_Clicked"-->
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <Label Text="{Binding Title}" TextColor="#000" FontSize="16" />
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate> // the output said three didn't it?
+        </ListView>
       </StackLayout>
     </StackLayout>
   </StackLayout>
