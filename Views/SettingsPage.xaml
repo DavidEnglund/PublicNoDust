@@ -55,7 +55,7 @@
                 <Label Text="{Binding Title}" TextColor="#000" FontSize="16" />
               </ViewCell>
             </DataTemplate>
-          </ListView.ItemTemplate> // the output said three didn't it?
+          </ListView.ItemTemplate>
         </ListView>
       </StackLayout>
     </StackLayout>
