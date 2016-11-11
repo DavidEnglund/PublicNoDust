@@ -45,5 +45,17 @@ namespace Dustbuster
             etContactInfo.Text = "";
         }
 
+        private void onlineHelpLink_Clicked(object sender, SelectedItemChangedEventArgs e)
+        {
+            // Makes the items unselectable (so they don't remain highlighted)
+            if (e.SelectedItem == null)
+            {
+                return;     //ItemSelected is called on deselection, which results in SelectedItem being set to null
+            }
+            ((ListView)sender).SelectedItem = null;
+
+            Link link = (Link)((ListView)sender).SelectedItem;
+            Device.OpenUri(new Uri(link.URL));
+        }
     }
 }

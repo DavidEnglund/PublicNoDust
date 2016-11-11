@@ -47,17 +47,19 @@
       </StackLayout>
 
       <StackLayout VerticalOptions="FillAndExpand">
-        <ListView x:Name="onlineHelp" HasUnevenRows="True" ItemsSource="{Binding Links}">
-          <!--ItemSelected="onlineHelpLink_Clicked"-->
+        <Label Text="Select a topic to see the online help:"/>
+          
+        <ListView x:Name="onlineHelp" HasUnevenRows="True" ItemsSource="{Binding Links}" ItemSelected="onlineHelpLink_Clicked">
           <ListView.ItemTemplate>
             <DataTemplate>
               <ViewCell>
                 <Label Text="{Binding Title}" TextColor="#000" FontSize="16" />
               </ViewCell>
             </DataTemplate>
-          </ListView.ItemTemplate> // the output said three didn't it?
+          </ListView.ItemTemplate>
         </ListView>
       </StackLayout>
+    
     </StackLayout>
   </StackLayout>
 </ContentPage>
