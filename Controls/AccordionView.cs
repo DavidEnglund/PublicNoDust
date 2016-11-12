@@ -97,6 +97,9 @@ namespace Dustbuster
 			set { SetValue(ExpandedPaneProperty, value); }
 		}
 		
+		/// <summary>
+		/// Called when ExpandedPane property is changed
+		/// </summary>
 		private static void OnExpandedPaneChanged(BindableObject bindable, object oldValue, object newValue)
 		{
 			var accordion = (AccordionView)bindable;
@@ -106,7 +109,10 @@ namespace Dustbuster
 				accordion.OnExpandedPaneChanged((AccordionPane)oldValue);
 			}
 		}
-
+		
+		/// <summary>
+		/// Called when ExpandedPane property is changed
+		/// </summary>
 		private void OnExpandedPaneChanged(AccordionPane oldExpanded)
 		{
 			bool expandedFound = false;
