@@ -3,8 +3,14 @@ using Xamarin.Forms;
 
 namespace Dustbuster
 {
+	/// <summary>
+	/// Represents a pane in AccordionView
+	/// </summary>
 	public class AccordionPane : ContentView
-	{
+	{	
+		/// <summary>
+		/// Header of an AccordionPane
+		/// </summary>
 		public class AccordionHeader : ContentView
 		{
 			private RelativeLayout titleLayout;
@@ -12,12 +18,12 @@ namespace Dustbuster
 			private Label titleLabel;
 			private Image iconImage;
 
-
 			public AccordionHeader(AccordionPane pane)
 			{
 				HeightRequest = 50;
 				HorizontalOptions = LayoutOptions.FillAndExpand;
 
+				// Setup the AccordionHeader layout
 
 				Content = (titleLayout = new RelativeLayout()
 				{
@@ -58,12 +64,19 @@ namespace Dustbuster
 					heightConstraint: Constraint.RelativeToParent((parent) => { return parent.Height; }));
 			}
 
+			/// <summary>
+			/// Title for the AccordionHeader
+			/// </summary>
 			public string Title
 			{
 				get { return titleLabel.Text; }
 				set { this.titleLabel.Text = value; }
 			}
 
+		
+			/// <summary>
+			/// Icon for the AccordionHeader
+			/// </summary>
 			public ImageSource IconImage
 			{
 				get { return this.iconImage.Source; }
@@ -95,36 +108,54 @@ namespace Dustbuster
 			Title = title;
 			Image = image;
 		}
-
+		
+		/// <summary>
+		/// The title of the accordion pane
+		/// </summary>
 		public string Title
 		{
 			get { return (string)GetValue(TitleProperty); }
 			set { SetValue(TitleProperty, value); }
 		}
-
+		
+		/// <summary>
+		/// The image of the AccordionPane
+		/// </summary>
 		public string Image
 		{
 			get { return (string)GetValue(ImageProperty); }
 			set { SetValue(ImageProperty, value); }
 		}
-
+		
+		/// <summary>
+		/// The expanded state of the AccordionPane
+		/// </summary>
 		public bool IsExpanded
 		{
 			get { return (bool)GetValue(IsExpandedProperty); }
 			set { SetValue(IsExpandedProperty, value); }
 		}
-
+		
+		/// <summary>
+		/// The header for the AccordionPane
+		/// </summary>
 		public AccordionHeader Header
 		{
 			get { return this.header; }
 		}
 
+		/// <summary>
+		/// The AccordionView instance that owns the AccordionPane
+		/// </summary>
 		public AccordionView Owner
 		{
 			get { return this.owner; }
 			set { this.owner = value; }
 		}
-
+		
+		/// <summary>
+		/// Called when the AccordionPane title is changed.
+		/// </summary>
 		private static void OnTitleChanged(BindableObject bindable, object oldValue, object newValue)
 		{
 			var accordion = (AccordionPane)bindable;
@@ -135,6 +166,9 @@ namespace Dustbuster
 			}
 		}
 
+		/// <summary>
+		/// Called when the AccordionPane image is changed.
+		/// </summary>
 		private static void OnImageChanged(BindableObject bindable, object oldValue, object newValue)
 		{
 			var acccordion = (AccordionPane)bindable;
@@ -144,12 +178,22 @@ namespace Dustbuster
 				acccordion.Header.IconImage = (string)newValue;
 			}
 		}
-
+		
+		/// <summary>
+		/// Called when the AccordionPane is expanded
+		/// </summary>
 		public virtual void OnPaneExpanded() { }
 
-        public virtual void OnPaneCollapsed() { }
+		/// <summary>
+		/// Called when the AccordionPane is collapsed
+		/// </summary>
+       		public virtual void OnPaneCollapsed() { }
 
-        public virtual void OnPaneInvalidate() { }
+		
+		/// <summary>
+		/// Called when the AccordionPane is invalidated (refresh)
+		/// </summary>
+        	public virtual void OnPaneInvalidate() { }
 	}
 }
 
