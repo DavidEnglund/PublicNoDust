@@ -46,14 +46,17 @@
         <Label x:Name="lblAnalytics" Text="Send Analytics" HorizontalTextAlignment="End" TextColor="#5a5d5e" FontSize="17" VerticalTextAlignment="Center"/>
       </StackLayout>
 
-      <StackLayout VerticalOptions="FillAndExpand">
-        <Label Text="Select a topic to see the online help:"/>
-          
+      <!-- Online Help -->
+      <StackLayout VerticalOptions="FillAndExpand" Padding="35,35,35,0">
+        <Label Text="Select a topic to view the online help:" TextColor="#5a5d5e" FontSize="17"/>
+        <!-- List View that holds the online help links -->
         <ListView x:Name="onlineHelp" HasUnevenRows="True" ItemsSource="{Binding Links}" ItemSelected="onlineHelpLink_Clicked">
           <ListView.ItemTemplate>
             <DataTemplate>
               <ViewCell>
-                <Label Text="{Binding Title}" TextColor="#000" FontSize="16" />
+                <StackLayout Padding="0,10,0,0">
+                  <Label Text="{Binding Title}" TextColor="#5a5d5e" FontSize="17"/>
+                </StackLayout>
               </ViewCell>
             </DataTemplate>
           </ListView.ItemTemplate>
