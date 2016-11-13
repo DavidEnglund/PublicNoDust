@@ -37,6 +37,11 @@ namespace Dustbuster
             get { return (float)Math.Ceiling(CalculateQuantity() / 100) * 100; }
         }
 
+        public double Area
+        {
+            get { return Job.Area; }
+        }
+
 		private float CalculateQuantity()
 		{
 			return (float)(Job.Area * ApplicationRate) / 1000; //mL to L

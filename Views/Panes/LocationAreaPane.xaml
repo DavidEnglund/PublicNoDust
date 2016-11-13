@@ -80,10 +80,10 @@
             <StackLayout.Padding>
               <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="0, 6, 0, 6" />
             </StackLayout.Padding>
-            <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_area" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Width, Mode=TwoWay}"/>
+            <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_area" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Area, Mode=TwoWay}"/>
           </StackLayout>
             <!-- BUTTON Area Unit Toggle -->
-          <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="toBind" x:Name="bToggle_area" VerticalOptions="FillAndExpand" />
+          <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="{Binding AreaUnit, Converter={StaticResource unitNotationConverter}}" x:Name="bToggle_area" VerticalOptions="FillAndExpand" Command="{Binding ChangeAreaUnit}"/>
         </Grid>
       </StackLayout>     
       <!-- BUTTON Calculate -->
