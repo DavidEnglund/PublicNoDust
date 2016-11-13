@@ -2077,8 +2077,8 @@ namespace Dustbuster.Droid
 			// aapt resource value: 0x7f020088
 			public const int nichola = 2130837640;
 			
-			// aapt resource value: 0x7f020099
-			public const int notification_template_icon_bg = 2130837657;
+			// aapt resource value: 0x7f02009b
+			public const int notification_template_icon_bg = 2130837659;
 			
 			// aapt resource value: 0x7f020089
 			public const int placeholder = 2130837641;
@@ -2111,22 +2111,28 @@ namespace Dustbuster.Droid
 			public const int settings_icon = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int success_tick = 2130837651;
+			public const int splash_logo = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int sunhawk_logo_lg = 2130837652;
+			public const int splash_screen = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int sunhawk_logo_md = 2130837653;
+			public const int success_tick = 2130837653;
 			
 			// aapt resource value: 0x7f020096
-			public const int sunhawk_logo_sm = 2130837654;
+			public const int sunhawk_logo_lg = 2130837654;
 			
 			// aapt resource value: 0x7f020097
-			public const int team_image = 2130837655;
+			public const int sunhawk_logo_md = 2130837655;
 			
 			// aapt resource value: 0x7f020098
-			public const int unselectedNone = 2130837656;
+			public const int sunhawk_logo_sm = 2130837656;
+			
+			// aapt resource value: 0x7f020099
+			public const int team_image = 2130837657;
+			
+			// aapt resource value: 0x7f02009a
+			public const int unselectedNone = 2130837658;
 			
 			static Drawable()
 			{
@@ -3306,6 +3312,9 @@ namespace Dustbuster.Droid
 			
 			// aapt resource value: 0x7f080145
 			public const int MyTheme_Base = 2131231045;
+			
+			// aapt resource value: 0x7f080147
+			public const int MyTheme_Splash = 2131231047;
 			
 			// aapt resource value: 0x7f080016
 			public const int Platform_AppCompat = 2131230742;
