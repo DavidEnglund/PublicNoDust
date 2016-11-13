@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
+using Dustbuster;
 
 namespace Dustbuster
 {
@@ -74,6 +75,7 @@ namespace Dustbuster
     
         string contactType; // either Phone or Email        
         double remindTime;
+
         // Pulls up the contact type selcted menu
         private async void OnContactClicked(object sender, EventArgs args)
         {
@@ -136,8 +138,19 @@ namespace Dustbuster
         {
 
             Boolean WebContactResult;
+            String industryType;
 
             Button button = (Button)sender;
+
+            if(App.IndustryOption == IndustryOptions.Civil)
+            {
+                industryType = "Civil";
+            }
+            else
+            {
+                industryType = "Mining";
+            }
+
             // validate the text entry fields
             if (ValidateFields())
             {                          
@@ -160,14 +173,48 @@ namespace Dustbuster
                 bool IsEmail = Regex.IsMatch(etContact.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
                 if (IsEmail)
                 {
-                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, etContact.Text, null);
-                    await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
+                    // old not used superceded by php web service
+                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, etContact.Text, null);
+
+                    // php web service send via json
+                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactDetails(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+
+                    // php webservice send via web part
+                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+
+                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactData(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+                    if (WebContactResult)
+                    {
+                        await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Contact Failed", "Please Re-enter details", "Ok");
+                    }
+                   
                 }
                 else
                 {
-                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, null, etContact.Text);
-                    await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
+                    // old not used superceded by php web service
+                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, null, etContact.Text);
+
+                    // php web service send via json
+                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactDetails(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+
+                    // php webservice send via web part
+                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+
+                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactData(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+                    if (WebContactResult)
+                    {
+                        await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
+                    }
+                    else
+                    {
+                        await DisplayAlert("Contact Failed", "Please Re-enter details", "Ok");
+                    }
                 }
+
                 // INSERT code to go back to main page
                 await Navigation.PopToRootAsync();
             }
