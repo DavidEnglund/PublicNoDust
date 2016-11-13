@@ -224,8 +224,15 @@ namespace Dustbuster.Droid
                 string jsonObj = JsonConvert.SerializeObject(userObject);
                 // creating multipart form
                 var multipart = new MultipartFormDataContent();
-                var body = new StringContent(jsonObj, Encoding.UTF8, "multipart/form-data");
-                multipart.Add(body);
+                multipart.Add(new StringContent(contactInfo), String.Format("\"{0}\"", "contactInfomation"));
+                multipart.Add(new StringContent(requestDate.ToString()), String.Format("\"{0}\"", "requestedDate"));
+                multipart.Add(new StringContent(contactName), String.Format("\"{0}\"", "contactsName"));
+                multipart.Add(new StringContent(jobLocation), String.Format("\"{0}\"", "jobLocation"));
+                multipart.Add(new StringContent(contactType), String.Format("\"{0}\"", "contactType"));
+                multipart.Add(new StringContent(industryType), String.Format("\"{0}\"", "industryToContact"));
+
+                //var body = new StringContent(jsonObj, Encoding.UTF8, "multipart/form-data");
+                //multipart.Add(body);
 
                 Console.WriteLine("Debug Multipart!!!: " + multipart);
 
@@ -266,13 +273,19 @@ namespace Dustbuster.Droid
 
             string webReturn;
             Boolean webReturnFlag;
-            String userObj = "contactInformation=" + contactInfo + "&requestedDate=" + requestDate+ "&contactsName=" + contactName + "&jobLocation=" + jobLocation + "&contactType="+contactType+"&industryToContact="+industryType;
-
+            //String userObj = "contactInformation=" + contactInfo + "&requestedDate=" + requestDate+ "&contactsName=" + contactName + "&jobLocation=" + jobLocation + "&contactType="+contactType+"&industryToContact="+industryType;
+            String userObj = " ";
             Uri uri = new Uri("http://www.rainstorm.com.au/app/Mailer/requestContact.php");
             HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(uri);
-            httpWebRequest.ContentType = "application/x-www-form-urlencoded";
+            httpWebRequest.ContentType = "text/html";
             httpWebRequest.Method = "POST";
 
+            httpWebRequest.Headers.Add("contactInformation", contactInfo);
+            httpWebRequest.Headers.Add("requestedDate", requestDate.ToString());
+            httpWebRequest.Headers.Add("contactsName", contactName);
+            httpWebRequest.Headers.Add("jobLocation", jobLocation);
+            httpWebRequest.Headers.Add("contactType", contactType);
+            httpWebRequest.Headers.Add("industryToContact", industryType);
             httpWebRequest.ContentLength = userObj.Length;
 
             try

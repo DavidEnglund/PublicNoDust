@@ -73,7 +73,7 @@ namespace Dustbuster
             get { return this.dpDate; }
         }
     
-        string contactType; // either Phone or Email        
+        string contactType = "Email"; // either Phone or Email        
         double remindTime;
 
         // Pulls up the contact type selcted menu
@@ -144,11 +144,11 @@ namespace Dustbuster
 
             if(App.IndustryOption == IndustryOptions.Civil)
             {
-                industryType = "Civil";
+                industryType = "Sunhawk";
             }
             else
             {
-                industryType = "Mining";
+                industryType = "Rainstorm";
             }
 
             // validate the text entry fields
@@ -180,9 +180,9 @@ namespace Dustbuster
                     //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactDetails(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
 
                     // php webservice send via web part
-                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, "perth", contactType, industryType);
 
-                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactData(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactData(etContact.Text, DatePicker.Date.ToString, etName.Text, " ", contactType, industryType);
                     if (WebContactResult)
                     {
                         await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
