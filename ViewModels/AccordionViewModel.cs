@@ -42,35 +42,24 @@ namespace Dustbuster
                     }
 
 
-					double tempLength = Length;
-					double tempWidth = Width;
+                    Job newJob = new Job()
+                    {
+                        Area = Area,
+                        AreaTypeID = (int)App.TrafficOption,
+                        CreationDate = DateTime.Now,
+                        WillRain = (App.WeatherOption == WeatherOptions.RainExpected),
+                        JobType = (int)App.IndustryOption,
+                        DurationMaxDays = (int)App.DurationOption,
+                        Location = Location
+                    };
 
-					tempLength = (LengthUnit == Units.Kilometre) ? tempLength * 1000 : tempLength;
-					tempWidth = (WidthUnit == Units.Kilometre) ? tempWidth * 1000 : tempWidth;
-
-					double tempArea = tempLength * tempWidth;
-
-					Area = (AreaUnit == Units.Kilometre) ? tempArea / 1000000 : tempArea;
-
-					ProductViewModel productViewModel = new ProductViewModel();
-
+                    ProductViewModel productViewModel = new ProductViewModel();
 					DbConnectionManager productsDB = App.ProductsDb;
 
-					var productSelection = productsDB.SelectProducts((int)App.DurationOption,
-											  (int)App.TrafficOption,
-											  (App.WeatherOption == WeatherOptions.RainExpected));
-
-					Job newJob = new Job()
-					{
-						Area = Area,
-						AreaTypeID = (int)App.TrafficOption,
-						CreationDate = DateTime.Now,
-						WillRain = (App.WeatherOption == WeatherOptions.RainExpected),
-						JobType = (int)App.IndustryOption,
-						DurationMaxDays = (int)App.DurationOption,
-						Location = Location
-					};
-
+					IEnumerable<ProductMatrix> productSelection = productsDB.SelectProducts((int)App.DurationOption,
+											                      (int)App.TrafficOption,
+											                      (App.WeatherOption == WeatherOptions.RainExpected));
+                    
 					foreach (ProductMatrix productMatrix in productSelection)
 					{
 						ProductDescription productDescription = productsDB.GetProductInfo(productMatrix);
@@ -215,11 +204,9 @@ namespace Dustbuster
                 if (length != value)
                 {
                     length = value;
+                    Area = width * length;
 
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("Length"));
-                    }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Length"));
                 }
             }
         }
@@ -235,11 +222,9 @@ namespace Dustbuster
                 if (width != value)
                 {
                     width = value;
+                    Area = width * length;
 
-                    if (PropertyChanged != null)
-                    {
-                        PropertyChanged(this, new PropertyChangedEventArgs("Width"));
-                    }
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Width"));
                 }
             }
         }
@@ -255,10 +240,13 @@ namespace Dustbuster
                 if (area != value)
                 {
                     area = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Area"));
 
-                    if (PropertyChanged != null)
+                    if (area != length * width)
                     {
-                        PropertyChanged(this, new PropertyChangedEventArgs("Area"));
+                        Length = 0;
+                        Width = 0;
+                        area = value;
                     }
                 }
             }
@@ -339,14 +327,9 @@ namespace Dustbuster
                 App.Current.MainPage.DisplayAlert("Alert", "Invalid Location", "OK");
                 return false;
             }
-            else if (Length <= 0)
+            else if (Area <= 0)
             {
-                App.Current.MainPage.DisplayAlert("Alert", "Invalid Length", "OK");
-                return false;
-            }
-            else if (Width <= 0)
-            {
-                App.Current.MainPage.DisplayAlert("Alert", "Invalid Width", "OK");
+                App.Current.MainPage.DisplayAlert("Alert", "Invalid Area", "OK");
                 return false;
             }
             return true;
