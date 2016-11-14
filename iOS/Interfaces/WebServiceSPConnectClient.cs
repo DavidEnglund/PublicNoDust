@@ -5,6 +5,8 @@ using System.Text;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.IO;
+using Dustbuster;
+
 
 using Dustbuster.iOS;
 
@@ -33,5 +35,20 @@ namespace Dustbuster.iOS
 		{
 			return Task.FromResult(false);
 		}
-	}
+
+        public Task<Boolean> SendContactDetails(String contactInfo, DateTime requestDate, String contactName, String jobLocation, String contactType, String industryType)
+        {
+            return Task.FromResult(false);
+        }
+
+        public Task<Boolean> SendContactClient(String contactInfo, DateTime requestDate, String contactName, String jobLocation, String contactType, String industryType)
+        {
+            return Task.FromResult(false);
+        }
+
+        public Task<Boolean> SendContactData(String contactInfo, DateTime requestDate, String contactName, String jobLocation, String contactType, String industryType)
+        {
+            return Task.FromResult(false);
+        }
+    }
 }

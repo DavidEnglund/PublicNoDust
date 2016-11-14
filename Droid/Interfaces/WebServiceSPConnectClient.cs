@@ -5,6 +5,9 @@ using System.Text;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net;
+using Newtonsoft.Json;
+using System.Net.Http;
 
 using Android.App;
 using Android.Content;
@@ -12,7 +15,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Util;
 
+using Dustbuster;
 using Dustbuster.Droid;
 
 [assembly: Dependency(typeof(WebServiceSPConnectClient))]
@@ -77,6 +82,12 @@ namespace Dustbuster.Droid
                     int DbVersion;
                     bool LatestDBVersion;
                     sunhawk.getLatestDbVersion(out DbVersion, out LatestDBVersion);
+
+                    //Memory leak here
+                    //GetDBVersion();
+                    
+                    // Logic Error
+                    //DbVersion = 0;
                     var result = DbVersion + " " + LatestDBVersion;
                     Console.WriteLine("Running database download!!!");
                     return Task.FromResult(result);
@@ -117,6 +128,8 @@ namespace Dustbuster.Droid
                         objfilestream.Write(mybytearray, 0, int.Parse(TotalBytes.ToString()));
                         objfilestream.Close();
                     }
+
+                    Log.Debug("Android Log Test", "Database Downloaded!!!!!!!");
                     Console.WriteLine("Database Downloaded!!!");
                     return Task.FromResult(true);
                 }
@@ -132,5 +145,67 @@ namespace Dustbuster.Droid
 
             }
         }
+
+        public Task<Boolean> SendContactClient(String contactInfo, DateTime requestDate, String contactName,
+            String jobLocation, String contactType, String industryType)
+        {
+            try
+            {
+                // serialise contact details into json
+                UserInfoPHP userObject = new UserInfoPHP(contactInfo, requestDate, contactName, jobLocation, contactType, industryType);
+                string jsonObj = JsonConvert.SerializeObject(userObject);
+
+                // creating multipart form
+                var multipart = new MultipartFormDataContent();
+                multipart.Add(new StringContent(contactInfo), String.Format("\"{0}\"", "contactInfomation"));
+                multipart.Add(new StringContent(requestDate.ToString()), String.Format("\"{0}\"", "requestedDate"));
+                multipart.Add(new StringContent(contactName), String.Format("\"{0}\"", "contactsName"));
+                multipart.Add(new StringContent(jobLocation), String.Format("\"{0}\"", "jobLocation"));
+                multipart.Add(new StringContent(contactType), String.Format("\"{0}\"", "contactType"));
+                multipart.Add(new StringContent(industryType), String.Format("\"{0}\"", "industryToContact"));
+
+                Console.WriteLine("Debug Multipart!!!: " + multipart);
+
+                // creating the connection
+                string resultContent;
+                Boolean resultFlag;
+                WebServiceResponseMsg responseModel;
+
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://www.rainstorm.com.au/app/Mailer/requestContact.php");
+                    var result = client.PostAsync(client.BaseAddress, multipart).Result;
+                    resultContent = result.Content.ReadAsStringAsync().Result;
+
+                    Console.WriteLine("Debug Message Content!!!: " + resultContent.ToString());
+
+                    responseModel = JsonConvert.DeserializeObject<WebServiceResponseMsg>(resultContent);
+                    
+                    Console.WriteLine("Debug Response!!!: "+responseModel.errors.ToString()+" "+responseModel.success);
+                }
+
+                if(responseModel.success == true)
+                {
+                    resultFlag = true;
+                }
+                else
+                {
+                    resultFlag = false;
+                }
+
+                return Task.FromResult(resultFlag);
+
+
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine("Web Service Exception: {0}", exception);
+                return Task.FromResult(false);
+            }
+        }
+
+        
+
+
     }
 }

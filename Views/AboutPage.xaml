@@ -82,7 +82,7 @@
         <StackLayout Orientation="Horizontal">
           <Image Source="placeholder.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
             <Image.GestureRecognizers>
-              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://au.linkedin.com/in/michelle-lim-422324114" />
+              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="https://au.linkedin.com/in/rmlim" />
             </Image.GestureRecognizers>
           </Image>
           <StackLayout Orientation="Vertical" Padding="10,3,0,0">

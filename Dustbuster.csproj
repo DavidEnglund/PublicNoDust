@@ -71,6 +71,9 @@
     <Compile Include="Models\DbModel.cs" />
     <Compile Include="Models\OnlineHelpLinks.cs" />
     <Compile Include="Models\UserInfo.cs" />
+    <Compile Include="Models\UserInfoPHP.cs" />
+    <Compile Include="Models\WebServiceErrorMsg.cs" />
+    <Compile Include="Models\WebServiceResponseMsg.cs" />
     <Compile Include="Services\HelpService.cs" />
     <Compile Include="ViewModels\AboutViewModel.cs" />
     <Compile Include="ViewModels\DustbusterViewModel.cs" />
