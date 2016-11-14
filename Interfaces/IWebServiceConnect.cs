@@ -17,10 +17,8 @@ namespace Dustbuster
 
         Task<Boolean> GetDB();
 
-        Task<Boolean> SendContactDetails(String contactInfo, DateTime requestDate, String contactName, String jobLocation, String contactType, String industryType);
-
         Task<Boolean> SendContactClient(String contactInfo, DateTime requestDate, String contactName, String jobLocation, String contactType, String industryType);
 
-        Task<Boolean> SendContactData(String contactInfo, DateTime requestDate, String contactName, String jobLocation, String contactType, String industryType);
+       
     }
 }

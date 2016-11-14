@@ -17,7 +17,7 @@ using Android.Views;
 using Android.Widget;
 using Android.Util;
 
-using Dustbuster.Models;
+using Dustbuster;
 using Dustbuster.Droid;
 
 [assembly: Dependency(typeof(WebServiceSPConnectClient))]
@@ -146,74 +146,6 @@ namespace Dustbuster.Droid
             }
         }
 
-        public Task<Boolean> SendContactDetails(String contactInfo, DateTime requestDate, String contactName,
-            String jobLocation, String contactType, String industryType)
-        {
-            
-
-            UserInfoPHP userObject = new UserInfoPHP(contactInfo, requestDate, contactName, jobLocation, contactType, industryType);
-            Console.WriteLine("userObject !!!: " + userObject.PrintObject());
-            Uri uri = new Uri("http://www.rainstorm.com.au/app/Mailer/requestContact.php");
-            HttpWebRequest  httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(uri);
-            httpWebRequest.ContentType = "text/html";
-            httpWebRequest.Method = "POST";
-
-            string jsonObj = JsonConvert.SerializeObject(userObject);
-
-            Console.WriteLine("jsonObject!!!!: "+jsonObj);
-
-            var data = Encoding.UTF8.GetBytes(jsonObj);
-            httpWebRequest.ContentLength = data.Length;
-
-           
-            string webReturn;
-            Boolean webReturnFlag;
-
-            try
-            {
-                /*
-                using (var stream = httpWebRequest.GetRequestStream())
-                {
-                    stream.Write(data, 0, data.Length);
-                    stream.Close();
-                }
-                */
-
-                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-                {
-                    streamWriter.Write(jsonObj);
-                    streamWriter.Flush();
-                }
-
-
-                using (WebResponse response = httpWebRequest.GetResponse())
-                {
-                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                    {
-                        webReturn = reader.ReadToEnd();
-                        Console.WriteLine("PHP Web Response: {0}", webReturn);
-                        reader.Close();
-                    }
-                }
-
-                if (webReturn == "true")
-                {
-                    webReturnFlag = true;
-                }
-                else
-                {
-                    webReturnFlag = false;
-                }
-
-                return Task.FromResult(webReturnFlag);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("Web Service Exception: {0}", ex);
-                return Task.FromResult(false);
-            }
-        }
-
         public Task<Boolean> SendContactClient(String contactInfo, DateTime requestDate, String contactName,
             String jobLocation, String contactType, String industryType)
         {
@@ -222,6 +154,7 @@ namespace Dustbuster.Droid
                 // serialise contact details into json
                 UserInfoPHP userObject = new UserInfoPHP(contactInfo, requestDate, contactName, jobLocation, contactType, industryType);
                 string jsonObj = JsonConvert.SerializeObject(userObject);
+
                 // creating multipart form
                 var multipart = new MultipartFormDataContent();
                 multipart.Add(new StringContent(contactInfo), String.Format("\"{0}\"", "contactInfomation"));
@@ -231,23 +164,27 @@ namespace Dustbuster.Droid
                 multipart.Add(new StringContent(contactType), String.Format("\"{0}\"", "contactType"));
                 multipart.Add(new StringContent(industryType), String.Format("\"{0}\"", "industryToContact"));
 
-                //var body = new StringContent(jsonObj, Encoding.UTF8, "multipart/form-data");
-                //multipart.Add(body);
-
                 Console.WriteLine("Debug Multipart!!!: " + multipart);
 
                 // creating the connection
                 string resultContent;
                 Boolean resultFlag;
+                WebServiceResponseMsg responseModel;
+
                 using (var client = new HttpClient())
                 {
                     client.BaseAddress = new Uri("http://www.rainstorm.com.au/app/Mailer/requestContact.php");
                     var result = client.PostAsync(client.BaseAddress, multipart).Result;
                     resultContent = result.Content.ReadAsStringAsync().Result;
-                    Console.WriteLine(resultContent);
+
+                    Console.WriteLine("Debug Message Content!!!: " + resultContent.ToString());
+
+                    responseModel = JsonConvert.DeserializeObject<WebServiceResponseMsg>(resultContent);
+                    
+                    Console.WriteLine("Debug Response!!!: "+responseModel.errors.ToString()+" "+responseModel.success);
                 }
 
-                if(resultContent == "true")
+                if(responseModel.success == true)
                 {
                     resultFlag = true;
                 }
@@ -267,64 +204,7 @@ namespace Dustbuster.Droid
             }
         }
 
-        public Task<Boolean> SendContactData(String contactInfo, DateTime requestDate, String contactName,
-            String jobLocation, String contactType, String industryType)
-        {
-
-            string webReturn;
-            Boolean webReturnFlag;
-            //String userObj = "contactInformation=" + contactInfo + "&requestedDate=" + requestDate+ "&contactsName=" + contactName + "&jobLocation=" + jobLocation + "&contactType="+contactType+"&industryToContact="+industryType;
-            String userObj = " ";
-            Uri uri = new Uri("http://www.rainstorm.com.au/app/Mailer/requestContact.php");
-            HttpWebRequest httpWebRequest = (HttpWebRequest)HttpWebRequest.Create(uri);
-            httpWebRequest.ContentType = "text/html";
-            httpWebRequest.Method = "POST";
-
-            httpWebRequest.Headers.Add("contactInformation", contactInfo);
-            httpWebRequest.Headers.Add("requestedDate", requestDate.ToString());
-            httpWebRequest.Headers.Add("contactsName", contactName);
-            httpWebRequest.Headers.Add("jobLocation", jobLocation);
-            httpWebRequest.Headers.Add("contactType", contactType);
-            httpWebRequest.Headers.Add("industryToContact", industryType);
-            httpWebRequest.ContentLength = userObj.Length;
-
-            try
-            {
-                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-                {
-                    streamWriter.Write(userObj);
-                    streamWriter.Flush();
-                }
-
-
-                using (WebResponse response = httpWebRequest.GetResponse())
-                {
-                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                    {
-                        webReturn = reader.ReadToEnd();
-                        Console.WriteLine("PHP Web Response: {0}", webReturn);
-                        reader.Close();
-                    }
-                }
-
-                if (webReturn == "true")
-                {
-                    webReturnFlag = true;
-                }
-                else
-                {
-                    webReturnFlag = false;
-                }
-
-                return Task.FromResult(webReturnFlag);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Web Service Exception: {0}", ex);
-                return Task.FromResult(false);
-            }
-        }
-
+        
 
 
     }

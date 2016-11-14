@@ -178,7 +178,7 @@ namespace Dustbuster
             }
         }
 
-        private string location;
+        //private string location;
         private double length;
         private double width;
         private double area;
@@ -193,12 +193,12 @@ namespace Dustbuster
 
         public string Location
         {
-            get { return location; }
+            get { return UserInfoPHP.Instance.jobLocation; }
             set
             {
-                if (location != value)
+                if (UserInfoPHP.Instance.jobLocation != value)
                 {
-                    location = value;
+                    UserInfoPHP.Instance.jobLocation = value;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Location"));
                 }
             }

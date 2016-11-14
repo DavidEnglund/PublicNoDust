@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
-namespace Dustbuster.Models
+namespace Dustbuster
 {
     public class UserInfoPHP
     {
@@ -16,6 +16,11 @@ namespace Dustbuster.Models
         public String contactType { get; set; }
         public String industryToContact { get; set; }
 
+        public UserInfoPHP()
+        {
+
+        }
+
         public UserInfoPHP(String contactInfoz, DateTime requestDatez, String contactNamez, String jobLocationz, String contactTypez, String industryTypez)
         {
             this.contactInformation = contactInfoz;
@@ -25,6 +30,22 @@ namespace Dustbuster.Models
             this.contactType = contactTypez;
             this.industryToContact = industryTypez;
         }
+
+        private static UserInfoPHP instance;
+
+        public static UserInfoPHP Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new UserInfoPHP();
+                }
+
+                return instance;
+            }
+        }
+
 
         public string PrintObject()
         {

@@ -175,14 +175,10 @@ namespace Dustbuster
                 {
                     // old not used superceded by php web service
                     //WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, etContact.Text, null);
-
-                    // php web service send via json
-                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactDetails(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
-
+                    
                     // php webservice send via web part
-                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, "perth", contactType, industryType);
+                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
 
-                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactData(etContact.Text, DatePicker.Date.ToString, etName.Text, " ", contactType, industryType);
                     if (WebContactResult)
                     {
                         await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
@@ -198,13 +194,10 @@ namespace Dustbuster
                     // old not used superceded by php web service
                     //WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, null, etContact.Text);
 
-                    // php web service send via json
-                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactDetails(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
-
                     // php webservice send via web part
-                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
 
-                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactData(etContact.Text, DatePicker.Date, etName.Text, null, contactType, industryType);
+                   
                     if (WebContactResult)
                     {
                         await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
