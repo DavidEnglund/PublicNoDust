@@ -53,6 +53,13 @@ namespace Dustbuster
                         Location = Location
                     };
 
+					//Starts Analytics up
+					AnalyticsClass.SetDetails();
+					//Send all needed data
+					AnalyticsClass.SendAnalytics(App.IndustryOption.ToString(), "Traffic", App.TrafficOption.ToString(), "Calendar", App.DurationOption.ToString(), "Rain", App.WeatherOption.ToString(), "Location", Location);
+
+					App.JobsDb.DbConnection.Insert(newJob);
+
                     ProductViewModel productViewModel = new ProductViewModel();
 					DbConnectionManager productsDB = App.ProductsDb;
 
@@ -77,6 +84,7 @@ namespace Dustbuster
 					AnalyticsClass.SendAnalytics(App.IndustryOption.ToString(), "Traffic", App.TrafficOption.ToString(), "Calendar", App.DurationOption.ToString(), "Rain", App.WeatherOption.ToString(), "Location", Location);
 
 					App.JobsDb.DbConnection.Insert(newJob);
+
 					await navigation.PushAsync(new ProductPage(productViewModel));
 
 					calculateTapped = false;
@@ -167,7 +175,7 @@ namespace Dustbuster
             }
         }
 
-        private string location;
+        //private string location;
         private double length;
         private double width;
         private double area;
@@ -182,12 +190,12 @@ namespace Dustbuster
 
         public string Location
         {
-            get { return location; }
+            get { return UserInfoPHP.Instance.jobLocation; }
             set
             {
-                if (location != value)
+                if (UserInfoPHP.Instance.jobLocation != value)
                 {
-                    location = value;
+                    UserInfoPHP.Instance.jobLocation = value;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Location"));
                 }
             }
