@@ -162,6 +162,10 @@
     <BundleResource Include="Resources\sunhawk_logo_lg.png" />
     <BundleResource Include="Resources\sunhawk_logo_md.png" />
     <BundleResource Include="Resources\sunhawk_logo_sm.png" />
+    <BundleResource Include="Resources\choice_calendar_1_month.png" />
+    <BundleResource Include="Resources\choice_calendar_1_to_6_months.png" />
+    <BundleResource Include="Resources\choice_calendar_over_1_month.png" />
+    <BundleResource Include="Resources\choice_calendar_over_6_months.png" />
     <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
