@@ -40,11 +40,7 @@
           </StackLayout>
         </StackLayout>
         <StackLayout Orientation="Horizontal">
-          <Image  Source="placeholder.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start">
-            <Image.GestureRecognizers>
-              <TapGestureRecognizer Command="{Binding TapAvatarCommand}" CommandParameter="http://www.tafenet.org" />
-            </Image.GestureRecognizers>
-          </Image>
+          <Image  Source="placeholder.png" HeightRequest="50" WidthRequest="50" VerticalOptions="Start" HorizontalOptions="Start" />
           <StackLayout Orientation="Vertical" Padding="10,3,0,0">
             <Grid Padding="0,0,0,-6">
               <Label Text="Ken H" FontAttributes="Bold" FontSize="15" TextColor="Black"/>
