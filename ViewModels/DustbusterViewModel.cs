@@ -6,27 +6,23 @@ namespace Dustbuster
 {
     public class DustbusterViewModel
     {
-        private ObservableCollection<ProductResult> products;
+        //private ObservableCollection<ProductResult> products;
+        private ObservableCollection<Job> jobs;
 
         public DustbusterViewModel()
         {
-            products = new ObservableCollection<ProductResult>();
-
-            products.Add(new ProductResult() { ProductName = "Gluon", DateCreated = DateTime.Now, Amount = "85000 L" });
-            products.Add(new ProductResult() { ProductName = "DustLig", DateCreated = DateTime.Now, Amount = "120 L" });
-            products.Add(new ProductResult() { ProductName = "Gluon26", DateCreated = DateTime.Now, Amount = "85 L" });
-            products.Add(new ProductResult() { ProductName = "Gluon", DateCreated = DateTime.Now, Amount = "180 L" });
-            products.Add(new ProductResult() { ProductName = "DustJel", DateCreated = DateTime.Now, Amount = "85 L" });
-            products.Add(new ProductResult() { ProductName = "Gluon", DateCreated = DateTime.Now, Amount = "160 L" });
-            products.Add(new ProductResult() { ProductName = "DustJel", DateCreated = DateTime.Now, Amount = "85 L" });
-            products.Add(new ProductResult() { ProductName = "Gluon", DateCreated = DateTime.Now, Amount = "85 L" });
-            products.Add(new ProductResult() { ProductName = "DustLig", DateCreated = DateTime.Now, Amount = "177 L" });
+            jobs = new ObservableCollection<Job>();
+            
+            foreach (Job j in App.JobsDb.GetJobs())
+            {
+                jobs.Add(j);
+            }
         }
 
-        public ObservableCollection<ProductResult> Products
+        public ObservableCollection<Job> Jobs
         {
-            get { return this.products; }
-            set { this.products = value; }
+            get { return jobs; }
+            set { jobs = value; }
         }
     }
 }

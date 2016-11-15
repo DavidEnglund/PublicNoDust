@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?disco" filename="Sunhawk_SP_svc.disco" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?wsdl" filename="Sunhawk_SP_svc.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?xsd=xsd1" filename="Sunhawk_SP_svc.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?xsd=xsd2" filename="Sunhawk_SP_svc0.xsd" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://student.mydesign.central.wa.edu.au/sunhawk_svc/Sunhawk_SP_svc.svc?xsd=xsd0" filename="Sunhawk_SP_svc1.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>

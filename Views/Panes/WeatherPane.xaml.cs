@@ -10,7 +10,7 @@ namespace Dustbuster
 		//init weather button group
 		SelectButtonGroup weatherButtonGroup = new SelectButtonGroup();
 
-		public WeatherPane() : base("Weather", "accordion_icon_weather_sun.png")
+		public WeatherPane() : base("Weather", "unselectedNone.png")
 		{
 			InitializeComponent();
 
@@ -21,6 +21,15 @@ namespace Dustbuster
 			weatherButtonGroup.AddButton(sunButton);
 		}
 
+		public override void OnPaneExpanded()
+		{
+            if (App.WeatherOption == WeatherOptions.None && Owner.IsPaneVisited(this))
+            {
+                Image = "unselectedNone.png";
+                weatherButtonGroup.Selected = null;
+            }
+		}
+
 		//rainy area button click
 		public void rainButton_clicked(object sender, EventArgs e)
 		{
@@ -28,12 +37,13 @@ namespace Dustbuster
 			Title = "Rain Expected";
 			Image = "accordion_icon_weather_rain.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			// set the option enum
+			App.WeatherOption = WeatherOptions.RainExpected;
+
+			if (!Owner.IsPaneVisited(((AccordionViewModel)BindingContext).LocationAreaPane))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
+				Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane);
 			}
-            // set the option enum
-            App.WeatherOption  = WeatherOptions.RainExpected;
         }
 
 		//sunny area button click
@@ -43,12 +53,13 @@ namespace Dustbuster
 			Title = "No Rain Expected";
 			Image = "accordion_icon_weather_sun.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["LocationArea"]))
+			// set the option enums
+			App.WeatherOption = WeatherOptions.NoRainExpected;
+
+			if (!Owner.IsPaneVisited(((AccordionViewModel)BindingContext).LocationAreaPane))
 			{
-				Owner.VisitPane(Owner.Panes["LocationArea"]);
+				Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane);
 			}
-            // set the option enums
-            App.WeatherOption = WeatherOptions.NoRainExpected;
         }
 	}
 }

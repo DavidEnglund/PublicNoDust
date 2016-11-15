@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <shape>
+      <gradient
+          android:startColor="#18b750"
+          android:endColor="#079ece"
+          android:angle="45"/>
+      </shape>
+  </item>
+  <item>
+    <bitmap
+        android:src="@drawable/splash_logo"
+        android:tileMode="disabled"
+        android:gravity="center"/>
+  </item>
+</layer-list>

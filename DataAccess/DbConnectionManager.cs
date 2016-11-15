@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Threading.Tasks;
 using SQLite;
-using Dustbuster.Interfaces;
 using Xamarin.Forms;
+using System;
 
 namespace Dustbuster
 {
@@ -20,17 +20,20 @@ namespace Dustbuster
 		private List<ProductDuration> durationList = new List<ProductDuration>
         {
             new ProductDuration(30,"Short Term"),
+            new ProductDuration(90,"Medium To Long Term"),        //applies to roads only
             new ProductDuration(180,"Medium Term"),
             new ProductDuration(360,"Long Term")
         };
 
 		private List<Supplier> supplierList = new List<Supplier>
         {
-            new Supplier(1,"Sunhawk","Sunhawk Phone","Sunhawk Email"),
-            new Supplier(2,"Rainstorm","Rainstorm Phone","Rainstorm Email")
+            new Supplier(1,"Sunhawk","0894592785","wa@sunhawk.com.au"),
+            new Supplier(2,"Rainstorm WA","0894520235","info@rainstorm.com.au"),
+            new Supplier(3,"Rainstorm Victoria","0352824024","info@rainstorm.com.au")
         };
 
-        private Job tempJob = new Job(1338, 0, 30, false, "Jobby McJobface"); //a pre-saved job for testing
+        //a pre-saved job for testing   TODO - Remove later
+        private Job tempJob = new Job(1, 1338, 1, 30, false, DateTime.Now, "tempJob object");
 
         //now that each area/duration combo has its own description (and different names for hydromulch),
         //this is pretty much useless, mebbe use for pictures or something
@@ -44,26 +47,29 @@ namespace Dustbuster
 
 		private List<ProductDescription> productDescriptions = new List<ProductDescription>
         {
-            new ProductDescription(1, 30,"1 App", 35, "Gluon","Gluon is a high performance polymer that can be sprayed onto soil surfaces to form a “veneer” or “crust” which can withstand wind speeds up to 120km/hr. Its crosslinking nature allows rain to seep through the crust instead of washing it away. A light dosage rate will give you enough protection from the elements for up to a month."),
-            new ProductDescription(1, 180,"1 App", 75, "Gluon","Gluon is a high performance polymer that can be sprayed onto soil surfaces to form a “veneer” or “crust” which can withstand wind speeds up to 120km/hr. Its crosslinking nature allows rain to seep through the crust instead of washing it away. A medium dosage rate will give your site protection for up to 6 months."),
-            new ProductDescription(1, 360,"1 App", 125, "Gluon","Gluon is a high performance polymer that can be sprayed onto soil surfaces to form a “veneer” or “crust” which can withstand wind speeds up to 120km/hr. Its crosslinking nature allows rain to seep through the crust instead of washing it away. To achieve all year round protection a high dosage rate will be required. Gluon can be used in combination with seed to achieve even longer lasting results."),
-            new ProductDescription(2, 30,"1 App/3 weeks", 150, "DustLig","DustLig is a sodium lignosulphonate derived from the wood pulp industry. It is a cheap, short term dust suppression, mainly used to achieve protection from wind erosion during weekends. Because it is water soluble re-application will be required after any rain event."),
-            new ProductDescription(2, 180,"1 App/3 weeks", 150, "DustLig","DustLig is a sodium lignosulphonate derived from the wood pulp industry. It is a cheap, short term dust suppression, mainly used to achieve protection from wind erosion. Because it is water soluble re-application will be required after any rain event. Without rain it is suggested to re-apply every 2 to 3 weeks for optimal protection."),
+            new ProductDescription(1, 30,"1 Application only", 35, "Gluon","Gluon is a high performance polymer that can be sprayed onto soil surfaces to form a “veneer” or “crust” which can withstand wind speeds up to 120km/hr. Its crosslinking nature allows rain to seep through the crust instead of washing it away. A light dosage rate will give you enough protection from the elements for up to a month."),
+            new ProductDescription(1, 180,"1 Application only", 75, "Gluon","Gluon is a high performance polymer that can be sprayed onto soil surfaces to form a “veneer” or “crust” which can withstand wind speeds up to 120km/hr. Its crosslinking nature allows rain to seep through the crust instead of washing it away. A medium dosage rate will give your site protection for up to 6 months."),
+            new ProductDescription(1, 360,"1 Application only", 125, "Gluon","Gluon is a high performance polymer that can be sprayed onto soil surfaces to form a “veneer” or “crust” which can withstand wind speeds up to 120km/hr. Its crosslinking nature allows rain to seep through the crust instead of washing it away. To achieve all year round protection a high dosage rate will be required. Gluon can be used in combination with seed to achieve even longer lasting results."),
+            new ProductDescription(2, 30,"1 Application/3 weeks", 150, "DustLig","DustLig is a sodium lignosulphonate derived from the wood pulp industry. It is a cheap, short term dust suppression, mainly used to achieve protection from wind erosion during weekends. Because it is water soluble re-application will be required after any rain event."),
+            new ProductDescription(2, 180,"1 Application/3 weeks", 150, "DustLig","DustLig is a sodium lignosulphonate derived from the wood pulp industry. It is a cheap, short term dust suppression, mainly used to achieve protection from wind erosion. Because it is water soluble re-application will be required after any rain event. Without rain it is suggested to re-apply every 2 to 3 weeks for optimal protection."),
             //explanation sheet entry 'DUSTLIG – TRAFFICED AREAS – SHORT TERM' is not on matrix (p1).
             /*
              //unused text from desc sheet:
                  DUSTLIG – TRAFFICED AREAS – SHORT TERM: DustLig is a sodium lignosulphonate derived from the wood pulp industry. It is a cheap, short term dust suppression used to achieve protection from wind erosion. For optimal protection on roads, regular re-application is needed to ensure build up in the road surface.
             */
-            new ProductDescription(5, 30,"1 App", 4000, "HydroMulch","HydroMulch is a cheap and environmentally friendly product to easily prevent water and wind erosion. Our proprietary blend comes as a full service application and will easily withstand any wind or rain event for up to 3 months. Protection from vehicles and pedestrians is required."),
-            new ProductDescription(5, 180,"1 App", 4000, "HydroMulch with Gluon","HydroMulch is a cheap and environmentally friendly product to easily prevent water and wind erosion. Our proprietary blend comes as a full service application. Mixed with Gluon will ensure extra strength and durability on the ground for up to 6 months. Protection from vehicles and pedestrians is required."),
-            new ProductDescription(5, 360,"1 App", 4000, "Hydroseeding","HydroSeeding is the best possible option to ensure long term erosion control. Our proprietary blend includes soil enhancers and fast germinating seeds to establish vegetation as soon as possible. Very popular on mine sites and waste treatment plant to complete revegetation requirements. We can add any type of seed or other additives to the product if requested."),
+            new ProductDescription(5, 30,"1 Application only", 4000, "HydroMulch","HydroMulch is a cheap and environmentally friendly product to easily prevent water and wind erosion. Our proprietary blend comes as a full service application and will easily withstand any wind or rain event for up to 3 months. Protection from vehicles and pedestrians is required."),
+            new ProductDescription(5, 180,"1 Application only", 4000, "HydroMulch with Gluon","HydroMulch is a cheap and environmentally friendly product to easily prevent water and wind erosion. Our proprietary blend comes as a full service application. Mixed with Gluon will ensure extra strength and durability on the ground for up to 6 months. Protection from vehicles and pedestrians is required."),
+            new ProductDescription(5, 360,"1 Application only", 4000, "Hydroseeding","HydroSeeding is the best possible option to ensure long term erosion control. Our proprietary blend includes soil enhancers and fast germinating seeds to establish vegetation as soon as possible. Very popular on mine sites and waste treatment plant to complete revegetation requirements. We can add any type of seed or other additives to the product if requested."),
 
-            new ProductDescription(3, 30,"3 App/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
-            new ProductDescription(3, 180,"3 App/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
-            new ProductDescription(3, 360,"3 App/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
-            new ProductDescription(4, 30,"1 App", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required."),
-            new ProductDescription(4, 180,"1 App/2 months", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required."),
-            new ProductDescription(4, 360,"1 App/2 months", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required.")
+            new ProductDescription(3, 30,"3 Applications/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
+            new ProductDescription(3, 90,"3 Applications/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
+            
+            new ProductDescription(4, 30,"1 Application only", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required."),
+            new ProductDescription(4, 90,"1 Application/2 months", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required."),
+
+            //medium and long term road solutions were folded into one result
+            //new ProductDescription(3, 360,"3 App/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
+            //new ProductDescription(4, 360,"1 App/2 months", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required.")
 
         };
 
@@ -105,11 +111,11 @@ namespace Dustbuster
             new ProductMatrix(30,1,true,4), 
             new ProductMatrix(30,1,false,3),  
             //medium term
-            new ProductMatrix(180,1,false,4),
-            new ProductMatrix(180,1,true,3), 
-            //long term
-            new ProductMatrix(360,1,false,4),
-            new ProductMatrix(360,1,true,3),
+            new ProductMatrix(90,1,false,4),
+            new ProductMatrix(90,1,true,3)
+            //long term (folded into medium term)
+            //new ProductMatrix(360,1,false,4),
+            //new ProductMatrix(360,1,true,3)
 
         };
 
@@ -121,23 +127,29 @@ namespace Dustbuster
             dbConnection = DependencyService.Get<ISQLite>().GetConnection(fileName);
         }
 
-        public DbConnectionManager()
-        {
-            dbConnection = DependencyService.Get<ISQLite>().GetConnection();
-        }
+        //public DbConnectionManager()
+        //{
+        //    dbConnection = DependencyService.Get<ISQLite>().GetConnection();
+        //}
 
 		public SQLiteConnection DbConnection
 		{
 			get { return this.dbConnection; }
 		}
+
+        public int GetTableInfo(string tabletype)
+        {
+            return dbConnection.GetTableInfo(tabletype).Count;
+        }
         
         //data retrieval methods
         #region JobsDbAccessMethods
         public IEnumerable<Job> GetJobs()
         {
             lock (locker)
+
             {
-                return (from i in dbConnection.Table<Job>() select i).ToList();
+               return dbConnection.Query<Job>("SELECT * FROM [Job]").ToList();
             }
         }
 
@@ -150,9 +162,35 @@ namespace Dustbuster
         {
             return dbConnection.Delete(job);
         }
+
+        public UserInfo GetUserInfo()
+        {
+            int key = 1;
+            return dbConnection.Get<UserInfo>(key);
+        }
+
+        public void UpdateUserInfo(UserInfo user)
+        {
+            //user.ID must be 1
+            lock (locker)
+            {
+                dbConnection.Update(user);
+            }
+        }
         #endregion
 
         #region ProductDbAccessMethods
+
+        public int GetDBVersion()
+        {
+            //couldnt get pragma user_version to work
+            int key = 1;
+            lock (locker)
+            {
+                return dbConnection.Get<DBMetaData>(key).DBVersion;
+            }
+        }
+
         public IEnumerable<ProductDuration> GetDurationList()
         {
             lock (locker)
@@ -180,10 +218,17 @@ namespace Dustbuster
         //should parameterise this
         public IEnumerable<ProductMatrix> SelectProducts(Job job)
         {
+            int rainToInt = 0;
+            if (job.WillRain)
+            {
+                rainToInt = 1;
+            }
+
             lock (locker)
             {
-				return dbConnection.Query<ProductMatrix>($"SELECT * FROM [ProductMatrix] WHERE [DurationMaxDays] = {job.DurationMaxDays}" +
-				                                         $" AND [AreaTypeId] = {job.AreaTypeID} AND [WillRain] = {(job.WillRain ? 1 : 0)}").ToList();
+				return dbConnection.Query<ProductMatrix>("SELECT * FROM [ProductMatrix] " +
+                                                         $"WHERE [DurationMaxDays] = {job.DurationMaxDays} " +
+				                                         $"AND [AreaTypeId] = {job.AreaTypeID} AND [WillRain] = {rainToInt}").ToList();
             }
         }
 
@@ -210,7 +255,6 @@ namespace Dustbuster
         {
             lock (locker)
             {
-                //linq and sqlite version for reference
                 return dbConnection.Table<ProductDescription>().Where(c => c.ProductId == pId && c.DurationMaxDays == duration).FirstOrDefault();
             }
         }
@@ -266,7 +310,6 @@ namespace Dustbuster
             }
         }
 
-
         #endregion
         //the following methods build the DB locally and may need to be edited once the external db is deployed
         #region BuildAndPopulateDbLocally
@@ -286,8 +329,9 @@ namespace Dustbuster
             Task task4 = Task.Run(() => FillProductMatrixTable());
             Task task5 = Task.Run(() => FillSupplierTable());
             Task task6 = Task.Run(() => FillProductDescriptionTable());
+            Task task7 = Task.Run(() => setDBVersion());
 
-            await Task.WhenAll(task1, task2, task3, task4, task5, task6);
+            await Task.WhenAll(task1, task2, task3, task4, task5, task6, task7);
         }
 
         public void CreateProductTables()
@@ -298,12 +342,25 @@ namespace Dustbuster
             dbConnection.CreateTable<ProductMatrix>();
             dbConnection.CreateTable<Supplier>();
             dbConnection.CreateTable<ProductDescription>();
+            dbConnection.CreateTable<DBMetaData>();
         }
 
         public void CreateJobTable()
         {
             dbConnection.CreateTable<Job>();
-            dbConnection.Insert(tempJob);  //adds a demo job for debug
+            dbConnection.CreateTable<UserInfo>();
+            //dbConnection.Insert(tempJob); //a demo job for debug
+            //dbConnection.Insert(new Job(0, 25000, 1, 90, true, DateTime.Now, "second Job object"));
+        }
+
+
+        public void setDBVersion()
+        {
+            DBMetaData newVer = new DBMetaData(4);
+            lock (locker)
+            {
+                dbConnection.Insert(newVer);
+            }
         }
 
         //set to return no. of altered rows, reset to void later if nec

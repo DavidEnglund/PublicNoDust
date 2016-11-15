@@ -1,63 +1,68 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Dustbuster.SettingsPage"
-             Title="Settings">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.SettingsPage" Title="Settings">
   <StackLayout>
-  <StackLayout Padding="50,10,50,10">
+    <StackLayout Padding="0,10,0,10">
       
-                <Label x:Name="NameLabel"
-                       Text="Your Name:"
-                       VerticalOptions="Center"
-                       TextColor="Black"/>
+      <!-- Dip label to left -->
+      <StackLayout Padding="35,0,35,0">
+        <!-- Enter Name Label -->
+        <Label x:Name="lblName" Text="Your Name:" VerticalOptions="Center" TextColor="#5a5d5e" FontSize="17"/>
+      </StackLayout>
+      
+      <!-- Center Entry -->
+      <StackLayout Padding="50,0,50,0">
+        <!-- Name Entry -->
+        <Entry x:Name="etName" BackgroundColor="#d9d9d9" Text="{Binding CustomerName, Mode=TwoWay}" Placeholder="E.g. John Smith"/>
+      </StackLayout>
+      
+      <StackLayout Padding="35,0,35,0">
+        <!-- Dip label to left -->
+        <!-- Contact Method Label -->
+        <Label x:Name="lblContactMethod" Text="Contact Method:" TextColor="#5a5d5e" FontSize="17"/>
+      </StackLayout>
+      
+      <!-- Center Picker -->
+      <StackLayout Padding="50,0,50,0">
+        <!-- Contact Method Picker (Phone & Email) -->
+        <Picker x:Name="ContactMethodPicker" SelectedIndex="{Binding ContactMethod, Mode=TwoWay}" BackgroundColor="#d9d9d9">
+          <Picker.Items>
+            <x:String>Phone</x:String>
+            <x:String>Email</x:String>
+          </Picker.Items>
+        </Picker>
+      </StackLayout>
+      
+      <!-- Center Entry -->
+      <StackLayout Padding="50,0,50,0">
+        <!-- Contact Info Entry (Phone & Email) -->
+        <Entry x:Name="etContactInfo" BackgroundColor="#d9d9d9" Text="{Binding ContactInfo, Mode=TwoWay}" WidthRequest="10" Placeholder="E.g. 0412345678"/>
+      </StackLayout>
+      
+      <!-- Stacklayout for Analytics Switch & Label -->
+      <StackLayout Orientation="Horizontal" Padding="50,20,50,0">
+        <!-- Analytics Switch  -->
+        <Switch x:Name="AnalyticsSwitch" IsToggled="{Binding EnableAnalytics, Mode=TwoWay}"/>
+        <!-- Analytics Label -->
+        <Label x:Name="lblAnalytics" Text="Send Analytics" HorizontalTextAlignment="End" TextColor="#5a5d5e" FontSize="17" VerticalTextAlignment="Center"/>
+      </StackLayout>
 
-                <Entry x:Name="NameTextEntry"
-                       BackgroundColor="#d9d9d9"
-					   Text="{Binding CustomerName, Mode=TwoWay}"
-                       Placeholder="E.g. John Smith"/>
-			
-                <Label x:Name="ContactMethodLabel"
-                       Text="Contact Method:"
-                       TextColor="Black" />
-
-                <Picker x:Name="ContactMethodPicker"
-                        SelectedIndex="{Binding ContactMethod, Mode=TwoWay}"
-                        BackgroundColor="#d9d9d9">
-                    <Picker.Items>
-			            <x:String>Phone</x:String> 
-			            <x:String>Email</x:String>
-			        </Picker.Items>
-				</Picker>
-
-                <Entry x:Name="ContactInfoEntry"
-                       BackgroundColor="#d9d9d9"
-					   Text="{Binding ContactInfo, Mode=TwoWay}"
-                       WidthRequest="10"  />
-
-          <StackLayout Orientation="Horizontal"
-                       Padding="0,20,0,0">
-
-               <Switch x:Name="AnalyticsSwitch"
-                       IsToggled="{Binding EnableAnalytics, Mode=TwoWay}"/>
-
-                <Label x:Name="AnalyticsLabel"
-                       Text="Send Analytics"
-                       HorizontalTextAlignment="End"
-                       TextColor="Black"/>
-          </StackLayout>
-
-          <StackLayout Orientation="Horizontal"
-                       Padding="0,0,0,0">
-        
-               <Switch x:Name="ReadModeSwitch"
-                       IsToggled="{Binding EnableReadMode, Mode=TwoWay}" />
-
-                <Label x:Name="ReadModeLabel"
-                       Text="Reading Mode"
-                       HorizontalTextAlignment="End"
-                       TextColor="Black" />
-           </StackLayout>
-     
+      <!-- Online Help -->
+      <StackLayout VerticalOptions="FillAndExpand" Padding="35,35,35,0">
+        <Label Text="Select a topic to view the online help:" TextColor="#5a5d5e" FontSize="17"/>
+        <!-- List View that holds the online help links -->
+        <ListView x:Name="onlineHelp" HasUnevenRows="True" ItemsSource="{Binding Links}" ItemSelected="onlineHelpLink_Clicked">
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <ViewCell>
+                <StackLayout Padding="0,10,0,0">
+                  <Label Text="{Binding Title}" TextColor="#5a5d5e" FontSize="17"/>
+                </StackLayout>
+              </ViewCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </StackLayout>
+    
     </StackLayout>
   </StackLayout>
 </ContentPage>

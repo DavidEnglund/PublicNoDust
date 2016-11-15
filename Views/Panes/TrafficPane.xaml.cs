@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +14,7 @@ namespace Dustbuster
 		//init traffic button group
 		SelectButtonGroup trafficButtonGroup = new SelectButtonGroup();
 
-		public TrafficPane() : base("Traffic", "accordion_icon_traffic_light.png")
+		public TrafficPane() : base("Traffic", "unselectedNone.png")
 		{
 			InitializeComponent();
 
@@ -23,6 +23,9 @@ namespace Dustbuster
 			//add trafficked and non trafficked button to button group
 			trafficButtonGroup.AddButton(traffickedButton);
 			trafficButtonGroup.AddButton(nonTraffickedButton);
+
+			//set traficOption to none
+			App.TrafficOption = TrafficOptions.None;
 		}
 
 		//trafficked button click
@@ -32,12 +35,27 @@ namespace Dustbuster
 			Title = "Trafficked Area";
 			Image = "accordion_icon_traffic_light.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
+			if (App.TrafficOption != TrafficOptions.TraffickedArea)
 			{
-				Owner.VisitPane(Owner.Panes["Calendar"]);
+				/*if (App.TrafficOption == TrafficOptions.NonTraffickedArea)
+				{
+					Owner.Panes["Calendar"].OnPaneInvalidate();
+				}*/
+
+				//set the option enum
+				App.TrafficOption = TrafficOptions.TraffickedArea;
+				App.WeatherOption = WeatherOptions.None;
+				App.DurationOption = DurationOptions.None;
+				//visit calendar pane
+
+				if (Owner.IsPaneVisited(((AccordionViewModel)BindingContext).WeatherPane))
+				{
+					Owner.VisitPane(((AccordionViewModel)BindingContext).WeatherPane, ((AccordionViewModel)BindingContext).CalendarPane);
+				}
+				else {
+					Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane, ((AccordionViewModel)BindingContext).CalendarPane);
+				}
 			}
-            // set the option enum
-            App.TrafficOption = TrafficOptions.TraffickedArea;
 		}
 
 		//non trafficked button click
@@ -45,14 +63,22 @@ namespace Dustbuster
 		{
 			trafficAnswer.Text = "No, my area is not a trafficked area";
 			Title = "Non Trafficked Area";
-			Image = "accordion_icon_traffic_openroad.png";
+			Image = "sandPile_icon.png";
 
-			if (!Owner.IsPaneVisited(Owner.Panes["Calendar"]))
+			if (App.TrafficOption != TrafficOptions.NonTraffickedArea)
 			{
-				Owner.VisitPane(Owner.Panes["Calendar"]);
+				if (App.TrafficOption == TrafficOptions.TraffickedArea)
+				{
+					((AccordionViewModel)BindingContext).CalendarPane.OnPaneInvalidate();
+				}
+
+				//set the option enum
+				App.TrafficOption = TrafficOptions.NonTraffickedArea;
+				App.WeatherOption = WeatherOptions.None;
+				App.DurationOption = DurationOptions.None;
+				//visit calendar pane
+				Owner.VisitPane(((AccordionViewModel)BindingContext).LocationAreaPane, ((AccordionViewModel)BindingContext).CalendarPane);
 			}
-            // set the option enum
-            App.TrafficOption = TrafficOptions.NonTraffickedArea;
-        }
+		}
 	}
 }

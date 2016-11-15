@@ -1,5 +1,6 @@
-﻿using Dustbuster.Views;
+using Dustbuster.Views;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace Dustbuster
 {
@@ -13,30 +14,25 @@ namespace Dustbuster
 			InitializeComponent();
 			InitializeDatabase();
 
-            //Set a style for readingmode to be enabled and disabled
-            if (Settings.EnableReadMode)
-            {
-                Resources["labelStyle"] = Resources["readModeLabelStyle"];  
-            }
-            else
-            {
-                Resources["labelStyle"] = Resources["normalLabelStyle"];
-            }
-
 			MainPage = new NavigationPage(new DustbusterPage())
 			{
 				BarBackgroundColor = Color.FromHex("#18b750")
-            };
-        }
+			};
+		}
 
-		private async void InitializeDatabase()
+		private void InitializeDatabase()
 		{
 			productsDb = new DbConnectionManager("ProductDB.db3");
 			jobsDb = new DbConnectionManager("JobDB.db3");
 
-			await productsDb.FillProductTablesAsync();
-			jobsDb.CreateJobTable();
-		}
+            //productsDb.FillProductTablesAsync();
+            Debug.WriteLine("DATABASE DEBUG: Job tables pre Job table check: {0}", jobsDb.GetTableInfo("Job"));
+            if (jobsDb.GetTableInfo("Job") == 0)
+            {
+                jobsDb.CreateJobTable();
+            }
+            Debug.WriteLine("DATABASE DEBUG: Job tables post Job table check: {0}", jobsDb.GetTableInfo("Job"));
+        }
 
 		public static DbConnectionManager ProductsDb
 		{
@@ -53,27 +49,34 @@ namespace Dustbuster
 			get;
 			set;
 		}
-        #region davids enums set
-        public static TrafficOptions TrafficOption
-        {
-            get;
-            set;
-        }
-        public static DurationOptions DurationOption
-        {
-            get;
-            set;
-        }
-        public static  WeatherOptions WeatherOption
-        {
-            get;
-            set;
-        }
-        #endregion
-        protected override void OnStart()
+		#region davids enums set
+		public static TrafficOptions TrafficOption
+		{
+			get;
+			set;
+		}
+		public static DurationOptions DurationOption
+		{
+			get;
+			set;
+		}
+		public static WeatherOptions WeatherOption
+		{
+			get;
+			set;
+		}
+		#endregion
+
+        //changed method to async to allow database update R.L
+		protected async override void OnStart()
 		{
 			// Handle when your app starts
-		}
+			// this will start the calendar access service for iOS - for android it currently does nothing
+			// DependencyService.Get<IReminderService>(DependencyFetchTarget.GlobalInstance).CreateService();
+            // Starts updating the product database. R.L
+            //await DependencyService.Get<IWebServiceConnect>().GetDBVersion();
+            //var result = await DependencyService.Get<IWebServiceConnect>().GetDB();
+        }
 
 		protected override void OnSleep()
 		{
@@ -84,42 +87,13 @@ namespace Dustbuster
 		{
 			// Handle when your app resumes
 		}
-
-		public class ListDataViewCell : ViewCell
-		{
-			public ListDataViewCell()
-			{
-				var label = new Label()
-				{
-					//Font = Font.SystemFontOfSize(NamedSize.Default),
-					TextColor = Color.Blue
-				};
-				label.SetBinding(Label.TextProperty, new Binding("TextValue"));
-				label.SetBinding(Label.ClassIdProperty, new Binding("DataValue"));
-				View = new StackLayout()
-				{
-					Orientation = StackOrientation.Vertical,
-					VerticalOptions = LayoutOptions.StartAndExpand,
-					Padding = new Thickness(12, 8),
-					Children = { label }
-				};
-			}
-		}
-
-		public class SimpleObject
-		{
-			public string TextValue
-			{ get; set; }
-			public string DataValue
-			{ get; set; }
-		}
 	}
 
-	public enum IndustryOptions { Civil, Mining };
-    #region davids enums create
-    // added some more enums for all of the users choices to be stored and used - david
-    public enum TrafficOptions { TraffickedArea, NonTraffickedArea };
-    public enum DurationOptions { UnderAMonth = 14,OverAMonth = 30,OverSixMonths=180};
-    public enum WeatherOptions { RainExpected,NoRainExpected};
-    #endregion
+	public enum IndustryOptions { Civil, Mining, None };
+	#region davids enums create
+	// added some more enums for all of the users choices to be stored and used - david
+	public enum TrafficOptions { NonTraffickedArea, TraffickedArea, None };
+	public enum DurationOptions { Under1Month=30, Over1Month=90, Under6Months=180, Over6Months=360, None };
+	public enum WeatherOptions { RainExpected, NoRainExpected, None };
+	#endregion
 }

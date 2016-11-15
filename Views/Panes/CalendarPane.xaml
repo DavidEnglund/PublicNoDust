@@ -3,92 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.CalendarPane">
-	<StackLayout>
-		<!--Header Text-->
-		<ContentView Padding="15">
-			<Label
+  <StackLayout>
+    <!--Header Text-->
+    <ContentView Padding="20">
+      <Label
 				x:Name="calendarHeader"
-				Text="How long do you expect to require a solution?"
-				FontSize="21"
-				FontAttributes="Bold"
-				HorizontalOptions="Center"
+				Text="Is the solution for a short or long duration?"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+        FontSize="18"
         Style="{DynamicResource labelStyle}"
 			/>
-		</ContentView>
+    </ContentView>
 
-		<!--Button Choice Group-->
-		<StackLayout Orientation="Vertical" HorizontalOptions="Center">
-			<Grid>
-				<!--Duration Under 30 days Button-->
-				<local:SelectImageButton
-					x:Name="under30Button"
-					SelectedBorderColor="Black"
-					SelectedBorderWidth="0"
-					SelectedImage="choice_calendar_under30.png"
+    <RelativeLayout x:Name="layoutDurationButtons"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
 
-					UnselectedBorderColor="White"
-					UnselectedBorderWidth="0"
-					UnselectedImage="choice_calendar_under30.png"
+      <!-- Button properties are added dynamically -->
+      <local:SelectImageButton x:Name="btnUnder30" Padding="26"/>
+      <local:SelectImageButton x:Name="btnOver30Under180" Padding="26"/>
+      <local:SelectImageButton x:Name="btnOver180" Padding="26"/>
 
-					Style="{DynamicResource selectableButtonStyle}"
-						
-					Padding="26"
-					Grid.Column="0"
-					Clicked="under30Button_clicked"
-				/>
+    </RelativeLayout>
 
-				<!--Duration Under 180days /or/ Over 30days -->
-				<local:SelectImageButton
-					x:Name="over30Under180Button"
-					SelectedBorderColor="Black"
-					SelectedBorderWidth="0"
-					SelectedBackgroundColor="Black"
-					SelectedImage="choice_calendar_over30.png"
 
-					UnselectedBorderColor="White"
-					UnselectedBorderWidth="0"
-					UnselectedBackgroundColor="White"
-					UnselectedImage="choice_calendar_over30.png"
-						
-					Style="{DynamicResource selectableButtonStyle}"
-
-					Padding="26"
-					Grid.Column="1"
-					Clicked="over30Under180Button_clicked"
-				/>
-
-				<!--Duration Over 180 days-->
-				<!--Not shown in all accordion flows-->
-				<local:SelectImageButton
-					x:Name="over180Button"
-					SelectedBorderColor="Black"
-					SelectedBorderWidth="0"
-					SelectedBackgroundColor="Black"
-					SelectedImage="choice_calendar_over180.png"
-
-					UnselectedBorderColor="White"
-					UnselectedBorderWidth="0"
-					UnselectedBackgroundColor="White"
-					UnselectedImage="choice_calendar_over180.png"
-
-					Style="{DynamicResource selectableButtonStyle}"
-						
-					Padding="26"
-					Grid.Column="2"
-					Clicked="over180Button_clicked"
-				/>
-			</Grid>
-
-		<!--Answer Choice Text-->
-		</StackLayout>
-		<ContentView Padding="40,20,40,10">
-			<Label
+    <!--Answer Choice Text-->
+    <ContentView Padding="0,10,0,10" HorizontalOptions="Center">
+      <Label
 				x:Name="calendarAnswer"
 				Text="Tap on a calendar to select your option"
-				XAlign="Center"
-				FontSize="17"
-				HorizontalOptions="CenterAndExpand"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+        FontSize="18"
+				Style="{DynamicResource labelStyle}"
+				
 			/>
-		</ContentView>
-	</StackLayout>
+    </ContentView>
+  </StackLayout>
 </local:AccordionPane>

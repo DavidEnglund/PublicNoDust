@@ -8,13 +8,17 @@ namespace Dustbuster
 	{
 		public LocationAreaPane() : base("Location and Area", "accordion_icon_location.png")
         {
-            BindingContext = new AreaViewModel();
-            InitializeComponent(); 
-
+            InitializeComponent();
 			Header.SetDynamicResource(StyleProperty, "locationAccordionStyle");
-
-
         }
-	}
+
+        /**
+         * Hide active soft-keyboard when pane dismisses or shrinks
+         **/
+        public override void OnPaneCollapsed()
+        {
+            DependencyService.Get<IKeyboardInteraction>().HideKeyboard();
+        }
+    }
 }
 

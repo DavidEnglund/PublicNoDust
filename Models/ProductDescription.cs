@@ -7,7 +7,20 @@ namespace Dustbuster
 	{
 		public ProductDescription() { }
 
-		public ProductDescription(int productId, int duration, string applications, int concentration, string name, string description)
+
+
+        public ProductDescription(int productId, int duration, string applications, int concentration, string name, string description)
+        {
+            ProductId = productId;
+            DurationMaxDays = duration;
+            ProductName = name;
+            ProductDesc = description;
+            ApplicationsRequired = applications;
+            Concentration = concentration;
+         
+        }
+
+        public ProductDescription(int productId, int duration, string applications, int concentration, string name, string description, string imageSource)
 		{
 			ProductId = productId;
 			DurationMaxDays = duration;
@@ -15,6 +28,7 @@ namespace Dustbuster
 			ProductDesc = description;
 			ApplicationsRequired = applications;
 			Concentration = concentration;
+            ImageSource = imageSource;
 		}
 
 		[PrimaryKey, AutoIncrement]
@@ -25,6 +39,7 @@ namespace Dustbuster
 		public string ProductDesc { get; set; }
 		public string ApplicationsRequired { get; set; }
 		public int Concentration { get; set; }  //mL per square m
+        public string ImageSource { get; set; } // Image binding
 
 		public float GetQuantity(int area)
 		{

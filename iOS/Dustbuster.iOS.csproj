@@ -24,7 +24,7 @@
     <MtouchArch>i386, x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>True</MtouchDebug>
-    <MtouchSdkVersion>9.3</MtouchSdkVersion>
+    <MtouchSdkVersion>10.0</MtouchSdkVersion>
     <MtouchProfiling>False</MtouchProfiling>
     <MtouchFastDev>False</MtouchFastDev>
     <MtouchUseLlvm>False</MtouchUseLlvm>
@@ -37,6 +37,7 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchFloat32>False</MtouchFloat32>
     <MtouchEnableGenericValueTypeSharing>False</MtouchEnableGenericValueTypeSharing>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -58,9 +59,22 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer: englund.david@gmail.com (GS2RJMHRKV)</CodesignKey>
+    <MtouchDebug>True</MtouchDebug>
+    <MtouchSdkVersion>10.0</MtouchSdkVersion>
+    <MtouchLink>None</MtouchLink>
+    <MtouchProfiling>False</MtouchProfiling>
+    <MtouchFastDev>False</MtouchFastDev>
+    <MtouchUseLlvm>False</MtouchUseLlvm>
+    <MtouchUseThumb>False</MtouchUseThumb>
+    <MtouchEnableBitcode>False</MtouchEnableBitcode>
+    <MtouchUseSGen>False</MtouchUseSGen>
+    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <OptimizePNGs>True</OptimizePNGs>
+    <MtouchTlsProvider>Default</MtouchTlsProvider>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchFloat32>False</MtouchFloat32>
+    <DeviceSpecificBuild>False</DeviceSpecificBuild>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -98,13 +112,29 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\DialerIOS.cs" />
+    <Compile Include="Interfaces\IOSReminderService.cs" />
+    <Compile Include="Interfaces\KeyboardInteractionIOS.cs" />
+    <Compile Include="Interfaces\SQLiteIOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <BundleResource Include="Resources\app_title.png" />
     <BundleResource Include="Resources\choice_calendar_over180.png" />
     <BundleResource Include="Resources\choice_calendar_under30.png" />
-    <BundleResource Include="Resources\choice_calendar_under180.png" />
     <BundleResource Include="Resources\choice_traffic_light.png" />
     <BundleResource Include="Resources\choice_traffic_openroad.png" />
     <BundleResource Include="Resources\choice_weather_rain.png" />
@@ -120,10 +150,19 @@
     <BundleResource Include="Resources\accordion_icon_weather_rain.png" />
     <BundleResource Include="Resources\accordion_icon_weather_sun.png" />
     <BundleResource Include="Resources\choice_calendar_over30.png" />
+    <Compile Include="Renderers\CarouselLayoutRenderer.cs" />
     <Compile Include="Renderers\SelectImageButtonRenderer.cs" />
     <BundleResource Include="Resources\about_icon.png" />
     <BundleResource Include="Resources\hamburger_icon.png" />
     <BundleResource Include="Resources\settings_icon.png" />
+    <BundleResource Include="Resources\sandPile_button_img.png" />
+    <BundleResource Include="Resources\rainstrom_logo_lg.png" />
+    <BundleResource Include="Resources\rainstrom_logo_md.png" />
+    <BundleResource Include="Resources\rainstrom_logo_sm.png" />
+    <BundleResource Include="Resources\sunhawk_logo_lg.png" />
+    <BundleResource Include="Resources\sunhawk_logo_md.png" />
+    <BundleResource Include="Resources\sunhawk_logo_sm.png" />
+    <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,28 +170,67 @@
     <Content Include="Entitlements.plist" />
     <None Include="packages.config" />
     <BundleResource Include="Resources\accordion_icon_traffic_openroad.png" />
+    <BundleResource Include="Resources\accordion_icon_calendar_none.png" />
+    <BundleResource Include="Resources\choice_calendar_under180.png" />
+    <BundleResource Include="Resources\unselectedNone.png" />
+    <None Include="Properties\app.manifest" />
+    <Compile Include="Interfaces\WebServiceSPConnectClient.cs" />
+    <BundleResource Include="Resources\david.png" />
+    <BundleResource Include="Resources\erdal.png" />
+    <BundleResource Include="Resources\hamburger_icon_black.png" />
+    <BundleResource Include="Resources\jayden.png" />
+    <BundleResource Include="Resources\michael.png" />
+    <BundleResource Include="Resources\michay.png" />
+    <BundleResource Include="Resources\mikey.png" />
+    <BundleResource Include="Resources\monique.png" />
+    <BundleResource Include="Resources\nichola.png" />
+    <BundleResource Include="Resources\placeholder.png" />
+    <BundleResource Include="Resources\readingMode_glasses.png" />
+    <BundleResource Include="Resources\readingMode_img.png" />
+    <BundleResource Include="Resources\sandPile_icon.png" />
+    <BundleResource Include="Resources\ProductDB.db3" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Plugin.Settings, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions, Version=2.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.5.1.0\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlite-net-pcl.1.2.0\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.batteries_green, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a84b7dcfb1391f7f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.bundle_green.1.0.1\lib\Xamarin.iOS10\SQLitePCLRaw.batteries_green.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1488e028ca7ab535, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.core.1.0.1\lib\Xamarin.iOS10\SQLitePCLRaw.core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLitePCLRaw.provider.sqlite3, Version=1.0.0.0, Culture=neutral, PublicKeyToken=62684c7b4f184e3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\SQLitePCLRaw.provider.sqlite3.ios_unified.1.0.1\lib\Xamarin.iOS10\SQLitePCLRaw.provider.sqlite3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
     <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.2.0.1.6495\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Xamarin.Forms.2.3.2.127\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform">
-      <HintPath>..\packages\Xamarin.Forms.2.0.1.6495\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Xamarin.Forms.2.3.2.127\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Platform.iOS">
-      <HintPath>..\packages\Xamarin.Forms.2.0.1.6495\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Xamarin.Forms.2.3.2.127\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.2.0.1.6495\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Xamarin.Forms.2.3.2.127\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dustbuster.csproj">
@@ -161,11 +239,5 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets'))" />
-  </Target>
-  <Import Project="..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.0.1.6495\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.2.127\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
 </Project>

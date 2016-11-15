@@ -4,28 +4,30 @@
 		     xmlns:local="clr-namespace:Dustbuster;assembly=Dustbuster"
              x:Class="Dustbuster.TrafficPane">
 
-	<StackLayout>
-		<!--Header Text-->
-		<ContentView Padding="15">
-			<Label
+  <StackLayout>
+    <!--Header Text-->
+    <ContentView Padding="20">
+      <Label
 				x:Name="trafficHeader"
-				Text="Is your solution for a trafficed area?"
-				FontSize="21"
-				FontAttributes="Bold"
-				HorizontalOptions="Center"
-        Style="{DynamicResource labelStyle}"
-			/>
-		</ContentView>
+				Text="Is your solution for a trafficked area?"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+        FontSize="18"
+        Style="{DynamicResource labelStyle}"/>
+    </ContentView>
 
-		<!--Button Choice Group-->
-		<StackLayout Orientation="Vertical" HorizontalOptions="Center">
-			<Grid>
-				<!--Traffic Button-->
-				<local:SelectImageButton
+    <!--Button Choice Group-->
+    <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+      <Grid>
+        <!--Traffic Button-->
+        <local:SelectImageButton
 					x:Name="traffickedButton"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
 					SelectedImage="choice_traffic_light.png"
+
+					HoldBorderWidth="0"
+					HoldBorderColor="Black"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
@@ -38,16 +40,21 @@
 					Clicked="traffickedButton_clicked"
 				/>
 
-				<!--OpenRoad Button-->
-				<local:SelectImageButton
+        <!--OpenRoad Button-->
+        <local:SelectImageButton
 					x:Name="nonTraffickedButton"
 					SelectedBorderColor="Black"
 					SelectedBorderWidth="0"
-					SelectedImage="choice_traffic_openroad.png"
+					SelectedImage="sandPile_button_img.png"
+          HeightRequest="85"
+          WidthRequest="85"
+
+					HoldBorderWidth="0"
+					HoldBorderColor="Black"
 
 					UnselectedBorderColor="White"
 					UnselectedBorderWidth="0"
-					UnselectedImage="choice_traffic_openroad.png"
+					UnselectedImage="sandPile_button_img.png"
 
 					Style="{DynamicResource selectableButtonStyle}"
 
@@ -55,20 +62,20 @@
 					Grid.Column="1"
 					Clicked="nonTraffickedButton_clicked"
 				/>
-			</Grid>
+      </Grid>
 
-		<!--Answer Choice Text-->
-		</StackLayout>
-		<ContentView Padding="40,20,40,10">
-			<Label
+      <!--Answer Choice Text-->
+    </StackLayout>
+    <ContentView Padding="40,20,40,10">
+      <Label
 				x:Name="trafficAnswer"
-				Text="Tap on the traffic light or open road to select your option"
-				XAlign="Center"
-				FontSize="17"
-				HorizontalOptions="CenterAndExpand"
+				Text="Tap on the traffic light or open area to select your option"
+        VerticalTextAlignment="Center"
+        HorizontalTextAlignment="Center"
+        FontSize="18"
         Style="{DynamicResource labelStyle}"
 			/>
-		</ContentView>
-	</StackLayout>
+    </ContentView>
+  </StackLayout>
 
 </local:AccordionPane>

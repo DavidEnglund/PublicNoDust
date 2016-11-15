@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Dustbuster.ContactRequestPage" Title="Contact Request">
+    <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+    <!-- Wrapper -->
+    <StackLayout Padding="0,10,0,10">
+        <!-- LABEL name -->
+        <StackLayout Padding="35,0,35,0">
+            <Label Text="Your Name:" VerticalOptions="Center" TextColor="#5a5d5e" FontAttributes="Bold" FontSize="Medium" />
+        </StackLayout>
+        <!-- Name Entry -->
+        <StackLayout Padding="52,0,52,0">
+            <Entry Placeholder="E.g. John Smith" x:Name="etName" BackgroundColor="#d9d9d9" />
+        </StackLayout>
+        <!-- LABEL contact info -->
+        <StackLayout Padding="35,0,35,0">
+            <Label Text="Contact Info:" TextColor="#5a5d5e" FontSize="Medium" FontAttributes="Bold" />
+        </StackLayout>
+        <!-- Phone/Email switcher button  -->
+        <StackLayout Padding="50,0,50,0">
+            <Button Text="Phone" x:Name="btnPhone" Clicked="OnContactClicked" BackgroundColor="Silver" TextColor="Black" />
+        </StackLayout>
+        <!-- Phone/Email entry field  -->
+        <StackLayout Padding="52,0,52,0">
+            <Entry Keyboard="Telephone" Placeholder="04 123 456 78" x:Name="etContact" BackgroundColor="#d9d9d9" />
+        </StackLayout>
+        <!-- LABEL contact-->
+        <StackLayout Padding="35,0,35,0">
+            <Label Text="Best Time of Contact:" TextColor="#5a5d5e" FontSize="Medium" FontAttributes="Bold" />
+        </StackLayout>
+      <!--  Date button & DatePicker-->
+        <StackLayout Padding="75,0,75,0">
+            <Button  BackgroundColor="Silver" Text="{Binding SelectedDate, StringFormat='{}{0:dd - MMM - yy}'}}" x:Name="btnDate" Command="{Binding DatePickerCommand}" />
+            <DatePicker  BackgroundColor="Silver" x:Name="dpDate" IsVisible="False" Date="{Binding SelectedDate, Mode=TwoWay}" HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+      <!-- Time Button  -->
+        <StackLayout Padding="75,0,75,0">
+            <Button Text="Morning" x:Name="btnTime" Clicked="OnTimeClicked"  BackgroundColor="Silver" TextColor="Black" />
+        </StackLayout>
+        <!-- Submit Button -->
+        <StackLayout Padding="100,10,100,0">
+            <Button Text="Submit" x:Name="btnSubmit" BackgroundColor="#18b750" TextColor="White" Clicked="OnSubmitClicked" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

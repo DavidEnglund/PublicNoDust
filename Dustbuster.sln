@@ -8,6 +8,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dustbuster.iOS", "iOS\Dustb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dustbuster", "Dustbuster.csproj", "{0251D14B-1821-4D77-A49A-F3ABDF2B5B32}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A8886BF2-B02D-4C56-97A2-7A51B8FEBE6A}"
+	ProjectSection(SolutionItems) = preProject
+		Dustbuster.sln = Dustbuster.sln
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -79,6 +84,7 @@ Global
 		{D2208323-7E3F-4ACE-AC1E-D635138CA9BE}.Release|iPhone.Build.0 = Release|iPhone
 		{D2208323-7E3F-4ACE-AC1E-D635138CA9BE}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{D2208323-7E3F-4ACE-AC1E-D635138CA9BE}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{D2208323-7E3F-4ACE-AC1E-D635138CA9BE}.Debug|Any CPU.Build.0 = Debug|iPhone
 		{0251D14B-1821-4D77-A49A-F3ABDF2B5B32}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
 		{0251D14B-1821-4D77-A49A-F3ABDF2B5B32}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
 		{0251D14B-1821-4D77-A49A-F3ABDF2B5B32}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU

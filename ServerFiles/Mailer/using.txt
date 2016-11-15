@@ -1,0 +1,46 @@
+##using the send contact request on-line forms##
+
+variable name that should be sent via POST:
+description,
+expected data type
+
+contactInfomation:
+the phone number or email address of the app's user,
+required string 
+ 
+requestedDate:
+the date and time the user wishes to be contacted at,
+required datetime
+
+contactsName:
+the app users name,
+required string
+
+industryToContact:
+the industry the user wished to have contact them
+required string ("sunhawk","rainstorm")
+
+jobLocation:
+the location of the job that the user has inputed,
+optional string
+
+contactType:
+the type of contact method the user prefers (email or phone),
+optional string ("email","phone")
+
+areaSize:
+the size of the area
+optional int (square meters)
+
+areaType:
+the type of area the user need dust suppression at (open area or road),
+optional string ("openArea","traffickedArea")
+
+jobDuration:
+the amount of days the user want the job to last,
+optional int (days)
+
+
+##output##
+the php will output a JSON object with contains an errors array and a success boolean.
+the errors array contains object with a errorType string and a errorMessage string
