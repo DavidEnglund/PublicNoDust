@@ -9,7 +9,7 @@ namespace Dustbuster
 {
     public class DbConnectionManager
     {
-		private SQLiteConnection dbConnection;
+        private SQLiteConnection dbConnection;
         private static object locker = new object(); //functions as a using block and prevents parallel access
 
         #region data_structures
@@ -17,7 +17,7 @@ namespace Dustbuster
         private string[] AreaTypeArray = new string[] { "Open Area", "Road" };  //open area = 0, roads = 1
 
         //string[] DurationArray = new string[] {"Short term", "Medium term", "Long term"};
-		private List<ProductDuration> durationList = new List<ProductDuration>
+        private List<ProductDuration> durationList = new List<ProductDuration>
         {
             new ProductDuration(30,"Short Term"),
             new ProductDuration(90,"Medium To Long Term"),        //applies to roads only
@@ -25,7 +25,7 @@ namespace Dustbuster
             new ProductDuration(360,"Long Term")
         };
 
-		private List<Supplier> supplierList = new List<Supplier>
+        private List<Supplier> supplierList = new List<Supplier>
         {
             new Supplier(1,"Sunhawk","0894592785","wa@sunhawk.com.au"),
             new Supplier(2,"Rainstorm WA","0894520235","info@rainstorm.com.au"),
@@ -37,7 +37,7 @@ namespace Dustbuster
 
         //now that each area/duration combo has its own description (and different names for hydromulch),
         //this is pretty much useless, mebbe use for pictures or something
-		private List<Product> productList = new List<Product> {
+        private List<Product> productList = new List<Product> {
             new Product(1, "Gluon"),
             new Product(2, "DustLig"),
             new Product(3, "DustJel"),
@@ -45,7 +45,7 @@ namespace Dustbuster
             new Product(5, "Hydromulch")
         };
 
-		private List<ProductDescription> productDescriptions = new List<ProductDescription>
+        private List<ProductDescription> productDescriptions = new List<ProductDescription>
         {
             new ProductDescription(1, 30,"1 Application only", 35, "Gluon","Gluon is a high performance polymer that can be sprayed onto soil surfaces to form a “veneer” or “crust” which can withstand wind speeds up to 120km/hr. Its crosslinking nature allows rain to seep through the crust instead of washing it away. A light dosage rate will give you enough protection from the elements for up to a month."),
             new ProductDescription(1, 180,"1 Application only", 75, "Gluon","Gluon is a high performance polymer that can be sprayed onto soil surfaces to form a “veneer” or “crust” which can withstand wind speeds up to 120km/hr. Its crosslinking nature allows rain to seep through the crust instead of washing it away. A medium dosage rate will give your site protection for up to 6 months."),
@@ -63,7 +63,7 @@ namespace Dustbuster
 
             new ProductDescription(3, 30,"3 Applications/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
             new ProductDescription(3, 90,"3 Applications/day", 10, "DustJel","DustJel is a concentrated liquid polyacrylamide designated to extend the duration of water on a soil surface before evaporating. Ideally it is used on roads with a regular maintenance schedule or when rain is expected. Best used multiple times a day to reduce regular water application. An automated dosage system is available to avoid manual handling."),
-            
+
             new ProductDescription(4, 30,"1 Application only", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required."),
             new ProductDescription(4, 90,"1 Application/2 months", 1500, "DustMag","DustMag is a hygroscopic solution which attracts and retains moisture from the air reducing the need for watering the road for up to 3 months. If the road is properly graded before application, no maintenance will be required."),
 
@@ -94,7 +94,7 @@ namespace Dustbuster
             new ProductMatrix(30,0,false,1),
             new ProductMatrix(30,0,true,1),
             new ProductMatrix(30,0,false,2),
-            new ProductMatrix(30,0,false,5), 
+            new ProductMatrix(30,0,false,5),
             new ProductMatrix(30,0,true,5),
             //medium term
             new ProductMatrix(180,0,false,1),
@@ -108,7 +108,7 @@ namespace Dustbuster
 
             //ROADS
             //short term
-            new ProductMatrix(30,1,true,4), 
+            new ProductMatrix(30,1,true,4),
             new ProductMatrix(30,1,false,3),  
             //medium term
             new ProductMatrix(90,1,false,4),
@@ -132,16 +132,16 @@ namespace Dustbuster
         //    dbConnection = DependencyService.Get<ISQLite>().GetConnection();
         //}
 
-		public SQLiteConnection DbConnection
-		{
-			get { return this.dbConnection; }
-		}
+        public SQLiteConnection DbConnection
+        {
+            get { return this.dbConnection; }
+        }
 
         public int GetTableInfo(string tabletype)
         {
             return dbConnection.GetTableInfo(tabletype).Count;
         }
-        
+
         //data retrieval methods
         #region JobsDbAccessMethods
         public IEnumerable<Job> GetJobs()
@@ -149,7 +149,7 @@ namespace Dustbuster
             lock (locker)
 
             {
-               return dbConnection.Query<Job>("SELECT * FROM [Job]").ToList();
+                return dbConnection.Query<Job>("SELECT * FROM [Job]").ToList();
             }
         }
 
@@ -226,9 +226,9 @@ namespace Dustbuster
 
             lock (locker)
             {
-				return dbConnection.Query<ProductMatrix>("SELECT * FROM [ProductMatrix] " +
+                return dbConnection.Query<ProductMatrix>("SELECT * FROM [ProductMatrix] " +
                                                          $"WHERE [DurationMaxDays] = {job.DurationMaxDays} " +
-				                                         $"AND [AreaTypeId] = {job.AreaTypeID} AND [WillRain] = {rainToInt}").ToList();
+                                                         $"AND [AreaTypeId] = {job.AreaTypeID} AND [WillRain] = {rainToInt}").ToList();
             }
         }
 
@@ -244,9 +244,9 @@ namespace Dustbuster
 
             lock (locker)
             {
-				return dbConnection.Query<ProductMatrix>("SELECT * FROM [ProductMatrix] " +
-				                                         $"WHERE [DurationMaxDays] = {maxDays} " +
-														 $"AND [AreaTypeId] = {areaType} AND [WillRain] = {rainToInt}").ToList();
+                return dbConnection.Query<ProductMatrix>("SELECT * FROM [ProductMatrix] " +
+                                                         $"WHERE [DurationMaxDays] = {maxDays} " +
+                                                         $"AND [AreaTypeId] = {areaType} AND [WillRain] = {rainToInt}").ToList();
             }
         }
 
@@ -456,6 +456,28 @@ namespace Dustbuster
             }
             return rowsAltered;
         }
+
+        #endregion
+
+        // here are all the methods to be run to update the database from online.
+        // they will need to be given a List<> of the table object that is to be updated.
+        #region update methods
+
+
+        public int UpdateProductMatrix(List<ProductMatrix> fromOnline)
+        {
+            dbConnection.DropTable<ProductMatrix>();
+            dbConnection.CreateTable<ProductMatrix>();
+            int rowsAltered = 0;
+            lock (locker)
+            {
+                foreach (var matrix in fromOnline)
+                {
+                    rowsAltered += dbConnection.Insert(matrix);
+                }
+            }
+            return rowsAltered;
+         }
 
         #endregion
     }

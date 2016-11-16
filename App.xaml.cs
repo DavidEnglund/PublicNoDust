@@ -20,10 +20,10 @@ namespace Dustbuster
 			};
 		}
 
-		private void InitializeDatabase()
-		{
-			productsDb = new DbConnectionManager("ProductDB.db3");
-			jobsDb = new DbConnectionManager("JobDB.db3");
+        private async void InitializeDatabase()
+        {
+            productsDb = new DbConnectionManager("ProductDB.db3");
+            jobsDb = new DbConnectionManager("JobDB.db3");
 
             //productsDb.FillProductTablesAsync();
             Debug.WriteLine("DATABASE DEBUG: Job tables pre Job table check: {0}", jobsDb.GetTableInfo("Job"));
@@ -32,9 +32,13 @@ namespace Dustbuster
                 jobsDb.CreateJobTable();
             }
             Debug.WriteLine("DATABASE DEBUG: Job tables post Job table check: {0}", jobsDb.GetTableInfo("Job"));
+
+            // updateing database from online
+            await DataAccess.OnlineUpdater.UpdateProductMatrix();
+            Debug.WriteLine("--== database updated ==--");
         }
 
-		public static DbConnectionManager ProductsDb
+        public static DbConnectionManager ProductsDb
 		{
 			get { return productsDb; }
 		}
