@@ -21,7 +21,7 @@ namespace Dustbuster.DataAccess
         // this is the connecction method that already has the 1st part of the webaddress in it and just needs the page(might change this to have the page as the name of the table).
         private static async Task<string> connection(string webpage)
         {
-            string page = "http://www.rainstorm.com.au/app/Update/" + webpage;  //target page
+            string page = "http://www.rainstorm.com.au/app/Update/" + webpage + ".php";  //target page
             string result = "";
             try
             {
@@ -48,7 +48,7 @@ namespace Dustbuster.DataAccess
         {
             // this will update the productmatrix table form online. 1st it give the connection the page to connect to then gets the json string back from the connection.
             // if its not null it will create a list from the json and then run the update db method.
-            string page = "getProductmatrices.php";  
+            string page = "ProductMatrix";  
             string result = await connection(page);
             List<ProductMatrix> productMatrixFromDB;
 
