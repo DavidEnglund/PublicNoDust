@@ -23,13 +23,13 @@ class DBTables{
 }
 // and now to actually get everything 
 $dbTables = new DBTables;
-$dbTables->DBMetaData = getDBMetaData();
-$dbTables->AreaType = getAreaType();
-$dbTables->Supplier = getSupplier();
-$dbTables->Product = getProduct();
-$dbTables->ProductDescription = getProductDescription();
-$dbTables->ProductDuration = getProductDuration();
-$dbTables->ProductMatrix = getProductMatrix();
+$dbTables->DBMetaData = json_decode(getDBMetaData());
+$dbTables->AreaType = json_decode(getAreaType());
+$dbTables->Supplier = json_decode(getSupplier());
+$dbTables->Product = json_decode(getProduct());
+$dbTables->ProductDescription = json_decode(getProductDescription());
+$dbTables->ProductDuration = json_decode(getProductDuration());
+$dbTables->ProductMatrix = json_decode(getProductMatrix());
 $json=json_encode($dbTables,JSON_NUMERIC_CHECK);
 echo $json;
 ?>
