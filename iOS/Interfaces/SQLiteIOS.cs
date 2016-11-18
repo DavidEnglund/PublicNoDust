@@ -14,27 +14,6 @@ namespace Dustbuster.iOS
 {
     public class SQLiteIOS : ISQLite
     {
-        public SQLiteConnection GetConnection()
-        {
-            //see override below to accomodate multiple databases
-
-            string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal); // Documents folder
-
-            var productDBfilename = "ProductDB.db3";
-            var jobDBfilename = "JobDB.db3";
-
-            var productDBpath = Path.Combine(documentsPath, productDBfilename);
-            var jobDBpath = Path.Combine(documentsPath, jobDBfilename);
-
-            //to create a new db everytime use this - for debugging only 
-            File.Create(productDBpath);
-            File.Create(jobDBpath);
-
-
-            var conn = new SQLiteConnection(productDBpath);
-
-            return conn;
-        }
 
         public SQLiteConnection GetConnection(string dbName)
         {
@@ -53,7 +32,11 @@ namespace Dustbuster.iOS
             }
             else if (dbName == "JobDB.db3")
             {
-                if (!File.Exists(dbPath)) File.Create(dbPath);
+                //if (!File.Exists(dbPath)) File.Create(dbPath);
+                if (!File.Exists(dbPath))
+                {
+                    File.Copy("JobDB.db3", dbPath);
+                }
             }
 
             //to create a new db everytime use this - for debugging only 

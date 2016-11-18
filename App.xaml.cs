@@ -45,6 +45,7 @@ namespace Dustbuster
             {
                 Debug.WriteLine("--== no database update required ==--");
             }
+
         }
 
         public static DbConnectionManager ProductsDb
