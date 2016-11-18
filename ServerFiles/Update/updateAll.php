@@ -30,6 +30,7 @@ $dbTables->Product = json_decode(getProduct());
 $dbTables->ProductDescription = json_decode(getProductDescription());
 $dbTables->ProductDuration = json_decode(getProductDuration());
 $dbTables->ProductMatrix = json_decode(getProductMatrix());
-$json=json_encode($dbTables,JSON_NUMERIC_CHECK);
+$json=json_encode($dbTables,JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT);
 echo $json;
+
 ?>

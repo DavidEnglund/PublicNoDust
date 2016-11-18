@@ -43,6 +43,22 @@ namespace Dustbuster.DataAccess
                 return result;
         }
 
+        // this method will return true if the online database is a newer version number than the local one
+        public static async Task<bool> UpdateAvailable()
+        {
+            string page = "DBMetaData";
+            string result = await connection(page);
+            List<DBMetaData> onlineMetaData = JsonConvert.DeserializeObject<List<DBMetaData>>(result);
+            int onlineVersionNumber = onlineMetaData[0].DBVersion;
+            if (onlineVersionNumber > App.ProductsDb.GetDBVersion())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public static async Task<bool> UpdateProductMatrix()
         {
