@@ -158,6 +158,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidAsset>
     <AndroidResource Include="Resources\raw\ProductDB.db3" />
+    <AndroidResource Include="Resources\raw\JobDB.db3" />
     <None Include="Web References\au.com.sunhawk\CompositeType.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
