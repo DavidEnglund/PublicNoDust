@@ -471,13 +471,103 @@ namespace Dustbuster
             int rowsAltered = 0;
             lock (locker)
             {
-                foreach (var matrix in fromOnline)
+                foreach (var row in fromOnline)
                 {
-                    rowsAltered += dbConnection.Insert(matrix);
+                    rowsAltered += dbConnection.Insert(row);
                 }
             }
             return rowsAltered;
-         }
+        }
+
+        public int UpdateProduct(List<Product> fromOnline)
+        {
+            dbConnection.DropTable<Product>();
+            dbConnection.CreateTable<Product>();
+            int rowsAltered = 0;
+            lock (locker)
+            {
+                foreach (var row in fromOnline)
+                {
+                    rowsAltered += dbConnection.Insert(row);
+                }
+            }
+            return rowsAltered;
+        }
+
+        public int UpdateProductDescription(List<ProductDescription> fromOnline)
+        {
+            dbConnection.DropTable<ProductDescription>();
+            dbConnection.CreateTable<ProductDescription>();
+            int rowsAltered = 0;
+            lock (locker)
+            {
+                foreach (var row in fromOnline)
+                {
+                    rowsAltered += dbConnection.Insert(row);
+                }
+            }
+            return rowsAltered;
+        }
+
+        public int UpdateProductDuration(List<ProductDuration> fromOnline)
+        {
+            dbConnection.DropTable<ProductDuration>();
+            dbConnection.CreateTable<ProductDuration>();
+            int rowsAltered = 0;
+            lock (locker)
+            {
+                foreach (var row in fromOnline)
+                {
+                    rowsAltered += dbConnection.Insert(row);
+                }
+            }
+            return rowsAltered;
+        }
+
+        public int UpdateDBMetaData(List<DBMetaData> fromOnline)
+        {
+            dbConnection.DropTable<DBMetaData>();
+            dbConnection.CreateTable<DBMetaData>();
+            int rowsAltered = 0;
+            lock (locker)
+            {
+                foreach (var row in fromOnline)
+                {
+                    rowsAltered += dbConnection.Insert(row);
+                }
+            }
+            return rowsAltered;
+        }
+
+        public int UpdateAreaType(List<AreaType> fromOnline)
+        {
+            dbConnection.DropTable<AreaType>();
+            dbConnection.CreateTable<AreaType>();
+            int rowsAltered = 0;
+            lock (locker)
+            {
+                foreach (var row in fromOnline)
+                {
+                    rowsAltered += dbConnection.Insert(row);
+                }
+            }
+            return rowsAltered;
+        }
+
+        public int UpdateSupplier(List<Supplier> fromOnline)
+        {
+            dbConnection.DropTable<Supplier>();
+            dbConnection.CreateTable<Supplier>();
+            int rowsAltered = 0;
+            lock (locker)
+            {
+                foreach (var row in fromOnline)
+                {
+                    rowsAltered += dbConnection.Insert(row);
+                }
+            }
+            return rowsAltered;
+        }
 
         #endregion
     }

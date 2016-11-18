@@ -34,11 +34,17 @@ namespace Dustbuster
             Debug.WriteLine("DATABASE DEBUG: Job tables post Job table check: {0}", jobsDb.GetTableInfo("Job"));
 
             // updating database from online if there is an updated version available.
-            if (await DataAccess.OnlineUpdater.UpdateAvailable())
+            bool update = false;
+            update = await DataAccess.OnlineUpdater.UpdateAvailable();
+            if (update)
             {
                 await DataAccess.OnlineUpdater.UpdateAll();
+                Debug.WriteLine("--== database updated ==--");
             }
-            Debug.WriteLine("--== database updated ==--");
+            else
+            {
+                Debug.WriteLine("--== no database update required ==--");
+            }
         }
 
         public static DbConnectionManager ProductsDb
