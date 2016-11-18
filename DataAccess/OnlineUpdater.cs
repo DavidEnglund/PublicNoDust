@@ -60,7 +60,44 @@ namespace Dustbuster.DataAccess
             }
         }
 
-        public static async Task<bool> UpdateProductMatrix()
+        // this method will update all of the local tables at once from the online database.
+        public static async Task<bool> UpdateAll()
+        {
+
+            string page = "updateAll";
+            string result = await connection(page);
+            dbTables allTables;
+
+            if (!string.IsNullOrWhiteSpace(result))
+            {
+                // turn the resulting json into an object
+                allTables = JsonConvert.DeserializeObject<dbTables>(result);
+                // runn all of the update methods in the database
+                App.ProductsDb.UpdateProductMatrix(allTables.ProductMatrix);
+                App.ProductsDb.UpdateProduct(allTables.Product);
+                App.ProductsDb.UpdateProductDuration(allTables.ProductDuration);
+                App.ProductsDb.UpdateProductDescription(allTables.ProductDescription);
+                App.ProductsDb.UpdateDBMetaData(allTables.DBMetaData);
+                App.ProductsDb.UpdateSupplier(allTables.Supplier);
+                App.ProductsDb.UpdateAreaType(allTables.AreaType);
+                return true;
+            }
+            return false;
+        }
+        // a private class that contains all of the db tables for use with update all fuction
+        private class dbTables
+        {
+            public List<Product> Product;
+            public List<ProductDescription> ProductDescription;
+            public List<ProductDuration> ProductDuration;
+            public List<ProductMatrix> ProductMatrix;
+            public List<AreaType> AreaType;
+            public List<DBMetaData> DBMetaData;
+            public List<Supplier> Supplier;
+        }
+    
+
+    public static async Task<bool> UpdateProductMatrix()
         {
             // this will update the productmatrix table form online. 1st it give the connection the page to connect to then gets the json string back from the connection.
             // if its not null it will create a list from the json and then run the update db method.

@@ -36,7 +36,7 @@ namespace Dustbuster
             // updating database from online if there is an updated version available.
             if (await DataAccess.OnlineUpdater.UpdateAvailable())
             {
-                await DataAccess.OnlineUpdater.UpdateProductMatrix();
+                await DataAccess.OnlineUpdater.UpdateAll();
             }
             Debug.WriteLine("--== database updated ==--");
         }
