@@ -207,7 +207,7 @@ namespace Dustbuster
             dbConnection.DropTable<ProductMatrix>();
             dbConnection.CreateTable<ProductMatrix>();
             int rowsAltered = 0;
-<<<<<<< HEAD
+
             lock (locker)
             {
                 foreach (var row in fromOnline)
@@ -260,15 +260,7 @@ namespace Dustbuster
                     rowsAltered += dbConnection.Insert(row);
                 }
             }
-=======
-            lock (locker)
-            {
-                foreach (var matrix in fromOnline)
-                {
-                    rowsAltered += dbConnection.Insert(matrix);
-                }
-            }
->>>>>>> d211036382a4edad57773ef2fd2e2ff5f3c1b653
+
             return rowsAltered;
         }
 
