@@ -48,17 +48,21 @@ namespace Dustbuster.DataAccess
         {
             string page = "DBMetaData";
             string result = await connection(page);
-            List<DBMetaData> onlineMetaData = JsonConvert.DeserializeObject<List<DBMetaData>>(result);
-            int onlineVersionNumber = onlineMetaData[0].DBVersion;
-            Debug.WriteLine("--== " + onlineVersionNumber + " : " + App.ProductsDb.GetDBVersion() + " ==--");
-            if (onlineVersionNumber > App.ProductsDb.GetDBVersion())
+            if (!string.IsNullOrWhiteSpace(result))
             {
-                return true;
+                List<DBMetaData> onlineMetaData = JsonConvert.DeserializeObject<List<DBMetaData>>(result);
+                int onlineVersionNumber = onlineMetaData[0].DBVersion;
+                Debug.WriteLine("--== " + onlineVersionNumber + " : " + App.ProductsDb.GetDBVersion() + " ==--");
+                if (onlineVersionNumber > App.ProductsDb.GetDBVersion())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
         // this method will update all of the local tables at once from the online database.
