@@ -42,27 +42,27 @@ namespace Dustbuster.Droid
 			int touchBorderWidth;
 			if (e.Action == MotionEventActions.Down)
 			{
-				Console.WriteLine("--= down =--");
+				
 				touchDown = true;
 
 			}
 			if (e.Action == MotionEventActions.Up)
 			{
-				Console.WriteLine("--= up =--");
+				
 				touchDown = false;
 
 			}
 			if (e.Action == MotionEventActions.ButtonPress)
 			{
-				Console.WriteLine("--= press =--");
+				
 				touchDown = false;
 			}
 			if (e.Action == MotionEventActions.ButtonRelease)
 			{
-				Console.WriteLine("--= release =--");
+				
 				touchDown = false;
 			}
-			Console.WriteLine(e.Action);
+			
 			// set the color depebding on the pressed state of the button
 			if (touchDown)
 			{

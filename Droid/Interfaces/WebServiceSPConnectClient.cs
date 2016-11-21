@@ -52,7 +52,7 @@ namespace Dustbuster.Droid
             }
         }
 
-        // Method to 
+        // AddNewRecord to SP server
         public Task<Boolean> AddNewRecord(String Name, String Email, String Phone)
         {
             try
@@ -73,6 +73,10 @@ namespace Dustbuster.Droid
             }
         }
 
+        /// <summary>
+        /// GetDbVersion get the updated DB version from SP
+        /// </summary>
+        /// <returns>Task returns a boolean flag</returns>
         public Task<String> GetDBVersion()
         {
             try
@@ -129,8 +133,6 @@ namespace Dustbuster.Droid
                         objfilestream.Close();
                     }
 
-                    Log.Debug("Android Log Test", "Database Downloaded!!!!!!!");
-                    Console.WriteLine("Database Downloaded!!!");
                     return Task.FromResult(true);
                 }
             }
@@ -145,6 +147,7 @@ namespace Dustbuster.Droid
 
             }
         }
+
 
         public Task<Boolean> SendContactClient(String contactInfo, DateTime requestDate, String contactName,
             String jobLocation, String contactType, String industryType)
@@ -164,8 +167,6 @@ namespace Dustbuster.Droid
                 multipart.Add(new StringContent(contactType), String.Format("\"{0}\"", "contactType"));
                 multipart.Add(new StringContent(industryType), String.Format("\"{0}\"", "industryToContact"));
 
-                Console.WriteLine("Debug Multipart!!!: " + multipart);
-
                 // creating the connection
                 string resultContent;
                 Boolean resultFlag;
@@ -177,11 +178,8 @@ namespace Dustbuster.Droid
                     var result = client.PostAsync(client.BaseAddress, multipart).Result;
                     resultContent = result.Content.ReadAsStringAsync().Result;
 
-                    Console.WriteLine("Debug Message Content!!!: " + resultContent.ToString());
-
                     responseModel = JsonConvert.DeserializeObject<WebServiceResponseMsg>(resultContent);
                     
-                    Console.WriteLine("Debug Response!!!: "+responseModel.errors.ToString()+" "+responseModel.success);
                 }
 
                 if(responseModel.success == true)
@@ -199,7 +197,6 @@ namespace Dustbuster.Droid
             }
             catch (Exception exception)
             {
-                Console.WriteLine("Web Service Exception: {0}", exception);
                 return Task.FromResult(false);
             }
         }

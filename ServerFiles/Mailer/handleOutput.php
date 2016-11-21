@@ -8,4 +8,4 @@ function handleOutput(){
 	echo $output;
 }
 
-?>
+?>`
