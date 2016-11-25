@@ -52,7 +52,7 @@ namespace Dustbuster.DataAccess
             {
                 List<DBMetaData> onlineMetaData = JsonConvert.DeserializeObject<List<DBMetaData>>(result);
                 int onlineVersionNumber = onlineMetaData[0].DBVersion;
-                Debug.WriteLine("--== " + onlineVersionNumber + " : " + App.ProductsDb.GetDBVersion() + " ==--");
+                Debug.WriteLine("--== Remote DB Ver: " + onlineVersionNumber + ", Local DB Ver: " + App.ProductsDb.GetDBVersion() + " ==--");
                 if (onlineVersionNumber > App.ProductsDb.GetDBVersion())
                 {
                     return true;
