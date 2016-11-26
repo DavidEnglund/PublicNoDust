@@ -60,11 +60,14 @@ namespace Dustbuster
                         newJob.Area = newJob.Area * 1000000;
                     }
 
-					//Starts Analytics up
-					AnalyticsClass.SetDetails();
-					//Send all needed data
-					AnalyticsClass.SendAnalytics(App.IndustryOption.ToString(), "Traffic", App.TrafficOption.ToString(), "Calendar", App.DurationOption.ToString(), "Rain", App.WeatherOption.ToString(), "Location", Location);
-
+                    if (Settings.EnableAnalytics)
+                    {
+                        //Starts Analytics up
+                        AnalyticsClass.SetDetails();
+                        //Send all needed data
+                        AnalyticsClass.SendAnalytics(App.IndustryOption.ToString(), "Traffic", App.TrafficOption.ToString(), "Calendar", App.DurationOption.ToString(), "Rain", App.WeatherOption.ToString(), "Location", Location);
+                    }
+                    
 					App.JobsDb.DbConnection.Insert(newJob);
 
                     ProductViewModel productViewModel = new ProductViewModel();
