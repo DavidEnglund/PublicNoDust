@@ -68,7 +68,7 @@ namespace Dustbuster
                     //added clause to show '>100L' for small jobs.
                     if (CalculateQuantity() < 100)
                     {
-                        return string.Format("Estimated amount per application: >{0}L", ((float)Math.Ceiling(CalculateQuantity() / 100) * 100).ToString());
+                        return string.Format("Estimated amount per application: <{0}L", ((float)Math.Ceiling(CalculateQuantity() / 100) * 100).ToString());
                     }
                     else
                     {
