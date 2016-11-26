@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using Dustbuster;
+﻿using System.Collections.ObjectModel;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Dustbuster
 {
@@ -12,10 +12,22 @@ namespace Dustbuster
         public DustbusterViewModel()
         {
             jobs = new ObservableCollection<Job>();
-            
-            foreach (Job j in App.JobsDb.GetJobs())
+            List<Job> DBjobs = App.JobsDb.GetJobs().ToList();
+            int count = DBjobs.Count;
+
+            if (count > 5)
             {
-                jobs.Add(j);
+                for (int i = count - 5; i < count; i++)
+                {
+                    jobs.Add(DBjobs[i]);
+                }
+            }
+            else
+            {
+                foreach (Job j in App.JobsDb.GetJobs())
+                {
+                    jobs.Add(j);
+                }
             }
         }
 
