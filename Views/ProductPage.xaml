@@ -19,7 +19,7 @@
                     <Label HorizontalTextAlignment="Center"	TextColor="#5a5d5e"	Text="{Binding ProductQuantityString}" />
                     <Label HorizontalTextAlignment="Center"	TextColor="#5a5d5e"	Text="{Binding ApplicationRateString}" />
                     <Label HorizontalTextAlignment="Center"	TextColor="#5a5d5e"	Text="{Binding ApplicationsRequired, StringFormat='Applications required: {0}'}" />
-                    <Label HorizontalTextAlignment="Center"	TextColor="#5a5d5e"	Text="{Binding Area, StringFormat='Job Area: {0}m&#xB2;'}" />                  
+                    <Label HorizontalTextAlignment="Center"	TextColor="#5a5d5e"	Text="{Binding AreaString}" />
                   </StackLayout>
                 </ScrollView>
               </StackLayout>

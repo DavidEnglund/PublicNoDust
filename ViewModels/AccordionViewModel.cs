@@ -53,6 +53,13 @@ namespace Dustbuster
                         Location = Location
                     };
 
+                    //quick and nasty fix for calc issue. page is still buggy.
+                    //job area will be saved as sq metre
+                    if (areaUnit == Units.Kilometre)
+                    {
+                        newJob.Area = newJob.Area * 1000000;
+                    }
+
 					//Starts Analytics up
 					AnalyticsClass.SetDetails();
 					//Send all needed data
