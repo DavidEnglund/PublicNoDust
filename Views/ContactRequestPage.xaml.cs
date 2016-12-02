@@ -72,7 +72,8 @@ namespace Dustbuster
         {
             get { return this.dpDate; }
         }
-    
+        
+
         string contactType = "Email"; // either Phone or Email        
         double remindTime;
 
@@ -153,8 +154,9 @@ namespace Dustbuster
 
             // validate the text entry fields
             if (ValidateFields())
-            {                          
-                ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text, dpDate.Date); //, 
+            {
+                DateTime datePick = DateTime.Now;                       
+                ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text, datePick); 
 
 
                 /*
@@ -177,7 +179,7 @@ namespace Dustbuster
                     //WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, etContact.Text, null);
                     
                     // php webservice send via web part
-                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
+                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, datePick, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
 
                     if (WebContactResult)
                     {
@@ -195,7 +197,7 @@ namespace Dustbuster
                     //WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, null, etContact.Text);
 
                     // php webservice send via web part
-                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, DatePicker.Date, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
+                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, datePick, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
 
                    
                     if (WebContactResult)
