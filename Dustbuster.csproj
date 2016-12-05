@@ -64,9 +64,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\OnlineUpdater.cs" />
-    <Compile Include="Managers\WebServiceManager.cs" />
+    <Compile Include="DataAccess\SendContactsClient.cs" />
     <Compile Include="Interfaces\IKeyboardInteraction.cs" />
-    <Compile Include="Interfaces\IWebServiceConnect.cs" />
     <Compile Include="Models\Analytics.cs" />
     <Compile Include="Models\DBMetaData.cs" />
     <Compile Include="Models\DbModel.cs" />

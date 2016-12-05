@@ -134,7 +134,6 @@
     <Compile Include="Renderers\SelectImageButtonRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Renderers\DroidEditRenderer.cs" />
-    <Compile Include="Interfaces\WebServiceSPConnectClient.cs" />
     <Compile Include="SplashActivity.cs" />
     <Compile Include="Web References\au.com.sunhawk\Reference.cs">
       <AutoGen>True</AutoGen>

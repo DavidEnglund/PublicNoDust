@@ -156,7 +156,7 @@ namespace Dustbuster
             if (ValidateFields())
             {
                 DateTime datePick = DateTime.Now;                       
-                ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text, datePick); 
+                //ContactRequestInfo requestInfo = new ContactRequestInfo(etName.Text, etContact.Text, datePick); 
 
 
                 /*
@@ -170,16 +170,14 @@ namespace Dustbuster
                 }
                 */
 
-                //Invoking WebService and sending contact data from app to sharepoint server R.L
-                Boolean result = await DependencyService.Get<IWebServiceConnect>().TestConnection();
+                //Invoking WebService and sending contact data from app to linux server R.L
+               
                 bool IsEmail = Regex.IsMatch(etContact.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
                 if (IsEmail)
                 {
-                    // old not used superceded by php web service
-                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, etContact.Text, null);
+                    SendContactsClient contactSend = new SendContactsClient();
+                    WebContactResult = await contactSend.SendContactClient(etContact.Text, datePick, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
                     
-                    // php webservice send via web part
-                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, datePick, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
 
                     if (WebContactResult)
                     {
@@ -193,13 +191,10 @@ namespace Dustbuster
                 }
                 else
                 {
-                    // old not used superceded by php web service
-                    //WebContactResult = await DependencyService.Get<IWebServiceConnect>().AddNewRecord(etName.Text, null, etContact.Text);
+                    SendContactsClient contactSend = new SendContactsClient();
+                    WebContactResult = await contactSend.SendContactClient(etContact.Text, datePick, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
 
-                    // php webservice send via web part
-                    WebContactResult = await DependencyService.Get<IWebServiceConnect>().SendContactClient(etContact.Text, datePick, etName.Text, UserInfoPHP.Instance.jobLocation, contactType, industryType);
 
-                   
                     if (WebContactResult)
                     {
                         await DisplayAlert("Contact Submitted", "Your details have been forwarded.", "Ok");
