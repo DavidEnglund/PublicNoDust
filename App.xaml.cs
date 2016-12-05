@@ -20,21 +20,29 @@ namespace Dustbuster
 			};
 		}
 
-		private void InitializeDatabase()
-		{
-			productsDb = new DbConnectionManager("ProductDB.db3");
-			jobsDb = new DbConnectionManager("JobDB.db3");
+        private async void InitializeDatabase()
+        {
+            productsDb = new DbConnectionManager("ProductDB.db3");
+            jobsDb = new DbConnectionManager("JobDB.db3");
 
-            //productsDb.FillProductTablesAsync();
-            Debug.WriteLine("DATABASE DEBUG: Job tables pre Job table check: {0}", jobsDb.GetTableInfo("Job"));
-            if (jobsDb.GetTableInfo("Job") == 0)
+            
+
+            // updating database from online if there is an updated version available.
+            bool update = false;
+            update = await DataAccess.OnlineUpdater.UpdateAvailable();
+            if (update)
             {
-                jobsDb.CreateJobTable();
+                await DataAccess.OnlineUpdater.UpdateAll();
+                Debug.WriteLine("--== database updated ==--");
             }
-            Debug.WriteLine("DATABASE DEBUG: Job tables post Job table check: {0}", jobsDb.GetTableInfo("Job"));
+            else
+            {
+                Debug.WriteLine("--== no database update required ==--");
+            }
+
         }
 
-		public static DbConnectionManager ProductsDb
+        public static DbConnectionManager ProductsDb
 		{
 			get { return productsDb; }
 		}
@@ -74,8 +82,8 @@ namespace Dustbuster
 			// this will start the calendar access service for iOS - for android it currently does nothing
 			// DependencyService.Get<IReminderService>(DependencyFetchTarget.GlobalInstance).CreateService();
             // Starts updating the product database. R.L
-            //await DependencyService.Get<IWebServiceConnect>().GetDBVersion();
-            //var result = await DependencyService.Get<IWebServiceConnect>().GetDB();
+            // await DependencyService.Get<IWebServiceConnect>().GetDBVersion();
+            // var result = await DependencyService.Get<IWebServiceConnect>().GetDB();
         }
 
 		protected override void OnSleep()

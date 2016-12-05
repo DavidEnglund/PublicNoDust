@@ -2748,7 +2748,10 @@ namespace Dustbuster.Droid
 		{
 			
 			// aapt resource value: 0x7f050000
-			public const int ProductDB = 2131034112;
+			public const int JobDB = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int ProductDB = 2131034113;
 			
 			static Raw()
 			{

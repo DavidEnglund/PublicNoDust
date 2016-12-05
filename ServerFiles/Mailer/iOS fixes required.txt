@@ -1,0 +1,5 @@
+what on iOS need to be looked at and or fixed
+the splash screen needs to be updated , read apple guidelines 1st
+the calendar buttons on the accordion page needs to be copied into the iOS project and set the build type.
+background on the hamburger menu product history section is what and needs to be changed to match android.
+learn how to deploy on the app store. read xamarin docs on how to do this and apple guidelines.

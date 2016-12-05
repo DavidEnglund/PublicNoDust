@@ -23,6 +23,7 @@
         <StackLayout Padding="52,0,52,0">
             <Entry Keyboard="Telephone" Placeholder="04 123 456 78" x:Name="etContact" BackgroundColor="#d9d9d9" />
         </StackLayout>
+        
         <!-- LABEL contact-->
         <StackLayout Padding="35,0,35,0">
             <Label Text="Best Time of Contact:" TextColor="#5a5d5e" FontSize="Medium" FontAttributes="Bold" />
@@ -35,7 +36,8 @@
       <!-- Time Button  -->
         <StackLayout Padding="75,0,75,0">
             <Button Text="Morning" x:Name="btnTime" Clicked="OnTimeClicked"  BackgroundColor="Silver" TextColor="Black" />
-        </StackLayout>
+        </StackLayout> 
+      
         <!-- Submit Button -->
         <StackLayout Padding="100,10,100,0">
             <Button Text="Submit" x:Name="btnSubmit" BackgroundColor="#18b750" TextColor="White" Clicked="OnSubmitClicked" />

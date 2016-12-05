@@ -30,7 +30,7 @@
             <StackLayout.Padding>
               <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="0, 6, 0, 6"  />
             </StackLayout.Padding>
-            <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_length" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Length, Mode=TwoWay}"/>
+            <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_length" Keyboard="Numeric" BackgroundColor="{Binding AreaColor}" VerticalOptions="FillAndExpand" Text="{Binding Length, Mode=TwoWay}" />
           </StackLayout>
           <!-- BUTTON Length Unit Toggle -->
           <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="{Binding LengthUnit, Converter={StaticResource unitNotationConverter}}" x:Name="bToggle_length" VerticalOptions="FillAndExpand" Command="{Binding ChangeLengthUnit}"/>
@@ -55,7 +55,7 @@
             <StackLayout.Padding>
               <OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 0" Android="0, 6, 0, 6" />
             </StackLayout.Padding>
-            <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_width" Keyboard="Numeric" BackgroundColor="#d9d9d9" VerticalOptions="FillAndExpand" Text="{Binding Width, Mode=TwoWay}"/>
+            <Entry Grid.Row="0" Grid.Column="0" Placeholder="0" x:Name="entry_width" Keyboard="Numeric" BackgroundColor="{Binding AreaColor}" VerticalOptions="FillAndExpand" Text="{Binding Width, Mode=TwoWay}" />
           </StackLayout>
             <!-- BUTTON Width Unit Toggle -->
           <Button Grid.Row="0" Grid.Column="1" BackgroundColor="Silver" TextColor="Black" Text="{Binding WidthUnit, Converter={StaticResource unitNotationConverter}}" x:Name="bToggle_width" VerticalOptions="FillAndExpand" Command="{Binding ChangeWidthUnit}"/>
