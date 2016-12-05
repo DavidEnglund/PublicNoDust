@@ -44,7 +44,7 @@ namespace Dustbuster
 
                     Job newJob = new Job()
                     {
-                        Area = Area,
+                        Area = area,
                         AreaTypeID = (int)App.TrafficOption,
                         CreationDate = DateTime.Now,
                         WillRain = (App.WeatherOption == WeatherOptions.RainExpected),
@@ -100,27 +100,26 @@ namespace Dustbuster
                 if (LengthUnit == Units.Metre)
                 {
                     LengthUnit = Units.Kilometre;
-                    Length = Length / 1000;
                 }
                 else
                 {
                     LengthUnit = Units.Metre;
-                    Length = Length * 1000;
                 }
+                setArea();
             });
 
             this.ChangeWidthUnit = new Command((nothing) =>
-            {
+            {   
                 if (WidthUnit == Units.Metre)
                 {
                     WidthUnit = Units.Kilometre;
-                    Width = Width / 1000;
                 }
                 else
                 {
                     WidthUnit = Units.Metre;
-                    Width = Width * 1000;
                 }
+                setArea();
+               
             });
 
             this.ChangeAreaUnit = new Command((nothing) =>
@@ -128,12 +127,14 @@ namespace Dustbuster
                 if (AreaUnit == Units.Metre)
                 {
                     AreaUnit = Units.Kilometre;
-                    Area = Area / 1000000;
                 }
                 else
                 {
                     AreaUnit = Units.Metre;
-                    Area = Area * 1000000;
+                }
+               if(areaUntouched == area)
+                {
+                    setArea();
                 }
             });
         }
@@ -183,10 +184,15 @@ namespace Dustbuster
         private double length;
         private double width;
         private double area;
+        private double areaUntouched;
+        public double areaInMetres;
 
         private Units lengthUnit;
         private Units widthUnit;
         private Units areaUnit;
+
+        //this color is for the length and width text. it will change depending on whether the area entry is using them or not
+        private Color areaColor = Color.FromHex("#d9d9d9");
 
         private readonly static string METRE_NOTATION = "m", KILOMETRE_NOTATION = "km";
         private readonly static string METRE_SQUARE_NOTATION = "m2", KILOMETRE_SQUARE_NOTATION = "km2";
@@ -204,6 +210,17 @@ namespace Dustbuster
                 }
             }
         }
+        // this is the publec setter for the test color for width an length to bind to
+        public Color AreaColor
+        {
+            get {
+                return areaColor;
+            }
+            set {
+                areaColor = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("AreaColor"));
+            }
+        }
 
         public double Length
         {
@@ -216,8 +233,7 @@ namespace Dustbuster
                 if (length != value)
                 {
                     length = value;
-                    Area = width * length;
-
+                    setArea();
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Length"));
                 }
             }
@@ -234,31 +250,58 @@ namespace Dustbuster
                 if (width != value)
                 {
                     width = value;
-                    Area = width * length;
-
+                    setArea();
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Width"));
                 }
             }
         }
-
-        public double Area
+        /// <summary>
+        /// this method will be called by anything that changes the width or length values and set the area accordingly
+        /// </summary>
+        private void setArea()
+        {
+            // setting the text feild color back now it being used again #d9d9d9
+            AreaColor = Color.FromHex("#d9d9d9");
+            // going to get a converted width then a converted length and set the area to that. this way the width and length stays the same but the area adjust to m/ km
+            double convertedWidth = width;
+            if (WidthUnit == Units.Kilometre)
+            {
+                convertedWidth *= 1000;
+            }
+            double convertedLength = length;
+            if (LengthUnit == Units.Kilometre)
+            {
+                convertedLength *= 1000;
+            }
+            // if area is set to km it needs to receive the data as km so convert metre value to km value whilst keeping it meaning the same thing
+            if (AreaUnit == Units.Metre)
+            {
+                areaUntouched = convertedLength * convertedWidth;
+                Area = (decimal)(convertedLength * convertedWidth);
+            }
+            else
+            {
+                areaUntouched = (convertedLength * convertedWidth) / 1000000;
+                Area = (decimal)(convertedLength * convertedWidth) / 1000000;
+            }
+        }
+        // this is the area that is diplayed and set by changing the area
+        public decimal Area
         {
             get
             {
-                return area;
+                    return (decimal)area; 
             }
             set
             {
-                if (area != value)
+                if (area != (double)value)
                 {
-                    area = value;
+                    area = (double)value;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Area"));
-
-                    if (area != length * width)
+                    // setting the len and width text color to red if they are not being used for the area
+                    if(area != areaUntouched)
                     {
-                        Length = 0;
-                        Width = 0;
-                        area = value;
+                        AreaColor = Color.FromHex("#d9d999");
                     }
                 }
             }
